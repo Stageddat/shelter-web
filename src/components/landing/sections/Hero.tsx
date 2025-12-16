@@ -1,6 +1,6 @@
 import Image from "next/image";
 import heroImage from "@/assets/landing/hero-image.png";
-import CtaButton from "./CtaButton";
+import CtaButton from "@/components/landing/CtaButton";
 
 export default function Hero() {
   return (
