@@ -54,7 +54,7 @@ export default function Features() {
           return (
             <article
               key={index}
-              className="hover:border-accent border-border rounded-lg border-2 p-4 transition hover:border-2"
+              className="hover:border-accent border-border rounded-lg border-2 p-4 transition duration-300 hover:border-2"
             >
               <Icon className="stroke-accent h-10 w-10" />
               <h3 className="text-primary-foreground mt-2 text-xl font-semibold">

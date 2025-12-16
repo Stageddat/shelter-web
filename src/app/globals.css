@@ -4,6 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
+  background: linear-gradient(
+    165deg,
+    #f5ebe0 0%,
+    #e8f4f8 30%,
+    #ffffff 70%,
+    #f8f8f8 100%
+  );
+
   color: #2c3e50;
   min-height: 100vh;
 }
@@ -57,13 +65,13 @@ body {
   --card-foreground: oklch(0.8122 0.0308 157.74);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.8221 0.0346 225.55);
+  --primary: #b4e0ea;
   --primary-foreground: oklch(0.2781 0.0296 256.85);
   --secondary: oklch(0.8122 0.0308 157.74);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.8122 0.0308 157.74);
+  --accent: #aecad6;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.9276 0.0058 264.53);

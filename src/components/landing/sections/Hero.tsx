@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <main className="flex min-h-screen items-center justify-center gap-x-16 border-2 border-black px-16">
       <section className="text-left">
-        <h1 className="text-primary-foreground m-0 text-9xl font-extrabold">
+        <h1 className="text-primary-foreground m-0 mt-2 text-9xl font-extrabold tracking-tight">
           shelter
         </h1>
         <p className="text-foreground m-0 mt-2 text-2xl">
