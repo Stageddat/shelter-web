@@ -1,40 +1,78 @@
 export default function Footer() {
   return (
-    <main className="border-accent mx-12 mt-7 flex w-11/12 flex-row border-t-4 pt-2">
-      <div className="w-1/4 border-2 border-black">
-        <p className="text-xl font-bold">shelter</p>
-        <p>© 2025 shelter</p>
-        <p>all rights reserved</p>
+    <footer className="border-border mx-auto mt-16 w-11/12 max-w-7xl border-t pt-8 pb-6">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {/* project section */}
+        <div className="space-y-3">
+          <p className="text-foreground text-2xl font-semibold">shelter</p>
+          <div className="text-muted-foreground space-y-1 text-sm">
+            <p>© 2025 shelter</p>
+            <p>all rights reserved</p>
+          </div>
+        </div>
+
+        {/* shelter section */}
+        <div className="space-y-3">
+          <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+            Product
+          </p>
+          <nav className="flex flex-col space-y-2">
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              about us
+            </a>
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              cloud
+            </a>
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              self-host
+            </a>
+          </nav>
+        </div>
+
+        {/* legal section */}
+        <div className="space-y-3">
+          <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+            Legal
+          </p>
+          <nav className="flex flex-col space-y-2">
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              privacy policy
+            </a>
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              terms of service
+            </a>
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              cookie policy
+            </a>
+          </nav>
+        </div>
+
+        {/* contact section */}
+        <div className="space-y-3">
+          <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
+            Contact
+          </p>
+          <nav className="flex flex-col space-y-2">
+            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+              discord
+            </a>
+            <a
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+              href="https://github.com/Stageddat/shelter"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github
+            </a>
+            <a
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+              href="mailto:hello@stageddat.dev"
+            >
+              hello@stageddat.dev
+            </a>
+          </nav>
+        </div>
       </div>
-      <div className="w-1/4 border-2 border-black">
-        <p className="block text-xl font-bold">product</p>
-        <a className="text-accent-foreground block">about us</a>
-        <a className="text-accent-foreground block">cloud</a>
-        <a className="text-accent-foreground block">self-host</a>
-      </div>
-      <div className="w-1/4 border-2 border-black">
-        <p className="text-xl font-bold">legal</p>
-        <a className="text-accent-foreground block">privacy policy</a>
-        <a className="text-accent-foreground block">terms of service</a>
-        <a className="text-accent-foreground block">cookie policy</a>
-      </div>
-      <div className="w-1/4 border-2 border-black">
-        <p className="text-xl font-bold">contact</p>
-        <a className="text-accent-foreground block">discord</a>
-        <a
-          className="text-accent-foreground block"
-          href="https://github.com/Stageddat/shelter"
-          target="_blank"
-        >
-          github
-        </a>
-        <a
-          className="text-accent-foreground block"
-          href="mailto:hello@stageddat.dev"
-        >
-          hello@stageddat.dev
-        </a>
-      </div>
-    </main>
+    </footer>
   );
 }
