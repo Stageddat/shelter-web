@@ -35,13 +35,22 @@ export default function Footer() {
             Legal
           </p>
           <nav className="flex flex-col space-y-2">
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <a
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+              href="/privacy"
+            >
               privacy policy
             </a>
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <a
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+              href="/terms"
+            >
               terms of service
             </a>
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <a
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+              href="/cookies"
+            >
               cookie policy
             </a>
           </nav>
