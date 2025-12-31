@@ -24,6 +24,7 @@ body {
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -59,6 +60,7 @@ body {
   --popover-foreground: oklch(0.25 0.02 240);
   --primary: oklch(0.85 0.05 210);
   --primary-foreground: oklch(0.25 0.02 240);
+  --primary-dark: oklch(0.55 0.08 210);
   --secondary: oklch(0.75 0.04 200);
   --secondary-foreground: oklch(0.25 0.02 240);
   --muted: oklch(0.97 0.01 220);
