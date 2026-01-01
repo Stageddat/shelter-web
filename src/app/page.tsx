@@ -3,6 +3,7 @@ import Features from "@/components/landing/sections/Features";
 import Security from "@/components/landing/sections/Security";
 import Start from "@/components/landing/sections/Start";
 import Footer from "@/components/landing/sections/Footer";
+import Faqs from "@/components/landing/sections/Faqs";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Features />
       <Security />
+      <Faqs />
       <Start />
       <Footer />
     </div>
