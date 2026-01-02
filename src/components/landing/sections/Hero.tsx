@@ -4,7 +4,7 @@ import CtaButton from "@/components/landing/CtaButton";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center px-8 py-16 lg:px-16">
+    <section className="relative flex min-h-screen items-center justify-center px-8 py-16">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
         {/* text left */}
         <div className="flex-1 text-center lg:text-left">
