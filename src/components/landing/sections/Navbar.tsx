@@ -61,9 +61,9 @@ interface NavLink {
 
 // Navigation links for shelter
 const navigationLinks: NavLink[] = [
-  { href: "#features", label: "features" },
-  { href: "#security", label: "security" },
-  { href: "#faqs", label: "faqs" },
+  { href: "/#features", label: "features" },
+  { href: "/#security", label: "security" },
+  { href: "/#faqs", label: "faqs" },
   // {
   //   href: "https://github.com/Stageddat/shelter",
   //   label: "github",
