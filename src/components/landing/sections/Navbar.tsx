@@ -64,11 +64,11 @@ const navigationLinks: NavLink[] = [
   { href: "#features", label: "features" },
   { href: "#security", label: "security" },
   { href: "#faqs", label: "faqs" },
-  {
-    href: "https://github.com/Stageddat/shelter",
-    label: "github",
-    external: true,
-  },
+  // {
+  //   href: "https://github.com/Stageddat/shelter",
+  //   label: "github",
+  //   external: true,
+  // },
 ];
 
 export default function Navbar() {
