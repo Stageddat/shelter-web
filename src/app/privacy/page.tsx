@@ -1,17 +1,20 @@
 import Navbar from "@/components/landing/sections/Navbar";
+import Link from "next/link";
+import LegalBack from "@/components/landing/LegalBack";
+import Footer from "@/components/landing/sections/Footer";
 
 export default function PrivacyPolicy() {
   return (
     <>
       <Navbar />
       <main className="bg-background mx-auto max-w-4xl px-8 py-16 lg:py-24">
+        <LegalBack />
         <h1 className="text-foreground mb-8 text-6xl font-bold">
           privacy policy
         </h1>
         <p className="text-muted-foreground mb-12 text-lg text-balance">
           last updated: december 30, 2025
         </p>
-
         <div className="space-y-12">
           <section className="space-y-4">
             <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
@@ -84,12 +87,12 @@ export default function PrivacyPolicy() {
               we only use essential cookies necessary for the app to function
               properly, such as keeping you logged in. we don&apos;t use
               tracking cookies or advertising cookies. see our{" "}
-              <a
+              <Link
                 className="text-primary-dark hover:text-primary-dark/80 transition-colors"
                 href="/cookies"
               >
                 cookie policy
-              </a>{" "}
+              </Link>{" "}
               for more details.
             </p>
           </section>
@@ -125,16 +128,17 @@ export default function PrivacyPolicy() {
             <p className="text-muted-foreground leading-relaxed text-pretty">
               if you have any questions about this privacy policy, please
               contact us at{" "}
-              <a
+              <Link
                 href="mailto:hello@stageddat.dev"
                 className="text-primary-dark hover:text-primary-dark/80 underline transition-colors"
               >
                 hello@stageddat.dev
-              </a>
+              </Link>
             </p>
           </section>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

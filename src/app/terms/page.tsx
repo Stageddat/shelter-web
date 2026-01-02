@@ -1,10 +1,13 @@
 import Navbar from "@/components/landing/sections/Navbar";
+import LegalBack from "@/components/landing/LegalBack";
+import Footer from "@/components/landing/sections/Footer";
 
 export default function TermsOfService() {
   return (
     <>
       <Navbar />
       <main className="mx-auto max-w-4xl px-8 py-16 lg:py-24">
+        <LegalBack />
         <h1 className="text-foreground mb-8 text-6xl font-bold">
           terms of service
         </h1>
@@ -175,6 +178,7 @@ export default function TermsOfService() {
           </section>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

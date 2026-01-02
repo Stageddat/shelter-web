@@ -1,10 +1,13 @@
 import Navbar from "@/components/landing/sections/Navbar";
+import LegalBack from "@/components/landing/LegalBack";
+import Footer from "@/components/landing/sections/Footer";
 
 export default function CookiePolicy() {
   return (
     <>
       <Navbar />
       <main className="mx-auto max-w-4xl px-8 py-16 lg:py-24">
+        <LegalBack />
         <h1 className="text-foreground mb-8 text-6xl font-bold">
           cookie policy
         </h1>
@@ -151,7 +154,7 @@ export default function CookiePolicy() {
               if you have questions about how we use cookies, contact us at{" "}
               <a
                 href="mailto:hello@stageddat.dev"
-                className="text-primary hover:text-primary/80 underline transition-colors"
+                className="text-primary-dark hover:text-primary-dark/80 underline transition-colors"
               >
                 hello@stageddat.dev
               </a>
@@ -159,6 +162,7 @@ export default function CookiePolicy() {
           </section>
         </div>
       </main>
+      <Footer />
     </>
   );
 }
