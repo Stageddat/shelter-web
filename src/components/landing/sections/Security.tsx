@@ -18,7 +18,7 @@ const securityFeatures = [
 
 export default function Security() {
   return (
-    <section className="px-8 py-20 lg:px-16 lg:py-32">
+    <section className="px-8 py-20 lg:px-16 lg:py-32" id="security">
       <div className="mx-auto max-w-7xl">
         {/* title */}
         <h2 className="text-foreground mb-16 text-center text-5xl font-bold tracking-tight lg:text-6xl">

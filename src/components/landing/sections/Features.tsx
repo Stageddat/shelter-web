@@ -3,7 +3,7 @@ import { features } from "@/data/landing/features";
 
 export default function Features() {
   return (
-    <section className="px-8 py-20 lg:px-16 lg:py-32">
+    <section className="px-8 py-20 lg:px-16 lg:py-32" id="features">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-foreground mb-12 text-center text-5xl font-bold tracking-tight text-balance lg:text-6xl">
           a safe place for your thoughts

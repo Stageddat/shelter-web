@@ -7,7 +7,7 @@ import {
 
 export default function Faqs() {
   return (
-    <section className="px-8 py-20 lg:px-16 lg:py-32">
+    <section className="px-8 py-20 lg:px-16 lg:py-32" id="faqs">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-foreground mb-16 text-center text-5xl font-bold tracking-tight text-balance lg:text-6xl">
           frequently asked questions
