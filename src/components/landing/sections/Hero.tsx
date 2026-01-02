@@ -23,7 +23,7 @@ export default function Hero() {
         <div className="flex-1">
           <Image
             src={heroImage}
-            alt="shelter hero illustration"
+            alt="shelter mascot image"
             width={500}
             height={500}
             className="mx-auto w-full max-w-md drop-shadow-2xl"
