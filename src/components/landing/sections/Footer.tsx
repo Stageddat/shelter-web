@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="space-y-3">
           <p className="text-foreground text-2xl font-semibold">shelter</p>
           <div className="text-muted-foreground space-y-1 text-sm">
-            <p>© 2025 shelter</p>
+            <p>© 2025-{new Date().getFullYear()} shelter</p>
             <p>all rights reserved</p>
           </div>
         </div>
