@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="border-border mx-auto mt-16 w-11/12 max-w-7xl border-t pt-8 pb-6">
@@ -16,16 +18,26 @@ export default function Footer() {
           <p className="text-foreground text-sm font-semibold tracking-wider uppercase">
             Product
           </p>
+          {/* TODO: add links */}
           <nav className="flex flex-col space-y-2">
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            <Link
+              href=""
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+            >
               about us
-            </a>
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            </Link>
+            <Link
+              href=""
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+            >
               cloud
-            </a>
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            </Link>
+            <Link
+              href=""
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+            >
               self-host
-            </a>
+            </Link>
           </nav>
         </div>
 
@@ -35,24 +47,24 @@ export default function Footer() {
             Legal
           </p>
           <nav className="flex flex-col space-y-2">
-            <a
+            <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               href="/privacy"
             >
               privacy policy
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               href="/terms"
             >
               terms of service
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               href="/cookies"
             >
               cookie policy
-            </a>
+            </Link>
           </nav>
         </div>
 
@@ -62,23 +74,27 @@ export default function Footer() {
             Contact
           </p>
           <nav className="flex flex-col space-y-2">
-            <a className="text-muted-foreground hover:text-foreground text-sm transition-colors">
+            {/* <Link
+              // TODO: add discord
+              href=""
+              className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+            >
               discord
-            </a>
-            <a
+            </Link> */}
+            <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               href="https://github.com/Stageddat/shelter"
               target="_blank"
               rel="noopener noreferrer"
             >
               github
-            </a>
-            <a
+            </Link>
+            <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
               href="mailto:hello@stageddat.dev"
             >
               hello@stageddat.dev
-            </a>
+            </Link>
           </nav>
         </div>
       </div>
