@@ -170,7 +170,7 @@ export default function TermsOfService() {
               if you have questions about these terms, reach out to us at{" "}
               <a
                 href="mailto:hello@stageddat.dev"
-                className="text-primary hover:text-primary/80 underline transition-colors"
+                className="text-primary-dark hover:text-primary-dark/80 underline transition-colors"
               >
                 hello@stageddat.dev
               </a>
