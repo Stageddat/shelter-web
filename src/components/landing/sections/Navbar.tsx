@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -72,32 +71,8 @@ const navigationLinks: NavLink[] = [
 ];
 
 export default function Navbar() {
-  const [isMobile, setIsMobile] = useState(false);
-  const containerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const checkWidth = () => {
-      if (containerRef.current) {
-        const width = containerRef.current.offsetWidth;
-        setIsMobile(width < 768);
-      }
-    };
-
-    checkWidth();
-
-    const resizeObserver = new ResizeObserver(checkWidth);
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => {
-      resizeObserver.disconnect();
-    };
-  }, []);
-
   return (
     <header
-      ref={containerRef}
       className={cn(
         "border-border/40 bg-background/80 supports-backdrop-filter:bg-background/60 fixed top-0 z-50 w-full border-b px-4 backdrop-blur-md md:px-6",
       )}
@@ -105,60 +80,58 @@ export default function Navbar() {
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between gap-4">
         {/* Left side */}
         <div className="flex items-center gap-2">
-          {/* Mobile menu trigger */}
-          {isMobile && (
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  className="group hover:bg-accent hover:text-accent-foreground h-9 w-9"
-                  variant="ghost"
-                  size="icon"
-                >
-                  <HamburgerIcon />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="left" className="w-2/4">
-                <div className="mx-6 mt-8 flex flex-col gap-6">
-                  {navigationLinks.map((link, index) => (
-                    <SheetClose asChild key={index}>
-                      <a
-                        href={link.href}
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noopener noreferrer" : undefined}
-                        className={cn(
-                          "hover:text-primary-dark text-base font-medium no-underline transition-colors",
-                          link.active
-                            ? "text-primary-dark"
-                            : "text-muted-foreground",
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    </SheetClose>
-                  ))}
-                  <div className="mt-4 flex flex-col gap-3">
-                    {/* <SheetClose asChild>
-                      <Button
-                        variant="ghost"
-                        asChild
-                        className="hover:bg-accent hover:text-primary-dark justify-start p-0 text-sm font-medium"
-                      >
-                        <Link href="/login">sign in</Link>
-                      </Button>
-                    </SheetClose> */}
-                    <SheetClose asChild>
-                      <Button
-                        asChild
-                        className="bg-primary text-primary-foreground hover:bg-primary-dark hover:text-background p-0"
-                      >
-                        <Link href="/signup">app</Link>
-                      </Button>
-                    </SheetClose>
-                  </div>
+          {/* Mobile menu trigger - only visible on mobile */}
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button
+                className="group hover:bg-accent hover:text-accent-foreground h-9 w-9 md:hidden"
+                variant="ghost"
+                size="icon"
+              >
+                <HamburgerIcon />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-2/4">
+              <div className="mx-6 mt-8 flex flex-col gap-6">
+                {navigationLinks.map((link, index) => (
+                  <SheetClose asChild key={index}>
+                    <a
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className={cn(
+                        "hover:text-primary-dark text-base font-medium no-underline transition-colors",
+                        link.active
+                          ? "text-primary-dark"
+                          : "text-muted-foreground",
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </SheetClose>
+                ))}
+                <div className="mt-4 flex flex-col gap-3">
+                  {/* <SheetClose asChild>
+                    <Button
+                      variant="ghost"
+                      asChild
+                      className="hover:bg-accent hover:text-primary-dark justify-start p-0 text-sm font-medium"
+                    >
+                      <Link href="/login">sign in</Link>
+                    </Button>
+                  </SheetClose> */}
+                  <SheetClose asChild>
+                    <Button
+                      asChild
+                      className="bg-primary text-primary-foreground hover:bg-primary-dark hover:text-background p-0"
+                    >
+                      <Link href="/signup">app</Link>
+                    </Button>
+                  </SheetClose>
                 </div>
-              </SheetContent>
-            </Sheet>
-          )}
+              </div>
+            </SheetContent>
+          </Sheet>
 
           {/* Logo and Desktop Navigation */}
           <div className="flex items-center gap-6">
@@ -171,30 +144,28 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop Navigation menu */}
-            {!isMobile && (
-              <NavigationMenu className="flex">
-                <NavigationMenuList className="gap-1">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index}>
-                      <a
-                        href={link.href}
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noopener noreferrer" : undefined}
-                        className={cn(
-                          "group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex h-9 w-max cursor-pointer items-center justify-center rounded-md px-4 py-2 text-sm font-medium no-underline transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                          link.active
-                            ? "bg-accent text-accent-foreground"
-                            : "text-muted-foreground hover:text-primary-dark",
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    </NavigationMenuItem>
-                  ))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            )}
+            {/* Desktop Navigation menu - only visible on desktop */}
+            <NavigationMenu className="hidden md:flex">
+              <NavigationMenuList className="gap-1">
+                {navigationLinks.map((link, index) => (
+                  <NavigationMenuItem key={index}>
+                    <a
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className={cn(
+                        "group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex h-9 w-max cursor-pointer items-center justify-center rounded-md px-4 py-2 text-sm font-medium no-underline transition-colors focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+                        link.active
+                          ? "bg-accent text-accent-foreground"
+                          : "text-muted-foreground hover:text-primary-dark",
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
         </div>
 
