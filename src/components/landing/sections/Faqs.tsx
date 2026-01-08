@@ -98,8 +98,7 @@ export default function Faqs() {
               is it free?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground text-base leading-relaxed text-pretty">
-              yes! shelter is free to use and open source. the sync feature
-              requires a subscription plan.
+              yes! shelter is free to use and open source.
             </AccordionContent>
           </AccordionItem>
 
