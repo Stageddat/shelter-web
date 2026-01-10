@@ -2,16 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
-  InputGroupText,
-  InputGroupTextarea,
 } from "@/components/ui/input-group";
-import { User, Mail, CircleQuestionMark, Info } from "lucide-react";
+import { User, Mail, CircleQuestionMark, Info, Cake, Lock } from "lucide-react";
 import { Label } from "@/components/ui/label";
 import {
   Tooltip,
@@ -20,18 +17,41 @@ import {
 } from "@/components/ui/tooltip";
 
 export default function Signup() {
-  const [name, setName] = useState("");
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    dateOfBirth: "",
+    password: "",
+    password2: "",
+  });
+
+  const [error, setError] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+    setError(""); // clear error when user type
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Name:", name);
+
+    // check password
+    if (formData.password !== formData.password2) {
+      setError("passwords don't match");
+      return;
+    }
+
+    // bla bla bla
+    console.log("Form data:", formData);
   };
 
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
       <div className="w-full max-w-2xl space-y-8">
-        {/* Header */}
+        {/* header */}
         <div className="space-y-2 text-center">
           <h1 className="text-foreground text-4xl font-bold tracking-tight lg:text-5xl">
             welcome!
@@ -41,12 +61,12 @@ export default function Signup() {
           </p>
         </div>
 
-        {/* Form Card */}
+        {/* form card */}
         <div className="border-border bg-card rounded-xl border p-8 shadow-lg lg:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               {/* ask username */}
-              <Label htmlFor="search">
+              <Label htmlFor="username">
                 what would you like us to call you?
               </Label>
               <InputGroup>
@@ -54,8 +74,8 @@ export default function Signup() {
                   type="text"
                   id="username"
                   name="username"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={formData.username}
+                  onChange={handleChange}
                   placeholder="enter your name"
                   className="h-12 text-base"
                   required
@@ -79,12 +99,15 @@ export default function Signup() {
               </InputGroup>
 
               {/* ask mail */}
-              <Label htmlFor="search">email</Label>
+              <Label htmlFor="email">email</Label>
               <InputGroup>
                 <InputGroupInput
+                  type="email"
                   placeholder="enter your email"
-                  id="mail"
-                  name="mail"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="h-12 text-base"
                   required
                 />
@@ -105,11 +128,20 @@ export default function Signup() {
                 </InputGroupAddon>
               </InputGroup>
 
-              <Label htmlFor="search">date of birth</Label>
+              {/* ask date of birth */}
+              <Label htmlFor="dateOfBirth">date of birth</Label>
               <InputGroup>
-                <InputGroupInput placeholder="mail" type="date" />
+                <InputGroupInput
+                  type="date"
+                  id="dateOfBirth"
+                  name="dateOfBirth"
+                  value={formData.dateOfBirth}
+                  onChange={handleChange}
+                  className="h-12 text-base"
+                  required
+                />
                 <InputGroupAddon>
-                  <Mail />
+                  <Cake />
                 </InputGroupAddon>
                 <InputGroupAddon align="inline-end">
                   <Tooltip>
@@ -126,9 +158,50 @@ export default function Signup() {
                 </InputGroupAddon>
               </InputGroup>
 
+              {/* ask password */}
+              <Label htmlFor="password">password</Label>
+              <InputGroup>
+                <InputGroupInput
+                  type="password"
+                  placeholder="set a password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="h-12 text-base"
+                  required
+                />
+                <InputGroupAddon>
+                  <Lock />
+                </InputGroupAddon>
+              </InputGroup>
+
+              {/* repeat password */}
+              <Label htmlFor="password2">repeat password</Label>
+              <InputGroup>
+                <InputGroupInput
+                  type="password"
+                  placeholder="repeat the password"
+                  id="password2"
+                  name="password2"
+                  value={formData.password2}
+                  onChange={handleChange}
+                  className="h-12 text-base"
+                  required
+                />
+                <InputGroupAddon>
+                  <Lock />
+                </InputGroupAddon>
+              </InputGroup>
+
+              {/* error message */}
+              {error && (
+                <p className="text-destructive text-sm font-medium">{error}</p>
+              )}
+
               <Button
                 type="submit"
-                className="bg-primary text-primary-foreground hover:bg-primary-dark hover:text-background hover:shadow-primary/20 w-full hover:shadow-lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full"
                 size="lg"
               >
                 continue
@@ -137,7 +210,7 @@ export default function Signup() {
           </form>
         </div>
 
-        {/* Footer text */}
+        {/* footer text */}
         <p className="text-muted-foreground text-center text-sm">
           already have an account?{" "}
           <a
