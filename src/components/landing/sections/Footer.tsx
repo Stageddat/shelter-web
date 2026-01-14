@@ -83,7 +83,7 @@ export default function Footer() {
             </Link> */}
             <Link
               className="text-muted-foreground hover:text-foreground text-sm transition-colors"
-              href="https://github.com/Stageddat/shelter"
+              href="https://github.com/Stageddat/shelter-web"
               target="_blank"
               rel="noopener noreferrer"
             >
