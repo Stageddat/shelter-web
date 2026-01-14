@@ -12,8 +12,7 @@ export default function Faqs() {
         <h2 className="text-foreground mb-16 text-center text-5xl font-bold tracking-tight text-balance lg:text-6xl">
           frequently asked questions
         </h2>
-
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="flex flex-col gap-2">
           <AccordionItem
             value="item-0"
             className="border-border bg-card hover:border-primary/50 rounded-xl border px-6 py-2 transition-colors"
