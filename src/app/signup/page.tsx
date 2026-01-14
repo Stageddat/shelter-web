@@ -15,6 +15,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { RegisterValidation } from "../../lib/RegisterValidation";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -35,17 +36,23 @@ export default function Signup() {
     setError(""); // clear error when user type
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // check if form data is valid
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // check password
-    if (formData.password !== formData.password2) {
-      setError("passwords don't match");
+    const result = await RegisterValidation(formData);
+
+    // check if form data is valid
+    if (!result.success) {
+      const firstError =
+        Object.values(result.errors ?? {}).flat()[0] ?? "invalid data";
+
+      setError(firstError);
       return;
     }
 
-    // bla bla bla
-    console.log("Form data:", formData);
+    // TODO: generar registrador
+    console.log("signup ok");
   };
 
   return (
