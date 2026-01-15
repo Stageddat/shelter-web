@@ -1,19 +1,23 @@
 // db.ts
 import { Dexie, type EntityTable } from "dexie";
 
-export interface User {
+interface User {
   id: number;
   username: string;
   email: string;
-  passwordHash: string;
-  dateOfBirth: string;
+
+  // llave maestra
+  // todo esta mierda esta en base64
+  encryptedMasterKey: string;
+  salt: string;
+  iv: string;
 }
 
 interface DiaryEntry {
   id: number;
   userId: number;
   title: string;
-  content: string;
+  encryptedContent: string;
   date: string;
   time: string;
 }
