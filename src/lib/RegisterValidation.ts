@@ -1,6 +1,5 @@
 import { registerSchema, type RegisterValidation } from "../schemas/register";
 
-// TODO: mejorar la validacion
 export async function RegisterValidation(data: unknown) {
   const result = registerSchema.safeParse(data);
 
@@ -11,8 +10,8 @@ export async function RegisterValidation(data: unknown) {
     };
   }
 
-  const validatedData: RegisterValidation = result.data;
-  console.log(validatedData);
-
-  return { success: true as const };
+  return {
+    success: true as const,
+    data: result.data,
+  };
 }
