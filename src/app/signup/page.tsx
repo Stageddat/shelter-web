@@ -247,12 +247,13 @@ export default function Signup() {
 
         {/* footer text */}
         <p className="text-muted-foreground text-center text-sm">
-          already have an account?{" "}
+          already have an account? {""}
           <Link
-            href="/login"
             className="text-primary-dark hover:text-primary font-medium underline transition-colors"
-          ></Link>
-          log in
+            href="/login"
+          >
+            log in
+          </Link>
         </p>
       </div>
     </main>
