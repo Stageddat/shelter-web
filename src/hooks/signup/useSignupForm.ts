@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { register } from "@/lib/register";
-import { RegisterValidation } from "@/lib/RegisterValidation";
+import { register } from "@/services/auth/register";
+import { RegisterValidation } from "@/services/auth/RegisterValidation";
+import { checkUserExists } from "@/services/auth/checkUserExists";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation"; // Next.js 13+
 
 export interface FormData {
   username: string;
@@ -11,6 +14,8 @@ export interface FormData {
 }
 
 export function useSignupForm() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState<FormData>({
     username: "",
     email: "",
@@ -30,13 +35,31 @@ export function useSignupForm() {
     setError("");
   };
 
+  // mirar si hay un usuario registrado
+  useEffect(() => {
+    async function checkExistingUser() {
+      try {
+        const exists = await checkUserExists();
+
+        if (exists) {
+          console.log("User already exists, redirecting to login...");
+          router.push("/login");
+        }
+      } catch (e) {
+        console.error("Error checking user:", e);
+      }
+    }
+
+    checkExistingUser();
+  }, [router]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
 
+    // validar datos del formulario
     try {
-      // validar datos del formulario
       const result = await RegisterValidation(formData);
 
       if (!result.success) {
