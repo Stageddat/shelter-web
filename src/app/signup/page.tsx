@@ -15,7 +15,9 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { RegisterValidation } from "../../lib/RegisterValidation";
+import { register } from "@/lib/register";
+import Link from "next/link";
+import { RegisterValidation } from "@/lib/RegisterValidation";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
@@ -27,32 +29,52 @@ export default function Signup() {
   });
 
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-    setError(""); // clear error when user type
+    setError("");
   };
 
-  // check if form data is valid
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
+    setIsLoading(true);
 
-    const result = await RegisterValidation(formData);
+    try {
+      // validar datos del formulario
+      const result = await RegisterValidation(formData);
 
-    // check if form data is valid
-    if (!result.success) {
-      const firstError =
-        Object.values(result.errors ?? {}).flat()[0] ?? "invalid data";
+      if (!result.success) {
+        const firstError =
+          Object.values(result.errors ?? {}).flat()[0] ?? "Invalid data";
+        setError(firstError);
+        setIsLoading(false);
+        return;
+      }
 
-      setError(firstError);
-      return;
+      // registrar usuario
+      const { userId, username, email, masterKey } = await register(
+        result.data,
+      );
+
+      console.log("registration successful!");
+      // console.debug("userId:", userId);
+      // console.log("username:", username);
+      // console.log("email:", email);
+      // console.log("mK:", masterKey);
+
+      // TODO: guardar sesion (userId y masterKey en session storage/Context)
+      // TODO: redirige al dashboard
+    } catch (err) {
+      console.error("registration error:", err);
+      setError(err instanceof Error ? err.message : "registration failed");
+    } finally {
+      setIsLoading(false);
     }
-
-    // TODO: generar registrador
-    console.log("signup ok");
   };
 
   return (
@@ -86,6 +108,7 @@ export default function Signup() {
                   placeholder="enter your name"
                   className="h-12 text-base"
                   required
+                  disabled={isLoading}
                 />
                 <InputGroupAddon>
                   <User />
@@ -117,6 +140,7 @@ export default function Signup() {
                   onChange={handleChange}
                   className="h-12 text-base"
                   required
+                  disabled={isLoading}
                 />
                 <InputGroupAddon>
                   <Mail />
@@ -146,6 +170,7 @@ export default function Signup() {
                   onChange={handleChange}
                   className="h-12 text-base"
                   required
+                  disabled={isLoading}
                 />
                 <InputGroupAddon>
                   <Cake />
@@ -177,6 +202,7 @@ export default function Signup() {
                   onChange={handleChange}
                   className="h-12 text-base"
                   required
+                  disabled={isLoading}
                 />
                 <InputGroupAddon>
                   <Lock />
@@ -195,6 +221,7 @@ export default function Signup() {
                   onChange={handleChange}
                   className="h-12 text-base"
                   required
+                  disabled={isLoading}
                 />
                 <InputGroupAddon>
                   <Lock />
@@ -210,8 +237,9 @@ export default function Signup() {
                 type="submit"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full"
                 size="lg"
+                disabled={isLoading}
               >
-                continue
+                {isLoading ? "creating account..." : "continue"}
               </Button>
             </div>
           </form>
@@ -220,12 +248,11 @@ export default function Signup() {
         {/* footer text */}
         <p className="text-muted-foreground text-center text-sm">
           already have an account?{" "}
-          <a
+          <Link
             href="/login"
             className="text-primary-dark hover:text-primary font-medium underline transition-colors"
-          >
-            log in
-          </a>
+          ></Link>
+          log in
         </p>
       </div>
     </main>
