@@ -29,6 +29,15 @@ export default function Login() {
     e.preventDefault();
     setError("");
     setIsLoading(true);
+
+    // TODO: login
+    // cargar los usuarios si hay y mostrar solo form de contraseña
+    // añadir aviso si no se detecta usuario
+    // redirigir a dashboard al logearse
+
+    // TODO: separar en diferentes views el FORM
+    // 1. login mail y pass
+    // 2. login user y pass
   };
   return (
     <div>
