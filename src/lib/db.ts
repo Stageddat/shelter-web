@@ -1,7 +1,7 @@
 // db.ts
 import { Dexie, type EntityTable } from "dexie";
 
-interface User {
+export interface User {
   id: number;
   username: string;
   email: string;
