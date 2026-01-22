@@ -7,6 +7,7 @@ import {
   encryptMasterKey,
 } from "../../lib/crypto";
 
+// TODO: add registration date and time
 export async function register(validatedData: RegisterValidation) {
   // 1. verificar si el email ya existe
   const existingUser = await db.users
