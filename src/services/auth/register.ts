@@ -1,12 +1,11 @@
-// src/lib/register.ts
 import { RegisterValidation } from "@/schemas/register";
-import { db } from "./db";
+import { db } from "../../lib/db";
 import {
   generateSalt,
   deriveKeyFromPassword,
   generateMasterKey,
   encryptMasterKey,
-} from "./crypto";
+} from "../../lib/crypto";
 
 export async function register(validatedData: RegisterValidation) {
   // 1. verificar si el email ya existe
