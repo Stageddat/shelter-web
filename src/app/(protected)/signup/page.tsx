@@ -1,6 +1,6 @@
 "use client";
 
-import SignupForm from "../../components/signup/SignupForm";
+import SignupForm from "@/components/signup/SignupForm";
 import SignupHeader from "@/components/signup/SignupHeader";
 import Link from "next/link";
 
