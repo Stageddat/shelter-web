@@ -5,7 +5,7 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { Mail, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
 
 interface UserLoginProps {
   loginFormData: {
