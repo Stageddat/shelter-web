@@ -5,6 +5,7 @@ import { getUser } from "@/services/auth/getUser";
 
 import { User } from "@/lib/db";
 import { login } from "@/services/auth/login";
+import { useAuth } from "@/contexts/AuthContext";
 
 export interface LoginFormData {
   email: string;
@@ -28,6 +29,7 @@ export function useLoginForm() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [userData, setUserData] = useState<User | null>(null);
+  const { setMasterKey } = useAuth();
 
   // comprovar si hay un usuario registrado
   useEffect(() => {
@@ -60,18 +62,20 @@ export function useLoginForm() {
 
     // TODO: comprobar contraseña
     try {
-      // poner credenciales
       const credentials = userData
         ? { password: loginFormData.password }
         : { email: loginFormData.email, password: loginFormData.password };
 
-      const isValid = await login(credentials);
+      const result = await login(credentials);
 
-      if (isValid) {
+      if (result.success && result.masterKey) {
+        // guardar masterKey en el contexto ram
+        setMasterKey(result.masterKey);
+
         // login correcto, redirigir a dashboard
         router.push("/app");
       } else {
-        setError("invalid password or mail :(. please try again.");
+        setError("invalid password or email :(. please try again.");
       }
     } catch (err) {
       console.error("login error:", err);
