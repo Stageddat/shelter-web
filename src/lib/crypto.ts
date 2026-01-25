@@ -5,7 +5,7 @@ const IV_SIZE = 12;
 // ============================================================
 // UTILITIES
 // ============================================================
-function bufferToBase64(buffer: ArrayBuffer | Uint8Array): string {
+export function bufferToBase64(buffer: ArrayBuffer | Uint8Array): string {
   const bytes = buffer instanceof Uint8Array ? buffer : new Uint8Array(buffer);
   let binary = "";
   for (let i = 0; i < bytes.length; i++) {
@@ -14,7 +14,7 @@ function bufferToBase64(buffer: ArrayBuffer | Uint8Array): string {
   return btoa(binary);
 }
 
-function base64ToBuffer(base64: string): Uint8Array {
+export function base64ToBuffer(base64: string): Uint8Array {
   const binary = atob(base64);
   const bytes = new Uint8Array(binary.length);
   for (let i = 0; i < binary.length; i++) {
