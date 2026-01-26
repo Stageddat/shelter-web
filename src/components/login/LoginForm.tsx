@@ -1,6 +1,6 @@
 import { useLoginForm } from "@/hooks/login/useLoginForm";
-import UserLogin from "./userLogin";
-import DefaultLogin from "./defaultLogin";
+import UserLogin from "./UserLogin";
+import DefaultLogin from "./DefaultLogin";
 
 export default function LoginForm() {
   const {

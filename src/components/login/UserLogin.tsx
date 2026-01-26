@@ -1,5 +1,5 @@
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 import {
   InputGroup,
   InputGroupAddon,
@@ -19,7 +19,6 @@ interface UserLoginProps {
   username: string;
 }
 
-// Login pero solo con contraseña
 export default function UserLogin({
   loginFormData,
   handleSubmit,
@@ -31,30 +30,30 @@ export default function UserLogin({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <h2 className="text-primary text-2xl font-bold">
-          welcome back, {username}
-        </h2>
+        <h1 className="text-foreground mb-1.5 text-4xl font-bold tracking-tight">
+          welcome back, {username}!
+        </h1>
 
-        {/* ask password */}
-        <Label htmlFor="password">password</Label>
-        <InputGroup>
-          <InputGroupInput
-            type="password"
-            placeholder="set a password"
-            id="password"
-            name="password"
-            value={loginFormData.password}
-            onChange={handleChange}
-            className="h-12 text-base"
-            required
-            disabled={isLoading}
-          />
-          <InputGroupAddon>
-            <Lock />
-          </InputGroupAddon>
-        </InputGroup>
+        <div className="space-y-2">
+          <Label htmlFor="password">password</Label>
+          <InputGroup>
+            <InputGroupInput
+              type="password"
+              id="password"
+              name="password"
+              value={loginFormData.password}
+              onChange={handleChange}
+              placeholder="enter your password"
+              className="h-12 text-base"
+              required
+              disabled={isLoading}
+            />
+            <InputGroupAddon>
+              <Lock />
+            </InputGroupAddon>
+          </InputGroup>
+        </div>
 
-        {/* error message */}
         {error && (
           <p className="text-destructive text-sm font-medium">{error}</p>
         )}
@@ -65,7 +64,7 @@ export default function UserLogin({
           size="lg"
           disabled={isLoading}
         >
-          {isLoading ? "logging in..." : "continue"}
+          {isLoading ? "logging in..." : "enter my shelter"}
         </Button>
       </div>
     </form>
