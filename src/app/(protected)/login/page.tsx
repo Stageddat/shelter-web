@@ -1,6 +1,6 @@
 "use client";
 
-import LoginForm from "@/components/login/loginForm";
+import LoginForm from "@/components/login/LoginForm";
 import Link from "next/link";
 
 export default function Login() {

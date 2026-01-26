@@ -60,7 +60,6 @@ export function useLoginForm() {
     setError("");
     setIsLoading(true);
 
-    // TODO: comprobar contraseña
     try {
       const credentials = userData
         ? { password: loginFormData.password }
