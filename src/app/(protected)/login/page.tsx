@@ -1,33 +1,26 @@
 "use client";
 
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
-import { useEffect, useState } from "react";
-import { Mail, Lock } from "lucide-react";
-import { getUser } from "@/services/auth/getUser";
 import LoginForm from "@/components/login/loginForm";
+import Link from "next/link";
 
 export default function Login() {
-  // TODO: login
-  // cargar los usuarios si hay y mostrar solo form de contraseña
-  // añadir aviso si no se detecta usuario
-  // redirigir a dashboard al logearse
-
-  // TODO: separar en diferentes views el FORM
-  // 1. login mail y pass
-  // 2. login user y pass
-
   return (
-    <div>
-      <h1>LOGIN!!!!</h1>
-      <div>
-        <LoginForm />
-      </div>{" "}
-    </div>
+    <main className="flex min-h-screen items-center justify-center px-8 py-16">
+      <div className="w-full max-w-2xl space-y-8">
+        <div className="border-border bg-card rounded-xl border p-8 shadow-lg lg:p-12">
+          <LoginForm />
+        </div>
+
+        <p className="text-muted-foreground text-center text-sm">
+          don’t have an account?{" "}
+          <Link
+            className="text-primary-dark hover:text-primary font-medium underline transition-colors"
+            href="/signup"
+          >
+            sign up
+          </Link>
+        </p>
+      </div>
+    </main>
   );
 }
