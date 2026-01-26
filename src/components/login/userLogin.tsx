@@ -32,7 +32,7 @@ export default function UserLogin({
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
         <h2 className="text-primary text-2xl font-bold">
-          Welcome back, {username}
+          welcome back, {username}
         </h2>
 
         {/* ask password */}
