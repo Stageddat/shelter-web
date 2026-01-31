@@ -18,7 +18,8 @@ interface FormFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 }
-
+// TODO: Change input to field component
+// https://ui.shadcn.com/docs/components/radix/field
 export default function FormField({
   field,
   value,
