@@ -1,11 +1,19 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
-import { countWords, createEntry } from "@/services/app/createNewEntry";
+import { useEntries } from "@/contexts/EntriesContext";
+import {
+  countWords,
+  createEntry as createEntryService,
+} from "@/services/app/createNewEntry";
 
 export const useNewEntry = () => {
   const router = useRouter();
   const { masterKey, isAuthenticated } = useAuth();
+  const { refreshEntries } = useEntries();
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isSaving, setIsSaving] = useState(false);
@@ -16,31 +24,36 @@ export const useNewEntry = () => {
     setWordCount(countWords(content));
   }, [content]);
 
-  const handleSave = async () => {
+  const handleSave = async (): Promise<number | null> => {
     if (!masterKey || !isAuthenticated) {
-      // TODO: usar toast
       alert("you are not authenticated");
-      return;
+      return null;
     }
 
     if (!content.trim()) {
       alert("write something first");
-      return;
+      return null;
     }
 
     try {
       setIsSaving(true);
 
-      await createEntry({
+      const entryId = await createEntryService({
         masterKey,
         title,
         content,
       });
 
-      router.push("/app");
+      if (entryId) {
+        await refreshEntries(); // actualizar el contexto
+        return entryId; // devuelve solo el número
+      }
+
+      return null;
     } catch (error) {
       console.error("error saving entry:", error);
       alert("failed to save entry");
+      return null;
     } finally {
       setIsSaving(false);
     }

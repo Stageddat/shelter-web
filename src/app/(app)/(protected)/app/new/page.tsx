@@ -1,13 +1,13 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import NoiseBackground from "@/components/shared/NoiseBackground";
-import { Sidebar } from "@/components/app/Sidebar";
-import { Header } from "@/components/app/Header";
-import { NewEntryEditor as EntryEditor } from "@/components/app/NewEntryEditor";
 import { NewEntryActions as EntryActions } from "@/components/app/NewEntryActions";
+import { NewEntryEditor as EntryEditor } from "@/components/app/NewEntryEditor";
 import { useNewEntry } from "@/hooks/app/useNewEntry";
 
 export default function NewEntry() {
+  const router = useRouter();
   const {
     title,
     setTitle,
@@ -19,14 +19,18 @@ export default function NewEntry() {
     handleCancel,
   } = useNewEntry();
 
+  const handleSaveAndRedirect = async () => {
+    const entryId = await handleSave();
+    if (entryId) {
+      router.push(`/app/entries/${entryId}`, { scroll: false });
+    }
+  };
+
   return (
     <div className="flex h-screen overflow-hidden">
       <NoiseBackground />
-      <Sidebar />
 
       <div className="flex flex-1 flex-col overflow-hidden">
-        <Header />
-
         <main className="flex flex-1 flex-col items-center overflow-y-auto px-6 py-12">
           <div className="w-full max-w-3xl">
             <EntryEditor
@@ -39,7 +43,7 @@ export default function NewEntry() {
 
             <EntryActions
               onCancel={handleCancel}
-              onSave={handleSave}
+              onSave={handleSaveAndRedirect}
               isSaving={isSaving}
               canSave={!!content.trim()}
             />
