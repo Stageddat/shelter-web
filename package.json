@@ -23,7 +23,7 @@
 		"dexie": "4.2.1",
 		"dexie-react-hooks": "4.2.0",
 		"lucide-react": "0.561.0",
-		"next": "16.0.10",
+		"next": "16.1.5",
 		"react": "19.2.1",
 		"react-dom": "19.2.1",
 		"tailwind-merge": "3.4.0",
