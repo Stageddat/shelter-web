@@ -9,6 +9,7 @@ import {
   createEntry as createEntryService,
 } from "@/services/app/createNewEntry";
 
+// TODO: autosave
 export const useNewEntry = () => {
   const router = useRouter();
   const { masterKey, isAuthenticated } = useAuth();
