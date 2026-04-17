@@ -4,7 +4,7 @@ import CtaButton from "../CtaButton";
 
 export default function Hero() {
   return (
-    <section className="bg-background relative flex min-h-[90vh] items-center justify-center overflow-hidden px-8 py-20 font-['Patrick_Hand',_cursive]">
+    <section className="bg-background font-primary relative flex min-h-[90vh] items-center justify-center overflow-hidden px-8 py-20">
       <div className="bg-secondary absolute top-[-5%] left-[-5%] -z-10 h-72 w-72 rounded-full opacity-50 blur-[100px]" />
       <div className="bg-accent absolute right-[10%] bottom-[10%] -z-10 h-32 w-32 rounded-full opacity-30 blur-3xl" />
 
