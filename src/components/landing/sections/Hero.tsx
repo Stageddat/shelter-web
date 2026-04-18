@@ -34,7 +34,7 @@ export default function Hero() {
               alt="shelter mascot"
               width={400}
               height={400}
-              className="h-auto w-full max-w-[320px] -rotate-1 brightness-[1.02] contrast-[0.95] transition-transform duration-500 hover:rotate-0"
+              className="h-auto w-full max-w-[320px] -rotate-1 brightness-[1.02] contrast-[0.95] transition-transform duration-500 ease-in-out hover:scale-105"
               priority
             />
           </div>
