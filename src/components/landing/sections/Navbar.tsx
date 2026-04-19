@@ -25,24 +25,24 @@ const NAV_LINKS = [
 function MobileMenu() {
   return (
     <Sheet>
-      <SheetTrigger className="border-border/40 bg-secondary/50 hover:bg-secondary flex h-10 w-10 items-center justify-center rounded-xl border transition-colors md:hidden">
-        <Menu className="text-foreground/70 h-5 w-5" />
+      <SheetTrigger className="border-border/40 bg-secondary/80 flex h-10 w-10 items-center justify-center rounded-2xl border transition-colors md:hidden">
+        <Menu className="text-foreground h-5 w-5" />
       </SheetTrigger>
 
       <SheetContent
         side="left"
-        className="border-border/20 bg-background/95 w-75 border-r p-0 backdrop-blur-2xl"
+        className="border-border/20 bg-background w-80 border-r p-0"
       >
-        <div className="flex h-full flex-col p-8">
-          <p className="font-primary mb-12 text-2xl leading-none tracking-tighter">
+        <div className="flex h-full flex-col p-10">
+          <p className="font-display text-foreground mb-12 text-3xl tracking-tighter">
             shelter
           </p>
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-8">
             {NAV_LINKS.map(({ href, label }) => (
               <SheetClose asChild key={href}>
                 <Link
                   href={href}
-                  className="text-muted-foreground hover:text-foreground font-primary text-2xl tracking-tight transition-all hover:translate-x-2"
+                  className="font-display text-muted-foreground hover:text-primary text-3xl tracking-tight transition-colors"
                 >
                   {label}
                 </Link>
