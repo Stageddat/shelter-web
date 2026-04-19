@@ -8,44 +8,47 @@ const securityFeatures = [
   },
   {
     title: "end to end encrypted",
-    text: "your entries are end-to-end encrypted and stored offline first, so only you can read them. not us, not anyone else.\nwe never read, scan, or sell your data.",
+    text: "your entries are end-to-end encrypted and stored offline first. we never read, scan, or sell your data. period.",
   },
   {
     title: "0 trackers & 0 ads",
-    text: "we strictly never collect personal data. there are no trackers, no ads, and no hidden analytics following you around. shelter is built to stay out of your business.",
+    text: "we strictly never collect personal data. there are no trackers, no ads, and no hidden analytics following you around.",
   },
 ];
 
 export default function Security() {
   return (
-    <section className="px-8 py-20 lg:px-16 lg:py-32" id="security">
-      <div className="mx-auto max-w-7xl">
-        {/* title */}
-        <h2 className="text-foreground mb-16 text-center text-5xl font-bold tracking-tight lg:text-6xl">
-          your shelter, fully protected
-        </h2>
+    <section className="bg-background px-8 py-24 lg:py-40" id="security">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-20 space-y-4 text-center">
+          <h2 className="font-display text-foreground text-5xl font-normal tracking-tighter sm:text-6xl lg:text-7xl">
+            fully protected
+          </h2>
+        </div>
 
-        {/* content */}
-        <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
-          {/* lock img */}
-          <div className="flex w-full justify-center lg:w-1/2">
+        <div className="flex flex-col items-center gap-16 lg:flex-row lg:gap-24">
+          <div className="relative flex w-full justify-center lg:w-1/2">
+            <div className="bg-secondary/40 absolute inset-0 -z-10 rounded-full blur-[100px]" />
+
             <Image
               src={Lock}
               alt="security lock illustration"
-              className="w-2/3 max-w-sm drop-shadow-xl"
+              className="w-full max-w-65 object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-sm"
             />
           </div>
 
-          {/* features */}
-          <div className="w-full space-y-8 lg:w-1/2">
+          <div className="w-full space-y-6 lg:w-1/2">
             {securityFeatures.map((feature) => (
-              <article key={feature.title} className="space-y-3">
-                <h3 className="border-primary text-primary-foreground border-b-2 pb-2 text-2xl font-bold lg:text-3xl">
-                  {feature.title}
+              <article key={feature.title} className="group space-y-3">
+                <h3 className="font-display text-foreground text-2xl font-medium tracking-tight lg:text-3xl">
+                  {feature.title.toLowerCase()}
                 </h3>
-                <p className="text-muted-foreground text-lg leading-relaxed text-pretty whitespace-pre-line">
-                  {feature.text}
-                </p>
+
+                <div className="border-border/60 group-hover:border-primary relative border-l-2 pl-6 transition-colors">
+                  <p className="font-primary text-muted-foreground text-base leading-relaxed text-pretty lg:text-lg">
+                    {feature.text}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
