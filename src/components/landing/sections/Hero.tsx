@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 lg:flex-row">
         {/* text left */}
         <div className="flex-1 space-y-6 text-center lg:text-left">
-          <h1 className="text-foreground text-8xl leading-[0.8] font-normal tracking-tight sm:text-9xl">
+          <h1 className="text-foreground pt-20 text-8xl leading-[0.8] font-normal tracking-tight sm:text-9xl">
             shelter
           </h1>
 
