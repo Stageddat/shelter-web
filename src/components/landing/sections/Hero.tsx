@@ -1,40 +1,34 @@
 import Image from "next/image";
 import heroImage from "@/assets/landing/hero-image.png";
-import CtaButton from "../CtaButton";
 
 export default function Hero() {
   return (
-    <section className="bg-background font-primary relative flex min-h-[90vh] items-center justify-center overflow-hidden px-8 py-20">
-      <div className="bg-secondary absolute top-[-5%] left-[-5%] -z-10 h-72 w-72 rounded-full opacity-50 blur-[100px]" />
-      <div className="bg-accent absolute right-[10%] bottom-[10%] -z-10 h-32 w-32 rounded-full opacity-30 blur-3xl" />
+    <section className="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden px-8">
+      <div className="bg-secondary/40 h-150600px] absolute top-[-5%] left-[-5%] -z-10 rounded-full blur-[130px]" />
+      <div className="bg-accent/20 absolute right-[5%] bottom-[5%] -z-10 h-125 w-125 rounded-full blur-[110px]" />
 
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 lg:flex-row">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-12 pt-32 pb-20 lg:flex-row lg:pt-0 lg:pb-0">
         {/* text left */}
-        <div className="flex-1 space-y-6 text-center lg:text-left">
-          <h1 className="text-foreground pt-20 text-8xl leading-[0.8] font-normal tracking-tight sm:text-9xl">
-            shelter
-          </h1>
-
-          <p className="text-muted-foreground mx-auto max-w-md text-2xl leading-tight lg:mx-0">
-            a secure place where your thoughts can breathe
-          </p>
-
-          <div className="pt-6">
-            <CtaButton />
+        <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+          <div className="space-y-8">
+            <h1 className="font-display text-foreground tracking-[ -0.05em] text-8xl leading-[0.8] font-normal sm:text-9xl lg:text-[13rem]">
+              shelter
+            </h1>
+            <p className="font-primary text-muted-foreground mx-auto max-w-md text-xl leading-relaxed lg:mx-0 lg:text-3xl">
+              a secure place where your thoughts can breathe
+            </p>
           </div>
         </div>
 
         {/* img */}
-        <div className="flex flex-1 justify-center">
-          <div className="relative p-2">
-            <div className="border-border bg-secondary/50 absolute inset-0 -z-10 rotate-2 rounded-2xl border shadow-sm" />
-
+        <div className="flex flex-1 items-center justify-center lg:justify-end">
+          <div className="relative w-full max-w-112.5 sm:max-w-150 lg:max-w-175">
             <Image
               src={heroImage}
               alt="shelter mascot"
-              width={400}
-              height={400}
-              className="h-auto w-full max-w-[320px] -rotate-1 brightness-[1.02] contrast-[0.95] transition-transform duration-500 ease-in-out hover:scale-105"
+              width={900}
+              height={900}
+              className="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
               priority
             />
           </div>
