@@ -9,9 +9,9 @@ body {
   min-height: 100vh;
 }
 
-html {
+/* html {
   scroll-behavior: smooth;
-}
+} */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
