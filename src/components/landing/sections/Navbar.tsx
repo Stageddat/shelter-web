@@ -97,7 +97,7 @@ export default function Navbar() {
           href="/signup"
           className={cn(
             buttonVariants({ size: "sm" }),
-            "bg-foreground text-background hover:bg-foreground/90 shadow-foreground/5 hidden h-10 rounded-full px-6 shadow-lg transition-all hover:-translate-y-0.5 sm:inline-flex",
+            "bg-foreground text-background hover:bg-foreground/90 shadow-foreground/5 hidden h-10 rounded-full px-6 shadow-lg transition-all sm:inline-flex",
           )}
         >
           get started
