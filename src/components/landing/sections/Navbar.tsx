@@ -65,7 +65,7 @@ function DesktopNav() {
               asChild
               className={cn(
                 navigationMenuTriggerStyle(),
-                "hover:bg-secondary/80 text-muted-foreground hover:text-foreground font-primary rounded-full bg-transparent px-4 transition-colors",
+                "hover:bg-secondary/80 text-muted-foreground hover:text-foreground font-primary rounded-full bg-transparent px-4 text-xl tracking-tight transition-colors lg:text-3xl",
               )}
             >
               <Link href={href}>{label}</Link>
@@ -85,7 +85,7 @@ export default function Navbar() {
           <MobileMenu />
           <Link
             href="/"
-            className="font-primary flex items-center text-2xl tracking-tighter transition-opacity hover:opacity-80 lg:text-3xl"
+            className="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-3xl"
           >
             <span className="relative -top-px">shelter</span>
           </Link>
