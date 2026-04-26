@@ -11,7 +11,7 @@ export default function Hero() {
         {/* text left */}
         <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
           <div className="space-y-8">
-            <h1 className="font-display text-foreground text-8xl leading-[0.8] font-normal tracking-[-0.05em] sm:text-9xl lg:text-[13rem]">
+            <h1 className="font-display text-foreground text-8xl leading-[0.8] font-normal tracking-tighter sm:text-9xl lg:text-[13rem]">
               shelter
             </h1>
             <p className="font-primary text-muted-foreground mx-auto max-w-md text-left text-xl leading-relaxed lg:mx-0 lg:text-3xl">
