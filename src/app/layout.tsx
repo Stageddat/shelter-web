@@ -1,25 +1,35 @@
-import type { Metadata } from "next";
+// app/layout.tsx
+import { Patrick_Hand, Caveat } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "shelter",
-  description: "a secure place where your thoughts can breathe",
-};
+const patrickHand = Patrick_Hand({
+  weight: "400",
+  variable: "--raw-patrick",
+  subsets: ["latin"],
+});
+
+const caveat = Caveat({
+  variable: "--raw-caveat",
+  subsets: ["latin"],
+});
+
+const excalifont = localFont({
+  src: "../fonts/excalifont.woff2", // Ajusta la ruta a tu archivo
+  variable: "--raw-excalifont",
+});
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
-        rel="stylesheet"
-      />
-      <body className={""}>{children}</body>
+    <html
+      lang="en"
+      className={` ${patrickHand.variable} ${caveat.variable} ${excalifont.variable} `}
+    >
+      <body className="font-primary antialiased">{children}</body>
     </html>
   );
 }

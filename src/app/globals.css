@@ -9,9 +9,9 @@ body {
   min-height: 100vh;
 }
 
-/* html {
+html {
   scroll-behavior: smooth;
-} */
+}
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -55,10 +55,10 @@ body {
   --color-sidebar-ring: var(--sidebar-ring);
 
   /* fuentes */
-  --font-primary: "Patrick Hand", cursive;
-  --font-display: "Patrick Hand", cursive;
-  --font-editor: "Excalifont", sans-serif;
-  --font-accent: "Caveat", cursive;
+  --font-primary: var(--raw-patrick), "Patrick Hand", cursive;
+  --font-display: var(--raw-patrick), "Patrick Hand", cursive;
+  --font-editor: var(--raw-excalifont), "Excalifont", sans-serif;
+  --font-accent: var(--raw-caveat), "Caveat", cursive;
 }
 
 :root {
