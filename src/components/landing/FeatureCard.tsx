@@ -1,4 +1,5 @@
 import { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export interface FeatureCardProps {
   icon: LucideIcon;
@@ -8,14 +9,26 @@ export interface FeatureCardProps {
 
 export function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
   return (
-    <article className="hover:border-accent border-border rounded-lg border-2 p-4 py-10 transition duration-300 hover:border-2">
-      <Icon className="stroke-accent h-10 w-10" />
-      <h3 className="text-primary-foreground mt-2 text-xl font-bold text-pretty">
-        {title}
-      </h3>
-      <p className="text-foreground text-md mt-1 text-pretty whitespace-pre-line">
-        {text}
-      </p>
+    <article
+      className={cn(
+        "group relative flex flex-col p-8",
+        "border-border rounded-xl border",
+        "bg-secondary transition-colors duration-300 ease-in-out",
+        "hover:bg-accent",
+      )}
+    >
+      <div className="bg-background border-border/50 text-primary mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border">
+        <Icon className="h-6 w-6 stroke-[1.5]" />
+      </div>
+
+      <div className="space-y-3">
+        <h3 className="font-display text-foreground text-2xl font-medium tracking-tight">
+          {title.toLowerCase()}
+        </h3>
+        <p className="font-primary text-muted-foreground text-base leading-relaxed">
+          {text}
+        </p>
+      </div>
     </article>
   );
 }
