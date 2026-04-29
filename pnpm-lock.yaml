@@ -63,7 +63,7 @@ importers:
         specifier: ^3.5.0
         version: 3.5.0
       zod:
-        specifier: ^4.3.6
+        specifier: ^4.4.0
         version: 4.4.0
     devDependencies:
       '@tailwindcss/postcss':
@@ -79,7 +79,7 @@ importers:
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
       baseline-browser-mapping:
-        specifier: ^2.10.22
+        specifier: ^2.10.24
         version: 2.10.24
       eslint:
         specifier: ^9.39.4
@@ -91,7 +91,7 @@ importers:
         specifier: ^3.8.3
         version: 3.8.3
       prettier-plugin-tailwindcss:
-        specifier: ^0.7.3
+        specifier: ^0.7.4
         version: 0.7.4(prettier@3.8.3)
       tailwindcss:
         specifier: ^4.2.4
