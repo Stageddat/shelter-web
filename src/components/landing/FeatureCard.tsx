@@ -22,10 +22,10 @@ export function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
       </div>
 
       <div className="space-y-3">
-        <h3 className="font-display text-foreground text-2xl font-medium tracking-normal">
+        <h3 className="font-display text-foreground text-3xl font-medium tracking-normal">
           {title.toLowerCase()}
         </h3>
-        <p className="font-primary text-muted-foreground text-xl leading-relaxed">
+        <p className="font-primary text-muted-foreground text-2xl leading-relaxed text-pretty">
           {text}
         </p>
       </div>

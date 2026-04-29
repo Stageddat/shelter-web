@@ -9,7 +9,7 @@ export default function Features() {
     >
       <div className="bg-border/20 absolute top-1/2 left-1/2 -z-10 h-150 w-150 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]" />
 
-      <div className="mx-auto max-w-8/12">
+      <div className="mx-auto max-w-9/12">
         <div className="mb-16 space-y-4 text-center">
           <h2 className="font-display text-foreground text-4xl font-normal tracking-tighter sm:text-5xl lg:text-6xl">
             a safe place for your thoughts
