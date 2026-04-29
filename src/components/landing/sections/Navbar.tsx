@@ -60,7 +60,7 @@ function DesktopNav() {
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList className="gap-1">
         {NAV_LINKS.map(({ href, label }) => (
-          <NavigationMenuItem key={href}>
+          <NavigationMenuItem key={`nav-${label}`}>
             <NavigationMenuLink
               asChild
               className={cn(
