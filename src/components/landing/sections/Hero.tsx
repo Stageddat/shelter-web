@@ -25,7 +25,7 @@ export default function Hero() {
           <div className="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
             <Image
               src={heroImage}
-              alt="shelter mascot"
+              alt="machka writing her journal with her kitty"
               width={900}
               height={900}
               className="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
