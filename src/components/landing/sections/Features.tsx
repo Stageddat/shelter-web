@@ -11,7 +11,7 @@ export default function Features() {
 
       <div className="mx-auto max-w-9/12">
         <div className="mb-16 space-y-4 text-center">
-          <h2 className="font-display text-foreground text-4xl font-normal tracking-tighter sm:text-5xl lg:text-6xl">
+          <h2 className="font-display text-foreground text-4xl font-normal tracking-normal sm:text-5xl lg:text-6xl">
             a safe place for your thoughts
           </h2>
         </div>
