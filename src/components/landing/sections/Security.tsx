@@ -21,7 +21,7 @@ export default function Security() {
     <section className="bg-background px-8 py-24 lg:py-40" id="security">
       <div className="mx-auto max-w-6xl">
         <div className="mb-20 space-y-4 text-center">
-          <h2 className="font-display text-foreground text-5xl font-normal tracking-tighter sm:text-6xl lg:text-7xl">
+          <h2 className="font-display text-foreground text-4xl font-normal sm:text-6xl lg:text-7xl">
             fully protected
           </h2>
         </div>
@@ -40,12 +40,12 @@ export default function Security() {
           <div className="w-full space-y-6 lg:w-1/2">
             {securityFeatures.map((feature) => (
               <article key={feature.title} className="group space-y-3">
-                <h3 className="font-display text-foreground text-2xl font-medium tracking-tight lg:text-3xl">
+                <h3 className="font-display text-foreground text-3xl font-medium tracking-tight">
                   {feature.title.toLowerCase()}
                 </h3>
 
                 <div className="border-border/60 group-hover:border-primary relative border-l-2 pl-6 transition-colors">
-                  <p className="font-primary text-muted-foreground text-base leading-relaxed text-pretty lg:text-lg">
+                  <p className="font-primary text-muted-foreground text-2xl leading-relaxed text-pretty lg:text-2xl">
                     {feature.text}
                   </p>
                 </div>
