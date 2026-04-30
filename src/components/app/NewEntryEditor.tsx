@@ -18,7 +18,7 @@ export const NewEntryEditor = ({
   return (
     <div className="dark:bg-background-dark/30 flex min-h-[65vh] flex-col rounded-xl bg-white p-12 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)]">
       <input
-        className="mb-6 w-full border-none bg-transparent p-0 text-left text-4xl font-bold tracking-tight lowercase placeholder:opacity-20 focus:ring-0 focus:outline-none"
+        className="mb-6 w-full border-none bg-transparent p-0 text-left text-4xl font-bold tracking-tight placeholder:opacity-20 focus:ring-0 focus:outline-none"
         placeholder="untitled entry"
         type="text"
         value={title}
@@ -26,7 +26,7 @@ export const NewEntryEditor = ({
       />
 
       <textarea
-        className="w-full flex-1 resize-none border-none bg-transparent p-0 text-left text-lg leading-relaxed font-light lowercase placeholder:opacity-20 focus:ring-0 focus:outline-none"
+        className="w-full flex-1 resize-none border-none bg-transparent p-0 text-left text-lg leading-relaxed font-light placeholder:opacity-20 focus:ring-0 focus:outline-none"
         placeholder="begin your thoughts here..."
         value={content}
         onChange={(e) => onContentChange(e.target.value)}
