@@ -88,7 +88,7 @@ const faqData = [
         <br />
         <br />{" "}
         <em>
-          Special thanks to <b>Fiddle</b> for creating all the wonderful
+          special thanks to <b>fiddle</b> for creating all the wonderful
           artwork.
         </em>
       </>
