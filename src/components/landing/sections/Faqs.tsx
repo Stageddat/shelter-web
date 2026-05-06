@@ -89,7 +89,7 @@ const faqData = [
         <br />{" "}
         <em>
           special thanks to <b>fiddle</b> for creating all the wonderful
-          artwork.
+          artwork!
         </em>
       </>
     ),
@@ -113,10 +113,10 @@ export default function Faqs() {
               value={`item-${index}`}
               className="border-border bg-secondary/30 hover:bg-secondary/50 rounded-2xl border px-6 py-1 transition-all"
             >
-              <AccordionTrigger className="font-display text-foreground hover:text-primary text-left text-2xl font-medium tracking-tight hover:no-underline">
+              <AccordionTrigger className="font-display text-foreground hover:text-primary text-left text-2xl font-medium tracking-normal hover:no-underline">
                 {faq.question.toLowerCase()}
               </AccordionTrigger>
-              <AccordionContent className="font-primary text-muted-foreground pb-4 text-2xl leading-relaxed">
+              <AccordionContent className="font-primary text-muted-foreground pb-4 text-2xl leading-relaxed tracking-normal">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
