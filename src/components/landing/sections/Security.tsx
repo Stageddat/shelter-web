@@ -40,7 +40,7 @@ export default function Security() {
           <div className="w-full space-y-6 lg:w-1/2">
             {securityFeatures.map((feature) => (
               <article key={feature.title} className="group space-y-3">
-                <h3 className="font-display text-foreground text-3xl font-medium tracking-tight">
+                <h3 className="font-display text-foreground text-3xl">
                   {feature.title.toLowerCase()}
                 </h3>
 
