@@ -86,7 +86,7 @@ export default function Faqs() {
     <section className="bg-background px-8 py-24 lg:py-40" id="faqs">
       <div className="mx-auto max-w-3xl">
         <div className="mb-16 text-center">
-          <h2 className="font-display text-foreground text-5xl font-normal tracking-tighter sm:text-6xl">
+          <h2 className="font-display text-foreground text-4xl font-normal sm:text-6xl lg:text-7xl">
             frequently asked questions
           </h2>
         </div>
