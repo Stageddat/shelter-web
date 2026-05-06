@@ -30,7 +30,7 @@ const faqData = [
   {
     question: "where is the data stored?",
     answer:
-      "all your entries are stored locally in your browser using encrypted storage by default, and synced to the cloud if you choose.",
+      "all your entries are stored locally in your browser using encrypted storage.",
   },
   {
     question: "what is this project inspired by?",
@@ -72,12 +72,27 @@ const faqData = [
   {
     question: "who can see my data?",
     answer:
-      "nobody! even we can't read it. your entries are encrypted with your own key before they ever leave your device.",
+      "nobody! even we can't read it. your entries are encrypted with your own key.",
   },
   {
     question: "is it secure?",
     answer:
       "yes. we use end-to-end encryption and a 'privacy-first' architecture to ensure your shelter remains yours alone.",
+  },
+  {
+    question: "who is machka?",
+    answer: (
+      <>
+        she is our official mascot! you can often find her and her kitty ziggy
+        wandering around the website.
+        <br />
+        <br />{" "}
+        <em>
+          Special thanks to <b>Fiddle</b> for creating all the wonderful
+          artwork.
+        </em>
+      </>
+    ),
   },
 ];
 
@@ -98,10 +113,10 @@ export default function Faqs() {
               value={`item-${index}`}
               className="border-border bg-secondary/30 hover:bg-secondary/50 rounded-2xl border px-6 py-1 transition-all"
             >
-              <AccordionTrigger className="font-display text-foreground hover:text-primary text-left text-xl font-medium tracking-tight hover:no-underline">
+              <AccordionTrigger className="font-display text-foreground hover:text-primary text-left text-2xl font-medium tracking-tight hover:no-underline">
                 {faq.question.toLowerCase()}
               </AccordionTrigger>
-              <AccordionContent className="font-primary text-muted-foreground pb-4 text-base leading-relaxed">
+              <AccordionContent className="font-primary text-muted-foreground pb-4 text-2xl leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
