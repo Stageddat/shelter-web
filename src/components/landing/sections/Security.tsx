@@ -1,4 +1,4 @@
-import Lock from "@/assets/landing/lock.png";
+import Lock from "@/assets/landing/book.png";
 import Image from "next/image";
 
 const securityFeatures = [
@@ -33,7 +33,7 @@ export default function Security() {
             <Image
               src={Lock}
               alt="security lock illustration"
-              className="w-full max-w-65 object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-sm"
+              className="w-full max-w-sm object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-md"
             />
           </div>
 
