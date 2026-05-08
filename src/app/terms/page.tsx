@@ -17,20 +17,20 @@ export default function TermsOfService() {
 
         <div className="space-y-12">
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
-              welcome to shelter
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
+              welcome to shelter!
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               by using shelter, you agree to these terms. we&apos;ve kept them
               simple and straightforward because we believe in transparency.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               what shelter is
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               shelter is a private, encrypted space for your thoughts, notes,
               and reflections. it&apos;s designed to be a safe place where you
               can write freely without judgment or surveillance.
@@ -38,10 +38,10 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               your account
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               you&apos;re responsible for keeping your account secure. choose a
               strong password and don&apos;t share it with anyone. if you
               believe your account has been compromised, contact us immediately.
@@ -49,15 +49,15 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               your content
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               everything you write in shelter belongs to you. we don&apos;t
               claim any ownership over your content. because your data is
               encrypted, we can&apos;t access it anyway.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               you&apos;re responsible for the content you create. while we
               can&apos;t see your entries, we ask that you use shelter
               responsibly and legally.
@@ -65,13 +65,13 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               acceptable use
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               you agree not to:
             </p>
-            <ul className="text-muted-foreground ml-6 space-y-2">
+            <ul className="text-muted-foreground ml-6 space-y-2 text-xl">
               <li>• use shelter for any illegal activities</li>
               <li>
                 • attempt to hack, break, or compromise the security of shelter
@@ -85,15 +85,15 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               service availability
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we work hard to keep shelter running smoothly, but we can&apos;t
               guarantee it will be available 100% of the time. we may need to
               take the service down for maintenance or updates occasionally.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               since your data is stored locally on your device, you&apos;ll
               always have access to your entries even when shelter&apos;s sync
               service is down.
@@ -101,10 +101,10 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               backups
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               while we take reasonable measures to keep your synced data safe,
               we recommend you regularly export your entries as a backup.
               you&apos;re responsible for maintaining your own backups of
@@ -113,25 +113,25 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               termination
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               you can stop using shelter at any time. if you want to delete your
               account, you can do so from your settings. this will remove any
               synced data from our servers.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we reserve the right to suspend or terminate accounts that violate
               these terms, though we&apos;ll always try to contact you first.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               no warranty
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               shelter is provided &quot;as is&quot; without warranties of any
               kind. we do our best to make shelter reliable and secure, but we
               can&apos;t guarantee it will meet all your needs or be completely
@@ -140,10 +140,10 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               limitation of liability
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we&apos;re not liable for any damages that result from using or
               being unable to use shelter. this includes data loss, even though
               we work hard to prevent it.
@@ -151,10 +151,10 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               changes to these terms
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we may update these terms from time to time. if we make
               significant changes, we&apos;ll notify you clearly and give you
               time to review them. continuing to use shelter after changes means
@@ -163,10 +163,10 @@ export default function TermsOfService() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               contact us
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               if you have questions about these terms, reach out to us at{" "}
               <a
                 href="mailto:hello@stageddat.dev"
