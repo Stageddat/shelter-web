@@ -17,10 +17,10 @@ export default function CookiePolicy() {
 
         <div className="space-y-12">
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               what are cookies
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               cookies are small text files that websites store on your device to
               remember information about you. they&apos;re a standard part of
               how modern websites work.
@@ -28,10 +28,10 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               our approach to cookies
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we use the absolute minimum number of cookies necessary to make
               shelter work. we don&apos;t use tracking cookies, advertising
               cookies, or analytics cookies.
@@ -39,13 +39,13 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               essential cookies we use
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               these cookies are required for shelter to function properly:
             </p>
-            <div className="ml-6 space-y-4">
+            <div className="ml-6 space-y-4 text-xl">
               <div>
                 <p className="text-foreground font-semibold">
                   • authentication cookies
@@ -79,13 +79,13 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               what we don&apos;t use
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               shelter does not use:
             </p>
-            <ul className="text-muted-foreground ml-6 space-y-2">
+            <ul className="text-muted-foreground ml-6 space-y-2 text-xl">
               <li>• tracking cookies to monitor your behavior</li>
               <li>• advertising cookies to show you ads</li>
               <li>• analytics cookies to collect usage statistics</li>
@@ -95,29 +95,29 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               local storage
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               in addition to cookies, we use your browser&apos;s local storage
               to save your encrypted entries on your device. this is not the
               same as cookies and gives you offline access to your content.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               everything stored locally is encrypted and only accessible by you.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               managing cookies
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               most browsers allow you to control cookies through their settings.
               you can set your browser to refuse cookies or alert you when
               cookies are being sent.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               however, if you disable our essential cookies, shelter won&apos;t
               work properly. you won&apos;t be able to stay logged in or save
               your preferences.
@@ -125,10 +125,10 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               cookie lifetime
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               our authentication cookies last for 30 days or until you log out,
               whichever comes first. session cookies are deleted when you close
               your browser.
@@ -136,10 +136,10 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               updates to this policy
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               if we ever need to add or change the cookies we use, we&apos;ll
               update this policy and let you know. we&apos;re committed to
               keeping cookie usage to the absolute minimum.
@@ -147,10 +147,10 @@ export default function CookiePolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               questions
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               if you have questions about how we use cookies, contact us at{" "}
               <a
                 href="mailto:hello@stageddat.dev"
