@@ -17,10 +17,10 @@ export default function PrivacyPolicy() {
         </p>
         <div className="space-y-12">
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               we don&apos;t collect your data
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               shelter is built on a simple principle: your thoughts are yours.
               we don&apos;t collect, store, or process any of your personal data
               on our servers. everything you write stays on your device.
@@ -28,14 +28,15 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
+              {" "}
               how your data is stored
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               all your entries are stored locally in your browser using
               encrypted storage. this means:
             </p>
-            <ul className="text-muted-foreground ml-6 space-y-2 text-pretty">
+            <ul className="text-muted-foreground text-prett ml-6 space-y-2 text-xl">
               <li>
                 • your notes never leave your device unless you choose to sync
               </li>
@@ -46,10 +47,11 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
+              {" "}
               end-to-end encryption
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               when you opt in to sync your entries across devices, your data is
               encrypted on your device before it ever reaches our servers. we
               use industry-standard encryption, and only you hold the keys to
@@ -58,10 +60,11 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
+              {" "}
               no tracking or analytics
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               we don&apos;t use tracking pixels, analytics tools, or any
               third-party services that collect your personal information. we
               don&apos;t track your behavior, your location, or how you use
@@ -70,20 +73,21 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
+              {" "}
               no ads, no selling data
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               we will never display ads or sell your data to third parties.
               ever. your privacy is not for sale.
             </p>
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               cookies
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground text-xl text-pretty">
               we only use essential cookies necessary for the app to function
               properly, such as keeping you logged in. we don&apos;t use
               tracking cookies or advertising cookies. see our{" "}
@@ -98,10 +102,10 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               your rights
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               since we don&apos;t collect your data, there&apos;s nothing for us
               to delete or share. you have complete ownership and control of
               everything you create in shelter. you can export or delete your
@@ -110,10 +114,10 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               changes to this policy
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               if we ever change this privacy policy, we&apos;ll notify you
               clearly and give you the option to review the changes. we&apos;ll
               never make changes that compromise your privacy without your
@@ -122,10 +126,10 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="space-y-4">
-            <h2 className="border-primary text-primary-foreground border-b-2 pb-2 text-3xl font-bold text-balance">
+            <h2 className="border-primary text-primary border-b-2 pb-2 text-3xl font-bold text-balance">
               contact us
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-muted-foreground text-xl text-pretty">
               if you have any questions about this privacy policy, please
               contact us at{" "}
               <Link
