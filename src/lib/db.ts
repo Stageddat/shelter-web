@@ -1,10 +1,8 @@
-// db.ts
 import { Dexie, type EntityTable } from "dexie";
 
 export interface User {
-  id: number;
+  id: string;
   username: string;
-  email: string;
 
   // llave maestra
   // todo esta mierda esta en base64
@@ -14,12 +12,19 @@ export interface User {
 }
 
 interface DiaryEntry {
-  id: number;
-  userId: number;
-  title: string;
+  // para identificar
+  id: string;
+  userId: string;
+
+  // contenido
+  encryptedtitle: string;
   encryptedContent: string;
+
+  // metadatos
   date: string;
   time: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const db = new Dexie("DiaryDatabase") as Dexie & {
@@ -28,8 +33,8 @@ const db = new Dexie("DiaryDatabase") as Dexie & {
 };
 
 db.version(1).stores({
-  users: "++id, email, username",
-  entries: "++id, userId, title, date, time",
+  users: "id, username",
+  entries: "id, userId, date, createdAt, updatedAt",
 });
 
 export type { DiaryEntry };
