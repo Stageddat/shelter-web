@@ -28,7 +28,7 @@ interface DiaryEntry {
 }
 
 const db = new Dexie("DiaryDatabase") as Dexie & {
-  users: EntityTable<User, "id">;
+  users: EntityTable<User>;
   entries: EntityTable<DiaryEntry, "id">;
 };
 
