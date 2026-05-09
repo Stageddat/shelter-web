@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { register } from "@/services/auth/register";
 import { RegisterValidation } from "@/services/auth/RegisterValidation";
-import { checkUserExists } from "@/services/auth/checkUserExists";
+import { hasExistingUser } from "@/services/auth/hasExistingUser";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation"; // Next.js 13+
 
@@ -39,7 +39,7 @@ export function useSignupForm() {
   useEffect(() => {
     async function checkExistingUser() {
       try {
-        const exists = await checkUserExists();
+        const exists = await hasExistingUser();
 
         if (exists) {
           console.log("User already exists, redirecting to login...");
