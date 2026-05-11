@@ -1,4 +1,4 @@
-import { Dexie, type EntityTable } from "dexie";
+import { Dexie, Table } from "dexie";
 
 export interface User {
   id: string;
@@ -28,8 +28,8 @@ interface DiaryEntry {
 }
 
 const db = new Dexie("DiaryDatabase") as Dexie & {
-  users: EntityTable<User>;
-  entries: EntityTable<DiaryEntry, "id">;
+  users: Table<User, "id">;
+  entries: Table<DiaryEntry, "id">;
 };
 
 db.version(1).stores({
