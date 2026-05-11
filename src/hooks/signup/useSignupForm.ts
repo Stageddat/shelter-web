@@ -1,25 +1,16 @@
 import { useState } from "react";
-import { register } from "@/services/auth/register";
+import { register } from "@/services/auth/register.service";
 import { RegisterValidation } from "@/services/auth/RegisterValidation";
 import { hasExistingUser } from "@/services/auth/hasExistingUser";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation"; // Next.js 13+
-
-export interface FormData {
-  username: string;
-  email: string;
-  dateOfBirth: string;
-  password: string;
-  password2: string;
-}
+import { RegisterInput } from "@/schemas/register.schema";
 
 export function useSignupForm() {
   const router = useRouter();
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<RegisterInput>({
     username: "",
-    email: "",
-    dateOfBirth: "",
     password: "",
     password2: "",
   });
@@ -71,9 +62,7 @@ export function useSignupForm() {
       }
 
       // registrar usuario
-      const { userId, username, email, masterKey } = await register(
-        result.data,
-      );
+      const { userId, username, masterKey } = await register(result.data);
 
       console.log("registration successful!");
       // console.debug("userId:", userId);
