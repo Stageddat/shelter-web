@@ -33,7 +33,10 @@ export async function register(registerInput: RegisterInput) {
   );
 
   // registrar usuario
-  const userId = await db.users.add({
+  const userId = crypto.randomUUID();
+
+  await db.users.add({
+    id: userId,
     username: registerInput.username,
     encryptedMasterKey,
     salt,
