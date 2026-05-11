@@ -1,7 +1,7 @@
 import {
   registerSchema,
-  type RegisterValidation,
-} from "../../schemas/register";
+  type RegisterInput,
+} from "../../schemas/register.schema";
 
 export async function RegisterValidation(data: unknown) {
   const result = registerSchema.safeParse(data);
