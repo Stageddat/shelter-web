@@ -1,11 +1,16 @@
 import { z } from "zod";
 
-// TODO: ser mas exigente con las contraseñas
 export const registerSchema = z
   .object({
-    username: z.string().min(3, "username must be at least 3 characters long"),
-    email: z.email("please enter a valid email address"),
-    dateOfBirth: z.coerce.date(),
+    username: z
+      .string()
+      .min(3, "username must be at least 3 characters long")
+      .max(20, "username must be at most 20 characters long")
+      .regex(
+        /^[a-zA-Z0-9_]+$/,
+        "username can only contain letters, numbers, and underscores",
+      )
+      .trim(),
     password: z.string().min(8, "password must be at least 8 characters long"),
     password2: z.string().min(8, "password must be at least 8 characters long"),
   })
@@ -14,4 +19,4 @@ export const registerSchema = z
     path: ["password2"],
   });
 
-export type RegisterValidation = z.infer<typeof registerSchema>;
+export type RegisterInput = z.infer<typeof registerSchema>;
