@@ -18,12 +18,9 @@ export const useNewEntry = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [isSaving, setIsSaving] = useState(false);
-  const [wordCount, setWordCount] = useState(0);
 
   // contar palabras
-  useEffect(() => {
-    setWordCount(countWords(content));
-  }, [content]);
+  const wordCount = countWords(content);
 
   const handleSave = async (): Promise<number | null> => {
     if (!masterKey || !isAuthenticated) {
@@ -47,7 +44,7 @@ export const useNewEntry = () => {
 
       if (entryId) {
         await refreshEntries(); // actualizar el contexto
-        return entryId; // devuelve solo el número
+        return entryId as unknown as number; // devuelve solo el número
       }
 
       return null;
