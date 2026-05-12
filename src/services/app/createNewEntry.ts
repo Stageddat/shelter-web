@@ -25,14 +25,18 @@ export async function createEntry({
 
   // guardar en db
   const entryId = await db.entries.add({
+    id: crypto.randomUUID(),
     userId: currentUser.id,
-    title: title || "untitled entry",
+    // todo: encriptar el titulo
+    encryptedtitle: title || "untitled entry",
     encryptedContent: `${ciphertext}:${iv}`,
     date: new Date().toISOString().split("T")[0],
     time: new Date().toLocaleTimeString("en-US", {
       hour: "2-digit",
       minute: "2-digit",
     }),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   });
 
   return entryId;
