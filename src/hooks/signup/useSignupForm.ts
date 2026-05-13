@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { register } from "@/services/auth/register.service";
-import { RegisterValidation } from "@/services/auth/RegisterValidation";
 import { hasExistingUser } from "@/services/auth/hasExistingUser";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation"; // Next.js 13+
-import { RegisterInput } from "@/schemas/register.schema";
+import { RegisterInput, registerSchema } from "@/schemas/register.schema";
 
 export function useSignupForm() {
   const router = useRouter();
@@ -37,7 +36,7 @@ export function useSignupForm() {
           router.push("/login");
         }
       } catch (e) {
-        console.error("Error checking user:", e);
+        console.error("error checking user:", e);
       }
     }
 
@@ -51,13 +50,11 @@ export function useSignupForm() {
 
     // validar datos del formulario
     try {
-      const result = await RegisterValidation(formData);
+      const result = await registerSchema.safeParseAsync(formData);
 
       if (!result.success) {
-        const firstError =
-          Object.values(result.errors ?? {}).flat()[0] ?? "Invalid data";
+        const firstError = result.error.issues[0]?.message ?? "invalid data";
         setError(firstError);
-        setIsLoading(false);
         return;
       }
 
