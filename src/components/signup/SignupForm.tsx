@@ -26,7 +26,7 @@ export default function SignupForm() {
 
         <Button
           type="submit"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full"
+          className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full text-lg"
           size="lg"
           disabled={isLoading}
         >
