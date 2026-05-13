@@ -8,20 +8,19 @@ export default function Signup() {
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
       <div className="w-full max-w-2xl space-y-8">
-        <div className="border-border bg-card rounded-xl border p-8 shadow-lg lg:p-12">
+        <div className="border-border bg-card rounded-xl border shadow-lg lg:px-12 lg:py-8 lg:pb-4">
           <SignupHeader />
           <SignupForm />
+          <p className="text-muted-foreground text-md mt-4 text-center">
+            already have an account?{" "}
+            <Link
+              className="text-primary-dark hover:text-primary font-medium underline transition-colors"
+              href="/login"
+            >
+              log in
+            </Link>
+          </p>
         </div>
-
-        <p className="text-muted-foreground text-center text-sm">
-          already have an account?{" "}
-          <Link
-            className="text-primary-dark hover:text-primary font-medium underline transition-colors"
-            href="/login"
-          >
-            log in
-          </Link>
-        </p>
       </div>
     </main>
   );
