@@ -31,8 +31,11 @@ export default function FormField({
 
   return (
     <div className="space-y-2">
-      <Label htmlFor={field.id}>{field.label}</Label>
-      <InputGroup>
+      <Label className="text-xl" htmlFor={field.id}>
+        {field.label}
+      </Label>
+      <InputGroup className="h-12!">
+        {" "}
         <InputGroupInput
           type={field.type}
           id={field.id}
@@ -40,7 +43,7 @@ export default function FormField({
           value={value}
           onChange={onChange}
           placeholder={field.placeholder}
-          className="h-12 text-base"
+          className="text-lg!"
           required
           disabled={disabled}
         />
