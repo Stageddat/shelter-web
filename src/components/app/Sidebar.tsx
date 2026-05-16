@@ -7,13 +7,13 @@ import { PlusCircle } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEntries } from "@/contexts/EntriesContext";
-import { Entry } from "@/services/app/entryService";
+import { DiaryEntry } from "@/lib/db";
 
 const EntryItem = ({
   entry,
   active = false,
 }: {
-  entry: Entry;
+  entry: DiaryEntry;
   active?: boolean;
 }) => {
   const router = useRouter();
@@ -33,7 +33,9 @@ const EntryItem = ({
       }`}
     >
       <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium lowercase">{entry.title}</p>
+        <p className="truncate text-sm font-medium lowercase">
+          {entry.encryptedtitle}
+        </p>
         <p className="text-muted-foreground/70 text-xs">{entry.time}</p>
       </div>
     </div>

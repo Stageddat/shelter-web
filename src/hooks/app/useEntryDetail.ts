@@ -5,7 +5,7 @@ import { entryService, DecryptedEntry } from "@/services/app/entryService";
 
 // TODO: change confirmation with popup
 
-export const useEntryDetail = (entryId: number) => {
+export const useEntryDetail = (entryId: string) => {
   const { masterKey, isAuthenticated } = useAuth();
   const { updateEntry: updateEntryInContext, removeEntry } = useEntries();
   const [entry, setEntry] = useState<DecryptedEntry | null>(null);
@@ -36,7 +36,7 @@ export const useEntryDetail = (entryId: number) => {
         masterKey,
       );
       setEntry(decryptedEntry);
-      setEditTitle(decryptedEntry.title);
+      setEditTitle(decryptedEntry.encryptedtitle);
       setEditContent(decryptedEntry.content);
     } catch (error) {
       console.error("Error loading entry:", error);
@@ -64,7 +64,7 @@ export const useEntryDetail = (entryId: number) => {
 
   const handleCancelEdit = useCallback(() => {
     if (entry) {
-      setEditTitle(entry.title);
+      setEditTitle(entry.encryptedContent);
       setEditContent(entry.content);
     }
     setIsEditing(false);
@@ -90,7 +90,7 @@ export const useEntryDetail = (entryId: number) => {
       setEntry(updatedEntry);
 
       updateEntryInContext(entry.id!, {
-        title: editTitle,
+        encryptedtitle: editTitle,
       });
 
       setIsEditing(false);

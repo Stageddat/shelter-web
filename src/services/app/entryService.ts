@@ -1,4 +1,4 @@
-import { db } from "@/lib/db";
+import { db, DiaryEntry } from "@/lib/db";
 import { encryptText, decryptText } from "@/lib/crypto";
 
 export interface CreateEntryParams {
@@ -7,32 +7,23 @@ export interface CreateEntryParams {
   content: string;
 }
 
-export interface Entry {
-  id?: number;
-  userId: number;
-  title: string;
-  encryptedContent: string;
-  date: string;
-  time: string;
-}
-
-export interface DecryptedEntry extends Entry {
+export interface DecryptedEntry extends DiaryEntry {
   content: string;
 }
 
 export interface GroupedEntries {
   date: string;
   displayDate: string;
-  entries: Entry[];
+  entries: DiaryEntry[];
 }
 
 export const entryService = {
-  async getEntryById(entryId: number): Promise<Entry | undefined> {
-    return await db.entries.get(entryId);
+  async getEntryById(entryId: string): Promise<DiaryEntry | undefined> {
+    return await db.entries.get({ id: entryId });
   },
 
   async decryptEntry(
-    entry: Entry,
+    entry: DiaryEntry,
     masterKey: CryptoKey,
   ): Promise<DecryptedEntry> {
     const [ciphertext, iv] = entry.encryptedContent.split(":");
@@ -44,7 +35,7 @@ export const entryService = {
     };
   },
 
-  async getAllEntries(): Promise<Entry[]> {
+  async getAllEntries(): Promise<DiaryEntry[]> {
     const users = await db.users.toArray();
     const currentUser = users[0];
 
@@ -59,7 +50,7 @@ export const entryService = {
       .sortBy("date");
   },
 
-  groupEntriesByDate(entries: Entry[]): GroupedEntries[] {
+  groupEntriesByDate(entries: DiaryEntry[]): GroupedEntries[] {
     const grouped = entries.reduce(
       (acc, entry) => {
         if (!acc[entry.date]) {
@@ -68,7 +59,7 @@ export const entryService = {
         acc[entry.date].push(entry);
         return acc;
       },
-      {} as Record<string, Entry[]>,
+      {} as Record<string, DiaryEntry[]>,
     );
 
     return Object.entries(grouped).map(([date, entries]) => ({
@@ -116,21 +107,29 @@ export const entryService = {
     return text.trim().split(/\s+/).filter(Boolean).length;
   },
 
-  async deleteEntry(entryId: number): Promise<void> {
-    await db.entries.delete(entryId);
+  async deleteEntry(entryId: string): Promise<void> {
+    await db.entries.where("id").equals(entryId).delete();
   },
 
   async updateEntry(
-    entryId: number,
+    entryId: string,
     masterKey: CryptoKey,
-    title: string,
-    content: string,
+    newTitle: string,
+    newContent: string,
   ): Promise<void> {
-    const { ciphertext, iv } = await encryptText(masterKey, content);
+    const { ciphertext, iv } = await encryptText(masterKey, newContent);
 
-    await db.entries.update(entryId, {
-      title: title || "untitled entry",
-      encryptedContent: `${ciphertext}:${iv}`,
-    });
+    await db.entries
+      .where("id")
+      .equals(entryId)
+      .modify({
+        encryptedtitle: newTitle || "untitled entry",
+        encryptedContent: `${ciphertext}:${iv}`,
+      });
+
+    //   await db.entries.update(entryId, {
+    //     title: title || "untitled entry",
+    //     encryptedContent: `${ciphertext}:${iv}`,
+    //   });
   },
 };

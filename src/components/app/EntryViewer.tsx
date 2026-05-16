@@ -44,7 +44,7 @@ export const EntryViewer = ({
       ) : (
         <>
           <h1 className="mb-6 text-4xl font-bold tracking-tight lowercase">
-            {entry.title}
+            {entry.encryptedtitle}
           </h1>
 
           <div className="flex-1 text-lg leading-relaxed font-light whitespace-pre-wrap lowercase">

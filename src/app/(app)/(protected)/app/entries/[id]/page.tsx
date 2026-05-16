@@ -7,7 +7,7 @@ import { EntryDetailActions } from "@/components/app/EntryDetailActions";
 import { useEntryDetail } from "@/hooks/app/useEntryDetail";
 import { useRouter } from "next/navigation";
 
-function EntryContent({ entryId }: { entryId: number }) {
+function EntryContent({ entryId }: { entryId: string }) {
   const router = useRouter();
 
   const {
@@ -85,7 +85,7 @@ export default function EntryDetailPage({
   params: Promise<{ id: string }>;
 }) {
   const resolvedParams = use(params);
-  const entryId = parseInt(resolvedParams.id);
+  const entryId = resolvedParams.id;
 
   return (
     <div className="flex h-screen overflow-hidden">

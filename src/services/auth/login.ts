@@ -23,9 +23,9 @@ export async function login(
     }
 
     // comprovar correo
-    if (credentials.email && user.email !== credentials.email) {
-      throw new Error("email does not match");
-    }
+    // if (credentials.email && user.email !== credentials.email) {
+    //   throw new Error("email does not match");
+    // }
 
     // derivar clave
     const passwordKey = await deriveKeyFromPassword(

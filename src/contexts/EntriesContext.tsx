@@ -7,18 +7,15 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import {
-  Entry,
-  entryService,
-  GroupedEntries,
-} from "@/services/app/entryService";
+import { entryService, GroupedEntries } from "@/services/app/entryService";
+import { DiaryEntry } from "@/lib/db";
 
 interface EntriesContextType {
   groupedEntries: GroupedEntries[];
   isLoading: boolean;
   refreshEntries: () => Promise<void>;
-  updateEntry: (entryId: number, updates: Partial<Entry>) => void;
-  removeEntry: (entryId: number) => void;
+  updateEntry: (entryId: string, updates: Partial<DiaryEntry>) => void;
+  removeEntry: (entryId: string) => void;
 }
 
 const EntriesContext = createContext<EntriesContextType | undefined>(undefined);
@@ -43,7 +40,7 @@ export function EntriesProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const updateEntry = useCallback(
-    (entryId: number, updates: Partial<Entry>) => {
+    (entryId: string, updates: Partial<DiaryEntry>) => {
       setGroupedEntries((prev) => {
         const allEntries = prev.flatMap((g) => g.entries);
         const updatedEntries = allEntries.map((e) =>
@@ -55,7 +52,7 @@ export function EntriesProvider({ children }: { children: React.ReactNode }) {
     [],
   );
 
-  const removeEntry = useCallback((entryId: number) => {
+  const removeEntry = useCallback((entryId: string) => {
     setGroupedEntries((prev) => {
       const allEntries = prev.flatMap((g) => g.entries);
       const filtered = allEntries.filter((e) => e.id !== entryId);

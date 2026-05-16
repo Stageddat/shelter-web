@@ -19,7 +19,7 @@ export const useHeaderBreadcrumb = () => {
     // si estamos en /app/entries/[id]
     const entryMatch = pathname.match(/\/app\/entries\/(\d+)/);
     if (entryMatch) {
-      const entryId = parseInt(entryMatch[1]);
+      const entryId = entryMatch[1];
 
       // buscar la entrada en el contexto
       const allEntries = groupedEntries.flatMap((g) => g.entries);
