@@ -28,19 +28,20 @@ export function useLogin() {
       }
     };
     fetchUser();
-  }, []);
+  }, [router]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
     setError("");
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
 
     try {
+      // aqui se logea y guardar la masterKey en el contexto de react
       const result = await login({ password });
 
       if (result.success && result.masterKey) {
