@@ -20,13 +20,11 @@ export default function SignupForm() {
           />
         ))}
 
-        {error && (
-          <p className="text-destructive text-sm font-medium">{error}</p>
-        )}
+        {error && <p className="text-destructive text-lg">{error}</p>}
 
         <Button
           type="submit"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 w-full text-lg"
+          className="bg-primary text-primary-foreground hover:bg-primary/85 mt-4 w-full text-lg"
           size="lg"
           disabled={isLoading}
         >
