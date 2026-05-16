@@ -54,7 +54,7 @@ export default function FormField({
           <InputGroupAddon align="inline-end">
             <Tooltip>
               <TooltipTrigger asChild>
-                <InputGroupButton className="rounded-full" size="icon-xs">
+                <InputGroupButton className="rounded-full" size="icon-sm">
                   <TooltipIcon />
                 </InputGroupButton>
               </TooltipTrigger>
