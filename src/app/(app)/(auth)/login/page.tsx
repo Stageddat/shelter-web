@@ -1,25 +1,29 @@
 "use client";
 
-import LoginForm from "@/components/login/LoginForm";
-import Link from "next/link";
+import { useLogin } from "@/hooks/login/useLogin";
+import PasswordForm from "@/components/login/PasswordForm";
 
 export default function Login() {
+  const { username, password, handleChange, handleSubmit, isLoading, error } =
+    useLogin();
+
+  // si no hay nombre de usuario, no mostrar nada
+  // el hook ya hace un redirect a /signup
+  if (!username) return null;
+
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
-      <div className="w-full max-w-2xl space-y-8">
-        <div className="border-border bg-card rounded-xl border p-8 shadow-lg lg:p-12">
-          <LoginForm />
+      <div className="w-full max-w-2xl">
+        <div className="border-border bg-card rounded-xl border shadow-lg lg:px-12 lg:py-8 lg:pb-4">
+          <PasswordForm
+            username={username}
+            password={password}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            isLoading={isLoading}
+            error={error}
+          />
         </div>
-
-        <p className="text-muted-foreground text-center text-sm">
-          don’t have an account?{" "}
-          <Link
-            className="text-primary-dark hover:text-primary font-medium underline transition-colors"
-            href="/signup"
-          >
-            sign up
-          </Link>
-        </p>
       </div>
     </main>
   );
