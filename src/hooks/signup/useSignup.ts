@@ -2,11 +2,13 @@ import { useState } from "react";
 import { register } from "@/services/auth/register.service";
 import { hasExistingUser } from "@/services/auth/hasExistingUser";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation"; // Next.js 13+
+import { useRouter } from "next/navigation";
 import { RegisterInput, registerSchema } from "@/schemas/register.schema";
+import { useAuth } from "@/contexts/AuthContext";
 
 export function useSignup() {
   const router = useRouter();
+  const { setMasterKey } = useAuth();
 
   const [formData, setFormData] = useState<RegisterInput>({
     username: "",
@@ -35,15 +37,15 @@ export function useSignup() {
           console.log("User already exists, redirecting to login...");
           router.push("/login");
         }
-      } catch (e) {
-        console.error("error checking user:", e);
+      } catch (err) {
+        console.error("error checking user:", err);
       }
     }
 
     checkExistingUser();
   }, [router]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setError("");
     setIsLoading(true);
@@ -58,8 +60,8 @@ export function useSignup() {
         return;
       }
 
-      // registrar usuario
-      const { userId, username, masterKey } = await register(result.data);
+      // registrar usuario y pillar mk para guardar leugo
+      const { masterKey } = await register(result.data);
 
       console.log("registration successful!");
       // console.debug("userId:", userId);
@@ -67,8 +69,9 @@ export function useSignup() {
       // console.log("email:", email);
       // console.log("mK:", masterKey);
 
-      // TODO: guardar sesion (userId y masterKey en session storage/Context)
-      // TODO: redirige al dashboard
+      // guardar en el contexto de react y redirigir a /app
+      setMasterKey(masterKey);
+      router.push("/app");
     } catch (err) {
       console.error("registration error:", err);
       setError(err instanceof Error ? err.message : "registration failed");
