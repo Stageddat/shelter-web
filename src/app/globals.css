@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -77,6 +76,8 @@ html {
   --muted-foreground: #a8927b;
   --accent: #d6c8b6;
   --accent-foreground: #4b3d33;
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.95 0.01 210);
   --border: #d6c8b6;
   --input: #d6c8b6;
   --ring: #4b3d33;
