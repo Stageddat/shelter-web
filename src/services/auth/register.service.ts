@@ -35,6 +35,7 @@ export async function register(registerInput: RegisterInput) {
   // registrar usuario
   const userId = crypto.randomUUID();
 
+  // guardar en db
   await db.users.add({
     id: userId,
     username: registerInput.username,
