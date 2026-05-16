@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation"; // Next.js 13+
 import { RegisterInput, registerSchema } from "@/schemas/register.schema";
 
-export function useSignupForm() {
+export function useSignup() {
   const router = useRouter();
 
   const [formData, setFormData] = useState<RegisterInput>({
