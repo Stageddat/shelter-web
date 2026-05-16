@@ -17,7 +17,7 @@ export const formFields: FormFieldConfig[] = [
   {
     id: "username",
     name: "username",
-    label: "what would you like us to call you?",
+    label: "what should we call you?",
     type: "text",
     placeholder: "enter your name",
     icon: User,
@@ -28,7 +28,7 @@ export const formFields: FormFieldConfig[] = [
   {
     id: "password",
     name: "password",
-    label: "password",
+    label: "choose a password",
     type: "password",
     placeholder: "set a password",
     icon: Lock,
