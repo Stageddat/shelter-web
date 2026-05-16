@@ -3,6 +3,9 @@
 import { useLogin } from "@/hooks/login/useLogin";
 import PasswordForm from "@/components/login/PasswordForm";
 
+/**
+ * pagina de /login
+ */
 export default function Login() {
   const { username, password, handleChange, handleSubmit, isLoading, error } =
     useLogin();
@@ -14,7 +17,7 @@ export default function Login() {
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
       <div className="w-full max-w-2xl">
-        <div className="border-border bg-card rounded-xl border shadow-lg lg:px-12 lg:py-8 lg:pb-4">
+        <div className="border-border bg-card rounded-xl border shadow-lg lg:px-12 lg:py-8">
           <PasswordForm
             username={username}
             password={password}

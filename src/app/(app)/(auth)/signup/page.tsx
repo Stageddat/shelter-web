@@ -6,6 +6,9 @@ import FormField from "@/components/signup/FormField";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+/**
+ * pagina de /signup
+ */
 export default function Signup() {
   const { formData, error, isLoading, handleChange, handleSubmit } =
     useSignup();
@@ -16,7 +19,7 @@ export default function Signup() {
         <div className="border-border bg-card rounded-xl border shadow-lg lg:px-12 lg:py-8 lg:pb-4">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* cabecera */}
-            <h1 className="text-foreground mb-8 text-center text-4xl font-bold lg:text-5xl">
+            <h1 className="text-foreground mb-8 text-4xl font-bold lg:text-5xl">
               welcome to shelter!
             </h1>
 

@@ -16,6 +16,9 @@ interface PasswordFormProps {
   error: string;
 }
 
+/**
+ * formulario de la pagina /login
+ */
 export default function PasswordForm({
   username,
   password,
@@ -26,12 +29,14 @@ export default function PasswordForm({
 }: PasswordFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <h1 className="text-foreground text-4xl font-bold tracking-tight">
+      <h1 className="text-foreground mb-2 text-4xl font-bold lg:text-5xl">
         welcome back, {username}!
       </h1>
 
       <div className="space-y-2">
-        <Label htmlFor="password">password</Label>
+        <Label className="text-xl" htmlFor="password">
+          password
+        </Label>
         <InputGroup>
           <InputGroupInput
             type="password"
@@ -40,7 +45,7 @@ export default function PasswordForm({
             value={password}
             onChange={handleChange}
             placeholder="enter your password"
-            className="h-12 text-base"
+            className="text-xl!"
             required
             disabled={isLoading}
           />
@@ -54,7 +59,7 @@ export default function PasswordForm({
 
       <Button
         type="submit"
-        className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+        className="bg-primary text-primary-foreground hover:bg-primary/85 w-full text-lg tracking-wide"
         size="lg"
         disabled={isLoading}
       >
