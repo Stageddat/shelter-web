@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Search, Settings } from "lucide-react";
 import Link from "next/link";
 import { useHeaderBreadcrumb } from "@/hooks/app/useHeaderBreadcrumb";
+import avatarPlaceholder from "@/assets/app/avatar-placeholder.webp";
 
 function HeaderComponent() {
   const breadcrumb = useHeaderBreadcrumb();
@@ -41,10 +42,7 @@ function HeaderComponent() {
           </Button>
         </div>
         <Avatar className="border-card h-10 w-10 border-2">
-          <AvatarImage
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBRqLsJILDS7bdIZCg0OCPzgGovS3Xp8TJDmnQLREh_NCxM6B6-mgsOBRr3c8-xstMyB86zwlPRmp_bl5AMH0g3ktxY3A82GwdtJa9Sr_SDmomNRDP7LITQs6ISYBXtjz1nsBZTOQn_CwXwUoS1udRMALtsfPT8TXdKnsr6vowhpLnC-3ovuEfEFPzCsqugJ7sSU1rptv0mq1xo2BxQufxVGfhqCZ09tiMZJXvwmfIfu7_Zb2gMrWaUxWOYf6wJYiRPpWPhXPN3gA"
-            alt="User profile"
-          />
+          <AvatarImage src={avatarPlaceholder.src} alt="User profile" />
           <AvatarFallback>U</AvatarFallback>
         </Avatar>
       </div>
