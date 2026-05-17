@@ -11,7 +11,7 @@ interface PasswordFormProps {
   username: string;
   password: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleSubmit: (e: React.FormEvent) => void;
+  handleSubmit: (e: React.SubmitEvent) => void;
   isLoading: boolean;
   error: string;
 }
