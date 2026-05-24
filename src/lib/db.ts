@@ -14,11 +14,12 @@ interface DiaryEntry {
   id: string;
   userId: string;
 
-  // titulo y contenido encriptado en binario
   encryptedTitle: Uint8Array;
-  encryptedContent: Uint8Array;
+  titleIv: Uint8Array;
 
-  // metadatos
+  encryptedContent: Uint8Array;
+  contentIv: Uint8Array;
+
   date: string;
   time: string;
   createdAt: string;
