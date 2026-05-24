@@ -4,21 +4,19 @@ export interface User {
   id: string;
   username: string;
 
-  // llave maestra
-  // todo esta mierda esta en base64
-  encryptedMasterKey: string;
-  salt: string;
-  iv: string;
+  // datos de encriptacion
+  encryptedMasterKey: Uint8Array;
+  salt: Uint8Array;
+  iv: Uint8Array;
 }
 
 interface DiaryEntry {
-  // para identificar
   id: string;
   userId: string;
 
-  // contenido
-  encryptedtitle: string;
-  encryptedContent: string;
+  // titulo y contenido encriptado en binario
+  encryptedTitle: Uint8Array;
+  encryptedContent: Uint8Array;
 
   // metadatos
   date: string;
