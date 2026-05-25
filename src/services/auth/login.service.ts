@@ -10,6 +10,8 @@ export async function login(password: string): Promise<CryptoKey> {
 
   const passwordKey = await deriveKeyFromPassword(password, user.salt);
 
+  // intenta desencriptar la llave,
+  // si falla, significa que la contraseña es incorrecta
   try {
     return await decryptMasterKey(
       user.encryptedMasterKey,
