@@ -8,6 +8,10 @@ import { Sidebar } from "@/components/app/Sidebar";
 import { Header } from "@/components/app/Header";
 import NoiseBackground from "@/components/shared/NoiseBackground";
 
+/**
+ * layout para /app/(protected).
+ * se inicia el contexto para las entradas
+ */
 function ProtectedContent({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
