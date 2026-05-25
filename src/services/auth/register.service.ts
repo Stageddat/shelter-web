@@ -6,7 +6,7 @@ import {
   generateMasterKey,
   encryptMasterKey,
 } from "../../lib/crypto";
-import { hasExistingUser } from "./hasExistingUser";
+import { hasExistingUser } from "@/lib/db.utils";
 
 export async function register(registerInput: RegisterInput) {
   if (await hasExistingUser()) {
