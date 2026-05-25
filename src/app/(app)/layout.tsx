@@ -1,8 +1,10 @@
 "use client";
 import { AuthProvider } from "@/contexts/AuthContext";
+
 /**
- * layout para todo /app, (auth) y (protected)
- * se inicia el contexto de auth
+ * layout raíz de la app.
+ * envuelve todo con AuthProvider para que login, signup
+ * y las páginas protegidas tengan acceso a la sesión.
  */
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return <AuthProvider>{children}</AuthProvider>;

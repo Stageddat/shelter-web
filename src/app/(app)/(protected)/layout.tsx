@@ -9,8 +9,8 @@ import { Header } from "@/components/app/Header";
 import NoiseBackground from "@/components/shared/NoiseBackground";
 
 /**
- * layout para /app/(protected).
- * se inicia el contexto para las entradas
+ * layout protegido para /app y subrutas.
+ * redirige a /login si no hay sesión activa.
  */
 function ProtectedContent({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuth();
