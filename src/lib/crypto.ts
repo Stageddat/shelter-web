@@ -64,8 +64,13 @@ export async function generateMasterKey(): Promise<CryptoKey> {
 export async function encryptMasterKey(
   masterKey: CryptoKey,
   passwordKey: CryptoKey,
-): Promise<{ encryptedMasterKey: Uint8Array; iv: Uint8Array }> {
-  const iv = crypto.getRandomValues(new Uint8Array(IV_SIZE));
+): Promise<{
+  encryptedMasterKey: Uint8Array<ArrayBuffer>;
+  iv: Uint8Array<ArrayBuffer>;
+}> {
+  const iv = crypto.getRandomValues(
+    new Uint8Array(IV_SIZE),
+  ) as Uint8Array<ArrayBuffer>;
   const rawMasterKey = await crypto.subtle.exportKey("raw", masterKey);
 
   const encrypted = await crypto.subtle.encrypt(
@@ -75,7 +80,7 @@ export async function encryptMasterKey(
   );
 
   return {
-    encryptedMasterKey: new Uint8Array(encrypted),
+    encryptedMasterKey: new Uint8Array(encrypted) as Uint8Array<ArrayBuffer>,
     iv,
   };
 }
@@ -103,8 +108,13 @@ export async function decryptMasterKey(
 export async function encryptText(
   masterKey: CryptoKey,
   textContent: string,
-): Promise<{ ciphertext: Uint8Array; iv: Uint8Array }> {
-  const iv = crypto.getRandomValues(new Uint8Array(IV_SIZE));
+): Promise<{
+  ciphertext: Uint8Array<ArrayBuffer>;
+  iv: Uint8Array<ArrayBuffer>;
+}> {
+  const iv = crypto.getRandomValues(
+    new Uint8Array(IV_SIZE),
+  ) as Uint8Array<ArrayBuffer>;
   const encoded = new TextEncoder().encode(textContent);
 
   const encrypted = await crypto.subtle.encrypt(
@@ -114,11 +124,10 @@ export async function encryptText(
   );
 
   return {
-    ciphertext: new Uint8Array(encrypted),
+    ciphertext: new Uint8Array(encrypted) as Uint8Array<ArrayBuffer>,
     iv,
   };
 }
-
 export async function decryptText(
   masterKey: CryptoKey,
   ciphertext: Uint8Array<ArrayBuffer>,
