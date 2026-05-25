@@ -27,6 +27,10 @@ function ProtectedContent({ children }: { children: React.ReactNode }) {
   return <EntriesProvider>{children}</EntriesProvider>;
 }
 
+/**
+ * estructura visual fija para todas las páginas de /app:
+ * fondo, sidebar y header. solo se muestra si hay sesión activa.
+ */
 export default function ProtectedLayout({
   children,
 }: {
