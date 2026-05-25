@@ -5,9 +5,9 @@ export interface User {
   username: string;
 
   // datos de encriptacion
-  encryptedMasterKey: Uint8Array;
-  salt: Uint8Array;
-  iv: Uint8Array;
+  encryptedMasterKey: Uint8Array<ArrayBuffer>;
+  salt: Uint8Array<ArrayBuffer>;
+  iv: Uint8Array<ArrayBuffer>;
 }
 
 interface DiaryEntry {
