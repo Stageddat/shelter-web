@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { register } from "@/services/auth/register.service";
-import { hasExistingUser } from "@/services/auth/hasExistingUser";
+import { hasExistingUser } from "@/lib/db.utils";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RegisterInput, registerSchema } from "@/schemas/register.schema";

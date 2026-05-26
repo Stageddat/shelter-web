@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
-import { getUser } from "@/services/auth/getUser";
+import { getUser } from "@/lib/db.utils";
 import { login } from "@/services/auth/login.service";
 
 export function useLogin() {
@@ -41,20 +41,16 @@ export function useLogin() {
     setIsLoading(true);
 
     try {
-      // aqui se logea y guardar la masterKey en el contexto de react
-      const result = await login({ password });
-
-      if (result.success && result.masterKey) {
-        setMasterKey(result.masterKey);
-        router.push("/app");
-      } else {
-        setError("invalid password :(. please try again.");
-      }
+      const masterKey = await login(password);
+      setMasterKey(masterKey);
+      router.push("/app");
     } catch (err) {
-      console.error("login error:", err);
-      setError("something exploded :(. please try again.");
-    } finally {
-      setIsLoading(false);
+      if (err instanceof Error && err.message === "incorrect password") {
+        setError("invalid password :(. please try again.");
+      } else {
+        console.error("unexpected login error: ", err);
+        setError("something exploded :(. please try again.");
+      }
     }
   };
 
