@@ -5,8 +5,6 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { EntriesProvider } from "@/contexts/EntriesContext";
 import { Sidebar } from "@/components/app/Sidebar";
-import { Header } from "@/components/app/Header";
-import NoiseBackground from "@/components/shared/NoiseBackground";
 
 /**
  * layout protegido para /app y subrutas.
@@ -39,14 +37,9 @@ export default function ProtectedLayout({
   return (
     <ProtectedContent>
       <div className="flex h-screen overflow-hidden">
-        <NoiseBackground />
         <Sidebar />
 
-        <div className="flex flex-1 flex-col overflow-hidden">
-          <Header />
-
-          {children}
-        </div>
+        <div className="flex flex-1 flex-col overflow-hidden">{children}</div>
       </div>
     </ProtectedContent>
   );
