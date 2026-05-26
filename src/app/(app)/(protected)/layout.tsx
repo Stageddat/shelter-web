@@ -27,7 +27,7 @@ function ProtectedContent({ children }: { children: React.ReactNode }) {
 
 /**
  * estructura visual fija para todas las páginas de /app:
- * fondo, sidebar y header. solo se muestra si hay sesión activa.
+ * el sidebar esta aqui para que se muestre en todas las páginas de la app
  */
 export default function ProtectedLayout({
   children,
