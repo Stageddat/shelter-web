@@ -25,6 +25,7 @@ export interface CreateEntryParams {
   content: string;
 }
 
+// encriptar titulo y contenido antes de guardar
 export async function createEntry({
   masterKey,
   title,
@@ -61,6 +62,7 @@ export async function createEntry({
   return id;
 }
 
+// encriptar titulo y contenido antes de actualizar
 export async function updateEntry(
   entryId: string,
   masterKey: CryptoKey,
@@ -85,13 +87,10 @@ export async function updateEntry(
   });
 }
 
+// borrar entrada
 export async function deleteEntry(entryId: string): Promise<void> {
   await db.entries.where("id").equals(entryId).delete();
 }
-
-// ============================================================
-// LEER Y DESCIFRAR
-// ============================================================
 
 // solo título, para la lista de /entries
 export async function getEntries(
