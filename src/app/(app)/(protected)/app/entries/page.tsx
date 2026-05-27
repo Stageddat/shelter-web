@@ -1,26 +1,26 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { useEntries } from "@/contexts/EntriesContext";
+import Link from "next/link";
 
-// TODO: mostrar una galeria de entradas
 export default function EntriesPage() {
-  const router = useRouter();
-  const { groupedEntries, isLoading } = useEntries();
+  const { entries, isLoading } = useEntries();
 
-  useEffect(() => {
-    // si hay entradas, redirigir a la primera
-    if (!isLoading && groupedEntries.length > 0) {
-      const firstEntry = groupedEntries[0].entries[0];
-      if (firstEntry?.id) {
-        router.replace(`/app/entries/${firstEntry.id}`);
-      }
-    } else if (!isLoading && groupedEntries.length === 0) {
-      // si no hay entradas, ir a la página principal
-      router.replace("/app");
-    }
-  }, [groupedEntries, isLoading, router]);
+  if (isLoading) return <p>loading...</p>;
 
-  return null;
+  if (entries.length === 0) {
+    return <p>no entries yet</p>;
+  }
+
+  return (
+    <main>
+      {entries.map((entry) => (
+        <Link key={entry.id} href={`/app/entries/${entry.id}`}>
+          {entry.id}
+          {/* Arreglar esta putisima mierda  */}
+          <br />
+        </Link>
+      ))}
+    </main>
+  );
 }
