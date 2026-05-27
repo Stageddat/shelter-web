@@ -4,6 +4,10 @@ export interface User {
   id: string;
   username: string;
 
+  // metadata
+  createdAt: string;
+  updatedAt: string;
+
   // datos de encriptacion
   encryptedMasterKey: Uint8Array<ArrayBuffer>;
   salt: Uint8Array<ArrayBuffer>;
