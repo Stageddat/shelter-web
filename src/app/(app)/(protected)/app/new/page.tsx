@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import NoiseBackground from "@/components/shared/NoiseBackground";
 import { NewEntryActions as EntryActions } from "@/components/app/NewEntryActions";
 import { NewEntryEditor as EntryEditor } from "@/components/app/NewEntryEditor";
-import { useNewEntry } from "@/hooks/app/useNewEntry";
+import { useCreateEntry } from "@/hooks/app/useCreateEntry";
 
 export default function NewEntry() {
   const router = useRouter();
@@ -13,11 +13,10 @@ export default function NewEntry() {
     setTitle,
     content,
     setContent,
-    wordCount,
     isSaving,
     handleSave,
     handleCancel,
-  } = useNewEntry();
+  } = useCreateEntry();
 
   const handleSaveAndRedirect = async () => {
     const entryId = await handleSave();
@@ -38,7 +37,6 @@ export default function NewEntry() {
               onTitleChange={setTitle}
               content={content}
               onContentChange={setContent}
-              wordCount={wordCount}
             />
 
             <EntryActions
