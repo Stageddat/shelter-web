@@ -4,7 +4,7 @@ import { hasExistingUser } from "@/lib/db.utils";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { RegisterInput, registerSchema } from "@/schemas/register.schema";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts/auth.context";
 
 export function useSignup() {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts/auth.context";
 import { getUser } from "@/lib/db.utils";
 import { login } from "@/services/auth/login.service";
 

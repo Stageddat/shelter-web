@@ -1,5 +1,5 @@
 "use client";
-import { AuthProvider } from "@/contexts/AuthContext";
+import { AuthProvider } from "@/contexts/auth.context";
 
 /**
  * layout raíz de la app.
