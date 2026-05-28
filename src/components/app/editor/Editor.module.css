@@ -1,0 +1,44 @@
+/* Editor.module.css */
+@reference "../../../app/globals.css";
+
+.tiptapEditor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tiptapEditor :global(.tiptap) {
+  flex: 1 1 0%;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @apply overflow-y-auto px-3;
+
+  p {
+    @apply font-editor mb-2 text-2xl leading-relaxed last:mb-0;
+  }
+
+  h1 {
+    @apply mt-8 mb-4 text-3xl font-bold first:mt-0 last:mb-0;
+  }
+
+  ul {
+    @apply my-4 list-disc pl-5;
+  }
+
+  ol {
+    @apply my-4 list-decimal pl-5;
+  }
+
+  li {
+    @apply font-editor mb-1 text-2xl leading-relaxed;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-foreground;
+  }
+}

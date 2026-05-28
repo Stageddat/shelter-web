@@ -1,53 +1,48 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import NoiseBackground from "@/components/shared/NoiseBackground";
-import { NewEntryActions as EntryActions } from "@/components/app/NewEntryActions";
-import { NewEntryEditor as EntryEditor } from "@/components/app/NewEntryEditor";
+import { Editor } from "@/components/app/editor/Editor";
 import { useCreateEntry } from "@/hooks/app/useCreateEntry";
 
 export default function NewEntry() {
   const router = useRouter();
-  const {
-    title,
-    setTitle,
-    content,
-    setContent,
-    isSaving,
-    handleSave,
-    handleCancel,
-  } = useCreateEntry();
+  const { title, setTitle, content, setContent, isSaving, handleSave } =
+    useCreateEntry();
 
   const handleSaveAndRedirect = async () => {
     const entryId = await handleSave();
-    if (entryId) {
-      router.push(`/app/entries/${entryId}`, { scroll: false });
-    }
+    if (entryId) router.push(`/app/entries/${entryId}`, { scroll: false });
   };
 
   return (
-    <div className="flex h-screen overflow-hidden">
-      <NoiseBackground />
-
-      <div className="flex flex-1 flex-col overflow-hidden">
-        <main className="flex flex-1 flex-col items-center overflow-y-auto px-6 py-12">
-          <div className="w-full max-w-3xl">
-            <EntryEditor
-              title={title}
-              onTitleChange={setTitle}
-              content={content}
-              onContentChange={setContent}
-            />
-
-            <EntryActions
-              onCancel={handleCancel}
-              onSave={handleSaveAndRedirect}
-              isSaving={isSaving}
-              canSave={!!content.trim()}
-            />
-          </div>
-        </main>
+    <main className="flex h-full flex-col px-10 py-12">
+      <div className="mt-auto flex gap-2">
+        <h1 className="mb-8 text-7xl font-bold tracking-wide lowercase">
+          new entry
+        </h1>
+        <button onClick={handleSaveAndRedirect} disabled={isSaving}>
+          {isSaving ? "saving..." : "save"}
+        </button>
       </div>
-    </div>
+
+      {/* titulo */}
+      <div className="px-2">
+        <h2 className="text-xl tracking-wide">title</h2>
+        <input
+          placeholder="untitled entry"
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="placeholder:text-muted-foreground border-accent font-editor mb-4 w-full border-b-2 bg-transparent text-2xl outline-none"
+        />
+      </div>
+
+      {/* editor */}
+      <div className="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-white/80 py-2">
+        <Editor content={content} editable={true} onChange={setContent} />
+      </div>
+
+      {/* botones */}
+    </main>
   );
 }
