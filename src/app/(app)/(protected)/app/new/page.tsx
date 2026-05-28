@@ -5,6 +5,7 @@ import { Editor } from "@/components/app/editor/Editor";
 import { useCreateEntry } from "@/hooks/app/useCreateEntry";
 import { ArrowLeft, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function NewEntry() {
   const router = useRouter();
@@ -19,9 +20,15 @@ export default function NewEntry() {
   return (
     <main className="flex h-full flex-col px-6 py-3">
       <div className="mt-auto mb-4 flex flex-row items-center justify-between">
-        <Button variant="ghost" className="flex items-center p-3! text-2xl">
-          <ArrowLeft className="mt-1 -mr-0.5" />
-          new entry
+        <Button
+          variant="ghost"
+          asChild
+          className="flex items-center px-3! py-6! text-2xl"
+        >
+          <Link href="/app/entries">
+            <ArrowLeft className="mt-1 -mr-0.5" />
+            new entry
+          </Link>
         </Button>
         <Button
           variant="default"
