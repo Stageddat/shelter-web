@@ -5,7 +5,7 @@ interface EntryEditorProps {
   onTitleChange: (title: string) => void;
   content: string;
   onContentChange: (content: string) => void;
-  wordCount: number;
+  // wordCount: number;
 }
 
 export const NewEntryEditor = ({
@@ -13,7 +13,6 @@ export const NewEntryEditor = ({
   onTitleChange,
   content,
   onContentChange,
-  wordCount,
 }: EntryEditorProps) => {
   return (
     <div className="dark:bg-background-dark/30 flex min-h-[65vh] flex-col rounded-xl bg-white p-12 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)]">
@@ -34,9 +33,9 @@ export const NewEntryEditor = ({
       />
 
       <div className="mt-8 flex items-center justify-between border-t border-gray-100 pt-6 dark:border-gray-800/30">
-        <div className="flex items-center gap-4 text-xs tracking-wider text-gray-400 uppercase">
+        {/* <div className="flex items-center gap-4 text-xs tracking-wider text-gray-400 uppercase">
           <span>{wordCount} words</span>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
