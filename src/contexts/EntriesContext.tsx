@@ -7,72 +7,63 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { entryService, GroupedEntries } from "@/services/app/entryService";
-import { DiaryEntry } from "@/lib/db";
+import { getEntries, DecryptedEntry } from "@/services/app/entry.service";
+import { useAuth } from "@/contexts/auth.context";
 
 interface EntriesContextType {
-  groupedEntries: GroupedEntries[];
+  entries: DecryptedEntry[];
   isLoading: boolean;
   refreshEntries: () => Promise<void>;
-  updateEntry: (entryId: string, updates: Partial<DiaryEntry>) => void;
   removeEntry: (entryId: string) => void;
 }
 
 const EntriesContext = createContext<EntriesContextType | undefined>(undefined);
 
-// componente de contexto
 export function EntriesProvider({ children }: { children: React.ReactNode }) {
-  const [groupedEntries, setGroupedEntries] = useState<GroupedEntries[]>([]);
+  const { masterKey } = useAuth();
+  const [entries, setEntries] = useState<DecryptedEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // refresca las entradas
+  // cargar entries inicio
+  React.useEffect(() => {
+    if (!masterKey) return;
+
+    async function load() {
+      try {
+        setIsLoading(true);
+        const data = await getEntries(masterKey!);
+        setEntries(data);
+      } catch (error) {
+        console.error("error loading entries:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    load();
+  }, [masterKey]);
+
+  // actiualizar la lista de entries
   const refreshEntries = useCallback(async () => {
+    if (!masterKey) return;
     try {
       setIsLoading(true);
-      const entries = await entryService.getAllEntries();
-      const grouped = entryService.groupEntriesByDate(entries);
-      setGroupedEntries(grouped);
+      const data = await getEntries(masterKey);
+      setEntries(data);
     } catch (error) {
       console.error("error loading entries:", error);
     } finally {
       setIsLoading(false);
     }
-  }, []);
-
-  const updateEntry = useCallback(
-    (entryId: string, updates: Partial<DiaryEntry>) => {
-      setGroupedEntries((prev) => {
-        const allEntries = prev.flatMap((g) => g.entries);
-        const updatedEntries = allEntries.map((e) =>
-          e.id === entryId ? { ...e, ...updates } : e,
-        );
-        return entryService.groupEntriesByDate(updatedEntries);
-      });
-    },
-    [],
-  );
+  }, [masterKey]);
 
   const removeEntry = useCallback((entryId: string) => {
-    setGroupedEntries((prev) => {
-      const allEntries = prev.flatMap((g) => g.entries);
-      const filtered = allEntries.filter((e) => e.id !== entryId);
-      return entryService.groupEntriesByDate(filtered);
-    });
+    setEntries((prev) => prev.filter((e) => e.id !== entryId));
   }, []);
 
-  React.useEffect(() => {
-    refreshEntries();
-  }, [refreshEntries]);
-
   const value = useMemo(
-    () => ({
-      groupedEntries,
-      isLoading,
-      refreshEntries,
-      updateEntry,
-      removeEntry,
-    }),
-    [groupedEntries, isLoading, refreshEntries, updateEntry, removeEntry],
+    () => ({ entries, isLoading, refreshEntries, removeEntry }),
+    [entries, isLoading, refreshEntries, removeEntry],
   );
 
   return (
