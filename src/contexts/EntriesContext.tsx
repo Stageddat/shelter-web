@@ -31,6 +31,7 @@ export function EntriesProvider({ children }: { children: React.ReactNode }) {
     async function load() {
       try {
         setIsLoading(true);
+        // await new Promise((resolve) => setTimeout(resolve, 600 * 1000)); // testing shit
         const data = await getEntries(masterKey!);
         setEntries(data);
       } catch (error) {
