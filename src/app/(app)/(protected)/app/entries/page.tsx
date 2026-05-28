@@ -13,12 +13,17 @@ export default function EntriesPage() {
   }
 
   return (
-    <main>
+    <main className="space-y-2 p-6">
       {entries.map((entry) => (
-        <Link key={entry.id} href={`/app/entries/${entry.id}`}>
-          {entry.id}
-          {/* Arreglar esta putisima mierda  */}
-          <br />
+        <Link
+          key={entry.id}
+          href={`/app/entries/${entry.id}`}
+          className="hover:bg-accent block rounded-xl p-4"
+        >
+          <p className="font-medium">{entry.title}</p>
+          <p className="text-muted-foreground text-sm">
+            {entry.date} · {entry.time}
+          </p>
         </Link>
       ))}
     </main>
