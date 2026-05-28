@@ -1,101 +1,27 @@
 "use client";
 
-import { use } from "react";
-import NoiseBackground from "@/components/shared/NoiseBackground";
-import { EntryViewer } from "@/components/app/EntryViewer";
-import { EntryDetailActions } from "@/components/app/EntryDetailActions";
-import { useEntryDetail } from "@/hooks/app/useEntryDetail";
-import { useRouter } from "next/navigation";
+import { useEntry } from "@/hooks/app/useEntry";
+import { useParams } from "next/navigation";
 
-function EntryContent({ entryId }: { entryId: string }) {
-  const router = useRouter();
+export default function EntryContent() {
+  const params = useParams();
+  const id = Array.isArray(params.id) ? params.id[0] : params.id;
 
-  const {
-    entry,
-    isLoading,
-    isEditing,
-    editTitle,
-    setEditTitle,
-    editContent,
-    setEditContent,
-    wordCount,
-    isSaving,
-    handleEdit,
-    handleCancelEdit,
-    handleSave,
-    handleDelete,
-  } = useEntryDetail(entryId);
+  const { entry, isLoading, error } = useEntry(id || "");
 
-  const handleBack = () => {
-    router.push("/app", { scroll: false });
-  };
-
-  const handleDeleteWithNavigation = async () => {
-    const deleted = await handleDelete();
-    if (deleted) {
-      router.push("/app", { scroll: false });
-    }
-  };
-
-  if (isLoading) {
-    return (
-      <div className="flex h-full items-center justify-center">
-        <p className="text-muted-foreground">loading entry...</p>
-      </div>
-    );
-  }
-
-  if (!entry) {
-    return (
-      <div className="flex h-full items-center justify-center">
-        <p className="text-muted-foreground">entry not found</p>
-      </div>
-    );
-  }
+  // fallos
+  if (!id) return <div>no id</div>; // id tiene q ir primero para ver si existe
+  if (error) return <div>{error}</div>;
+  if (isLoading) return <div>loading...</div>; // en caso q exista, se pone loading
+  if (!entry) return <div>not found</div>;
 
   return (
-    <div className="w-full max-w-3xl">
-      <EntryViewer
-        entry={entry}
-        wordCount={wordCount}
-        isEditing={isEditing}
-        editTitle={editTitle}
-        editContent={editContent}
-        onTitleChange={setEditTitle}
-        onContentChange={setEditContent}
-      />
-
-      <EntryDetailActions
-        isEditing={isEditing}
-        isSaving={isSaving}
-        canSave={!!editContent.trim()}
-        onEdit={handleEdit}
-        onCancelEdit={handleCancelEdit}
-        onSave={handleSave}
-        onDelete={handleDeleteWithNavigation}
-        onBack={handleBack}
-      />
-    </div>
-  );
-}
-
-export default function EntryDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
-  const resolvedParams = use(params);
-  const entryId = resolvedParams.id;
-
-  return (
-    <div className="flex h-screen overflow-hidden">
-      <NoiseBackground />
-
-      <div className="flex flex-1 flex-col overflow-hidden">
-        <main className="flex flex-1 flex-col items-center overflow-y-auto px-6 py-12">
-          <EntryContent entryId={entryId} />
-        </main>
-      </div>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold">{entry.title}</h1>
+      <p className="text-sm text-gray-500">
+        {entry.date} - {entry.time}
+      </p>
+      {entry.content && <p className="mt-4">{entry.content}</p>}
     </div>
   );
 }
