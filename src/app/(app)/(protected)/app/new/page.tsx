@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { Editor } from "@/components/app/editor/Editor";
 import { useCreateEntry } from "@/hooks/app/useCreateEntry";
+import { ArrowLeft, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function NewEntry() {
   const router = useRouter();
@@ -15,14 +17,20 @@ export default function NewEntry() {
   };
 
   return (
-    <main className="flex h-full flex-col px-10 py-12">
-      <div className="mt-auto flex gap-2">
-        <h1 className="mb-8 text-7xl font-bold tracking-wide lowercase">
+    <main className="flex h-full flex-col px-6 py-3">
+      <div className="mt-auto mb-4 flex flex-row items-center justify-between">
+        <Button variant="ghost" className="flex items-center p-3! text-2xl">
+          <ArrowLeft className="mt-1 -mr-0.5" />
           new entry
-        </h1>
-        <button onClick={handleSaveAndRedirect} disabled={isSaving}>
-          {isSaving ? "saving..." : "save"}
-        </button>
+        </Button>
+        <Button
+          variant="default"
+          onClick={handleSaveAndRedirect}
+          disabled={isSaving || !title || !content}
+          className="flex h-10! w-10! items-center justify-center rounded-full text-2xl"
+        >
+          <Check className="h-5! w-5! stroke-3!" />
+        </Button>
       </div>
 
       {/* titulo */}
