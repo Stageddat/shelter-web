@@ -25,9 +25,12 @@ export function Editor({ content, editable, onChange }: EditorProps) {
 
   return (
     <div className="flex min-h-0 flex-1 flex-col">
-      {" "}
-      {editable && <EditorToolbar editor={editor} />}
-      <Separator className="mb-4 h-0.5!" />
+      {editable && (
+        <>
+          <EditorToolbar editor={editor} />
+          <Separator className="mb-4 h-0.5!" />
+        </>
+      )}
       <EditorContent
         editor={editor}
         className={`flex-1 outline-none ${styles.tiptapEditor}`}
