@@ -1,28 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/auth.context";
 import { useEntries } from "@/contexts/EntriesContext";
 import { createEntry } from "@/services/app/entry.service";
 
 export function useCreateEntry() {
-  const router = useRouter();
   const { masterKey } = useAuth();
   const { refreshEntries } = useEntries();
 
   const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState("");
 
-  const handleSave = async (): Promise<string | null> => {
+  const handleSave = async (editorContent: string): Promise<string | null> => {
     if (!masterKey) {
       setError("you are not authenticated");
       return null;
     }
 
-    if (!content.trim()) {
+    if (!editorContent.trim()) {
       setError("write something first");
       return null;
     }
@@ -31,14 +28,15 @@ export function useCreateEntry() {
       setIsSaving(true);
       setError("");
 
-      const entryId = await createEntry({ masterKey, title, content });
+      const entryId = await createEntry({
+        masterKey,
+        title,
+        content: editorContent,
+      });
       await refreshEntries();
-      router.push(`/app/entries/${entryId}`); //redirige a la entrada creada
       return entryId;
     } catch (err) {
-      console.error("error saving entry:", err);
-      setError("failed to save entry");
-      return null;
+      throw err;
     } finally {
       setIsSaving(false);
     }
@@ -47,11 +45,8 @@ export function useCreateEntry() {
   return {
     title,
     setTitle,
-    content,
-    setContent,
     isSaving,
     error,
     handleSave,
-    handleCancel: () => router.back(),
   };
 }
