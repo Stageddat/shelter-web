@@ -47,7 +47,7 @@ export default function EntryView({
   };
 
   return (
-    <main className="flex h-full flex-col px-6 py-3">
+    <>
       {/* header */}
       <div className="mt-auto mb-4 flex flex-row items-center justify-between">
         <Button
@@ -102,6 +102,6 @@ export default function EntryView({
           }}
         />
       </div>
-    </main>
+    </>
   );
 }

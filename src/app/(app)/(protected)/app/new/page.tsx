@@ -28,7 +28,7 @@ export default function NewEntry() {
   };
 
   return (
-    <main className="flex h-full flex-col px-6 py-3">
+    <main className="flex h-full flex-col px-12 py-6">
       <div className="mt-auto mb-4 flex items-center justify-between">
         <Button
           variant="ghost"
@@ -52,7 +52,7 @@ export default function NewEntry() {
       </div>
 
       <div className="px-2">
-        <h2 className="text-xl tracking-wide">title</h2>
+        {/* <h2 className="text-xl tracking-wide">title</h2> */}
         <input
           placeholder="untitled entry"
           type="text"

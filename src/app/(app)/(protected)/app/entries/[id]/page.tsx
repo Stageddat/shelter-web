@@ -17,7 +17,7 @@ export default function EntryContent() {
   if (!entry) return <div>not found</div>;
 
   return (
-    <main className="flex h-full flex-col px-6 py-3">
+    <main className="flex h-full flex-col px-12 py-6">
       <EntryView entry={entry}></EntryView>
     </main>
   );
