@@ -1,4 +1,4 @@
-name: "Protect main branch from merge"
+name: "Protect main merge"
 
 on:
   pull_request:
