@@ -1,7 +1,7 @@
 "use client";
 
-import { Toggle } from "@/components/ui/toggle";
 import { Editor, useEditorState } from "@tiptap/react";
+
 import {
   Bold,
   Italic,
@@ -11,77 +11,75 @@ import {
   Code,
 } from "lucide-react";
 
-interface EditorToolbarProps {
-  editor: Editor | null;
+import { Toggle } from "@/components/ui/toggle";
+
+interface Props {
+  editor: Editor;
 }
 
-export function EditorToolbar({ editor }: EditorToolbarProps) {
-  const editorState = useEditorState({
+export function EditorToolbar({ editor }: Props) {
+  const state = useEditorState({
     editor,
-    selector: (ctx) => ({
-      isBold: ctx.editor?.isActive("bold") ?? false,
-      isItalic: ctx.editor?.isActive("italic") ?? false,
-      isStrike: ctx.editor?.isActive("strike") ?? false,
-      isBullet: ctx.editor?.isActive("bulletList") ?? false,
-      isOrdered: ctx.editor?.isActive("orderedList") ?? false,
-      isCode: ctx.editor?.isActive("code") ?? false,
+
+    selector: ({ editor }) => ({
+      bold: editor.isActive("bold"),
+      italic: editor.isActive("italic"),
+      strike: editor.isActive("strike"),
+      bullet: editor.isActive("bulletList"),
+      ordered: editor.isActive("orderedList"),
+      code: editor.isActive("code"),
     }),
   });
-
-  if (!editor || !editorState) return null;
 
   const buttons = [
     {
       icon: Bold,
-      action: () => editor.chain().focus().toggleBold().run(),
-      active: editorState.isBold,
-      label: "bold",
+      active: state.bold,
+      onClick: () => editor.chain().focus().toggleBold().run(),
     },
     {
       icon: Italic,
-      action: () => editor.chain().focus().toggleItalic().run(),
-      active: editorState.isItalic,
-      label: "italic",
+      active: state.italic,
+      onClick: () => editor.chain().focus().toggleItalic().run(),
     },
     {
       icon: Strikethrough,
-      action: () => editor.chain().focus().toggleStrike().run(),
-      active: editorState.isStrike,
-      label: "strike",
+      active: state.strike,
+      onClick: () => editor.chain().focus().toggleStrike().run(),
     },
     {
       icon: List,
-      action: () => editor.chain().focus().toggleBulletList().run(),
-      active: editorState.isBullet,
-      label: "bullet list",
+      active: state.bullet,
+      onClick: () => editor.chain().focus().toggleBulletList().run(),
     },
     {
       icon: ListOrdered,
-      action: () => editor.chain().focus().toggleOrderedList().run(),
-      active: editorState.isOrdered,
-      label: "ordered list",
+      active: state.ordered,
+      onClick: () => editor.chain().focus().toggleOrderedList().run(),
     },
     {
       icon: Code,
-      action: () => editor.chain().focus().toggleCode().run(),
-      active: editorState.isCode,
-      label: "code",
+      active: state.code,
+      onClick: () => editor.chain().focus().toggleCode().run(),
     },
   ];
 
   return (
-    <div className="mb-2 flex gap-0.5 px-3">
-      {buttons.map(({ icon: Icon, action, active, label }) => (
-        <Toggle
-          key={label}
-          type="button"
-          pressed={active} // forzar el pressed de toggle con tiptap
-          onPressedChange={action} // usar el evento nativo de togle
-          className="hover:bg-accent rounded p-2 transition-colors"
-        >
-          <Icon className="h-4 w-4" />
-        </Toggle>
-      ))}
+    <div className="mb-2 flex gap-1 px-3">
+      {buttons.map((button, index) => {
+        const Icon = button.icon;
+
+        return (
+          <Toggle
+            key={index}
+            pressed={button.active}
+            onPressedChange={button.onClick}
+            className="rounded p-2"
+          >
+            <Icon className="h-4 w-4" />
+          </Toggle>
+        );
+      })}
     </div>
   );
 }
