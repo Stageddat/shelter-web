@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Editor } from "@/components/app/editor/Editor";
 import { useCreateEntry } from "@/hooks/app/useCreateEntry";
@@ -41,14 +41,23 @@ export default function NewEntry() {
           </Link>
         </Button>
 
-        <Button
-          variant="default"
-          onClick={handleSaveAndRedirect}
-          disabled={isSaving || !title || isEditorEmpty}
-          className="flex h-10! w-10! items-center justify-center rounded-full"
-        >
-          <Check className="h-5! w-5! stroke-3!" />
-        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="secondary"
+            onClick={() => router.back()}
+            className="flex h-10! w-10! items-center justify-center rounded-full"
+          >
+            <X className="h-5! w-5! stroke-3!" />
+          </Button>
+          <Button
+            variant="default"
+            onClick={handleSaveAndRedirect}
+            disabled={isSaving || !title || isEditorEmpty}
+            className="flex h-10! w-10! items-center justify-center rounded-full"
+          >
+            <Check className="h-5! w-5! stroke-3!" />
+          </Button>
+        </div>
       </div>
 
       <div className="px-2">

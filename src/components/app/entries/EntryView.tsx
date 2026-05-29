@@ -4,7 +4,7 @@ import { Editor } from "@/components/app/editor/Editor";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/contexts/auth.context";
 import { useEntries } from "@/contexts/EntriesContext";
-import { ArrowLeft, Pencil } from "lucide-react";
+import { ArrowLeft, Pencil, X, Check } from "lucide-react";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { DecryptedEntry, updateEntry } from "@/services/app/entry.service";
@@ -63,9 +63,19 @@ export default function EntryView({
 
         {isEditing ? (
           <div className="flex gap-2">
-            <Button onClick={handleSave}>save</Button>
-            <Button variant="ghost" onClick={handleCancel}>
-              cancel
+            <Button
+              variant="secondary"
+              onClick={handleCancel}
+              className="flex h-10! w-10! items-center justify-center rounded-full"
+            >
+              <X className="h-5! w-5! stroke-3!" />
+            </Button>
+            <Button
+              variant="default"
+              onClick={handleSave}
+              className="flex h-10! w-10! items-center justify-center rounded-full"
+            >
+              <Check className="h-5! w-5! stroke-3!" />
             </Button>
           </div>
         ) : (
