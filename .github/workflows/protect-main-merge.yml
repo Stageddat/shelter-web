@@ -1,0 +1,16 @@
+name: "Protect main branch from merge"
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  protect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only allow PRs from 'dev'
+        run: |
+          if [ "${{ github.head_ref }}" != "dev" ]; then
+            echo "Only PRs from 'dev' branch are allowed."
+            exit 1
+          fi
