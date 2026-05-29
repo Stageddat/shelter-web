@@ -16,9 +16,12 @@ export const useEntry = (entryId: string) => {
       try {
         const data = await getEntry(entryId, masterKey!);
         setEntry(data);
+        // throw new Error("entry loaded"); // debug
       } catch (err) {
         console.error("error loading entry:", err);
-        setError("entry not found");
+        setError("failed to load entry :c");
+        setEntry(null);
+        throw err;
       } finally {
         setIsLoading(false);
       }
