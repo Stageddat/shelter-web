@@ -6,6 +6,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { Lock } from "lucide-react";
+import LoadingText from "../shared/LoadingText";
 
 interface PasswordFormProps {
   username: string;
@@ -33,8 +34,8 @@ export default function PasswordForm({
         welcome back, {username}!
       </h1>
 
-      <div className="space-y-2">
-        <Label className="text-xl" htmlFor="password">
+      <div className={`space-y-2 ${error ? "mb-2" : "mb-4"}`}>
+        <Label className="mb-0.5 text-xl" htmlFor="password">
           password
         </Label>
         <InputGroup>
@@ -55,15 +56,17 @@ export default function PasswordForm({
         </InputGroup>
       </div>
 
-      {error && <p className="text-destructive text-sm font-medium">{error}</p>}
+      {error && (
+        <p className="text-destructive mb-2 text-sm font-medium">{error}</p>
+      )}
 
       <Button
         type="submit"
-        className="bg-primary text-primary-foreground hover:bg-primary/85 w-full text-lg tracking-wide"
+        className="bg-primary text-primary-foreground hover:bg-primary/85 w-full text-lg tracking-wider"
         size="lg"
         disabled={isLoading}
       >
-        {isLoading ? "logging in..." : "enter my shelter"}
+        {isLoading ? <LoadingText text="entering" /> : "enter shelter"}
       </Button>
     </form>
   );
