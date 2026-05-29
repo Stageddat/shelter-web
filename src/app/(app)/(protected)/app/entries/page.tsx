@@ -5,6 +5,7 @@ import EntryCard from "@/components/app/entries/EntryCard";
 import EmptyState from "@/components/app/entries/EmptyState";
 import EntriesHeader from "@/components/app/entries/EntriesHeader";
 import LoadingText from "@/components/shared/LoadingText";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function EntriesPage() {
   const { entries, isLoading } = useEntries();
@@ -17,17 +18,20 @@ export default function EntriesPage() {
     );
 
   return (
-    <main className="screen flex h-full flex-col overflow-y-auto px-10 py-12">
+    <main className="flex h-full flex-col px-10 pt-12">
       <EntriesHeader entriesCount={entries.length} />
-      {entries.length === 0 ? (
-        <EmptyState />
-      ) : (
-        <div className="space-y-2 pb-6">
-          {entries.map((entry) => (
-            <EntryCard key={entry.id} entry={entry} />
-          ))}
-        </div>
-      )}
+      <ScrollArea className="min-h-0 flex-1">
+        {" "}
+        {entries.length === 0 ? (
+          <EmptyState />
+        ) : (
+          <div className="mr-3 space-y-2 pb-6">
+            {entries.map((entry) => (
+              <EntryCard key={entry.id} entry={entry} />
+            ))}
+          </div>
+        )}
+      </ScrollArea>
     </main>
   );
 }
