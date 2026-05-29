@@ -47,9 +47,13 @@ export function useLogin() {
     } catch (err) {
       if (err instanceof Error && err.message === "incorrect password") {
         setError("invalid password :(. please try again.");
+        setIsLoading(false);
+        throw err;
       } else {
         console.error("unexpected login error: ", err);
         setError("something exploded :(. please try again.");
+        setIsLoading(false);
+        throw err;
       }
     }
   };
