@@ -1,5 +1,6 @@
 "use client";
 
+import EntryView from "@/components/app/entries/EntryView";
 import { useEntry } from "@/hooks/app/useEntry";
 import { useParams } from "next/navigation";
 
@@ -16,12 +17,8 @@ export default function EntryContent() {
   if (!entry) return <div>not found</div>;
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold">{entry.title}</h1>
-      <p className="text-sm text-gray-500">
-        {entry.date} - {entry.time}
-      </p>
-      {entry.content && <p className="mt-4">{entry.content}</p>}
-    </div>
+    <main className="flex h-full flex-col px-6 py-3">
+      <EntryView entry={entry}></EntryView>
+    </main>
   );
 }
