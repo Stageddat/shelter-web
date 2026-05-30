@@ -38,7 +38,7 @@ export default function EntryCard({ entry }: { entry: DecryptedEntry }) {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
-              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogCancel>cancel</AlertDialogCancel>
               <AlertDialogAction onClick={()=>handleConfirmDelete(entry.id)}>delete</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
