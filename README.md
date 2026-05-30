@@ -2,7 +2,7 @@
 
 A secure, open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
 
-![alt text](./docs/images/hero-readme-editor.png)
+![shelter web entry editor](./docs/images/hero-readme-editor.png)
 
 Shelter is built with [Typescript](https://www.typescriptlang.org/), [Next.JS](https://nextjs.org/), [Tailwind](https://tailwindcss.com/), [Tiptap](https://tiptap.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
 
@@ -41,7 +41,7 @@ pnpm install
 pnpm run dev
 ```
 
-Open `localhost:3000` with your browser to see the result.
+Open `localhost:3000` in your browser to view the local development server.
 
 ## Contributing
 
