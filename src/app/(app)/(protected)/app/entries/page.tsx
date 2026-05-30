@@ -19,19 +19,18 @@ export default function EntriesPage() {
 
   return (
     <main className="flex h-full flex-col px-10 pt-12">
-      <EntriesHeader entriesCount={entries.length} />
-      <ScrollArea className="min-h-0 flex-1">
-        {" "}
-        {entries.length === 0 ? (
-          <EmptyState />
-        ) : (
+      <EntriesHeader entriesCount={entries.length} />{" "}
+      {entries.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <ScrollArea className="min-h-0 flex-1">
           <div className="mr-3 space-y-2 pb-6">
             {entries.map((entry) => (
               <EntryCard key={entry.id} entry={entry} />
             ))}
           </div>
-        )}
-      </ScrollArea>
+        </ScrollArea>
+      )}
     </main>
   );
 }
