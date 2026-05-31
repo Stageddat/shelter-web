@@ -18,6 +18,7 @@ export function useSignup() {
 
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isChecking, setIsChecking] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -36,10 +37,12 @@ export function useSignup() {
         if (exists) {
           console.log("User already exists, redirecting to login...");
           router.push("/login");
+          return;
         }
       } catch (err) {
         console.error("error checking user:", err);
       }
+      setIsChecking(false);
     }
 
     checkExistingUser();
@@ -84,6 +87,7 @@ export function useSignup() {
     formData,
     error,
     isLoading,
+    isChecking,
     handleChange,
     handleSubmit,
   };

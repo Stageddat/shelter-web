@@ -10,8 +10,10 @@ import Link from "next/link";
  * pagina de /signup
  */
 export default function Signup() {
-  const { formData, error, isLoading, handleChange, handleSubmit } =
+  const { formData, error, isLoading, isChecking, handleChange, handleSubmit } =
     useSignup();
+
+  if (isChecking) return null;
 
   return (
     <main className="flex min-h-screen items-center justify-center px-8 py-16">
