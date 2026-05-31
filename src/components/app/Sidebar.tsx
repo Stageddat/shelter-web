@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import {
   PlusCircle,
   House,
@@ -44,8 +45,13 @@ export function Sidebar() {
             <Button
               key={href}
               asChild
-              variant={pathname === href ? "secondary" : "ghost"}
-              className="w-full justify-start gap-3 py-6 text-lg tracking-wider"
+              variant="ghost"
+              className={cn(
+                "w-full justify-start gap-3 py-6 pl-4 text-lg tracking-wider",
+                "text-foreground/40 hover:text-foreground/80 hover:bg-transparent",
+                pathname === href &&
+                  "text-foreground hover:text-foreground bg-secondary/30 hover:bg-secondary/30 rounded-full",
+              )}
             >
               <Link href={href}>
                 <Icon className="h-7! w-7!" />
