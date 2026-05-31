@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -95,15 +95,12 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <Link
-          href="/signup"
-          className={cn(
-            buttonVariants({ size: "sm" }),
-            "bg-foreground text-background hover:bg-foreground/90 shadow-foreground/5 hidden h-10 rounded-full px-6 text-2xl shadow-lg transition-all sm:inline-flex",
-          )}
+        <Button
+          asChild
+          className="bg-primary hover:bg-primary/85 shadow-foreground/5 hidden h-10 px-4 py-2 text-2xl shadow-lg transition-all sm:inline-flex"
         >
-          get started
-        </Link>
+          <Link href="/signup">get started</Link>
+        </Button>
       </div>
     </header>
   );

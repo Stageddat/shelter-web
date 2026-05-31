@@ -171,7 +171,7 @@ export function groupEntriesByDate(
   );
 
   return Object.entries(grouped)
-    .sort(([a], [b]) => b.localeCompare(a)) // más reciente primero
+    .sort(([a], [b]) => b.localeCompare(a))
     .map(([date, entries]) => ({
       date,
       displayDate: formatDisplayDate(date),
@@ -180,7 +180,7 @@ export function groupEntriesByDate(
 }
 
 function formatDisplayDate(dateString: string): string {
-  const date = new Date(dateString + "T00:00:00"); // evita problemas de timezone
+  const date = new Date(dateString + "T00:00:00");
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(yesterday.getDate() - 1);
@@ -191,4 +191,24 @@ function formatDisplayDate(dateString: string): string {
   if (fmt(date) === fmt(yesterday)) return "yesterday";
 
   return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+export async function getTotalEntriesCount(): Promise<number> {
+  const user = await getUser();
+  if (!user) return 0;
+
+  return await db.entries.where("userId").equals(user.id).count();
+}
+
+export async function getLastEntryDate(): Promise<string | null> {
+  const user = await getUser();
+  if (!user) return null;
+
+  const lastEntry = await db.entries
+    .where("userId")
+    .equals(user.id)
+    .reverse()
+    .sortBy("createdAt");
+
+  return lastEntry.length > 0 ? lastEntry[0].date : null;
 }

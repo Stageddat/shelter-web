@@ -9,6 +9,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import { FormFieldConfig } from "@/data/signup/formFields";
 
@@ -18,9 +19,7 @@ interface FormFieldProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disabled?: boolean;
 }
-/**
- * campos del formulario
- */
+
 export default function FormField({
   field,
   value,
@@ -36,7 +35,6 @@ export default function FormField({
         {field.label}
       </Label>
       <InputGroup className="h-12!">
-        {" "}
         <InputGroupInput
           type={field.type}
           id={field.id}
@@ -51,23 +49,28 @@ export default function FormField({
         <InputGroupAddon>
           <Icon />
         </InputGroupAddon>
+
         {TooltipIcon && field.tooltipContent && (
           <InputGroupAddon align="inline-end">
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <InputGroupButton className="rounded-full" size="icon-sm">
-                  <TooltipIcon />
-                </InputGroupButton>
-              </TooltipTrigger>
-              <TooltipContent>
-                {field.tooltipContent.split("\n").map((line, i) => (
-                  <span key={i}>
-                    {line}
-                    {i < field.tooltipContent!.split("\n").length - 1 && <br />}
-                  </span>
-                ))}
-              </TooltipContent>
-            </Tooltip>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <InputGroupButton className="rounded-full" size="icon-sm">
+                    <TooltipIcon />
+                  </InputGroupButton>
+                </TooltipTrigger>
+                <TooltipContent>
+                  {field.tooltipContent.split("\n").map((line, i) => (
+                    <span key={i}>
+                      {line}
+                      {i < field.tooltipContent!.split("\n").length - 1 && (
+                        <br />
+                      )}
+                    </span>
+                  ))}
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </InputGroupAddon>
         )}
       </InputGroup>

@@ -6,7 +6,6 @@ export default function Start() {
       className="bg-background relative overflow-hidden px-8 py-32 lg:py-52"
       id="start"
     >
-      {/* Decoración de fondo para cerrar con calidez */}
       <div className="bg-secondary/40 absolute inset-x-0 bottom-0 -z-10 h-full w-full rounded-t-[100px] opacity-50 blur-3xl" />
 
       <div className="mx-auto max-w-4xl text-center">
@@ -20,7 +19,7 @@ export default function Start() {
           </p>
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-6">
+        <div className="mt-2 flex flex-col items-center gap-6">
           <CtaButton />
         </div>
       </div>
