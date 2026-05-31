@@ -15,15 +15,18 @@ import { Button } from "@/components/ui/button";
 import { TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import dumbCat from "@/assets/app/dumb-cat.png";
+import { useAuth } from "@/contexts/auth.context";
 
 export default function AppPage() {
-  const { entries } = useEntries();
+  const { user } = useAuth();
+  const { entries, greeting } = useEntries();
+
   return (
     <main className="flex h-screen max-h-screen flex-col overflow-hidden px-10 py-12">
       {/* top */}
       <div className="flex items-center justify-between">
         <h2 className="mb-6 flex text-left text-7xl font-bold tracking-wide lowercase">
-          welcome to your shelter!
+          {greeting}
         </h2>
         <Popover>
           <PopoverTrigger asChild>

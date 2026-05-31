@@ -9,20 +9,23 @@ import React, {
 } from "react";
 import { getEntries, DecryptedEntry } from "@/services/app/entry.service";
 import { useAuth } from "@/contexts/auth.context";
+import { getDynamicGreeting } from "@/hooks/app/useDynamicGreetings";
 
 interface EntriesContextType {
   entries: DecryptedEntry[];
   isLoading: boolean;
   refreshEntries: () => Promise<void>;
   removeEntry: (entryId: string) => void;
+  greeting: string;
 }
 
 const EntriesContext = createContext<EntriesContextType | undefined>(undefined);
 
 export function EntriesProvider({ children }: { children: React.ReactNode }) {
-  const { masterKey } = useAuth();
+  const { masterKey, user } = useAuth();
   const [entries, setEntries] = useState<DecryptedEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [greeting] = useState(() => getDynamicGreeting(user?.username));
 
   // cargar entries inicio
   React.useEffect(() => {
@@ -68,7 +71,9 @@ export function EntriesProvider({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <EntriesContext.Provider value={value}>{children}</EntriesContext.Provider>
+    <EntriesContext.Provider value={{ ...value, greeting }}>
+      {children}
+    </EntriesContext.Provider>
   );
 }
 
