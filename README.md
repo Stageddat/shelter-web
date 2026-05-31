@@ -47,6 +47,6 @@ Open `localhost:3000` in your browser to view the local development server.
 
 Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a pull request.
 
-## 📄 License
+## License
 
 This project is open-source and available under the [GNU AGPLv3](./LICENSE).
