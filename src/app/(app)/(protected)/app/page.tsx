@@ -40,8 +40,8 @@ export default function AppPage() {
             className="w-2xl border-2 border-dashed border-red-600 bg-red-200"
           >
             <PopoverHeader>
-              <PopoverTitle className="text-4xl font-semibold text-red-600">
-                WARNING
+              <PopoverTitle className="text-4xl font-semibold tracking-wide text-red-600">
+                this app is in an early development stage
               </PopoverTitle>
 
               <PopoverDescription className="text-2xl text-red-600">
@@ -61,29 +61,32 @@ export default function AppPage() {
 
       <div className="grid min-h-0 flex-1 grid-cols-4 grid-rows-[auto_2fr_2fr] gap-2">
         {/* row 1 */}
-        <div className="bg-accent/80 rounded-sm p-10 text-center text-3xl">
-          {entries.length}
+        <div className="bg-secondary/40 rounded-sm p-10 text-center text-3xl">
+          <b>
+            {/* change this count system */}
+            {entries.length}
+          </b>
           <br />
           entries
         </div>
-        <div className="bg-accent/80 rounded-sm p-10 text-center text-3xl">
-          67
+        <div className="bg-secondary/40 rounded-sm p-10 text-center text-3xl">
+          <b>67</b>
           <br />
           words
         </div>
-        <div className="bg-accent/80 rounded-sm p-10 text-center text-3xl">
+        <div className="bg-secondary/40 rounded-sm p-10 text-center text-3xl">
           <b>NaN</b>
           <br />
           streak
         </div>
-        <div className="bg-accent/80 rounded-sm p-10 text-center text-3xl">
+        <div className="bg-secondary/40 rounded-sm p-10 text-center text-3xl">
           <b>tomorrow</b>
           <br />
           last entry
         </div>
 
-        <div className="bg-accent/80 col-span-2 row-span-2 flex flex-col rounded-sm p-4 text-3xl">
-          <h3 className="flex-none text-4xl">last entries</h3>
+        <div className="bg-secondary/40 col-span-2 row-span-2 flex flex-col rounded-sm p-4 text-3xl">
+          <h3 className="flex-none p-2 text-4xl">last entries</h3>
           <ScrollArea className="min-h-0 flex-1">
             <div className="mr-3 space-y-2 pb-6">
               {entries.map((entry) => (
@@ -92,10 +95,10 @@ export default function AppPage() {
             </div>
           </ScrollArea>
         </div>
-        <div className="bg-accent/80 col-span-2 row-span-1 rounded-sm p-10 text-3xl">
+        <div className="bg-secondary/40 col-span-2 row-span-1 rounded-sm p-10 text-3xl">
           lofi & focus
         </div>
-        <div className="bg-accent/80 col-span-2 row-span-1 overflow-hidden rounded-sm text-3xl">
+        <div className="bg-secondary/40 col-span-2 row-span-1 overflow-hidden rounded-sm text-3xl">
           <Image
             src={dumbCat}
             alt="machka"
