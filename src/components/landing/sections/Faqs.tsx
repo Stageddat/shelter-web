@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const faqData = [
   {
@@ -86,11 +87,11 @@ const faqData = [
         she is our official mascot! you can often find her and her kitty ziggy
         wandering around the website.
         <br />
-        <br />{" "}
-        <em>
-          special thanks to <b>fiddle</b> for creating all the wonderful
-          artwork!
-        </em>
+        <br /> special thanks to{" "}
+        <Link href="https://www.instagram.com/fiddlearty" target="_blank">
+          fiddle
+        </Link>{" "}
+        for creating all the wonderful artwork!
       </>
     ),
   },
@@ -111,9 +112,9 @@ export default function Faqs() {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="border-border bg-secondary/30 hover:bg-secondary/50 rounded-2xl border px-6 py-1 transition-all"
+              className="border-border bg-secondary/20 hover:bg-secondary/30 rounded-2xl border px-6 py-1 transition-all"
             >
-              <AccordionTrigger className="font-display text-foreground hover:text-primary text-left text-2xl font-medium tracking-normal hover:no-underline">
+              <AccordionTrigger className="font-display text-foreground hover:text-primary items-center text-left text-2xl font-semibold tracking-wide hover:no-underline">
                 {faq.question.toLowerCase()}
               </AccordionTrigger>
               <AccordionContent className="font-primary text-muted-foreground pb-4 text-2xl leading-relaxed tracking-normal">

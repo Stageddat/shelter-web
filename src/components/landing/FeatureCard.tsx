@@ -11,10 +11,10 @@ export function FeatureCard({ icon: Icon, title, text }: FeatureCardProps) {
   return (
     <article
       className={cn(
-        "group relative flex flex-col p-8",
+        "group relative flex flex-col p-4 md:p-6 lg:p-8",
         "border-border rounded-xl border",
-        "bg-secondary transition-colors duration-300 ease-in-out",
-        "hover:bg-accent",
+        "bg-secondary/50 border-0 transition-colors duration-300 ease-in-out",
+        "hover:bg-accent/50",
       )}
     >
       <div className="bg-background border-border/50 text-primary mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg border">
