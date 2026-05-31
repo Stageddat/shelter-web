@@ -1,8 +1,11 @@
 // app/layout.tsx
-import { Patrick_Hand, Caveat } from "next/font/google";
+import { Patrick_Hand, Caveat, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Metadata } from "next";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const patrickHand = Patrick_Hand({
   weight: "400",
@@ -40,7 +43,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` ${patrickHand.variable} ${caveat.variable} ${excalifont.variable} `}
+      className={cn(patrickHand.variable, caveat.variable, excalifont.variable, "font-sans", inter.variable)}
     >
       <body className="font-primary antialiased">{children}</body>
     </html>
