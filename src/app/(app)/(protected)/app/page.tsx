@@ -27,28 +27,38 @@ export default function AppPage() {
         </h2>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant="destructive" className="h-12 w-12">
+            <Button
+              variant="destructive"
+              className="bg-destructive/20 h-12 w-12"
+            >
               <TriangleAlert className="h-7! w-7!" />
             </Button>
           </PopoverTrigger>
 
-          <PopoverContent align="end" className="w-[800px] bg-red-500">
+          <PopoverContent
+            align="end"
+            className="w-2xl border-2 border-dashed border-red-600 bg-red-200"
+          >
             <PopoverHeader>
-              <PopoverTitle className="text-4xl text-white">
+              <PopoverTitle className="text-4xl font-semibold text-red-600">
                 WARNING
               </PopoverTitle>
 
-              <PopoverDescription className="text-2xl text-white">
-                This version of the application is in an early stage of
-                development (Alpha). <br /> Its use is at your own risk; we are
-                not responsible for any data loss between updates.
+              <PopoverDescription className="text-2xl text-red-600">
+                shelter is under active development. while we work on
+                stabilizing the database structure, data loss during updates is
+                a possibility.{" "}
+                <b>please make sure to export your journal frequently</b> to
+                ensure you always have a local backup of your journal.
+                <br />
+                <br />
+                you can export your journal easily from the settings page.
               </PopoverDescription>
             </PopoverHeader>
           </PopoverContent>
         </Popover>
       </div>
 
-      {/* El grid ahora es flex-1 y min-h-0 para congelar su altura */}
       <div className="grid min-h-0 flex-1 grid-cols-4 grid-rows-[auto_2fr_2fr] gap-2">
         {/* row 1 */}
         <div className="bg-accent/80 rounded-sm p-10 text-center text-3xl">
