@@ -16,7 +16,9 @@
 	"devDependencies": {
 		"@eslint/compat": "^2.1.0",
 		"@eslint/js": "^10.0.1",
+		"@fontsource-variable/caveat": "^5.2.8",
 		"@fontsource-variable/inter": "^5.2.8",
+		"@fontsource/patrick-hand": "^5.2.8",
 		"@lucide/svelte": "^1.3.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
 		"@sveltejs/enhanced-img": "^0.10.4",
