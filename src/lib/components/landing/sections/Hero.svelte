@@ -6,13 +6,6 @@
 	class="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background px-8"
 >
 	<div
-		class="absolute top-[-5%] left-[-5%] -z-10 h-150 w-150 rounded-full bg-secondary/40 blur-[130px]"
-	/>
-	<div
-		class="absolute right-[5%] bottom-[5%] -z-10 h-125 w-125 rounded-full bg-accent/20 blur-[110px]"
-	/>
-
-	<div
 		class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-0 pt-32 pb-20 lg:flex-row lg:items-center lg:pt-0 lg:pb-0"
 	>
 		<!-- {/* text left */} -->
