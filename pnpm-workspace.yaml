@@ -1,4 +1,4 @@
 allowBuilds:
-  msw: true
-  sharp: true
-  unrs-resolver: false
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: set this to true or false
