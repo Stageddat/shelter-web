@@ -15,10 +15,8 @@ import { Button } from "@/components/ui/button";
 import { TriangleAlert } from "lucide-react";
 import Image from "next/image";
 import dumbCat from "@/assets/app/dumb-cat.png";
-import { useAuth } from "@/contexts/auth.context";
 
 export default function AppPage() {
-  const { user } = useAuth();
   const { entries, greeting } = useEntries();
 
   return (
