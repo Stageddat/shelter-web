@@ -6,7 +6,7 @@ export const faqData = [
 	},
 	{
 		question: 'is it open source?',
-		answer: `yes! you can find the source code on <a href="https://github.com/Stageddat/shelter" target="_blank" class="text-primary underline hover:opacity-80">github</a> and we welcome contributions.`
+		answer: `yes! you can find the source code on <a href="https://github.com/Stageddat/shelter-web" target="_blank" class="text-primary underline hover:opacity-80">github</a> and we welcome contributions.`
 	},
 	{
 		question: 'where is the data stored?',
