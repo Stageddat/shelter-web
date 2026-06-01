@@ -18,7 +18,7 @@
 >
 	<div class="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 		<div class="flex items-center gap-8">
-			<!-- Mobile menu -->
+			<!-- mobile nav -->
 			<Sheet.Root bind:open={sheetOpen}>
 				<Sheet.Trigger
 					class="flex h-10 w-10 items-center justify-center rounded-2xl border border-border/40 bg-secondary/80 transition-colors md:hidden"
@@ -45,7 +45,7 @@
 				</Sheet.Content>
 			</Sheet.Root>
 
-			<!-- Logo -->
+			<!-- logo -->
 			<a
 				href="/"
 				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-3xl"
@@ -53,7 +53,7 @@
 				<span class="relative -top-px">shelter</span>
 			</a>
 
-			<!-- Desktop nav -->
+			<!-- pc nav -->
 			<NavigationMenu.Root class="hidden md:flex">
 				<NavigationMenu.List class="gap-1">
 					{#each NAV_LINKS as { href, label }}
@@ -70,7 +70,8 @@
 			</NavigationMenu.Root>
 		</div>
 
-		<!-- CTA -->
+		<!-- boton para empezar -->
+		<!-- TODO: añadir sitio de idioma y login tal vez? -->
 		<Button
 			href="/signup"
 			class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:inline-flex"
