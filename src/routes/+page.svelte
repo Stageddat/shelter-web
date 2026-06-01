@@ -1,11 +1,15 @@
+<script>
+	import MachkaImg from '$lib/assets/landing/machka.png';
+</script>
+
 <section
-	class="bg-background relative flex min-h-screen w-full items-center justify-center overflow-hidden px-8"
+	class="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-background px-8"
 >
 	<div
-		class="bg-secondary/40 absolute top-[-5%] left-[-5%] -z-10 h-150 w-150 rounded-full blur-[130px]"
+		class="absolute top-[-5%] left-[-5%] -z-10 h-150 w-150 rounded-full bg-secondary/40 blur-[130px]"
 	/>
 	<div
-		class="bg-accent/20 absolute right-[5%] bottom-[5%] -z-10 h-125 w-125 rounded-full blur-[110px]"
+		class="absolute right-[5%] bottom-[5%] -z-10 h-125 w-125 rounded-full bg-accent/20 blur-[110px]"
 	/>
 
 	<div
@@ -15,12 +19,12 @@
 		<div class="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
 			<div class="space-y-8">
 				<h1
-					class="font-display text-foreground text-8xl leading-[0.8] font-normal tracking-wide sm:text-9xl lg:text-[13rem]"
+					class="font-display text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
 				>
 					shelter
 				</h1>
 				<p
-					class="font-primary text-muted-foreground mx-auto max-w-md text-left text-xl leading-relaxed text-pretty lg:mx-0 lg:text-3xl"
+					class="font-primary mx-auto max-w-md text-left text-xl leading-relaxed text-pretty text-muted-foreground lg:mx-0 lg:text-3xl"
 				>
 					a secure place where your thoughts can breathe
 				</p>
@@ -28,16 +32,13 @@
 		</div>
 
 		<!-- {/* img */} -->
-		<div class="flex flex-1 items-center justify-center lg:-ml-16 lg:justify-center">
+		<div class="flex flex-1 items-center justify-center lg:-ml-16">
 			<div class="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
-				<!-- <img
-              src={heroImage}
-              alt="machka writing her journal with her kitty"
-              width={900}
-              height={900}
-              class="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
-              priority
-            /> -->
+				<enhanced:img
+					src={MachkaImg}
+					alt="machka writing her journal with her kitty"
+					class="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
+				/>
 			</div>
 		</div>
 	</div>
