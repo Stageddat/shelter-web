@@ -1,5 +1,5 @@
 <script lang="ts">
-	import LockImg from '$lib/assets/landing/book.png';
+	import LockImg from '$lib/assets/landing/book.png?enhanced';
 
 	const securityFeatures = [
 		{

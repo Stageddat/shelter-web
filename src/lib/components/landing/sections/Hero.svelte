@@ -1,5 +1,5 @@
 <script>
-	import MachkaImg from '$lib/assets/landing/machka.png';
+	import MachkaImg from '$lib/assets/landing/machka.png?enhanced';
 </script>
 
 <section
