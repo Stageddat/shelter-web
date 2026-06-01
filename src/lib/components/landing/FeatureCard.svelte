@@ -1,15 +1,13 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
-	import { cn } from '$lib/utils'; // Tu alias $lib en SvelteKit
+	import { cn } from '$lib/utils';
 
-	// En Svelte 5, definimos la interfaz de las Props directamente
 	interface FeatureCardProps {
-		icon: Component; // En lucide-svelte, los iconos son componentes puros de Svelte
+		icon: Component;
 		title: string;
 		text: string;
 	}
 
-	// Recibimos las props usando el Rune $props() con destructuring
 	let { icon: Icon, title, text }: FeatureCardProps = $props();
 </script>
 

@@ -19,7 +19,7 @@
 		<div class="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
 			<div class="space-y-8">
 				<h1
-					class="font-display text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
+					class="text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
 				>
 					shelter
 				</h1>
