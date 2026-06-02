@@ -1,8 +1,9 @@
 <script lang="ts">
-	import { getAuthContext, setAuthContext } from '$lib/contexts/auth.context.svelte';
+	import { setAuthContext, AuthState } from '$lib/contexts/auth.context.svelte';
 	let { children } = $props();
 
-	getAuthContext();
+	const auth = new AuthState();
+	setAuthContext(auth);
 </script>
 
 {@render children()}
