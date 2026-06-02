@@ -1,13 +1,8 @@
 <script lang="ts">
 	import LoginForm from '$lib/components/login/LoginForm.svelte';
-	import { useLogin } from '$lib/hooks/login/useLogin.svelte'; // Fíjate en la extensión .svelte.ts si usa runes adentro
+	import { useLogin } from '$lib/hooks/login/useLogin.svelte';
 
-	// Inicializamos la lógica del login
 	const login = useLogin();
-
-	// Si tu hook maneja la redirección mediante código (por ejemplo, con svelte-routing o el router de SvelteKit),
-	// esto emula el guard de React.
-	// En Svelte 5, usamos un efecto reactivo o un condicional en el HTML.
 </script>
 
 {#if login.username}
