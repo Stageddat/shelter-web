@@ -1,15 +1,15 @@
 import { createContext } from 'svelte';
 import { getEntries, type DecryptedEntry } from '$lib/services/app/entry.service';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
-// import { getDynamicGreeting } from '$hooks/app/useDynamicGreetings';
+import { getDynamicGreeting } from '$lib/hooks/app/useDynamicGreeting';
 
-class EntriesState {
+class AppContext {
 	entries = $state<DecryptedEntry[]>([]);
 	isLoading = $state(true);
 
 	greeting = $derived.by(() => {
 		const auth = getAuthContext();
-		// return getDynamicGreeting(auth?.user?.username);
+		return getDynamicGreeting(auth?.user?.username);
 	});
 
 	constructor() {
@@ -45,5 +45,5 @@ class EntriesState {
 	};
 }
 
-export const [getEntriesContext, setEntriesContext] = createContext<EntriesState>();
-export { EntriesState };
+export const [getAppContext, setAppContext] = createContext<AppContext>();
+export { AppContext };
