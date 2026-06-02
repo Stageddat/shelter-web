@@ -10,21 +10,23 @@ export function useLogin() {
 	let isLoading = $state(false);
 	let error = $state('');
 
-	async function fetchUser() {
-		try {
-			const user = await getUser();
-			if (!user) {
+	$effect(() => {
+		async function fetchUser() {
+			try {
+				const user = await getUser();
+				if (!user) {
+					goto('/signup', { replaceState: true });
+					return;
+				}
+				username = user.username;
+			} catch (e) {
+				console.error('error fetching user:', e);
 				goto('/signup', { replaceState: true });
-				return;
 			}
-			username = user.username;
-		} catch (e) {
-			console.error('error fetching user:', e);
-			goto('/signup', { replaceState: true });
 		}
-	}
 
-	fetchUser();
+		fetchUser();
+	});
 
 	function handleChange(e: Event & { currentTarget: HTMLInputElement }) {
 		password = e.currentTarget.value;
