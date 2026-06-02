@@ -3,18 +3,17 @@
 	import EntryCard from '$lib/components/app/entries/EntryCard';
 	// import { ScrollArea } from '@/components/ui/scroll-area';
 	// import { useEntries } from '@/contexts/EntriesContext';
-	// import {
-	// 	Popover,
-	// 	PopoverContent,
-	// 	PopoverDescription,
-	// 	PopoverHeader,
-	// 	PopoverTitle,
-	// 	PopoverTrigger
-	// } from '@/components/ui/popover';
-	// import { Button } from '@/components/ui/button';
-	// import { TriangleAlert } from 'lucide-react';
-	// import Image from 'next/image';
-	// import dumbCat from '@/assets/app/dumb-cat.png';
+	import {
+		Popover,
+		PopoverContent,
+		PopoverDescription,
+		PopoverHeader,
+		PopoverTitle,
+		PopoverTrigger
+	} from '$lib/components/ui/popover';
+	import { Button } from '$lib/components/ui/button';
+	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
+	import dumbCat from '@/assets/app/dumb-cat.png?enhanced';
 
 	// const { entries, greeting } = useEntries();
 </script>
@@ -24,7 +23,8 @@
 	{/* top */}
       <div class="flex items-center justify-between">
         <h2 class="mb-6 flex text-left text-7xl font-bold tracking-wide lowercase">
-          {greeting}
+          <!-- {greeting} -->
+          yooo wassup!
         </h2>
         <Popover>
           <PopoverTrigger asChild>
@@ -100,7 +100,7 @@
           lofi & focus
         </div>
         <div class="bg-secondary/40 col-span-2 row-span-1 overflow-hidden rounded-sm text-3xl">
-          <Image
+          <enhanced:img
             src={dumbCat}
             alt="machka"
             class="h-full w-full object-fill"
