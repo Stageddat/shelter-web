@@ -1,8 +1,8 @@
 <script lang="ts">
-	let text = $props();
+	let { text = 'loading' } = $props();
 </script>
 
-<span class="dots text-muted-foreground">{text}</span>;
+<span class="dots text-muted-foreground">{text}</span>
 
 <style>
 	.dots::after {
