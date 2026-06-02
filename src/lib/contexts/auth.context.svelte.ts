@@ -16,4 +16,4 @@ class AuthState {
 	};
 }
 
-export const [getAuthContext, setAutContexth] = createContext<AuthState>();
+export const [getAuthContext, setAuthContext] = createContext<AuthState>();
