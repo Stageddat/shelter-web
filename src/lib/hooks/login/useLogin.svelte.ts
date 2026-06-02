@@ -48,8 +48,9 @@ export function useLogin() {
 				console.error('unexpected login error: ', err);
 				error = 'something exploded :(. please try again.';
 			}
-			isLoading = false;
 			throw err;
+		} finally {
+			isLoading = false;
 		}
 	}
 
