@@ -8,12 +8,15 @@ class AuthState {
 	isAuthenticated = $derived(this.masterKey !== null);
 
 	constructor() {
+		// Carga el usuario de forma asíncrona al instanciar
 		getUser().then((u) => (this.user = u));
 	}
 
 	logout = () => {
 		this.masterKey = null;
+		this.user = undefined;
 	};
 }
 
 export const [getAuthContext, setAuthContext] = createContext<AuthState>();
+export { AuthState };
