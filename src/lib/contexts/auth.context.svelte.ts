@@ -2,13 +2,12 @@ import { createContext } from 'svelte';
 import { type User } from '$lib/db';
 import { getUser } from '$lib/db.utils';
 
-class AuthState {
+class AuthContext {
 	user = $state<User | undefined>(undefined);
 	masterKey = $state<CryptoKey | null>(null);
 	isAuthenticated = $derived(this.masterKey !== null);
 
 	constructor() {
-		// Carga el usuario de forma asíncrona al instanciar
 		getUser().then((u) => (this.user = u));
 	}
 
@@ -18,5 +17,5 @@ class AuthState {
 	};
 }
 
-export const [getAuthContext, setAuthContext] = createContext<AuthState>();
-export { AuthState };
+export const [getAuthContext, setAuthContext] = createContext<AuthContext>();
+export { AuthContext };
