@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getAuthContext, setAutContexth } from '$lib/contexts/auth.context.svelte';
+	import { getAuthContext, setAuthContext } from '$lib/contexts/auth.context.svelte';
 	let { children } = $props();
 
 	getAuthContext();
