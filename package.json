@@ -48,6 +48,10 @@
 		"vite": "^8.0.7"
 	},
 	"dependencies": {
+		"@tiptap/core": "^3.24.0",
+		"@tiptap/extension-bubble-menu": "^3.24.0",
+		"@tiptap/pm": "^3.24.0",
+		"@tiptap/starter-kit": "^3.24.0",
 		"dexie": "^4.4.3",
 		"zod": "^4.4.3"
 	}
