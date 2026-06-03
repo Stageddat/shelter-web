@@ -1,21 +1,19 @@
 <script lang="ts">
-	import { useSignup } from '$lib/hooks/signup/useSignup.svelte'; // Asumiendo versión Svelte del hook
+	import { useSignup } from '$lib/hooks/signup/useSignup.svelte';
 	import { formFields } from '$lib/constants/signup/formFields';
 	import FormField from '$lib/components/signup/FormField.svelte';
 	import { Button } from '$lib/components/ui/button';
+	import { resolve } from '$app/paths';
 
-	// En SvelteKit se usa el elemento <a> normal, ya que viene optimizado por defecto
-	// o puedes importar "goto" si necesitas navegación programática.
-
-	// Ejecutamos el hook (en Svelte 5 los hooks suelen devolver objetos reactivos o getters)
 	const signup = useSignup();
 </script>
 
 {#if signup.isChecking}
 	<!-- add loading? -->
-	<div class="flex min-h-screen items-center justify-center">
+	<!-- <div class="flex min-h-screen items-center justify-center">
 		<div class="h-8 w-8 animate-spin rounded-full border-b-2 border-primary"></div>
-	</div>
+	</div> -->
+	<div></div>
 {:else}
 	<main class="flex min-h-screen items-center justify-center px-8 py-16">
 		<div class="w-full max-w-2xl">
@@ -53,10 +51,10 @@
 				</form>
 
 				<p class="text-md mt-4 text-center text-muted-foreground">
-					already have a diary?{' '}
+					already have a diary?
 					<a
 						class="text-primary-dark font-medium underline transition-colors hover:text-primary"
-						href="/restore"
+						href={resolve('/restore')}
 					>
 						restore
 					</a>
