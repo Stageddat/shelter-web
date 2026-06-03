@@ -6,7 +6,7 @@ import { type LucideIcon } from '@lucide/svelte';
 
 export interface FormFieldConfig {
 	id: keyof RegisterInput;
-	name: string;
+	name: keyof RegisterInput;
 	label: string;
 	type: string;
 	placeholder?: string;
