@@ -1,18 +1,19 @@
 <script lang="ts">
 	import LockImg from '$lib/assets/landing/book.png?enhanced';
+	import { m } from '$lib/paraglide/messages';
 
 	const securityFeatures = [
 		{
-			title: 'your thoughts are yours',
-			text: 'shelter stores notes privately on your browser, so you can access them quickly, even offline. no one else can read them, not even us.'
+			title: m.landing_security_1_title(),
+			text: m.landing_security_1_description()
 		},
 		{
-			title: 'end to end encrypted',
-			text: 'your entries are end-to-end encrypted and stored offline first. we never read, scan, or sell your data. period.'
+			title: m.landing_security_2_title(),
+			text: m.landing_security_2_description()
 		},
 		{
-			title: '0 trackers & 0 ads',
-			text: 'we strictly never collect personal data. there are no trackers, no ads, and no hidden analytics following you around.'
+			title: m.landing_security_3_title(),
+			text: m.landing_security_3_description()
 		}
 	];
 </script>
@@ -21,7 +22,7 @@
 	<div class="mx-auto max-w-6xl">
 		<div class="mb-20 space-y-4 text-center">
 			<h2 class="font-display text-4xl font-normal text-foreground sm:text-6xl lg:text-7xl">
-				fully protected
+				{m.landing_security_title()}
 			</h2>
 		</div>
 
@@ -35,7 +36,7 @@
 			</div>
 
 			<div class="w-full space-y-6 lg:w-1/2">
-				{#each securityFeatures as feature}
+				{#each securityFeatures as feature (feature.title)}
 					<article class="group space-y-3">
 						<h3 class="font-display text-3xl text-foreground">
 							{feature.title.toLowerCase()}
