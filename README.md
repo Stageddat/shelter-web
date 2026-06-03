@@ -4,7 +4,7 @@ A secure, open-source web-based journal designed with privacy and end-to-end enc
 
 ![shelter web entry editor](./docs/images/hero-readme-editor.png)
 
-Shelter is built with [Typescript](https://www.typescriptlang.org/), [Next.JS](https://nextjs.org/), [Tailwind](https://tailwindcss.com/), [Tiptap](https://tiptap.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
+Shelter is built with [Typescript](https://www.typescriptlang.org/), [SvelteKit](https://svelte.dev/), [Tailwind](https://tailwindcss.com/), [Tiptap](https://tiptap.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
 
 ## Features
 

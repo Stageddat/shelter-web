@@ -1,11 +1,11 @@
-import { db } from "@/lib/db";
+import { db } from '$lib/db';
 
 export async function getUser() {
-  const user = await db.users.limit(1).toArray();
-  return user[0];
+	const user = await db.users.limit(1).toArray();
+	return user[0];
 }
 
 export async function hasExistingUser(): Promise<boolean> {
-  const userCount = await db.users.count();
-  return userCount > 0;
+	const userCount = await db.users.count();
+	return userCount > 0;
 }
