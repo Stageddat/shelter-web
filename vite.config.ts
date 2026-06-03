@@ -4,6 +4,6 @@ import { enhancedImages } from '@sveltejs/enhanced-img';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [enhancedImages(), sveltekit(), tailwindcss()],
-	build: { sourcemap: true }
+	plugins: [enhancedImages(), sveltekit(), tailwindcss()]
+	// build: { sourcemap: true }
 });
