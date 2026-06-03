@@ -1,4 +1,5 @@
 import { goto } from '$app/navigation';
+import { resolve } from '$app/paths';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 import { getUser } from '$lib/db.utils';
 import { login } from '$lib/services/auth/login.service';
@@ -15,13 +16,13 @@ export function useLogin() {
 			try {
 				const user = await getUser();
 				if (!user) {
-					goto('/signup', { replaceState: true });
+					goto(resolve('/signup'), { replaceState: true });
 					return;
 				}
 				username = user.username;
 			} catch (e) {
 				console.error('error fetching user:', e);
-				goto('/signup', { replaceState: true });
+				goto(resolve('/signup'), { replaceState: true });
 			}
 		}
 
@@ -33,14 +34,14 @@ export function useLogin() {
 		error = '';
 	}
 
-	async function handleSubmit(e: SubmitEvent) {
+	async function handleSubmit() {
 		error = '';
 		isLoading = true;
 
 		try {
 			const masterKey = await login(password);
 			auth.masterKey = masterKey;
-			goto('/app');
+			goto(resolve('/app'));
 		} catch (err) {
 			if (err instanceof Error && err.message === 'incorrect password') {
 				error = 'invalid password :(. please try again.';

@@ -1,9 +1,9 @@
 import { register } from '$lib/services/auth/register.service';
 import { hasExistingUser } from '$lib/db.utils';
 import { goto } from '$app/navigation';
-import { browser } from '$app/environment';
 import { type RegisterInput, registerSchema } from '$lib/schemas/register.schema';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
+import { resolve } from '$app/paths';
 
 export function useSignup() {
 	const auth = getAuthContext();
@@ -49,7 +49,7 @@ export function useSignup() {
 				auth.masterKey = masterKey;
 			}
 
-			goto('/app');
+			goto(resolve('/app'));
 		} catch (err) {
 			console.error('registration error:', err);
 			error = err instanceof Error ? err.message : 'registration failed';
@@ -65,7 +65,7 @@ export function useSignup() {
 
 				if (exists) {
 					console.log('User already exists, redirecting to login...');
-					goto('/login');
+					goto(resolve('/login'));
 					return;
 				}
 			} catch (err) {
