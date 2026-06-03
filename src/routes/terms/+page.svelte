@@ -147,7 +147,7 @@
 				contact us
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">
-				if you have questions about these terms, reach out to us at{' '}
+				if you have questions about these terms, reach out to us at
 				<a
 					href="mailto:hello@stageddat.dev"
 					class="text-primary-dark hover:text-primary-dark/80 underline transition-colors"
