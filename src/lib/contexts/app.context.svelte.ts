@@ -4,21 +4,19 @@ import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 import { getDynamicGreeting } from '$lib/hooks/app/useDynamicGreeting';
 
 class AppContext {
+	private auth = getAuthContext();
+
 	entries = $state<DecryptedEntry[]>([]);
 	isLoading = $state(true);
 
 	greeting = $derived.by(() => {
-		const auth = getAuthContext();
-		return getDynamicGreeting(auth?.user?.username);
+		return getDynamicGreeting(this.auth?.user?.username);
 	});
 
 	constructor() {
-		const auth = getAuthContext();
-
 		$effect(() => {
-			if (!auth || !auth.masterKey) return;
-
-			this.loadEntries(auth.masterKey);
+			if (!this.auth?.masterKey) return;
+			this.loadEntries(this.auth.masterKey);
 		});
 	}
 
@@ -35,9 +33,8 @@ class AppContext {
 	}
 
 	refreshEntries = async () => {
-		const auth = getAuthContext();
-		if (!auth || !auth.masterKey) return;
-		await this.loadEntries(auth.masterKey);
+		if (!this.auth?.masterKey) return;
+		await this.loadEntries(this.auth.masterKey);
 	};
 
 	removeEntry = (entryId: string) => {
