@@ -1,6 +1,7 @@
 <script lang="ts">
 	import FeatureCard from '$lib/components/landing/FeatureCard.svelte';
 	import { features } from '$lib/constants/landing/features';
+	import { m } from '$lib/paraglide/messages';
 </script>
 
 <section class="relative overflow-hidden bg-background px-12 py-24" id="features">
@@ -9,7 +10,7 @@
 			<h2
 				class="font-display text-4xl font-normal text-pretty text-foreground sm:text-6xl lg:text-7xl"
 			>
-				a safe place for your thoughts
+				{m.landing_features_title()}
 			</h2>
 		</div>
 

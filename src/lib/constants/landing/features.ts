@@ -4,36 +4,37 @@ import CloudSync from '@lucide/svelte/icons/cloud-sync';
 import EyeOff from '@lucide/svelte/icons/eye-off';
 import Bird from '@lucide/svelte/icons/bird';
 import PencilLine from '@lucide/svelte/icons/pencil-line';
+import { m } from '$lib/paraglide/messages';
 
 export const features = [
 	{
 		icon: Shield,
-		title: 'top-level security',
-		text: 'your entries are encrypted and protected at all times.'
+		title: m.landing_features_1_title(),
+		text: m.landing_features_1_description()
 	},
 	{
 		icon: Database,
-		title: 'local storage & offline-first',
-		text: 'keep your journals safe on your own device.'
+		title: m.landing_features_2_title(),
+		text: m.landing_features_2_description()
 	},
 	{
 		icon: CloudSync,
-		title: 'cloud sync (coming soon)',
-		text: "soon you'll be able to access your thoughts anywhere."
+		title: m.landing_features_3_title(),
+		text: m.landing_features_3_description()
 	},
 	{
 		icon: EyeOff,
-		title: '100% personal & private',
-		text: 'your journal is for your eyes only.\nwe respect your privacy.'
+		title: m.landing_features_4_title(),
+		text: m.landing_features_4_description()
 	},
 	{
 		icon: Bird,
-		title: 'designed for calm',
-		text: 'a distraction-free interface to help you focus.'
+		title: m.landing_features_5_title(),
+		text: m.landing_features_5_description()
 	},
 	{
 		icon: PencilLine,
-		title: 'write at your own pace',
-		text: 'there are no deadlines or pressures. just you and your thoughts.'
+		title: m.landing_features_6_title(),
+		text: m.landing_features_6_description()
 	}
 ];

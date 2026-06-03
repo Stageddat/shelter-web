@@ -3,5 +3,17 @@
   "landing_hero_title": "shelter",
   "landing_hero_subtitle": "a secure place where your thoughts can breathe",
   "landing_hero_image_alt": "machka writing her journal with her kitty ziggy",
-  "landing_features_title": ""
+  "landing_features_title": "a safe place for your thoughts",
+  "landing_features_1_title": "top-level security",
+  "landing_features_1_description": "your entries are encrypted and protected at all times.",
+  "landing_features_2_title": "local storage & offline-first",
+  "landing_features_2_description": "keep your journals safe on your own device.",
+  "landing_features_3_title": "cloud sync (coming soon)",
+  "landing_features_3_description": "soon you'll be able to access your thoughts anywhere.",
+  "landing_features_4_title": "100% personal & private",
+  "landing_features_4_description": "your journal is for your eyes only.\nwe respect your privacy.",
+  "landing_features_5_title": "designed for calm",
+  "landing_features_5_description": "a distraction-free interface to help you focus.",
+  "landing_features_6_title": "write at your own pace",
+  "landing_features_6_description": "there are no deadlines or pressures. just you and your thoughts."
 }

@@ -3,5 +3,17 @@
   "landing_hero_title": "shelter",
   "landing_hero_subtitle": "un lloc segur on les teves idees poden respirar sense preocupacions",
   "landing_hero_image_alt": "la machka escrivint el seu diari amb el seu gat ziggy",
-  "landing_features_title": ""
+  "landing_features_title": "un lloc segur per les teves idees",
+  "landing_features_1_title": "seguretat d'alt nivell",
+  "landing_features_1_description": "les teves entrades estan xifrades i protegides en tot moment.",
+  "landing_features_2_title": "emmagatzematge local i totalment fora de línia",
+  "landing_features_2_description": "mentenim els vostres diaris segurs al vostre propi dispositiu.",
+  "landing_features_3_title": "sincronització al núvol (pròximament)",
+  "landing_features_3_description": "aviat podràs accedir als teus pensaments des de qualsevol lloc.",
+  "landing_features_4_title": "100% personal i privat",
+  "landing_features_4_description": "el teu diari és només per a tu.\nrespectem la teva privadesa.",
+  "landing_features_5_title": "dissenyat per a la calma",
+  "landing_features_5_description": "una interfície sense distraccions per ajudar-vos a concentrar-vos.",
+  "landing_features_6_title": "escriu al teu ritme",
+  "landing_features_6_description": "ho hi ha terminis ni pressions. només tu i els teus pensaments."
 }
