@@ -4,12 +4,12 @@
 	import { useEntry } from '$lib/hooks/app/useEntry.svelte';
 	import type { PageProps } from './$types';
 
-	const { data }: PageProps = $props();
+	const { params }: PageProps = $props();
 
-	const entryState = $derived(useEntry(data.id));
+	const entryState = $derived(useEntry(params.id));
 </script>
 
-{#if !data.id}
+{#if !params.id}
 	<div
 		class="flex h-full w-full items-center justify-center text-4xl tracking-wide text-foreground"
 	>
