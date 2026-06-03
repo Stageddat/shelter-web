@@ -1,6 +1,6 @@
 <script lang="ts">
 	import packageJson from '../../../../../package.json';
-	// import EntryCard from '$lib/components/app/entries/EntryCard';
+	import EntryCard from '$lib/components/app/entry/EntryCard.svelte';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { getAppContext } from '$lib/contexts/app.context.svelte';
 	import {
@@ -42,7 +42,7 @@
 
 					<PopoverDescription class="text-2xl text-red-600">
 						shelter is under active development. while we work on stabilizing the database
-						structure, data loss during updates is a possibility.{' '}
+						structure, data loss during updates is a possibility.
 						<b>please make sure to export your journal frequently</b> to ensure you always have a
 						local backup of your journal.
 						<br />
@@ -88,6 +88,9 @@
                 <EntryCard key={entry.id} entry={entry} />
               ))}
             </div> -->
+				{#each entries as entry (entry.id)}
+					<EntryCard {entry} />
+				{/each}
 			</ScrollArea>
 		</div>
 		<div class="col-span-2 row-span-1 rounded-sm bg-secondary/40 p-10 text-3xl">lofi & focus</div>
