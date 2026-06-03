@@ -1,4 +1,3 @@
-// src/lib/constants/features.ts
 import Database from '@lucide/svelte/icons/database';
 import Shield from '@lucide/svelte/icons/shield';
 import CloudSync from '@lucide/svelte/icons/cloud-sync';
