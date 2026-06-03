@@ -1,4 +1,7 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "example_message": "Hello world {username}"
+  "landing_hero_title": "shelter",
+  "landing_hero_subtitle": "a secure place where your thoughts can breathe",
+  "landing_hero_image_alt": "machka writing her journal with her kitty ziggy",
+  "landing_features_title": ""
 }

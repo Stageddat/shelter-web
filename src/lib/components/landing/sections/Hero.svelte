@@ -1,5 +1,6 @@
 <script>
 	import MachkaImg from '$lib/assets/landing/machka.png?enhanced';
+	import { m } from '$lib/paraglide/messages.js';
 </script>
 
 <section
@@ -14,12 +15,12 @@
 				<h1
 					class="text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
 				>
-					shelter
+					{m.landing_hero_title()}
 				</h1>
 				<p
 					class="font-primary mx-auto max-w-md text-left text-xl leading-relaxed text-pretty text-muted-foreground lg:mx-0 lg:text-3xl"
 				>
-					a secure place where your thoughts can breathe
+					{m.landing_hero_subtitle()}
 				</p>
 			</div>
 		</div>
@@ -29,7 +30,7 @@
 			<div class="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
 				<enhanced:img
 					src={MachkaImg}
-					alt="machka writing her journal with her kitty"
+					alt={m.landing_hero_image_alt()}
 					class="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
 				/>
 			</div>
