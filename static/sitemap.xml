@@ -1,0 +1,26 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://shelter.stageddat.dev/</loc>
+		<lastmod>2026-06-01T00:46:15.510Z</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>1</priority>
+	</url>
+	<url>
+		<loc>https://shelter.stageddat.dev/privacy</loc>
+		<lastmod>2026-06-01T00:46:15.510Z</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://shelter.stageddat.dev/terms</loc>
+		<lastmod>2026-06-01T00:46:15.510Z</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://shelter.stageddat.dev/cookies</loc>
+		<lastmod>2026-06-01T00:46:15.510Z</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+</urlset>
