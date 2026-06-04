@@ -44,5 +44,10 @@
   "landing_faqs_9_answer": "she is our official mascot! you can often find her and her kitty ziggy wandering around the website.<br /><br /> special thanks to <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> for creating all the wonderful artwork!",
   "landing_start_title": "ready to rest?",
   "landing_start_description": "start your journey at your own pace.",
-  "landing_start_button": "start my journey!"
+  "landing_start_button": "start my journey!",
+  "landing_navbar_title": "shelter",
+  "landing_navbar_features": "features",
+  "landing_navbar_security": "security",
+  "landing_navbar_faqs": "faqs",
+  "landing_navbar_start": "get started"
 }

@@ -2,6 +2,7 @@
 	import Menu from '@lucide/svelte/icons/menu';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import { m } from '$lib/paraglide/messages';
 
 	let sheetOpen = $state(false);
 </script>
@@ -21,21 +22,21 @@
 					<a
 						href={localizeHref('/#features')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>features</a
+						>{m.landing_navbar_features()}</a
 					>
 				</Sheet.Close>
 				<Sheet.Close>
 					<a
 						href={localizeHref('/#security')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>security</a
+						>{m.landing_navbar_security()}</a
 					>
 				</Sheet.Close>
 				<Sheet.Close>
 					<a
 						href={localizeHref('/#faqs')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>faqs</a
+						>{m.landing_navbar_faqs()}</a
 					>
 				</Sheet.Close>
 			</nav>

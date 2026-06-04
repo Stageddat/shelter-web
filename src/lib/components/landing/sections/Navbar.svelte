@@ -1,9 +1,10 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import MobileNav from '$lib/components/landing/MobileNav.svelte';
 	import DesktopNav from '$lib/components/landing/DesktopNav.svelte';
 	import LanguageSelector from '$lib/components/landing/LanguageSelector.svelte';
+	import { m } from '$lib/paraglide/messages';
+	import { localizeHref } from '$lib/paraglide/runtime';
 </script>
 
 <header
@@ -14,10 +15,10 @@
 			<MobileNav />
 
 			<a
-				href={resolve('/')}
+				href={localizeHref('/')}
 				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-3xl"
 			>
-				<span class="relative -top-px">shelter</span>
+				<span class="relative -top-px">{m.landing_navbar_logo()}</span>
 			</a>
 
 			<DesktopNav />
@@ -30,7 +31,7 @@
 				href="/signup"
 				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:inline-flex"
 			>
-				get started
+				{m.landing_navbar_start()}
 			</Button>
 		</div>
 	</div>
