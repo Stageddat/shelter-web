@@ -10,8 +10,8 @@
 				frequently asked questions
 			</h2>
 		</div>
-		<Accordion.Root type="single" collapsible class="space-y-3">
-			{#each faqData as faq, i}
+		<Accordion.Root type="single" class="space-y-3">
+			{#each faqData as faq, i (i)}
 				<Accordion.Item
 					value={`item-${i}`}
 					class="rounded-2xl border border-border bg-secondary/20 px-6 py-1 transition-all hover:bg-secondary/30"
