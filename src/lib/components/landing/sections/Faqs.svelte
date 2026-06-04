@@ -27,6 +27,7 @@
 					<Accordion.Content
 						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal text-muted-foreground"
 					>
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{@html faq.answer}
 					</Accordion.Content>
 				</Accordion.Item>
