@@ -25,7 +25,7 @@
 						{faq.question()}
 					</Accordion.Trigger>
 					<Accordion.Content
-						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal text-muted-foreground"
+						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal whitespace-pre-line text-muted-foreground"
 					>
 						<ParaglideMessage message={faq.message} inputs={{}}>
 							{#snippet link({

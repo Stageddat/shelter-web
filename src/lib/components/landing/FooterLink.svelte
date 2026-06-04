@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	const {
 		href,
 		external = false,
@@ -6,7 +8,7 @@
 	} = $props<{
 		href: string;
 		external?: boolean;
-		children?: any;
+		children?: Snippet;
 	}>();
 </script>
 
