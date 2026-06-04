@@ -49,5 +49,17 @@
   "landing_navbar_features": "features",
   "landing_navbar_security": "security",
   "landing_navbar_faqs": "faqs",
-  "landing_navbar_start": "get started"
+  "landing_navbar_start": "get started",
+  "landing_footer_title": "shelter",
+  "landing_footer_year": "© 2025–{currentYear} shelter",
+  "landing_footer_copyright": "all rights reserved.",
+  "landing_footer_product_title": "product",
+  "landing_footer_product_about_us": "about us",
+  "landing_footer_product_cloud": "cloud",
+  "landing_footer_product_selfhost": "self-host",
+  "landing_footer_legal_title": "legal",
+  "landing_footer_legal_privacy": "privacy policy",
+  "landing_footer_legal_terms": "terms of service",
+  "landing_footer_legal_cookies": "cookie policy",
+  "landing_footer_contact_title": "contact"
 }

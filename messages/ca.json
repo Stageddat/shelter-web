@@ -49,5 +49,17 @@
   "landing_navbar_features": "característiques",
   "landing_navbar_security": "seguretat",
   "landing_navbar_faqs": "preguntes",
-  "landing_navbar_start": "començar"
+  "landing_navbar_start": "començar",
+  "landing_footer_title": "shelter",
+  "landing_footer_year": "© 2025–{currentYear} shelter",
+  "landing_footer_copyright": "tots els drets reservats.",
+  "landing_footer_product_title": "producte",
+  "landing_footer_product_about_us": "sobre nosaltres",
+  "landing_footer_product_cloud": "núvol",
+  "landing_footer_product_selfhost": "hosting personal",
+  "landing_footer_legal_title": "legal",
+  "landing_footer_legal_privacy": "política de privacitat",
+  "landing_footer_legal_terms": "condicions del servei",
+  "landing_footer_legal_cookies": "política de cookies",
+  "landing_footer_contact_title": "contacte"
 }
