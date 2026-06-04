@@ -1,13 +1,14 @@
 <script lang="ts">
 	import * as Accordion from '$lib/components/ui/accordion/index';
 	import { faqData } from '$lib/constants/landing/faqs';
+	import { m } from '$lib/paraglide/messages';
 </script>
 
 <section class="bg-background px-8 py-24 lg:py-40" id="faqs">
 	<div class="mx-auto max-w-3xl">
 		<div class="mb-16 text-center">
 			<h2 class="font-display text-4xl font-normal text-foreground sm:text-6xl lg:text-7xl">
-				frequently asked questions
+				{m.landing_faqs_title()}
 			</h2>
 		</div>
 		<Accordion.Root type="single" class="space-y-3">
