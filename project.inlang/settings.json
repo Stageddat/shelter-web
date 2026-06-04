@@ -1,12 +1,10 @@
 {
   "$schema": "https://inlang.com/schema/project-settings",
-  // paraglide new
   "baseLocale": "en",
   "locales": [
     "en",
     "ca"
   ],
-  // shitty fink not updating
   "sourceLanguageTag": "en",
   "languageTags": [
     "en",
