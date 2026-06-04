@@ -1,9 +1,9 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import * as Accordion from '$lib/components/ui/accordion/index';
-	import { getFaqData } from '$lib/constants/landing/faqs';
+	import { ParaglideMessage } from '@inlang/paraglide-js-svelte';
 	import { m } from '$lib/paraglide/messages';
-
-	const faqs = $derived(getFaqData());
+	import { faqData } from '$lib/constants/landing/faqs';
 </script>
 
 <section class="bg-background px-8 py-24 lg:py-40" id="faqs">
@@ -14,7 +14,7 @@
 			</h2>
 		</div>
 		<Accordion.Root type="single" class="space-y-3">
-			{#each faqs as faq, i (i)}
+			{#each faqData as faq, i (i)}
 				<Accordion.Item
 					value={`item-${i}`}
 					class="rounded-2xl border border-border bg-secondary/20 px-6 py-1 transition-all hover:bg-secondary/30"
@@ -22,13 +22,28 @@
 					<Accordion.Trigger
 						class="font-display items-center text-left text-2xl font-semibold tracking-wide text-foreground hover:text-primary hover:no-underline"
 					>
-						{faq.question}
+						{faq.question()}
 					</Accordion.Trigger>
 					<Accordion.Content
 						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal text-muted-foreground"
 					>
-						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-						{@html faq.answer}
+						<ParaglideMessage message={faq.message} inputs={{}}>
+							{#snippet link({
+								children,
+								options
+							}: {
+								children: Snippet;
+								options: { href: string };
+							})}
+								<a
+									href={options.href}
+									target="_blank"
+									class="text-primary underline hover:opacity-80"
+								>
+									{@render children()}
+								</a>
+							{/snippet}
+						</ParaglideMessage>
 					</Accordion.Content>
 				</Accordion.Item>
 			{/each}

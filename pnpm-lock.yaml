@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@inlang/paraglide-js-svelte':
+        specifier: ^1.0.3
+        version: 1.0.3(@inlang/paraglide-js@2.18.2(typescript@6.0.3))(svelte@5.56.0(@typescript-eslint/types@8.60.0))
       '@tiptap/core':
         specifier: ^3.24.0
         version: 3.24.0(@tiptap/pm@3.24.0)
@@ -369,6 +372,12 @@ packages:
     resolution: {integrity: sha512-GRM+DT0nnFYVPs/lK85YvX5CeUQ/rWvxKdvnpBb0xlAcamhYEVb7VpHVfu26Ec1/wWtHOVIM1POguiytrm2BIw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
+
+  '@inlang/paraglide-js-svelte@1.0.3':
+    resolution: {integrity: sha512-K65UnMaVy5z8+VqhBpX6Mt4dt7wxLFupejQ+sQTSga6Wh5bL7rnUq9ZU3Tn2OIk1Uah7scw9GHVZxSqhjJrWzA==}
+    peerDependencies:
+      '@inlang/paraglide-js': '>=2.11.0 <3'
+      svelte: ^5.0.0
 
   '@inlang/paraglide-js@2.18.2':
     resolution: {integrity: sha512-H2ksOE2dy9M4iJ+oDu8VPgk+B52C+OCFQpuJHBol0ZYLs3H17PCewVWIppkJNC36ClmLZnGhF+URjbcglTM8XQ==}
@@ -1991,6 +2000,11 @@ snapshots:
       esbuild-wasm: 0.19.12
     transitivePeerDependencies:
       - babel-plugin-macros
+
+  '@inlang/paraglide-js-svelte@1.0.3(@inlang/paraglide-js@2.18.2(typescript@6.0.3))(svelte@5.56.0(@typescript-eslint/types@8.60.0))':
+    dependencies:
+      '@inlang/paraglide-js': 2.18.2(typescript@6.0.3)
+      svelte: 5.56.0(@typescript-eslint/types@8.60.0)
 
   '@inlang/paraglide-js@2.18.2(typescript@6.0.3)':
     dependencies:
