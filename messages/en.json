@@ -41,5 +41,8 @@
   "landing_faqs_8_question": "is it secure?",
   "landing_faqs_8_answer": "yes. we use end-to-end encryption and a 'privacy-first' architecture to ensure your shelter remains yours alone.",
   "landing_faqs_9_question": "who is machka?",
-  "landing_faqs_9_answer": "she is our official mascot! you can often find her and her kitty ziggy wandering around the website.<br /><br /> special thanks to <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> for creating all the wonderful artwork!"
+  "landing_faqs_9_answer": "she is our official mascot! you can often find her and her kitty ziggy wandering around the website.<br /><br /> special thanks to <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> for creating all the wonderful artwork!",
+  "landing_start_title": "ready to rest?",
+  "landing_start_description": "start your journey at your own pace.",
+  "landing_start_button": "start my journey!"
 }
