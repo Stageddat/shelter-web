@@ -1,7 +1,9 @@
 <script lang="ts">
 	import * as Accordion from '$lib/components/ui/accordion/index';
-	import { faqData } from '$lib/constants/landing/faqs';
+	import { getFaqData } from '$lib/constants/landing/faqs';
 	import { m } from '$lib/paraglide/messages';
+
+	const faqs = $derived(getFaqData());
 </script>
 
 <section class="bg-background px-8 py-24 lg:py-40" id="faqs">
@@ -12,7 +14,7 @@
 			</h2>
 		</div>
 		<Accordion.Root type="single" class="space-y-3">
-			{#each faqData as faq, i (i)}
+			{#each faqs as faq, i (i)}
 				<Accordion.Item
 					value={`item-${i}`}
 					class="rounded-2xl border border-border bg-secondary/20 px-6 py-1 transition-all hover:bg-secondary/30"
