@@ -4,6 +4,8 @@
 	import { ParaglideMessage } from '@inlang/paraglide-js-svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { faqData } from '$lib/constants/landing/faqs';
+	console.log(m.landing_faqs_1_question());
+	console.log(m.landing_faqs_1_answer());
 </script>
 
 <section class="bg-background px-8 py-24 lg:py-40" id="faqs">
@@ -27,7 +29,8 @@
 					<Accordion.Content
 						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal whitespace-pre-line text-muted-foreground"
 					>
-						<ParaglideMessage message={faq.message} inputs={{}}>
+						{@html faq.message()}
+						<!-- <ParaglideMessage message={faq.message} inputs={{}}>
 							{#snippet link({
 								children,
 								options
@@ -41,9 +44,9 @@
 									class="text-primary underline hover:opacity-80"
 								>
 									{@render children()}
-								</a>
-							{/snippet}
-						</ParaglideMessage>
+								</a> -->
+						<!-- {/snippet} -->
+						<!-- </ParaglideMessage> -->
 					</Accordion.Content>
 				</Accordion.Item>
 			{/each}
