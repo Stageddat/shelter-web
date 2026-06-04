@@ -135,5 +135,6 @@
 	}
 	html {
 		@apply font-patrick;
+		scrollbar-gutter: stable;
 	}
 }
