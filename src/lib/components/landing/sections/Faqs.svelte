@@ -1,11 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	// import type { Snippet } from 'svelte';
 	import * as Accordion from '$lib/components/ui/accordion/index';
-	import { ParaglideMessage } from '@inlang/paraglide-js-svelte';
+	// import { ParaglideMessage } from '@inlang/paraglide-js-svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { faqData } from '$lib/constants/landing/faqs';
-	console.log(m.landing_faqs_1_question());
-	console.log(m.landing_faqs_1_answer());
 </script>
 
 <section class="bg-background px-8 py-24 lg:py-40" id="faqs">
@@ -29,6 +27,7 @@
 					<Accordion.Content
 						class="font-primary pb-4 text-2xl leading-relaxed tracking-normal whitespace-pre-line text-muted-foreground"
 					>
+						<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 						{@html faq.message()}
 						<!-- <ParaglideMessage message={faq.message} inputs={{}}>
 							{#snippet link({
