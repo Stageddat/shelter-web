@@ -61,5 +61,10 @@
   "landing_footer_legal_privacy": "privacy policy",
   "landing_footer_legal_terms": "terms of service",
   "landing_footer_legal_cookies": "cookie policy",
-  "landing_footer_contact_title": "contact"
+  "landing_footer_contact_title": "contact",
+  "login_title": "welcome back, {username}!",
+  "login_password_label": "password",
+  "login_password_placeholder": "enter your password",
+  "login_button": "enter my shelter",
+  "login_button_loading": "entering"
 }

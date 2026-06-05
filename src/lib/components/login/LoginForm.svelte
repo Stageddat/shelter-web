@@ -4,6 +4,7 @@
 	import { InputGroup, InputGroupAddon, InputGroupInput } from '$lib/components/ui/input-group';
 	import Lock from '@lucide/svelte/icons/lock';
 	import LoadingText from '../shared/LoadingText.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let {
 		username,
@@ -28,12 +29,12 @@
 </script>
 
 <form onsubmit={onFormSubmit} class="space-y-6">
-	<h1 class="mb-2 text-4xl font-bold text-foreground lg:text-5xl">
-		welcome back, {username}!
+	<h1 class="mb-2 text-4xl font-bold tracking-wide text-foreground lg:text-5xl">
+		{m.login_title({ username })}
 	</h1>
 
 	<div class="space-y-2 {error ? 'mb-2' : 'mb-4'}">
-		<Label class="mb-0.5 text-xl" for="password">password</Label>
+		<Label class="mb-0.5 text-xl" for="password">{m.login_password_label()}</Label>
 		<InputGroup>
 			<InputGroupInput
 				type="password"
@@ -41,7 +42,7 @@
 				name="password"
 				value={password}
 				oninput={handleChange}
-				placeholder="enter your password"
+				placeholder={m.login_password_placeholder()}
 				class="text-xl!"
 				required
 				disabled={isLoading}
@@ -63,9 +64,9 @@
 		disabled={isLoading}
 	>
 		{#if isLoading}
-			<LoadingText text="entering" />
+			<LoadingText text={m.login_button_loading()} />
 		{:else}
-			enter shelter
+			{m.login_button()}
 		{/if}
 	</Button>
 </form>
