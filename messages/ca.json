@@ -61,10 +61,5 @@
   "landing_footer_legal_terms": "condicions del servei",
   "landing_footer_legal_cookies": "política de cookies",
   "landing_footer_contact_title": "contacte",
-  "login_title": "hola de nou, {username}!",
-  "login_password_label": "contrasenya",
-  "login_password_placeholder": "introdueix la teva contrasenya",
-  "login_button": "accedir al meu shelter",
-  "login_button_loading": "accedint",
-  "landing_start_title": ""
+  "landing_start_title": "preparat per descansar?"
 }
