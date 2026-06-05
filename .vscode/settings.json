@@ -12,5 +12,10 @@
 		"**/.git/**",
 		"**/node_modules/**",
 		"**/src/lib/components/ui/**"
+	],
+	"i18n-ally.localesPaths": [
+		"messages",
+		"src/paraglide/messages",
+		"src/lib/paraglide/messages"
 	]
 }

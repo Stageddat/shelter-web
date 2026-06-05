@@ -65,5 +65,6 @@
   "login_password_label": "contrasenya",
   "login_password_placeholder": "introdueix la teva contrasenya",
   "login_button": "accedir al meu shelter",
-  "login_button_loading": "accedint"
+  "login_button_loading": "accedint",
+  "landing_start_title": ""
 }
