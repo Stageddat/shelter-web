@@ -1,4 +1,21 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "landing_hero_title": "shelter"
+    "landing_hero_title": "shelter",
+    "landing_hero_subtitle": "ein sicherer ort an dem deine gedanken frei atmen können ohne beurteilt zu werden",
+    "landing_hero_image_alt": "machka schreibt ihren tagebuch mit ihrer katze kitty ziggy",
+    "landing_features_title": "ein sicherer ort für deine gedanken",
+    "landing_features_1_title": "top-level sicherheit",
+    "landing_features_1_description": "deine einträge sind jederzeit verschlüsselt und geschützt.",
+    "landing_features_2_title": "lokale speicherung und offline-first",
+    "landing_features_2_description": "beware deine tagebücher sicher auf deinem gerät auf.",
+    "landing_features_3_title": "cloud sync (kommt bald)",
+    "landing_features_3_description": "bald kannst du jederzeit und überall auf deine gedanken zugreifen.",
+    "landing_features_4_title": "100% persönlich und privat",
+    "landing_features_4_description": "dein tagebuch ist nur für deine augen.\nwir respektieren deine privatsphäre.",
+    "landing_features_5_title": "für ruhe entworfen",
+    "landing_features_5_description": "eine ablenkungsfreie benutzeroberfläche, die dir hilft, dich zu konzentrieren.",
+    "landing_features_6_title": "schreibe auf deiner eigenen geschwindigkeit",
+    "landing_features_6_description": "es gibt keine fristen oder druck. nur dich und deine gedanken.",
+    "landing_security_title": "vollständig geschützt",
+    "landing_security_1_title": "deine gedanken gehören dir"
 }
