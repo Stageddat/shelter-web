@@ -18,8 +18,18 @@
 		{ href: '/app/calendar', label: 'calendar', icon: Calendar },
 		{ href: '/app/stats', label: 'stats', icon: ChartNoAxesColumn },
 		{ href: '/app/search', label: 'search', icon: Search },
-		{ href: '/app/settings', label: 'settings', icon: Settings }
+		{
+			href: '/app/settings',
+			label: 'settings',
+			icon: Settings,
+			navigateTo: '/app/settings/general'
+		}
 	];
+
+	function isActive(href: string) {
+		if (href === '/app') return page.url.pathname === '/app';
+		return page.url.pathname.startsWith(href);
+	}
 </script>
 
 <aside class="flex h-screen w-72 flex-col border-r bg-card/50 backdrop-blur-md">
@@ -32,16 +42,16 @@
 
 		<!-- links -->
 		<nav class="flex flex-col gap-1">
-			{#each links as { href, label, icon: Icon } (href)}
+			{#each links as { href, label, icon: Icon, navigateTo } (href)}
 				<Button
 					variant="ghost"
 					class={cn(
 						'w-full justify-start gap-3 py-6 pl-4 text-lg tracking-wider',
 						'text-foreground/40 hover:bg-transparent hover:text-foreground/80',
-						page.url.pathname === href &&
+						isActive(href) &&
 							'rounded-full bg-secondary/30 text-foreground hover:bg-secondary/30 hover:text-foreground'
 					)}
-					{href}
+					href={navigateTo ?? href}
 				>
 					<Icon class="h-7! w-7!" />
 					<span>{label}</span>
