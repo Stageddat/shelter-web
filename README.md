@@ -9,7 +9,11 @@ Shelter is built with [Typescript](https://www.typescriptlang.org/), [SvelteKit]
 ## Features
 
 - **Local-First Architecture:** Fast, resilient, and works entirely offline using IndexedDB.
-- **End-to-End Encryption (E2EE):** Client-side encryption ensures nobody can read your entries.
+- **End-to-End Encryption (E2EE):** Client-side encryption via the Web Crypto API. Nobody can read your entries except you, not even us.
+- **No account required:** No email, no server, no tracking. Just open the app and start writing.
+- **Rich Text Editor:** Write with formatting using a clean, distraction-free editor powered by Tiptap.
+- **Multilingual:** Available in English, Catalan and Danish, with more languages on the way.
+- **Open Source:** Fully auditable code under the GNU AGPLv3 license.
 
 ## Getting Started
 
@@ -41,7 +45,7 @@ pnpm install
 pnpm run dev
 ```
 
-Open `localhost:3000` in your browser to view the local development server.
+Open `localhost:5173` in your browser to view the local development server.
 
 ## Contributing
 
