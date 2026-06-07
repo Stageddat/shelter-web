@@ -37,7 +37,7 @@ export default defineConfig({
 				navigateFallback: '/',
 				navigateFallbackAllowlist: [/^\//],
 				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
-				additionalManifestEntries: [{ url: '/', revision: null }],
+				// additionalManifestEntries: [{ url: '/', revision: null }],
 				runtimeCaching: [
 					{
 						urlPattern: /\.(?:png|jpg|webp|svg|ico)$/,
