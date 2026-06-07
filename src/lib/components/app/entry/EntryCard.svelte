@@ -11,14 +11,14 @@
 	}
 	let { entry }: Props = $props();
 
-	const { refreshEntries } = getAppContext();
+	const { removeEntry } = getAppContext();
 
 	let showDialog = $state(false);
 
 	async function handleConfirmDelete(id: string) {
-		await deleteEntry(id);
-		await refreshEntries();
 		showDialog = false;
+		removeEntry(id);
+		await deleteEntry(id);
 	}
 </script>
 
