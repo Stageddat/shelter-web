@@ -8,7 +8,7 @@
 
 	onMount(async () => {
 		if (pwaInfo) {
-			const { registerSW } = await import('virtual:pwa-register');
+			const { registerSW } = await import('virtual:pwa-register/sveltekit');
 			registerSW({
 				immediate: true,
 				onRegistered() {},
@@ -35,6 +35,7 @@
 		src="https://stats.stageddat.dev/script.js"
 		data-website-id="77c3d000-480e-4bd8-b2e0-47dfde39965b"
 	></script>
+	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifest}
 </svelte:head>
 <div class="sr-only" aria-hidden="true">
