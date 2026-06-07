@@ -2,6 +2,7 @@
 	import { onMount, onDestroy } from 'svelte';
 	import { Editor } from '@tiptap/core';
 	import StarterKit from '@tiptap/starter-kit';
+	import { CharacterCount } from '@tiptap/extensions';
 	import { Separator } from '$lib/components/ui/separator';
 	import EditorToolbar from './EditorToolbar.svelte';
 	import { slide } from 'svelte/transition';
@@ -10,14 +11,16 @@
 		initialContent?: string;
 		editable?: boolean;
 		onChange?: (content: string) => void;
-		onEmptyChange?: (isEmpty: boolean) => void;
 	}
 
-	let { initialContent = '', editable = true, onChange, onEmptyChange }: Props = $props();
+	let { initialContent = '', editable = true, onChange }: Props = $props();
 
 	let element: HTMLDivElement;
 	let editor = $state<Editor | null>(null);
-	let wasEmpty = true;
+
+	// metadata
+	let wordCount = $state(0);
+	let charCount = $state(0);
 
 	export function resetContent(content: string) {
 		editor?.commands.setContent(content ? JSON.parse(content) : '');
@@ -26,19 +29,14 @@
 	onMount(() => {
 		editor = new Editor({
 			element,
-			extensions: [StarterKit.configure({ heading: false })],
+			extensions: [StarterKit.configure({ heading: false }), CharacterCount],
 			content: initialContent ? JSON.parse(initialContent) : '',
 			editable,
 			onUpdate: ({ editor: e }) => {
 				onChange?.(JSON.stringify(e.getJSON()));
 
-				const currentEmpty = e.isEmpty;
-				if (currentEmpty !== wasEmpty) {
-					wasEmpty = currentEmpty;
-					queueMicrotask(() => {
-						onEmptyChange?.(currentEmpty);
-					});
-				}
+				charCount = e.storage.characterCount.characters();
+				wordCount = e.storage.characterCount.words();
 			},
 			onTransaction: ({ editor: e }) => {
 				editor = e as unknown as Editor;
@@ -62,7 +60,20 @@
 			<Separator class="mb-4 h-0.5!" />
 		</div>
 	{/if}
+
 	<div bind:this={element} class="tiptap-editor flex-1 outline-none"></div>
+
+	{#if editor}
+		<div class="mt-4">
+			<Separator class="my-2 h-0.5!" />
+
+			<div class="flex justify-end gap-4 px-3 font-mono text-sm text-muted-foreground">
+				<span>{wordCount} {wordCount === 1 ? 'word' : 'words'}</span>
+				<span>•</span>
+				<span>{charCount} {charCount === 1 ? 'character' : 'characters'}</span>
+			</div>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -71,6 +82,7 @@
 	.tiptap-editor :global(.tiptap) {
 		flex: 1 1 0%;
 		outline: none;
+		min-height: 100%;
 
 		&::-webkit-scrollbar {
 			display: none;
@@ -79,6 +91,9 @@
 		@apply overflow-y-auto px-3;
 	}
 
+	.tiptap-editor :global(.tiptap[contenteditable='true']) {
+		cursor: text;
+	}
 	.tiptap-editor :global(.tiptap p) {
 		@apply mb-2 font-patrick text-2xl leading-relaxed last:mb-0;
 	}
