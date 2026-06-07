@@ -57,6 +57,12 @@ Open `localhost:5173` in your browser to view the local development server.
 
 Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a pull request.
 
+**Thank you to all the contributors who made this project possible!**
+
+<a href="https://github.com/stageddat/shelter-web/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=stageddat/shelter-web" />
+</a>
+
 ## License
 
 This project is open-source and available under the [GNU AGPLv3](./LICENSE).
