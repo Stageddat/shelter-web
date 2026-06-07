@@ -7,6 +7,7 @@
 
 	const localeConfig: Record<string, { label: string; flag: string }> = {
 		en: { label: 'english', flag: 'gb' },
+		es: { label: 'español', flag: 'es' },
 		ca: { label: 'català', flag: 'es-ct' },
 		de: { label: 'deutsch', flag: 'de' },
 		da: { label: 'dansk', flag: 'dk' }
