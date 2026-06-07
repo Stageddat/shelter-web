@@ -20,6 +20,7 @@
 	let title = $state('');
 	let displayedEntry = $state<DecryptedEntry | null>(null);
 	let currentContent = $state('');
+	let editorRef = $state<Editor | null>(null);
 
 	$effect(() => {
 		title = initialEntry.title;
@@ -44,6 +45,7 @@
 		if (!displayedEntry) return;
 		title = displayedEntry.title;
 		currentContent = displayedEntry.content ?? '';
+		editorRef?.resetContent(displayedEntry.content ?? '');
 		isEditing = false;
 	};
 </script>
@@ -61,7 +63,7 @@
 	{#if isEditing}
 		<div class="flex gap-2">
 			<Button
-				variant="secondary"
+				variant="ghost"
 				onclick={handleCancel}
 				class="flex h-10! w-10! items-center justify-center rounded-full"
 			>
@@ -99,12 +101,11 @@
 
 <div class="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-white/80 py-2">
 	{#if displayedEntry}
-		{#key `${isEditing ? 'editing' : 'viewing'}-${displayedEntry.updatedAt}`}
-			<Editor
-				initialContent={displayedEntry.content ?? ''}
-				editable={isEditing}
-				onChange={(json) => (currentContent = json)}
-			/>
-		{/key}
+		<Editor
+			bind:this={editorRef}
+			initialContent={displayedEntry.content ?? ''}
+			editable={isEditing}
+			onChange={(json) => (currentContent = json)}
+		/>
 	{/if}
 </div>

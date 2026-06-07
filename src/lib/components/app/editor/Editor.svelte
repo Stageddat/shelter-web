@@ -4,6 +4,7 @@
 	import StarterKit from '@tiptap/starter-kit';
 	import { Separator } from '$lib/components/ui/separator';
 	import EditorToolbar from './EditorToolbar.svelte';
+	import { slide } from 'svelte/transition';
 
 	interface Props {
 		initialContent?: string;
@@ -17,6 +18,10 @@
 	let element: HTMLDivElement;
 	let editor = $state<Editor | null>(null);
 	let wasEmpty = true;
+
+	export function resetContent(content: string) {
+		editor?.commands.setContent(content ? JSON.parse(content) : '');
+	}
 
 	onMount(() => {
 		editor = new Editor({
@@ -41,6 +46,10 @@
 		});
 	});
 
+	$effect(() => {
+		editor?.setEditable(editable);
+	});
+
 	onDestroy(() => {
 		editor?.destroy();
 	});
@@ -48,8 +57,10 @@
 
 <div class="flex min-h-0 flex-1 flex-col">
 	{#if editable && editor}
-		<EditorToolbar {editor} />
-		<Separator class="mb-4 h-0.5!" />
+		<div transition:slide={{ duration: 200 }}>
+			<EditorToolbar {editor} />
+			<Separator class="mb-4 h-0.5!" />
+		</div>
 	{/if}
 	<div bind:this={element} class="tiptap-editor flex-1 outline-none"></div>
 </div>
