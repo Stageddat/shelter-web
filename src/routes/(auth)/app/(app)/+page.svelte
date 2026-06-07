@@ -12,8 +12,8 @@
 		PopoverTrigger
 	} from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
-	import TriangleAlert from '@lucide/svelte/icons/triangle-alert';
 	import dumbCat from '$lib/assets/app/dumb-cat.png?enhanced';
+	import { Info } from '@lucide/svelte';
 
 	const appContext = getAppContext();
 	const entries = appContext.entries;
@@ -27,27 +27,24 @@
 			{greetingMessage}
 		</h2>
 		<Popover>
-			<!-- as child? -->
 			<PopoverTrigger>
-				<Button variant="destructive" class="h-12 w-12 bg-destructive/20">
-					<TriangleAlert class="h-7! w-7!" />
+				<Button variant="outline" class="h-12 w-12">
+					<Info class="h-7! w-7!" />
 				</Button>
 			</PopoverTrigger>
 
-			<PopoverContent align="end" class="w-2xl border-2 border-dashed border-red-600 bg-red-200">
+			<PopoverContent align="end" class="w-2xl">
 				<PopoverHeader>
-					<PopoverTitle class="text-4xl font-semibold tracking-wide text-red-600">
-						this app is in an early development stage
+					<PopoverTitle class="text-3xl font-semibold tracking-wide">
+						shelter is still in development!
 					</PopoverTitle>
 
-					<PopoverDescription class="text-2xl text-red-600">
-						shelter is under active development. while we work on stabilizing the database
-						structure, data loss during updates is a possibility.
-						<b>please make sure to export your journal frequently</b> to ensure you always have a
-						local backup of your journal.
-						<br />
-						<br />
-						you can export your journal easily from the settings page.
+					<PopoverDescription class="space-y-3 text-xl">
+						<span>
+							we're actively working on shelter. as a precaution, we recommend exporting your
+							journal from time to time, just in case ;)
+						</span>
+						<span class="block"> you can export easily in settings › data › export! </span>
 					</PopoverDescription>
 				</PopoverHeader>
 			</PopoverContent>
