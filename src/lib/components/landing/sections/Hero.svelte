@@ -1,6 +1,6 @@
 <script>
-	import MachkaImg from '$lib/assets/landing/machka.png?enhanced';
-	import { m } from '$lib/paraglide/messages.js';
+	import MachkaImg from '$lib/assets/landing/machka.webp?enhanced';
+	import { m } from '$lib/paraglide/messages';
 </script>
 
 <section
