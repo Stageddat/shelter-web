@@ -6,23 +6,23 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { getAppContext } from '$lib/contexts/app.context.svelte';
 
-	const { entries, isLoading } = getAppContext();
+	const app = getAppContext();
 </script>
 
-{#if isLoading}
+{#if app.isLoading}
 	<div class="flex h-full items-center justify-center text-6xl text-muted-foreground">
 		<LoadingText />
 	</div>
 {:else}
 	<main class="flex h-full flex-col px-10 pt-12">
-		<EntriesHeader entriesCount={entries.length} />
+		<EntriesHeader entriesCount={app.entries.length} />
 
-		{#if entries.length === 0}
+		{#if app.entries.length === 0}
 			<EmptyState />
 		{:else}
 			<ScrollArea class="min-h-0 flex-1">
 				<div class="mr-3 space-y-2 pb-6">
-					{#each entries as entry (entry.id)}
+					{#each app.entries as entry (entry.id)}
 						<EntryCard {entry} />
 					{/each}
 				</div>
