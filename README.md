@@ -1,10 +1,16 @@
+<div align="center">
+
 # Shelter - Web
+[**shelter.stageddat.dev**](https://shelter.stageddat.dev)<br/>
+[Join our Discord server!](https://discord.gg/BntK5GbF2M)
 
-A secure, open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
+</div>
 
-![shelter web entry editor](./docs/images/hero-readme-editor.png)
+<img src="./docs/images/hero-readme-editor.png" alt="Shelter — journal editor" width="100%"/>
 
-Shelter is built with [Typescript](https://www.typescriptlang.org/), [SvelteKit](https://svelte.dev/), [Tailwind](https://tailwindcss.com/), [Tiptap](https://tiptap.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
+Shelter is a secure, open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
+
+Built with [SvelteKit](https://svelte.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
 
 ## Features
 
