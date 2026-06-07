@@ -3,7 +3,26 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
+	import { pwaInfo } from 'virtual:pwa-info';
+	import { onMount } from 'svelte';
 
+	onMount(async () => {
+		if (pwaInfo) {
+			// Se importa dinámicamente debido a que SvelteKit utiliza SSR/SSG
+			const { registerSW } = await import('virtual:pwa-register');
+			registerSW({
+				immediate: true,
+				onRegistered(r) {
+					console.log('Service Worker registrado con éxito');
+				},
+				onRegisterError(error) {
+					console.error('Error al registrar el Service Worker:', error);
+				}
+			});
+		}
+	});
+
+	const webManifest = $derived(pwaInfo ? pwaInfo.webManifest.linkTag : '');
 	let { children } = $props();
 </script>
 
@@ -19,6 +38,7 @@
 		src="https://stats.stageddat.dev/script.js"
 		data-website-id="77c3d000-480e-4bd8-b2e0-47dfde39965b"
 	></script>
+	{@html webManifest}
 </svelte:head>
 <div class="sr-only" aria-hidden="true">
 	{#each locales as locale (locale)}
