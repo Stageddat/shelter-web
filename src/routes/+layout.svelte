@@ -8,7 +8,7 @@
 
 	onMount(async () => {
 		if (pwaInfo) {
-			const { registerSW } = await import('virtual:pwa-register/sveltekit');
+			const { registerSW } = await import('virtual:pwa-register');
 			registerSW({
 				immediate: true,
 				onRegistered() {},
