@@ -8,15 +8,12 @@
 
 	onMount(async () => {
 		if (pwaInfo) {
-			// Se importa dinámicamente debido a que SvelteKit utiliza SSR/SSG
 			const { registerSW } = await import('virtual:pwa-register');
 			registerSW({
 				immediate: true,
-				onRegistered(r) {
-					console.log('Service Worker registrado con éxito');
-				},
-				onRegisterError(error) {
-					console.error('Error al registrar el Service Worker:', error);
+				onRegistered() {},
+				onRegisterError(err: Error) {
+					console.error('failed to register service worker:', err);
 				}
 			});
 		}

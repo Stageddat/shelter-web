@@ -35,13 +35,25 @@ export default defineConfig({
 			kit: { spa: true },
 			workbox: {
 				navigateFallback: '/',
-				navigateFallbackAllowlist: [/^\/*/],
-				globPatterns: ['client/**/*.{js,css,ico,png,svg,webp,webmanifest,woff,woff2}']
+				navigateFallbackAllowlist: [/^\//],
+				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
+				additionalManifestEntries: [{ url: '/', revision: null }],
+				runtimeCaching: [
+					{
+						urlPattern: /\.(?:png|jpg|webp|svg|ico)$/,
+						handler: 'CacheFirst',
+						options: {
+							cacheName: 'images',
+							expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 30 }
+						}
+					}
+				]
 			},
+
 			manifest: {
 				name: 'shelter',
 				short_name: 'shelter',
-				description: 'Private encrypted journal',
+				description: 'private encrypted journal',
 				theme_color: '#ffffff',
 				background_color: '#ffffff',
 				display: 'standalone',
