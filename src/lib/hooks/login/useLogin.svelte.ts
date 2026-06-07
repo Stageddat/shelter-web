@@ -1,7 +1,7 @@
 import { goto } from '$app/navigation';
 import { resolve } from '$app/paths';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
-import { getUser } from '$lib/db.utils';
+import { getUser } from '$lib/services/app/db.service';
 import { login } from '$lib/services/auth/login.service';
 
 export function useLogin() {

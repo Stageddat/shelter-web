@@ -1,5 +1,5 @@
 import { register } from '$lib/services/auth/register.service';
-import { hasExistingUser } from '$lib/db.utils';
+import { hasExistingUser } from '$lib/services/app/db.service';
 import { goto } from '$app/navigation';
 import { type RegisterInput, registerSchema } from '$lib/schemas/register.schema';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';

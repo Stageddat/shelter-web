@@ -11,14 +11,14 @@
 	}
 	let { entry }: Props = $props();
 
-	const { refreshEntries } = getAppContext();
+	const { removeEntry } = getAppContext();
 
 	let showDialog = $state(false);
 
 	async function handleConfirmDelete(id: string) {
-		await deleteEntry(id);
-		await refreshEntries();
 		showDialog = false;
+		removeEntry(id);
+		await deleteEntry(id);
 	}
 </script>
 
@@ -47,7 +47,7 @@
 
 <a
 	href={resolve(`/app/entries/${entry.id}`)}
-	class="group flex items-center rounded-xl border border-border p-4 transition-all hover:bg-accent"
+	class="group flex items-center rounded-xl border border-border p-4 transition-all hover:bg-muted/50"
 >
 	<div class="flex-1">
 		<p class="text-xl">{entry.title}</p>
