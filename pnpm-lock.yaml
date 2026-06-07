@@ -17,6 +17,9 @@ importers:
       '@tiptap/extension-bubble-menu':
         specifier: ^3.25.0
         version: 3.25.0(@tiptap/core@3.25.0(@tiptap/pm@3.25.0))(@tiptap/pm@3.25.0)
+      '@tiptap/extensions':
+        specifier: ^3.26.0
+        version: 3.26.0(@tiptap/core@3.25.0(@tiptap/pm@3.25.0))(@tiptap/pm@3.25.0)
       '@tiptap/pm':
         specifier: ^3.25.0
         version: 3.25.0
@@ -1533,6 +1536,12 @@ packages:
     peerDependencies:
       '@tiptap/core': 3.25.0
       '@tiptap/pm': 3.25.0
+
+  '@tiptap/extensions@3.26.0':
+    resolution: {integrity: sha512-4wajuqnO2X0+LVvsBjW/xk3/tmdb16bNL939QhicAay4YYqXITeV2v3XJsryzmG4L5GkK1yLxvRGk4aLoxWrnA==}
+    peerDependencies:
+      '@tiptap/core': 3.26.0
+      '@tiptap/pm': 3.26.0
 
   '@tiptap/pm@3.25.0':
     resolution: {integrity: sha512-JeaVgyLj0gQZ1gVxDI73QkP+/Ozcjyp37HyL1pXLCRVjY8nnsDrdMzuKsP1SWN2fOhC+JBGW8/88g0rPmwZQFg==}
@@ -4688,6 +4697,11 @@ snapshots:
       '@tiptap/core': 3.25.0(@tiptap/pm@3.25.0)
 
   '@tiptap/extensions@3.25.0(@tiptap/core@3.25.0(@tiptap/pm@3.25.0))(@tiptap/pm@3.25.0)':
+    dependencies:
+      '@tiptap/core': 3.25.0(@tiptap/pm@3.25.0)
+      '@tiptap/pm': 3.25.0
+
+  '@tiptap/extensions@3.26.0(@tiptap/core@3.25.0(@tiptap/pm@3.25.0))(@tiptap/pm@3.25.0)':
     dependencies:
       '@tiptap/core': 3.25.0(@tiptap/pm@3.25.0)
       '@tiptap/pm': 3.25.0
