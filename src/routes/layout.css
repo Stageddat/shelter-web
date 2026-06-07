@@ -138,3 +138,7 @@
 		scrollbar-gutter: stable;
 	}
 }
+
+::selection {
+	@apply bg-accent/30 text-foreground;
+}
