@@ -1,6 +1,6 @@
 import { db } from '$lib/db';
 import { encryptText, decryptText } from '$lib/crypto';
-import { getUser } from '$lib/db.utils';
+import { getUser } from '$lib/services/app/db.service';
 
 // mover esto a tipos
 export interface DecryptedEntry {

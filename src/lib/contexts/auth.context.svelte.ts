@@ -1,6 +1,6 @@
 import { createContext } from 'svelte';
 import { type User } from '$lib/db';
-import { getUser } from '$lib/db.utils';
+import { getUser } from '$lib/services/app/db.service';
 
 class AuthContext {
 	user = $state<User | undefined>(undefined);

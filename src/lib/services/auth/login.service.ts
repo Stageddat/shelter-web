@@ -1,4 +1,4 @@
-import { getUser } from '$lib/db.utils';
+import { getUser } from '$lib/services/app/db.service';
 import { decryptMasterKey, deriveKeyFromPassword } from '$lib/crypto';
 
 export async function login(password: string): Promise<CryptoKey> {
