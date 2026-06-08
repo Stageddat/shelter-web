@@ -1,9 +1,8 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-/// <reference types="vite-plugin-pwa/svelte" />
-/// <reference types="vite-plugin-pwa/info" />
-/// <reference types="vite-plugin-pwa/client" />
+import 'vite-plugin-pwa/info';
+import 'vite-plugin-pwa/vanillajs';
 
 declare global {
 	namespace App {
