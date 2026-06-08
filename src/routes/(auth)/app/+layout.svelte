@@ -4,6 +4,7 @@
 	import { goto } from '$app/navigation';
 	import Sidebar from '$lib/components/app/Sidebar.svelte';
 	import { resolve } from '$app/paths';
+	import PWAUpdatePrompt from '$lib/components/app/PWAUpdatePrompt.svelte';
 
 	let { children } = $props();
 
@@ -17,6 +18,8 @@
 		}
 	});
 </script>
+
+<PWAUpdatePrompt />
 
 {#if authContext.isAuthenticated}
 	<div class="flex h-screen">
