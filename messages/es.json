@@ -1,8 +1,10 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-  "landing": {
-    "hero": {
-      "title": "shelter"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "landing": {
+        "hero": {
+            "title": "shelter",
+            "subtitle": "un espacio seguro donde tus pensamientos respiran en libertad",
+            "image_alt": "machka escribiendo en su diario con su gatito ziggy"
+        }
     }
-  }
 }
