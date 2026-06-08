@@ -15,12 +15,12 @@
 				<h1
 					class="text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
 				>
-					{m.landing_hero_title()}
+					{m['landing.hero.title']()}
 				</h1>
 				<p
 					class="font-primary mx-auto max-w-md text-left text-xl leading-relaxed text-pretty text-muted-foreground lg:mx-0 lg:text-3xl"
 				>
-					{m.landing_hero_subtitle()}
+					{m['landing.hero.subtitle']()}
 				</p>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 			<div class="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
 				<enhanced:img
 					src={MachkaImg}
-					alt={m.landing_hero_image_alt()}
+					alt={m['landing.hero.image_alt']()}
 					class="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
 				/>
 			</div>

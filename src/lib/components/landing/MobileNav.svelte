@@ -22,21 +22,21 @@
 					<a
 						href={localizeHref('/#features')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>{m.landing_navbar_features()}</a
+						>{m['landing.navbar.features']()}</a
 					>
 				</Sheet.Close>
 				<Sheet.Close>
 					<a
 						href={localizeHref('/#security')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>{m.landing_navbar_security()}</a
+						>{m['landing.navbar.security']()}</a
 					>
 				</Sheet.Close>
 				<Sheet.Close>
 					<a
 						href={localizeHref('/#faqs')}
 						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
-						>{m.landing_navbar_faqs()}</a
+						>{m['landing.navbar.faqs']()}</a
 					>
 				</Sheet.Close>
 			</nav>

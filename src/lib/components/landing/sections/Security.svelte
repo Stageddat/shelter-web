@@ -4,16 +4,16 @@
 
 	const securityFeatures = [
 		{
-			title: m.landing_security_1_title(),
-			text: m.landing_security_1_description()
+			title: m['landing.security.1.title'](),
+			text: m['landing.security.1.description']()
 		},
 		{
-			title: m.landing_security_2_title(),
-			text: m.landing_security_2_description()
+			title: m['landing.security.2.title'](),
+			text: m['landing.security.2.description']()
 		},
 		{
-			title: m.landing_security_3_title(),
-			text: m.landing_security_3_description()
+			title: m['landing.security.3.title'](),
+			text: m['landing.security.3.description']()
 		}
 	];
 </script>
@@ -22,7 +22,7 @@
 	<div class="mx-auto max-w-6xl">
 		<div class="mb-20 space-y-4 text-center">
 			<h2 class="font-display text-4xl font-normal text-foreground sm:text-6xl lg:text-7xl">
-				{m.landing_security_title()}
+				{m['landing.security.title']()}
 			</h2>
 		</div>
 

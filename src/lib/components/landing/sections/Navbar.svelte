@@ -18,7 +18,7 @@
 				href={localizeHref('/')}
 				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-3xl"
 			>
-				<span class="relative -top-px">{m.landing_navbar_logo()}</span>
+				<span class="relative -top-px">{m['landing.navbar.logo']()}</span>
 			</a>
 
 			<DesktopNav />
@@ -31,7 +31,7 @@
 				href="/signup"
 				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:inline-flex"
 			>
-				{m.landing_navbar_start()}
+				{m['landing.navbar.start']()}
 			</Button>
 		</div>
 	</div>

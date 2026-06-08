@@ -1,13 +1,13 @@
 import { m } from '$lib/paraglide/messages';
 
 export const faqData = [
-	{ question: () => m.landing_faqs_1_question(), message: m.landing_faqs_1_answer },
-	{ question: () => m.landing_faqs_2_question(), message: m.landing_faqs_2_answer },
-	{ question: () => m.landing_faqs_3_question(), message: m.landing_faqs_3_answer },
-	{ question: () => m.landing_faqs_4_question(), message: m.landing_faqs_4_answer },
-	{ question: () => m.landing_faqs_5_question(), message: m.landing_faqs_5_answer },
-	{ question: () => m.landing_faqs_6_question(), message: m.landing_faqs_6_answer },
-	{ question: () => m.landing_faqs_7_question(), message: m.landing_faqs_7_answer },
-	{ question: () => m.landing_faqs_8_question(), message: m.landing_faqs_8_answer },
-	{ question: () => m.landing_faqs_9_question(), message: m.landing_faqs_9_answer }
+	{ question: () => m['landing.faqs.1.question'](), message: m['landing.faqs.1.answer'] },
+	{ question: () => m['landing.faqs.2.question'](), message: m['landing.faqs.2.answer'] },
+	{ question: () => m['landing.faqs.3.question'](), message: m['landing.faqs.3.answer'] },
+	{ question: () => m['landing.faqs.4.question'](), message: m['landing.faqs.4.answer'] },
+	{ question: () => m['landing.faqs.5.question'](), message: m['landing.faqs.5.answer'] },
+	{ question: () => m['landing.faqs.6.question'](), message: m['landing.faqs.6.answer'] },
+	{ question: () => m['landing.faqs.7.question'](), message: m['landing.faqs.7.answer'] },
+	{ question: () => m['landing.faqs.8.question'](), message: m['landing.faqs.8.answer'] },
+	{ question: () => m['landing.faqs.9.question'](), message: m['landing.faqs.9.answer'] }
 ];
