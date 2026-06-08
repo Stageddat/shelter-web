@@ -1,4 +1,8 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format",
-    "landing_hero_title": "shelter"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "landing": {
+    "hero": {
+      "title": "shelter"
+    }
+  }
 }
