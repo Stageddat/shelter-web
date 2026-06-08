@@ -11,9 +11,10 @@
 		initialContent?: string;
 		editable?: boolean;
 		onChange?: (content: string) => void;
+		onEmptyChange?: (isEmpty: boolean) => void;
 	}
 
-	let { initialContent = '', editable = true, onChange }: Props = $props();
+	let { initialContent = '', editable = true, onChange, onEmptyChange }: Props = $props();
 
 	let element: HTMLDivElement;
 	let editor = $state<Editor | null>(null);
@@ -34,6 +35,7 @@
 			editable,
 			onUpdate: ({ editor: e }) => {
 				onChange?.(JSON.stringify(e.getJSON()));
+				onEmptyChange?.(e.isEmpty);
 
 				charCount = e.storage.characterCount.characters();
 				wordCount = e.storage.characterCount.words();
