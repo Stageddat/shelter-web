@@ -30,7 +30,7 @@ export default defineConfig({
 		sveltekit(),
 		tailwindcss(),
 		SvelteKitPWA({
-			registerType: 'autoUpdate',
+			registerType: 'prompt',
 			// injectRegister: 'inline',
 			kit: { spa: true },
 			workbox: {
