@@ -30,11 +30,11 @@
 
 <form onsubmit={onFormSubmit} class="space-y-6">
 	<h1 class="mb-2 text-4xl font-bold tracking-wide text-foreground lg:text-5xl">
-		{m.login_title({ username })}
+		{m['login.title']({ username })}
 	</h1>
 
 	<div class="space-y-2 {error ? 'mb-2' : 'mb-4'}">
-		<Label class="mb-0.5 text-xl" for="password">{m.login_password_label()}</Label>
+		<Label class="mb-0.5 text-xl" for="password">{m['login.password.label']()}</Label>
 		<InputGroup>
 			<InputGroupInput
 				type="password"
@@ -42,7 +42,7 @@
 				name="password"
 				value={password}
 				oninput={handleChange}
-				placeholder={m.login_password_placeholder()}
+				placeholder={m['login.password.placeholder']()}
 				class="text-xl!"
 				required
 				disabled={isLoading}
@@ -64,9 +64,9 @@
 		disabled={isLoading}
 	>
 		{#if isLoading}
-			<LoadingText text={m.login_button_loading()} />
+			<LoadingText text={m['login.button.loading']()} />
 		{:else}
-			{m.login_button()}
+			{m['login.button.default']()}
 		{/if}
 	</Button>
 </form>

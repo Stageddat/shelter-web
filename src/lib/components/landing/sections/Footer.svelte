@@ -11,42 +11,46 @@
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 			<div class="space-y-4">
 				<p class="text-4xl font-normal tracking-tighter text-foreground">
-					{m.landing_footer_title()}
+					{m['landing.footer.title']()}
 				</p>
 				<div class="space-y-1 text-sm leading-relaxed text-muted-foreground">
-					<p>{m.landing_footer_year({ currentYear })}</p>
-					<p>{m.landing_footer_copyright()}</p>
+					<p>{m['landing.footer.year']({ currentYear })}</p>
+					<p>{m['landing.footer.copyright']()}</p>
 				</div>
 			</div>
 
 			<!-- product -->
 			<div class="space-y-4">
 				<p class="text-xl font-medium tracking-wide text-foreground">
-					{m.landing_footer_product_title()}
+					{m['landing.footer.product.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
-					<FooterLink href="">{m.landing_footer_product_about_us()}</FooterLink>
-					<FooterLink href="">{m.landing_footer_product_cloud()}</FooterLink>
-					<FooterLink href="">{m.landing_footer_product_selfhost()}</FooterLink>
+					<FooterLink href="">{m['landing.footer.product.about_us']()}</FooterLink>
+					<FooterLink href="">{m['landing.footer.product.cloud']()}</FooterLink>
+					<FooterLink href="">{m['landing.footer.product.selfhost']()}</FooterLink>
 				</nav>
 			</div>
 
 			<div class="space-y-4">
 				<p class="text-lg font-medium tracking-tight text-foreground">
-					{m.landing_footer_legal_title()}
+					{m['landing.footer.legal.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
-					<FooterLink href={localizeHref('/privacy')}>{m.landing_footer_legal_privacy()}</FooterLink
-					>
-					<FooterLink href={localizeHref('/terms')}>{m.landing_footer_legal_terms()}</FooterLink>
-					<FooterLink href={localizeHref('/cookies')}>{m.landing_footer_legal_cookies()}</FooterLink
-					>
+					<FooterLink href={localizeHref('/privacy')}>
+						{m['landing.footer.legal.privacy']()}
+					</FooterLink>
+					<FooterLink href={localizeHref('/terms')}>
+						{m['landing.footer.legal.terms']()}
+					</FooterLink>
+					<FooterLink href={localizeHref('/cookies')}>
+						{m['landing.footer.legal.cookies']()}
+					</FooterLink>
 				</nav>
 			</div>
 
 			<div class="space-y-4">
 				<p class="text-lg font-medium tracking-tight text-foreground">
-					{m.landing_footer_contact_title()}
+					{m['landing.footer.contact.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
 					<FooterLink href="https://github.com/Stageddat/shelter-web" external>github</FooterLink>

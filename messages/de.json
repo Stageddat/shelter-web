@@ -1,70 +1,134 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format",
-    "landing_hero_title": "shelter",
-    "landing_hero_subtitle": "ein sicherer ort an dem deine gedanken frei atmen können, ohne beurteilt zu werden",
-    "landing_hero_image_alt": "machka schreibt ihren tagebuch mit ihrer kitty ziggy",
-    "landing_features_title": "ein sicherer ort für deine gedanken",
-    "landing_features_1_title": "top-level sicherheit",
-    "landing_features_1_description": "deine einträge sind jederzeit verschlüsselt und geschützt.",
-    "landing_features_2_title": "lokale speicherung und offline-first",
-    "landing_features_2_description": "beware deine tagebücher sicher auf deinem gerät auf.",
-    "landing_features_3_title": "cloud sync (kommt bald)",
-    "landing_features_3_description": "bald kannst du jederzeit und überall auf deine gedanken zugreifen.",
-    "landing_features_4_title": "100% persönlich und privat",
-    "landing_features_4_description": "dein tagebuch ist nur für deine augen.\nwir respektieren deine privatsphäre.",
-    "landing_features_5_title": "für ruhe entworfen",
-    "landing_features_5_description": "eine ablenkungsfreie benutzeroberfläche, die dir hilft, dich zu konzentrieren.",
-    "landing_features_6_title": "schreibe auf deiner eigenen geschwindigkeit",
-    "landing_features_6_description": "es gibt keine fristen oder druck. nur dich und deine gedanken.",
-    "landing_security_title": "vollständig geschützt",
-    "landing_security_1_title": "deine gedanken gehören dir",
-    "landing_security_1_description": "shelter speichert notizen privat in deinem browser, sodass du schnell darauf zugreifen kannst - sogar offline. niemand anderes kann sie lesen, nicht einmal wir.",
-    "landing_security_2_title": "ende-zu-ende verschlüsselt",
-    "landing_security_2_description": "deine einträge sind ende-zu-ende verschlüsselt und werden zuerst offline gespeichert. wir lesen, scannen oder verkaufen deine daten niemals. punkt.",
-    "landing_security_3_title": "0 tracker und 0 werbung",
-    "landing_security_3_description": "wir erfassen strikt keine persönlichen daten. es gibt keine tracker, keine werbung und keine versteckten analysen, die dich verfolgen.",
-    "landing_faqs_title": "häufig gestellte fragen",
-    "landing_faqs_1_question": "was ist shelter?",
-    "landing_faqs_1_answer": "shelter ist ein sicherer ort an dem deine gedanken atmen können. es ist eine sichere journaling-web-app in der du frei und ohne beurteilung in deinem lieblingsbrowser schreiben kannst.",
-    "landing_faqs_2_question": "ist es open source?",
-    "landing_faqs_2_answer": "ja! den quellcode findest du auf <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> und wir freuen uns über beiträge.",
-    "landing_faqs_3_question": "wo sind die daten gespeichert?",
-    "landing_faqs_3_answer": "alle deine einträge werden lokal in deinem browser in verschlüsseltem speicher abgelegt.",
-    "landing_faqs_4_question": "wovon ist dieses projekt inspiriert?",
-    "landing_faqs_4_answer": "dieses projekt ist vom kommentarbereich des songs shelter von porter robinson und madeon inspiriert. viele menschen schreiben dort tägliche einträge, und wir wollten einen persönlichen, privaten raum für diese kleinen lebensmomente schaffen. du kannst dir das video ansehen <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">hier</a>!",
-    "landing_faqs_5_question": "ist es kostenlos?",
-    "landing_faqs_5_answer": "ja! shelter is kostenlos, ohne werbung, und open source. es ist ein herzensprojekt.",
-    "landing_faqs_6_question": "wie werden die daten verschlüsselt?",
-    "landing_faqs_6_answer": "die daten werden lokal mit starker verschlüsselung gespeichert. mehr über unsere sicherheitsprotokolle erfährst du in unserer <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">datenschutzerklärung</a>.",
-    "landing_faqs_7_question": "wer kann meine daten sehen?",
-    "landing_faqs_7_answer": "niemand! nicht einmal wir können sie lesen. deine einträge sind verschlüsselt mit deinem eigenem schlüssel.",
-    "landing_faqs_8_question": "ist es sicher?",
-    "landing_faqs_8_answer": "ja. wir benutzen ende-zu-ende verschlüsselung und eine datenschutzfreundliche architektur, damit dein shelter ganz dir allein gehört.",
-    "landing_faqs_9_question": "wer ist machka?",
-    "landing_faqs_9_answer": "sie ist unser offizielles maskottchen! du kannst sie und ihren kitty ziggy oft auf der website entdecken. .<br /><br /> ein besonderer dank geht an <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> für die wunderbaren kunstwerke!",
-    "landing_start_title": "bereit zu ruhen?",
-    "landing_start_description": "starte deine reise in deinem eigenem tempo.",
-    "landing_start_button": "starte meine reise!",
-    "landing_navbar_logo": "shelter",
-    "landing_navbar_features": "funktionen",
-    "landing_navbar_security": "sicherheit",
-    "landing_navbar_faqs": "fragen",
-    "landing_navbar_start": "jetzt starten",
-    "landing_footer_title": "shelter",
-    "landing_footer_year": "© 2025-{currentYear} shelter",
-    "landing_footer_copyright": "alle rechte vorbehalten.",
-    "landing_footer_product_title": "produkt",
-    "landing_footer_product_about_us": "über uns",
-    "landing_footer_product_cloud": "cloud",
-    "landing_footer_product_selfhost": "selbst-hosten",
-    "landing_footer_legal_title": "legal",
-    "landing_footer_legal_privacy": "datenschutzerklärung",
-    "landing_footer_legal_terms": "nutzungsbedingungen",
-    "landing_footer_legal_cookies": "cookie-richtlinie",
-    "landing_footer_contact_title": "kontakt",
-    "login_title": "willkommen zurück, {username}!",
-    "login_password_label": "passwort",
-    "login_password_placeholder": "geben sie ihr passwort ein",
-    "login_button": "betritt mein shelter",
-    "login_button_loading": "wird betreten"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "landing": {
+    "hero": {
+      "title": "shelter",
+      "subtitle": "ein sicherer ort an dem deine gedanken frei atmen können, ohne beurteilt zu werden",
+      "image_alt": "machka schreibt ihren tagebuch mit ihrer kitty ziggy"
+    },
+    "features": {
+      "1": {
+        "title": "top-level sicherheit",
+        "description": "deine einträge sind jederzeit verschlüsselt und geschützt."
+      },
+      "2": {
+        "title": "lokale speicherung und offline-first",
+        "description": "beware deine tagebücher sicher auf deinem gerät auf."
+      },
+      "3": {
+        "title": "cloud sync (kommt bald)",
+        "description": "bald kannst du jederzeit und überall auf deine gedanken zugreifen."
+      },
+      "4": {
+        "title": "100% persönlich und privat",
+        "description": "dein tagebuch ist nur für deine augen.\nwir respektieren deine privatsphäre."
+      },
+      "5": {
+        "title": "für ruhe entworfen",
+        "description": "eine ablenkungsfreie benutzeroberfläche, die dir hilft, dich zu konzentrieren."
+      },
+      "6": {
+        "title": "schreibe auf deiner eigenen geschwindigkeit",
+        "description": "es gibt keine fristen oder druck. nur dich und deine gedanken."
+      },
+      "title": "ein sicherer ort für deine gedanken"
+    },
+    "security": {
+      "1": {
+        "title": "deine gedanken gehören dir",
+        "description": "shelter speichert notizen privat in deinem browser, sodass du schnell darauf zugreifen kannst - sogar offline. niemand anderes kann sie lesen, nicht einmal wir."
+      },
+      "2": {
+        "title": "ende-zu-ende verschlüsselt",
+        "description": "deine einträge sind ende-zu-ende verschlüsselt und werden zuerst offline gespeichert. wir lesen, scannen oder verkaufen deine daten niemals. punkt."
+      },
+      "3": {
+        "title": "0 tracker und 0 werbung",
+        "description": "wir erfassen strikt keine persönlichen daten. es gibt keine tracker, keine werbung und keine versteckten analysen, die dich verfolgen."
+      },
+      "title": "vollständig geschützt"
+    },
+    "faqs": {
+      "1": {
+        "question": "was ist shelter?",
+        "answer": "shelter ist ein sicherer ort an dem deine gedanken atmen können. es ist eine sichere journaling-web-app in der du frei und ohne beurteilung in deinem lieblingsbrowser schreiben kannst."
+      },
+      "2": {
+        "question": "ist es open source?",
+        "answer": "ja! den quellcode findest du auf <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> und wir freuen uns über beiträge."
+      },
+      "3": {
+        "question": "wo sind die daten gespeichert?",
+        "answer": "alle deine einträge werden lokal in deinem browser in verschlüsseltem speicher abgelegt."
+      },
+      "4": {
+        "question": "wovon ist dieses projekt inspiriert?",
+        "answer": "dieses projekt ist vom kommentarbereich des songs shelter von porter robinson und madeon inspiriert. viele menschen schreiben dort tägliche einträge, und wir wollten einen persönlichen, privaten raum für diese kleinen lebensmomente schaffen. du kannst dir das video ansehen <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">hier</a>!"
+      },
+      "5": {
+        "question": "ist es kostenlos?",
+        "answer": "ja! shelter is kostenlos, ohne werbung, und open source. es ist ein herzensprojekt."
+      },
+      "6": {
+        "question": "wie werden die daten verschlüsselt?",
+        "answer": "die daten werden lokal mit starker verschlüsselung gespeichert. mehr über unsere sicherheitsprotokolle erfährst du in unserer <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">datenschutzerklärung</a>."
+      },
+      "7": {
+        "question": "wer kann meine daten sehen?",
+        "answer": "niemand! nicht einmal wir können sie lesen. deine einträge sind verschlüsselt mit deinem eigenem schlüssel."
+      },
+      "8": {
+        "question": "ist es sicher?",
+        "answer": "ja. wir benutzen ende-zu-ende verschlüsselung und eine datenschutzfreundliche architektur, damit dein shelter ganz dir allein gehört."
+      },
+      "9": {
+        "question": "wer ist machka?",
+        "answer": "sie ist unser offizielles maskottchen! du kannst sie und ihren kitty ziggy oft auf der website entdecken. .<br /><br /> ein besonderer dank geht an <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> für die wunderbaren kunstwerke!"
+      },
+      "title": "häufig gestellte fragen"
+    },
+    "start": {
+      "title": "bereit zu ruhen?",
+      "description": "starte deine reise in deinem eigenem tempo.",
+      "button": "starte meine reise!"
+    },
+    "navbar": {
+      "logo": "shelter",
+      "features": "funktionen",
+      "security": "sicherheit",
+      "faqs": "fragen",
+      "start": "jetzt starten"
+    },
+    "footer": {
+      "title": "shelter",
+      "year": "© 2025-{currentYear} shelter",
+      "copyright": "alle rechte vorbehalten.",
+      "product": {
+        "title": "produkt",
+        "about_us": "über uns",
+        "cloud": "cloud",
+        "selfhost": "selbst-hosten"
+      },
+      "legal": {
+        "title": "legal",
+        "privacy": "datenschutzerklärung",
+        "terms": "nutzungsbedingungen",
+        "cookies": "cookie-richtlinie"
+      },
+      "contact": {
+        "title": "kontakt"
+      }
+    }
+  },
+  "login": {
+    "title": "willkommen zurück, {username}!",
+    "password": {
+      "label": "passwort",
+      "placeholder": "geben sie ihr passwort ein"
+    },
+    "button": {
+      "default": "betritt mein shelter",
+      "loading": "wird betreten"
+    }
+  }
 }

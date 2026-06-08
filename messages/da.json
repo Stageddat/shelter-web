@@ -1,34 +1,74 @@
 {
-    "$schema": "https://inlang.com/schema/inlang-message-format",
-    "landing_hero_title": "shelter",
-    "landing_hero_subtitle": "et sikkert sted, hvor dine tanker kan trække vejret uden at blive dømt",
-    "landing_hero_image_alt": "machka som skriver hendes journal med hendes kat ziggy",
-    "landing_features_title": "et sikkert sted for dine tanker",
-    "landing_features_1_description": "dit indlæg vil hele tiden være krypteret og beskyttet.",
-    "landing_features_2_title": "lokal opbevaret & offline-først",
-    "landing_features_2_description": "beholder dine journaler sikkert på dit eget enhed.",
-    "landing_features_3_title": "cloud sync (kommer snart)",
-    "landing_features_3_description": "snart vil du kunne få adgang til dine tanker, hvor du vil.",
-    "landing_features_4_title": "100% personlig & privat",
-    "landing_features_4_description": "din journal er kun for dig.\nvi respekterer dit privatliv.",
-    "landing_features_5_description": "en distraktionsfri interface til at hjælpe med at fokusere.",
-    "landing_features_6_title": "skriv ved dit eget tempo",
-    "landing_features_6_description": "der er ingen deadlines eller tryk. bare dig og dine tanker.",
-    "landing_security_title": "helt beskyttet",
-    "landing_security_1_title": "dine tanker er dine",
-    "landing_security_2_description": "dine journaler er slut til slut krypteret og gemt offline først. vi læser, skanner, eller sælger ikke din data.",
-    "landing_security_3_title": "0 tracker & 0 reklamer",
-    "landing_security_3_description": "vi samler aldrig personlig data. der er ingen trackers, ingen reklamer, og ingen gemte analyser som følger dig.",
-    "landing_faqs_title": "ofte stilte spørgsmål",
-    "landing_faqs_1_question": "hvad er shelter?",
-    "landing_faqs_1_answer": "shelter er et sikkert sted, hvor du dine tanker kan trækker vejret. det er et sikkert journal web app hvor du kan frit skrive uden at blive dømt i din yndlings browser.",
-    "landing_faqs_2_question": "er det open source?",
-    "landing_faqs_2_answer": "ja! du kan finde source code på <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> og vi byder bidrag velkommen.",
-    "landing_faqs_3_question": "hvor er dataen opbevaret?",
-    "landing_faqs_3_answer": "alle dine indlæg er lokalt opbevaret i din brower ved brug at krypteret opbevaring.",
-    "landing_faqs_4_question": "hvad er dette projekt inspireret af?",
-    "landing_faqs_4_answer": "dette projekt er inspireret af kommentar sektionen af sangen \"shelter\" af porter robinson & madeon. mange mennesker skrive daglige indlæg der, og vi ville lave et personligt, sikkert sted for de mindre dele af livet. du kan se videoen <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">her</a>!",
-    "landing_faqs_5_question": "er det gratis?",
-    "landing_faqs_5_answer": "ja! shelter er gratis at bruge , reklame-fri, og open source. det er lavet med meget kærlighed.",
-    "landing_faqs_6_question": "hvordan er dataen krypteret?"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "landing": {
+    "hero": {
+      "title": "shelter",
+      "subtitle": "et sikkert sted, hvor dine tanker kan trække vejret uden at blive dømt",
+      "image_alt": "machka som skriver hendes journal med hendes kat ziggy"
+    },
+    "features": {
+      "1": {
+        "description": "dit indlæg vil hele tiden være krypteret og beskyttet."
+      },
+      "2": {
+        "title": "lokal opbevaret & offline-først",
+        "description": "beholder dine journaler sikkert på dit eget enhed."
+      },
+      "3": {
+        "title": "cloud sync (kommer snart)",
+        "description": "snart vil du kunne få adgang til dine tanker, hvor du vil."
+      },
+      "4": {
+        "title": "100% personlig & privat",
+        "description": "din journal er kun for dig.\nvi respekterer dit privatliv."
+      },
+      "5": {
+        "description": "en distraktionsfri interface til at hjælpe med at fokusere."
+      },
+      "6": {
+        "title": "skriv ved dit eget tempo",
+        "description": "der er ingen deadlines eller tryk. bare dig og dine tanker."
+      },
+      "title": "et sikkert sted for dine tanker"
+    },
+    "security": {
+      "1": {
+        "title": "dine tanker er dine"
+      },
+      "2": {
+        "description": "dine journaler er slut til slut krypteret og gemt offline først. vi læser, skanner, eller sælger ikke din data."
+      },
+      "3": {
+        "title": "0 tracker & 0 reklamer",
+        "description": "vi samler aldrig personlig data. der er ingen trackers, ingen reklamer, og ingen gemte analyser som følger dig."
+      },
+      "title": "helt beskyttet"
+    },
+    "faqs": {
+      "1": {
+        "question": "hvad er shelter?",
+        "answer": "shelter er et sikkert sted, hvor du dine tanker kan trækker vejret. det er et sikkert journal web app hvor du kan frit skrive uden at blive dømt i din yndlings browser."
+      },
+      "2": {
+        "question": "er det open source?",
+        "answer": "ja! du kan finde source code på <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> og vi byder bidrag velkommen."
+      },
+      "3": {
+        "question": "hvor er dataen opbevaret?",
+        "answer": "alle dine indlæg er lokalt opbevaret i din brower ved brug at krypteret opbevaring."
+      },
+      "4": {
+        "question": "hvad er dette projekt inspireret af?",
+        "answer": "dette projekt er inspireret af kommentar sektionen af sangen \"shelter\" af porter robinson & madeon. mange mennesker skrive daglige indlæg der, og vi ville lave et personligt, sikkert sted for de mindre dele af livet. du kan se videoen <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">her</a>!"
+      },
+      "5": {
+        "question": "er det gratis?",
+        "answer": "ja! shelter er gratis at bruge , reklame-fri, og open source. det er lavet med meget kærlighed."
+      },
+      "6": {
+        "question": "hvordan er dataen krypteret?"
+      },
+      "title": "ofte stilte spørgsmål"
+    }
+  }
 }

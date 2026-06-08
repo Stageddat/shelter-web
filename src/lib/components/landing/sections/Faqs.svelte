@@ -10,7 +10,7 @@
 	<div class="mx-auto max-w-3xl">
 		<div class="mb-16 text-center">
 			<h2 class="font-display text-4xl font-normal text-foreground sm:text-6xl lg:text-7xl">
-				{m.landing_faqs_title()}
+				{m['landing.faqs.title']()}
 			</h2>
 		</div>
 		<Accordion.Root type="single" class="space-y-3">

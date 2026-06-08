@@ -10,7 +10,7 @@
 			<h2
 				class="font-display text-4xl font-normal text-pretty text-foreground sm:text-6xl lg:text-7xl"
 			>
-				{m.landing_features_title()}
+				{m['landing.features.title']()}
 			</h2>
 		</div>
 

@@ -9,32 +9,32 @@ import { m } from '$lib/paraglide/messages';
 export const features = [
 	{
 		icon: Shield,
-		title: m.landing_features_1_title(),
-		text: m.landing_features_1_description()
+		title: m['landing.features.1.title'](),
+		text: m['landing.features.1.description']()
 	},
 	{
 		icon: Database,
-		title: m.landing_features_2_title(),
-		text: m.landing_features_2_description()
+		title: m['landing.features.2.title'](),
+		text: m['landing.features.2.description']()
 	},
 	{
 		icon: CloudSync,
-		title: m.landing_features_3_title(),
-		text: m.landing_features_3_description()
+		title: m['landing.features.3.title'](),
+		text: m['landing.features.3.description']()
 	},
 	{
 		icon: EyeOff,
-		title: m.landing_features_4_title(),
-		text: m.landing_features_4_description()
+		title: m['landing.features.4.title'](),
+		text: m['landing.features.4.description']()
 	},
 	{
 		icon: Bird,
-		title: m.landing_features_5_title(),
-		text: m.landing_features_5_description()
+		title: m['landing.features.5.title'](),
+		text: m['landing.features.5.description']()
 	},
 	{
 		icon: PencilLine,
-		title: m.landing_features_6_title(),
-		text: m.landing_features_6_description()
+		title: m['landing.features.6.title'](),
+		text: m['landing.features.6.description']()
 	}
 ];
