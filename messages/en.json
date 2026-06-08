@@ -130,8 +130,5 @@
       "default": "enter my shelter",
       "loading": "entering"
     }
-  },
-  "test": {
-    "title": "test"
   }
 }
