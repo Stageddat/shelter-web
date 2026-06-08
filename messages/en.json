@@ -66,5 +66,6 @@
     "login_password_label": "password",
     "login_password_placeholder": "enter your password",
     "login_button": "enter my shelter",
-    "login_button_loading": "entering"
+    "login_button_loading": "entering",
+    "test_plural": "{count, plural, one {# entry} other {# entries}}"
 }
