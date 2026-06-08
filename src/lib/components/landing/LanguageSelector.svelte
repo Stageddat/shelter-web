@@ -7,10 +7,11 @@
 
 	const localeConfig: Record<string, { label: string; translation: 'official' | 'community' }> = {
 		en: { label: 'english', translation: 'official' },
-		es: { label: 'español', translation: 'community' },
 		ca: { label: 'català', translation: 'official' },
+		es: { label: 'español', translation: 'community' },
 		de: { label: 'deutsch', translation: 'community' },
-		da: { label: 'dansk', translation: 'community' }
+		da: { label: 'dansk', translation: 'community' },
+		ru: { label: 'русский', translation: 'community' }
 	};
 
 	const official = locales.filter((l) => localeConfig[l].translation === 'official');
