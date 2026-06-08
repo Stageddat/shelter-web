@@ -1,7 +1,7 @@
 <div align="center">
 
 # Shelter - Web
-[**shelter.stageddat.dev**](https://shelter.stageddat.dev)<br/>
+[**shelter.cat**](https://shelter.cat)<br/>
 [Join our Discord server!](https://discord.gg/BntK5GbF2M)
 
 </div>
