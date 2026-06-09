@@ -99,7 +99,7 @@
 	/>
 </div>
 
-<div class="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-white/80 py-2">
+<div class="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-secondary/10 py-2">
 	{#if displayedEntry}
 		<Editor
 			bind:this={editorRef}
