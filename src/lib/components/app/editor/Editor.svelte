@@ -122,6 +122,6 @@
 	}
 
 	.tiptap-editor :global(.tiptap ::selection) {
-		@apply bg-accent/30 text-foreground;
+		@apply bg-selection text-foreground;
 	}
 </style>

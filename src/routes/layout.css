@@ -27,6 +27,7 @@
 	--muted-foreground: oklch(37.56% 0.026 57.38);
 	--accent: oklch(72.63% 0.102 57.32);
 	--accent-foreground: oklch(12.67% 0.023 62.03);
+	--selection: oklch(72.63% 0.102 57.32 / 30%);
 	--destructive: oklch(0.577 0.245 27.325);
 	--destructive-foreground: oklch(0.95 0.01 210);
 	--border: oklch(80.89% 0.064 58.11);
@@ -63,6 +64,8 @@
 	--muted-foreground: oklch(0.708 0 0);
 	--accent: oklch(0.269 0 0);
 	--accent-foreground: oklch(0.985 0 0);
+	/* only exception where selection is the 30% of a color that is not accent! */
+	--selection: oklch(0.488 0.243 264 / 40%);
 	--destructive: oklch(0.704 0.191 22.216);
 	--border: oklch(1 0 0 / 10%);
 	--input: oklch(1 0 0 / 15%);
@@ -98,6 +101,7 @@
 	--muted-foreground: oklch(69% 0.04 275);
 	--accent: oklch(82% 0.09 277);
 	--accent-foreground: oklch(24% 0.03 284);
+	--selection: oklch(82% 0.09 277 / 30%);
 	--border: oklch(40% 0.03 280);
 	--input: oklch(40% 0.03 280);
 	--ring: oklch(82% 0.09 277);
@@ -134,6 +138,7 @@
 	--color-destructive: var(--destructive);
 	--color-accent-foreground: var(--accent-foreground);
 	--color-accent: var(--accent);
+	--color-selection: var(--selection);
 	--color-muted-foreground: var(--muted-foreground);
 	--color-muted: var(--muted);
 	--color-secondary-foreground: var(--secondary-foreground);
@@ -169,5 +174,5 @@
 }
 
 ::selection {
-	@apply bg-accent/30 text-foreground;
+	@apply bg-selection text-foreground;
 }
