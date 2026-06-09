@@ -33,7 +33,7 @@
 
 		<div class="flex gap-2">
 			<Button
-				variant="secondary"
+				variant="ghost"
 				onclick={() => history.back()}
 				class="flex h-10! w-10! items-center justify-center rounded-full"
 			>
