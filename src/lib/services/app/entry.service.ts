@@ -50,8 +50,8 @@ export async function createEntry({
 		titleIv,
 		encryptedContent,
 		contentIv,
-		date: now.toISOString().split('T')[0], // "2026-03-21"
-		time: now.toTimeString().slice(0, 5), // "14:32"
+		date: now.toLocaleDateString('sv'), // YYYY-MM-DD
+		time: now.toLocaleTimeString('sv').slice(0, 5), // HH:mm
 		createdAt: now.toISOString(),
 		updatedAt: now.toISOString()
 	});
@@ -91,7 +91,7 @@ export async function getEntries(masterKey: CryptoKey): Promise<DecryptedEntry[]
 	const user = await getUser();
 	if (!user) return [];
 
-	const entries = await db.entries.where('userId').equals(user.id).reverse().sortBy('date');
+	const entries = await db.entries.where('userId').equals(user.id).reverse().sortBy('createdAt');
 
 	return Promise.all(
 		entries.map(async (entry) => ({
