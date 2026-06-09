@@ -17,6 +17,15 @@
 			goto(resolve('/login'), { replaceState: true });
 		}
 	});
+
+	const auth = getAuthContext();
+
+	if (import.meta.env.DEV) {
+		import('$lib/dev/seed').then(({ seedEntries }) => {
+			const seedWindow = window as Window & { __seed?: (n?: number) => void }; // what the fuck is this
+			seedWindow.__seed = (n = 500) => seedEntries(auth.masterKey!, n);
+		});
+	}
 </script>
 
 <PWAUpdatePrompt />
