@@ -34,6 +34,7 @@
 		defer
 		src="https://stats.stageddat.dev/script.js"
 		data-website-id="77c3d000-480e-4bd8-b2e0-47dfde39965b"
+		data-performance="true"
 	></script>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifest}
