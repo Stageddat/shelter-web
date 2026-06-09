@@ -5,6 +5,7 @@
 	import { page } from '$app/state';
 	import { pwaInfo } from 'virtual:pwa-info';
 	import { onMount } from 'svelte';
+	import { ModeWatcher } from 'mode-watcher';
 
 	onMount(async () => {
 		if (pwaInfo) {
@@ -39,6 +40,7 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifest}
 </svelte:head>
+
 <div class="sr-only" aria-hidden="true">
 	{#each locales as locale (locale)}
 		<a href={localizeHref(page.url.pathname, { locale })} data-sveltekit-reload>
@@ -46,4 +48,5 @@
 		</a>
 	{/each}
 </div>
+<ModeWatcher />
 {@render children()}
