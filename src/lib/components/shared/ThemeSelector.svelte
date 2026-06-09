@@ -41,7 +41,7 @@
 					<button
 						{...props}
 						onclick={() => applyTheme(option)}
-						class="flex w-full items-center gap-3 rounded px-3 py-2 text-lg transition-colors hover:bg-accent/25"
+						class="flex w-full items-center gap-3 rounded px-3 py-2 text-lg tracking-wider transition-colors hover:bg-accent/25"
 					>
 						<span class="w-4 text-muted-foreground">
 							{#if isActive(option)}<Check class="h-4 w-4" />{/if}
