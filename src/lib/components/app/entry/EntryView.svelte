@@ -106,6 +106,8 @@
 			initialContent={displayedEntry.content ?? ''}
 			editable={isEditing}
 			onChange={(json) => (currentContent = json)}
+			date={displayedEntry.date}
+			time={displayedEntry.time}
 		/>
 	{/if}
 </div>

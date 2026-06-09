@@ -6,15 +6,25 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import EditorToolbar from './EditorToolbar.svelte';
 	import { slide } from 'svelte/transition';
+	import EditorFooter from './EditorFooter.svelte';
 
 	interface Props {
 		initialContent?: string;
 		editable?: boolean;
 		onChange?: (content: string) => void;
 		onEmptyChange?: (isEmpty: boolean) => void;
+		date?: string;
+		time?: string;
 	}
 
-	let { initialContent = '', editable = true, onChange, onEmptyChange }: Props = $props();
+	let {
+		initialContent = '',
+		editable = true,
+		onChange,
+		onEmptyChange,
+		date,
+		time
+	}: Props = $props();
 
 	let element: HTMLDivElement;
 	let editor = $state<Editor | null>(null);
@@ -68,12 +78,7 @@
 	{#if editor}
 		<div class="mt-4">
 			<Separator class="my-2 h-0.5!" />
-
-			<div class="flex justify-end gap-4 px-3 font-mono text-sm text-muted-foreground">
-				<span>{wordCount} {wordCount === 1 ? 'word' : 'words'}</span>
-				<span>•</span>
-				<span>{charCount} {charCount === 1 ? 'character' : 'characters'}</span>
-			</div>
+			<EditorFooter {wordCount} {charCount} {date} {time} />
 		</div>
 	{/if}
 </div>
