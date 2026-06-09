@@ -82,6 +82,35 @@
 	--sidebar-ring: oklch(0.556 0 0);
 }
 
+[data-theme='mocha-lavender'],
+[data-theme='mocha-lavender'].dark {
+	--background: oklch(24% 0.03 284);
+	--foreground: oklch(88% 0.04 272);
+	--card: oklch(32% 0.03 282);
+	--card-foreground: oklch(88% 0.04 272);
+	--popover: oklch(32% 0.03 282);
+	--popover-foreground: oklch(88% 0.04 272);
+	--primary: oklch(82% 0.09 277);
+	--primary-foreground: oklch(24% 0.03 284);
+	--secondary: oklch(40% 0.03 280);
+	--secondary-foreground: oklch(88% 0.04 272);
+	--muted: oklch(48% 0.03 279);
+	--muted-foreground: oklch(69% 0.04 275);
+	--accent: oklch(82% 0.09 277);
+	--accent-foreground: oklch(24% 0.03 284);
+	--border: oklch(40% 0.03 280);
+	--input: oklch(40% 0.03 280);
+	--ring: oklch(82% 0.09 277);
+	--sidebar: oklch(22% 0.03 284);
+	--sidebar-foreground: oklch(88% 0.04 272);
+	--sidebar-primary: oklch(82% 0.09 277);
+	--sidebar-primary-foreground: oklch(24% 0.03 284);
+	--sidebar-accent: oklch(40% 0.03 280);
+	--sidebar-accent-foreground: oklch(88% 0.04 272);
+	--sidebar-border: oklch(32% 0.03 282);
+	--sidebar-ring: oklch(82% 0.09 277);
+}
+
 @theme inline {
 	/* --font-sans: 'Inter', sans-serif; */
 	--font-patrick: 'Patrick Hand', sans-serif;
