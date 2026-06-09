@@ -47,9 +47,9 @@
 					variant="ghost"
 					class={cn(
 						'w-full justify-start gap-3 py-6 pl-4 text-lg tracking-wider',
-						'text-foreground/40 hover:bg-transparent hover:text-foreground/80',
+						'text-foreground/60 hover:bg-transparent! hover:text-foreground/95',
 						isActive(href) &&
-							'rounded-full bg-secondary/30 text-foreground hover:bg-secondary/30 hover:text-foreground'
+							'rounded-full bg-secondary/30 text-foreground hover:bg-secondary/30! hover:text-foreground'
 					)}
 					href={navigateTo ?? href}
 				>
