@@ -28,7 +28,7 @@
 		<p class="mb-2 text-2xl tracking-widest uppercase">shelter info</p>
 		<p class="text-left text-xl tracking-wide lowercase">
 			version:
-			<span class="opacity-50">{packageJson.version}</span>
+			<span class="opacity-60">{packageJson.version}</span>
 		</p>
 		<p class="text-left text-xl tracking-wide lowercase">
 			source:
