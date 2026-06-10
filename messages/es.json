@@ -5,6 +5,62 @@
             "title": "shelter",
             "subtitle": "un espacio seguro donde tus pensamientos respiran en libertad",
             "image_alt": "machka escribiendo en su diario con su gatito ziggy"
+        },
+        "features": {
+            "1": {
+                "title": "seguridad de alto nivel",
+                "description": "tus entradas están encriptadas y protegidos todo el tiempo."
+            },
+            "2": {
+                "title": "almacenamiento local y offline",
+                "description": "mantén tus diarios de forma segura en tu propio dispositivo."
+            },
+            "3": {
+                "title": "sincronización en la nube (muy pronto)",
+                "description": "pronto podrás acceder a tus ideas en cualquier lugar."
+            },
+            "4": {
+                "title": "100% personal y privado",
+                "description": "tu diario es solo tuyo,\nrespetamos tu privacidad."
+            },
+            "5": {
+                "title": "diseñado para la calma",
+                "description": "una interfaz sin distracciones para ayudarte a concentrarte."
+            },
+            "6": {
+                "title": "escribe a tu ritmo",
+                "description": "no hay plazos ni presiones. solo tú y tus pensamientos."
+            },
+            "title": "un lugar seguro para tus pensamientos"
+        },
+        "security": {
+            "1": {
+                "title": "tus pensamientos son tuyos",
+                "description": "shelter guarda las notas de forma privada en tu navegador, para que puedas acceder a ellas rápidamente, incluso sin conexión. nadie más puede leerlas, ni siquiera nosotros."
+            },
+            "2": {
+                "title": "cifrado de extremo a extremo",
+                "description": "tus datos se cifran de extremo a extremo y se almacenan sin conexión. nunca leemos, escaneamos ni vendemos tus datos."
+            },
+            "3": {
+                "title": "0 rastreadores y 0 anuncios",
+                "description": "jamás recopilamos datos personales. no utilizamos rastreadores, anuncios ni análisis ocultos que te sigan."
+            },
+            "title": "totalmente protegido"
+        },
+        "faqs": {
+            "1": {
+                "question": "¿qué es shelter?",
+                "answer": "shelter es un lugar seguro donde tus pensamientos pueden respirar. es una aplicación web de diario segura donde puedes escribir libremente sin presión en tu navegador favorito."
+            },
+            "2": {
+                "question": "¿es de código abierto?",
+                "answer": "¡sí! puedes encontrar el código fuente en <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> y aceptamos contribuciones."
+            },
+            "3": {
+                "question": "¿dónde se almacenan los datos?",
+                "answer": "todas tus entradas se almacenan localmente en tu navegador mediante almacenamiento cifrado."
+            }
         }
     }
 }
