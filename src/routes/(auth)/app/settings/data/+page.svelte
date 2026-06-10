@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { exportFullBackup } from '$lib/services/backup/export.service';
-	import { importFullBackup } from '$lib/services/backup/import.service';
+	import { checkImportCompatibility, importFullBackup } from '$lib/services/backup/import.service';
 	import { purgeAllData } from '$lib/services/app/db.service';
 	import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 	import { Trash2, FileUp, FileDown } from '@lucide/svelte';
@@ -48,6 +48,25 @@
 		importing = true;
 		try {
 			const buffer = await file.arrayBuffer();
+
+			const check = checkImportCompatibility(buffer);
+
+			if (!check.ok) {
+				toast.error(
+					check.reason === 'format_incompatible'
+						? 'this backup is not compatible with this version of shelter'
+						: 'this backup format is not supported'
+				);
+				return;
+			}
+
+			if (check.warning === 'backup_from_newer_app') {
+				const ok = confirm(
+					'this backup was created with a newer version of shelter. some data may be lost. continue?'
+				);
+				if (!ok) return;
+			}
+
 			await importFullBackup(buffer);
 			window.alert('backup imported successfully, you will be logged out in 3 seconds');
 			toast.success('backup imported successfully');
