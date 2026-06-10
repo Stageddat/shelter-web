@@ -92,8 +92,8 @@
 
 	<!-- import & export -->
 	<div class="mb-4">
-		<p class="mb-1 text-2xl tracking-widest uppercase opacity-75">import & export</p>
-		<p class="mb-4 text-xl lowercase opacity-60">backup your data or bring it to this profile</p>
+		<p class="mb-1 text-2xl tracking-widest uppercase">import & export</p>
+		<p class="mb-4 text-xl lowercase opacity-85">backup your data or bring it to this profile</p>
 		<div class="flex w-full flex-row gap-4">
 			<div
 				class="flex w-1/2 flex-col rounded-xl border border-current p-5 opacity-100"
@@ -104,7 +104,11 @@
 					download an encrypted backup of all your entries and attachments. keep it somewhere safe,
 					only you can open it.
 				</p>
-				<Button class="mt-auto h-12 w-full text-xl" onclick={handleExport} disabled={exporting}>
+				<Button
+					class="mt-auto h-12 w-full cursor-pointer text-xl"
+					onclick={handleExport}
+					disabled={exporting}
+				>
 					<FileDown class="mr-1 h-6! w-6!" />
 					{exporting ? 'exporting...' : 'export'}
 				</Button>
@@ -120,7 +124,7 @@
 					data.
 				</p>
 				<Button
-					class="mt-auto h-12 w-full text-xl"
+					class="mt-auto h-12 w-full cursor-pointer text-xl"
 					onclick={handleImportClick}
 					disabled={importing}
 				>
@@ -135,17 +139,17 @@
 
 	<!-- purge -->
 	<div class="my-4">
-		<p class="mb-1 text-2xl tracking-widest uppercase opacity-75">danger zone</p>
-		<p class="mb-4 text-xl lowercase opacity-60">permanently delete all the data in this profile</p>
+		<p class="mb-1 text-2xl tracking-widest uppercase">danger zone</p>
+		<p class="mb-4 text-xl lowercase opacity-85">permanently delete all the data in this profile</p>
 		<div
 			class="flex flex-row items-center justify-between gap-4 rounded-xl border border-destructive/20 p-5"
 		>
-			<p class="w-9/12 text-xl leading-relaxed text-destructive lowercase opacity-70">
+			<p class="w-9/12 text-xl leading-relaxed text-destructive lowercase opacity-90">
 				this action is irreversible. all entries, accounts and attachments will be permanently
 				deleted. make sure to export a backup first if you want to keep a copy.
 			</p>
 			<Button
-				class="h-12 w-3/12 text-xl"
+				class="h-12 w-3/12 cursor-pointer text-xl"
 				onclick={handlePurge}
 				disabled={purging}
 				variant="destructive"
