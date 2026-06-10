@@ -13,8 +13,8 @@
 	</div>
 
 	<!-- project description -->
-	<div class="mb-6">
-		<p class="mb-2 text-2xl tracking-widest uppercase">what is shelter?</p>
+	<div class="my-4 flex flex-col gap-2">
+		<p class="text-2xl tracking-widest uppercase">what is shelter?</p>
 		<p class="text-left text-xl tracking-wide lowercase opacity-85">
 			shelter is a secure, open-source web-based journal designed with privacy and end-to-end<br />
 			encryption. your data stays yours, stored directly in your browser.
@@ -24,8 +24,8 @@
 	<hr class="border-current opacity-10" />
 
 	<!-- project info -->
-	<div class="my-4 flex flex-col gap-1">
-		<p class="mb-2 text-2xl tracking-widest uppercase">shelter info</p>
+	<div class="my-4 flex flex-col gap-2">
+		<p class="text-2xl tracking-widest uppercase">shelter info</p>
 		<p class="text-left text-xl tracking-wide lowercase">
 			version:
 			<span class="opacity-60">{packageJson.version}</span>
@@ -79,8 +79,8 @@
 	<hr class="border-current opacity-10" />
 
 	<!-- credits -->
-	<div class="my-4 flex flex-col gap-3">
-		<p class="mb-2 text-2xl tracking-widest uppercase">credits</p>
+	<div class="my-4 flex flex-col gap-2">
+		<p class="text-2xl tracking-widest uppercase">credits</p>
 		<p class="text-left text-xl tracking-wide lowercase opacity-85">
 			this project is made possible by an amazing community of developers, artists, illustrators,
 			graphic designers, musicians, testers, translators, and way too much caffeine. i'm truly
@@ -99,8 +99,8 @@
 	<hr class="border-current opacity-10" />
 
 	<!-- links -->
-	<div class="my-4">
-		<p class="mb-2 text-2xl tracking-widest uppercase">links</p>
+	<div class="my-4 gap-2">
+		<p class="mb-3 text-2xl tracking-widest uppercase">links</p>
 		<div class="flex flex-row gap-3">
 			<a
 				href="https://github.com/Stageddat/shelter-web/issues"
