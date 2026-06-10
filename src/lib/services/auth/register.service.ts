@@ -22,6 +22,7 @@ export async function register(registerInput: RegisterInput) {
 		await db.users.add({
 			id: crypto.randomUUID(),
 			username: registerInput.username,
+			displayName: registerInput.username,
 
 			createdAt: new Date().toISOString(),
 			updatedAt: new Date().toISOString(),
