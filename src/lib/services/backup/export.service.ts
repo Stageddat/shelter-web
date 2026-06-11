@@ -1,11 +1,11 @@
 import { db } from '$lib/db';
-import { ExportMode, BlockType, type BackupMeta } from '$lib/types/app/backup';
+import { ExportMode, BlockType, META_VERSION, type BackupMeta } from '$lib/types/app/backup';
 import { encodeHeader, encodeBlock, encodeMetadata } from '$lib/services/backup/backup.codec';
+import packageJson from '$lib/../../package.json';
 
 export async function exportFullBackup(): Promise<ArrayBuffer> {
 	const enc = new TextEncoder();
 
-	// leer datos de db
 	const user = await db.users.toCollection().first();
 	if (!user) throw new Error('no hay usuario para exportar');
 
@@ -36,7 +36,8 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 
 	// metadata
 	const meta: BackupMeta = {
-		appVersion: '0.1.0',
+		metaVersion: META_VERSION,
+		appVersion: packageJson.version,
 		username: user.username,
 		totalEntries: entries.length,
 		encrypted: true,
@@ -45,7 +46,7 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 	const metaBytes = encodeMetadata(meta);
 
 	// bloques
-	const totalBlocks = 1 + entryBlocks.length; // 1 user + N entries
+	const totalBlocks = 1 + entryBlocks.length;
 	const userBlock = encodeBlock(BlockType.User, userBytes);
 	const encodedEntryBlocks = entryBlocks.map((e) => encodeBlock(BlockType.Entry, e));
 
