@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import LanguageSelector from '$lib/components/landing/LanguageSelector.svelte';
 	import ThemeSelector from '$lib/components/shared/ThemeSelector.svelte';
 	import { getAuthContext } from '$lib/contexts/auth.context.svelte';
@@ -6,14 +6,16 @@
 	import * as InputGroup from '$lib/components/ui/input-group/index';
 	import { updateDisplayName } from '$lib/services/app/user.service';
 
-	let copied = $state(false);
-
-	function handleCopy() {
-		navigator.clipboard.writeText(auth.user?.id ?? '');
-		copied = true;
-		setTimeout(() => (copied = false), 2000);
-	}
 	const auth = getAuthContext();
+
+	let copied = $state<'username' | 'id' | null>(null);
+
+	function handleCopy(type: 'username' | 'id') {
+		const value = type === 'username' ? auth.user?.username : auth.user?.id;
+		navigator.clipboard.writeText(value ?? '');
+		copied = type;
+		setTimeout(() => (copied = null), 2000);
+	}
 
 	let displayName = $state(auth.user?.displayName ?? auth.user?.username ?? '');
 
@@ -80,11 +82,11 @@
 		<div class="flex flex-row items-center justify-between gap-2">
 			<p class="text-xl tracking-wide lowercase opacity-85">username</p>
 			<button
-				onclick={handleCopy}
+				onclick={() => handleCopy('username')}
 				class="flex cursor-pointer items-center gap-2 rounded-md border border-border bg-muted/60 px-3 py-1 transition-opacity hover:opacity-90"
 			>
 				<span class="font-mono text-base opacity-85">{auth.user?.username}</span>
-				{#if copied}
+				{#if copied === 'username'}
 					<Check class="size-3.5" />
 				{:else}
 					<Copy class="size-3.5" />
@@ -95,11 +97,11 @@
 		<div class="flex flex-row items-center justify-between gap-2">
 			<p class="text-xl tracking-wide lowercase opacity-85">user id</p>
 			<button
-				onclick={handleCopy}
+				onclick={() => handleCopy('id')}
 				class="flex cursor-pointer items-center gap-2 rounded-md border border-border bg-muted/60 px-3 py-1 transition-opacity hover:opacity-90"
 			>
 				<span class="font-mono text-base opacity-85">{auth.user?.id}</span>
-				{#if copied}
+				{#if copied === 'id'}
 					<Check class="size-3.5" />
 				{:else}
 					<Copy class="size-3.5" />
