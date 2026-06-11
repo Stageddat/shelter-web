@@ -13,6 +13,7 @@
 		editable?: boolean;
 		onChange?: (content: string) => void;
 		onEmptyChange?: (isEmpty: boolean) => void;
+		onCountChange?: (wordCount: number, charCount: number) => void;
 		date?: string;
 		time?: string;
 	}
@@ -22,6 +23,7 @@
 		editable = true,
 		onChange,
 		onEmptyChange,
+		onCountChange,
 		date,
 		time
 	}: Props = $props();
@@ -46,6 +48,7 @@
 			onUpdate: ({ editor: e }) => {
 				onChange?.(JSON.stringify(e.getJSON()));
 				onEmptyChange?.(e.isEmpty);
+				onCountChange?.(wordCount, charCount);
 
 				charCount = e.storage.characterCount.characters();
 				wordCount = e.storage.characterCount.words();
@@ -122,6 +125,6 @@
 	}
 
 	.tiptap-editor :global(.tiptap ::selection) {
-		@apply bg-accent/30 text-foreground;
+		@apply bg-selection text-foreground;
 	}
 </style>

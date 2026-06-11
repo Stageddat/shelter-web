@@ -1,5 +1,8 @@
 <script lang="ts">
-	import LockImg from '$lib/assets/landing/book.png?enhanced';
+	import BookLight from '$lib/assets/landing/book.webp?enhanced';
+	import BookDark from '$lib/assets/landing/book-dark.webp?enhanced';
+	import BookMochaLavender from '$lib/assets/landing/book-mocha-lavender.webp?enhanced';
+	import { theme, mode } from 'mode-watcher';
 	import { m } from '$lib/paraglide/messages';
 
 	const securityFeatures = [
@@ -28,11 +31,28 @@
 
 		<div class="flex flex-col items-center gap-16 lg:flex-row lg:gap-24">
 			<div class="relative flex w-full justify-center lg:w-1/2">
-				<enhanced:img
-					src={LockImg}
-					alt="security lock illustration"
-					class="w-full max-w-sm object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-md"
-				/>
+				{#if theme.current === 'mocha-lavender'}
+					<enhanced:img
+						src={BookMochaLavender}
+						alt="security lock illustration"
+						class="w-full max-w-sm object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-md"
+						loading="lazy"
+					/>
+				{:else if mode.current === 'dark'}
+					<enhanced:img
+						src={BookDark}
+						alt="security lock illustration"
+						class="w-full max-w-sm object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-md"
+						loading="lazy"
+					/>
+				{:else}
+					<enhanced:img
+						src={BookLight}
+						alt="security lock illustration"
+						class="w-full max-w-sm object-contain transition-all duration-1000 ease-in-out hover:scale-105 sm:max-w-md"
+						loading="lazy"
+					/>
+				{/if}
 			</div>
 
 			<div class="w-full space-y-6 lg:w-1/2">

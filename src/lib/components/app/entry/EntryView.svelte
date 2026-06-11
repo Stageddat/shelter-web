@@ -21,16 +21,20 @@
 	let displayedEntry = $state<DecryptedEntry | null>(null);
 	let currentContent = $state('');
 	let editorRef = $state<Editor | null>(null);
+	let wordCount = $state(0);
+	let charCount = $state(0);
 
 	$effect(() => {
 		title = initialEntry.title;
 		displayedEntry = initialEntry;
 		currentContent = initialEntry.content ?? '';
+		wordCount = initialEntry.wordCount ?? 0;
+		charCount = initialEntry.charCount ?? 0;
 	});
 
 	const handleSave = async () => {
 		if (!masterKey || !displayedEntry) return;
-		await updateEntry(initialEntry.id, masterKey, title, currentContent);
+		await updateEntry(initialEntry.id, masterKey, title, currentContent, wordCount, charCount);
 		await refreshEntries();
 		displayedEntry = {
 			...displayedEntry,
@@ -99,7 +103,7 @@
 	/>
 </div>
 
-<div class="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-white/80 py-2">
+<div class="flex min-h-0 flex-1 flex-col rounded-sm border-2 bg-secondary/10 py-2">
 	{#if displayedEntry}
 		<Editor
 			bind:this={editorRef}
@@ -108,6 +112,15 @@
 			onChange={(json) => (currentContent = json)}
 			date={displayedEntry.date}
 			time={displayedEntry.time}
+			onCountChange={(w, c) => {
+				wordCount = w;
+				charCount = c;
+			}}
+			onEmptyChange={(isEmpty) => {
+				if (isEmpty) {
+					isEditing = true;
+				}
+			}}
 		/>
 	{/if}
 </div>

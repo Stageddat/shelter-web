@@ -1,5 +1,8 @@
 <script>
-	import MachkaImg from '$lib/assets/landing/machka.webp?enhanced';
+	import MachkaLight from '$lib/assets/landing/machka.webp?enhanced';
+	import MachkaDark from '$lib/assets/landing/machka-dark.webp?enhanced';
+	import MachkaMochaLavender from '$lib/assets/landing/machka-mocha-lavender.webp?enhanced';
+	import { theme, mode } from 'mode-watcher';
 	import { m } from '$lib/paraglide/messages';
 </script>
 
@@ -9,7 +12,6 @@
 	<div
 		class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-0 pt-32 pb-20 lg:flex-row lg:items-center lg:pt-0 lg:pb-0"
 	>
-		<!-- {/* text left */} -->
 		<div class="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
 			<div class="space-y-8">
 				<h1
@@ -25,14 +27,30 @@
 			</div>
 		</div>
 
-		<!-- {/* img */} -->
 		<div class="flex flex-1 items-center justify-center lg:-ml-16">
 			<div class="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
-				<enhanced:img
-					src={MachkaImg}
-					alt={m['landing.hero.image_alt']()}
-					class="h-auto w-full object-contain brightness-[1.02] transition-all duration-1000"
-				/>
+				{#if theme.current === 'mocha-lavender'}
+					<enhanced:img
+						src={MachkaMochaLavender}
+						alt={m['landing.hero.image_alt']()}
+						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
+					/>
+				{:else if mode.current === 'dark'}
+					<enhanced:img
+						src={MachkaDark}
+						alt={m['landing.hero.image_alt']()}
+						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
+					/>
+				{:else}
+					<enhanced:img
+						src={MachkaLight}
+						alt={m['landing.hero.image_alt']()}
+						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
+					/>
+				{/if}
 			</div>
 		</div>
 	</div>

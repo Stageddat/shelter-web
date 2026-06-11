@@ -1,8 +1,9 @@
-import { Dexie, type Table } from 'dexie';
+import { Dexie, type EntityTable } from 'dexie';
 
 export interface User {
 	id: string;
 	username: string;
+	displayName?: string;
 
 	// metadata
 	createdAt: string;
@@ -28,17 +29,47 @@ interface DiaryEntry {
 	time: string;
 	createdAt: string;
 	updatedAt: string;
+	wordCount?: number;
+	charCount?: number;
 }
 
 const db = new Dexie('DiaryDatabase') as Dexie & {
-	users: Table<User, 'id'>;
-	entries: Table<DiaryEntry, 'id'>;
+	users: EntityTable<User, 'id'>;
+	entries: EntityTable<DiaryEntry, 'id'>;
 };
 
 db.version(1).stores({
 	users: 'id, username',
 	entries: 'id, userId, date, createdAt, updatedAt'
 });
+
+db.version(2)
+	.stores({
+		users: 'id, username',
+		entries: 'id, userId, date, createdAt, updatedAt'
+	})
+	.upgrade(async (tx) => {
+		await tx
+			.table('users')
+			.toCollection()
+			.modify((user) => {
+				if (!user.displayName) {
+					user.displayName = user.username;
+				}
+			});
+
+		await tx
+			.table('entries')
+			.toCollection()
+			.modify((entry) => {
+				if (!entry.wordCount) {
+					entry.wordCount = 0;
+				}
+				if (!entry.charCount) {
+					entry.charCount = 0;
+				}
+			});
+	});
 
 export type { DiaryEntry };
 export { db };

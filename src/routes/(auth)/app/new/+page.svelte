@@ -10,10 +10,12 @@
 
 	let contentRef = $state('');
 	let isEditorEmpty = $state(true);
+	let wordCount = $state(0);
+	let charCount = $state(0);
 
 	async function handleSaveAndRedirect() {
 		try {
-			const entryId = await entry.handleSave(contentRef);
+			const entryId = await entry.handleSave(contentRef, wordCount, charCount);
 			if (entryId) {
 				const resolved = resolve('/(auth)/app/entries/[id]', { id: entryId });
 				goto(resolved, { replaceState: true });
@@ -66,6 +68,10 @@
 			editable={true}
 			onChange={(json) => (contentRef = json)}
 			onEmptyChange={(isEmpty) => (isEditorEmpty = isEmpty)}
+			onCountChange={(w, c) => {
+				wordCount = w;
+				charCount = c;
+			}}
 		/>
 	</div>
 </main>

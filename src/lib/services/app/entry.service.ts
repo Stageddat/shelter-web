@@ -11,6 +11,8 @@ export interface DecryptedEntry {
 	content?: string; // descifrado, solo cuando se abre la entrada
 	createdAt: string;
 	updatedAt: string;
+	wordCount?: number;
+	charCount?: number;
 }
 
 export interface GroupedEntries {
@@ -23,13 +25,17 @@ export interface CreateEntryParams {
 	masterKey: CryptoKey;
 	title: string;
 	content: string;
+	wordCount?: number;
+	charCount?: number;
 }
 
 // encriptar titulo y contenido antes de guardar
 export async function createEntry({
 	masterKey,
 	title,
-	content
+	content,
+	wordCount,
+	charCount
 }: CreateEntryParams): Promise<string> {
 	const user = await getUser();
 	if (!user) throw new Error('no user found');
@@ -53,7 +59,9 @@ export async function createEntry({
 		date: now.toLocaleDateString('sv'), // YYYY-MM-DD
 		time: now.toLocaleTimeString('sv').slice(0, 5), // HH:mm
 		createdAt: now.toISOString(),
-		updatedAt: now.toISOString()
+		updatedAt: now.toISOString(),
+		wordCount: wordCount ?? 0,
+		charCount: charCount ?? 0
 	});
 
 	return id;
@@ -64,20 +72,25 @@ export async function updateEntry(
 	entryId: string,
 	masterKey: CryptoKey,
 	title: string,
-	content: string
+	content: string,
+	wordCount: number,
+	charCount: number
 ): Promise<void> {
+	console.log('saving wordCount:', wordCount, 'charCount:', charCount);
 	const { ciphertext: encryptedTitle, iv: titleIv } = await encryptText(
 		masterKey,
 		title || 'untitled'
 	);
 	const { ciphertext: encryptedContent, iv: contentIv } = await encryptText(masterKey, content);
 
-	await db.entries.where('id').equals(entryId).modify({
+	await db.entries.update(entryId, {
 		encryptedTitle,
 		titleIv,
 		encryptedContent,
 		contentIv,
-		updatedAt: new Date().toISOString()
+		updatedAt: new Date().toISOString(),
+		wordCount,
+		charCount
 	});
 }
 

@@ -10,7 +10,7 @@ export function useCreateEntry() {
 	let isSaving = $state(false);
 	let error = $state('');
 
-	async function handleSave(editorContent: string): Promise<string | null> {
+	async function handleSave(editorContent: string, wordCount: number, charCount: number) {
 		if (!auth.masterKey) {
 			error = 'you are not authenticated';
 			return null;
@@ -26,7 +26,9 @@ export function useCreateEntry() {
 			const entryId = await createEntry({
 				masterKey: auth.masterKey,
 				title,
-				content: editorContent
+				content: editorContent,
+				wordCount,
+				charCount
 			});
 			await entries.refreshEntries();
 			return entryId;

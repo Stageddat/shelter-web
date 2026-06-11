@@ -1,13 +1,15 @@
 import {
 	type BackupMeta,
+	type DecodedHeader,
+	type BlockRaw,
 	HEADER_SIZE,
 	MAGIC_NUMBER,
 	FORMAT_VERSION,
-	type DecodedHeader,
-	type BlockRaw
+	META_VERSION,
+	Compressed
 } from '$lib/types/app/backup';
 
-// crc32
+// CRC32 checksum
 function crc32(bytes: Uint8Array): number {
 	let crc = 0xffffffff;
 	for (const byte of bytes) {
@@ -30,15 +32,9 @@ export function encodeBlock(type: number, data: Uint8Array): Uint8Array {
 	const view = new DataView(buffer);
 	const u8 = new Uint8Array(buffer);
 
-	let offset = 0;
-
-	view.setUint8(offset, type);
-	offset += 1;
-
-	view.setUint32(offset, data.byteLength, false);
-	offset += 4;
-
-	u8.set(data, offset);
+	view.setUint8(0, type);
+	view.setUint32(1, data.byteLength, false);
+	u8.set(data, 5);
 
 	return u8;
 }
@@ -48,44 +44,38 @@ export function encodeHeader(meta: Uint8Array, totalBlocks: number, mode: number
 	const view = new DataView(buffer);
 	const u8 = new Uint8Array(buffer);
 
-	let offset = 0;
+	// [0-3] magic
+	u8.set(MAGIC_NUMBER, 0);
 
-	// magic "SHLT"
-	u8.set(MAGIC_NUMBER, offset);
-	offset += 4;
+	// [4] FORMAT_VERSION
+	view.setUint8(4, FORMAT_VERSION);
 
-	// versión formato
-	view.setUint16(offset, FORMAT_VERSION, false);
-	offset += 2;
+	// [5] META_VERSION
+	view.setUint8(5, META_VERSION);
 
-	// modo
-	view.setUint8(offset, mode);
-	offset += 1;
+	// [6] mode
+	view.setUint8(6, mode);
 
-	// reservado
-	view.setUint8(offset, 0x00);
-	offset += 1;
+	// [7] compressed (0x00 de momento)
+	view.setUint8(7, Compressed.No);
 
-	// timestamp ms
-	view.setBigInt64(offset, BigInt(Date.now()), false);
-	offset += 8;
+	// [8-15] timestamp
+	view.setBigInt64(8, BigInt(Date.now()), false);
 
-	// longitud metadata JSON
-	view.setUint32(offset, meta.byteLength, false);
-	offset += 4;
+	// [16-19] metaLength
+	view.setUint32(16, meta.byteLength, false);
 
-	// total bloques
-	view.setUint32(offset, totalBlocks, false);
-	offset += 4;
+	// [20-23] totalBlocks
+	view.setUint32(20, totalBlocks, false);
 
-	// checksum de los primeros 28 bytes (placeholder, se sobreescribe)
-	const checksumOffset = offset;
-	view.setUint32(offset, 0, false);
+	// [24-27] checksum reservado 0x00000000
+	view.setUint32(24, 0, false);
 
-	// aqui faltan 4 bytes para llegar a HEADER_SIZE
+	// [28-31] reservado 0x00000000
+	view.setUint32(28, 0, false);
 
-	// escribir checksum real
-	view.setUint32(checksumOffset, crc32(u8.slice(0, HEADER_SIZE)), false);
+	// CRC32 calculado sobre los 32 bytes del header
+	view.setUint32(24, crc32(u8), false);
 
 	return u8;
 }
@@ -97,23 +87,24 @@ export function decodeHeader(buffer: ArrayBuffer): DecodedHeader {
 
 	// verificar magic
 	const magic = String.fromCharCode(u8[0], u8[1], u8[2], u8[3]);
-	if (magic !== 'SHLT') throw new Error('.shelter file not valid');
+	if (magic !== 'SHLT') throw new Error('invalid_file');
 
 	// verificar checksum
-	const storedChecksum = view.getUint32(24, false);
-
-	// reemplazar los 4 bytes del checksum con 0 para recalcular
+	// poner checksum a 0 y recalcularlo
 	const copy = u8.slice(0, HEADER_SIZE);
 	copy[24] = 0;
 	copy[25] = 0;
 	copy[26] = 0;
 	copy[27] = 0;
 	const expectedChecksum = crc32(copy);
-	if (storedChecksum !== expectedChecksum) throw new Error('invalid checksum');
+	const storedChecksum = view.getUint32(24, false);
+	if (storedChecksum !== expectedChecksum) throw new Error('invalid_checksum');
 
 	return {
-		version: view.getUint16(4, false),
+		formatVersion: view.getUint8(4),
+		metaVersion: view.getUint8(5),
 		mode: view.getUint8(6),
+		compressed: view.getUint8(7),
 		timestamp: view.getBigInt64(8, false),
 		metaLength: view.getUint32(16, false),
 		totalBlocks: view.getUint32(20, false),
@@ -135,6 +126,7 @@ export function decodeBlocks(buffer: ArrayBuffer, offset: number): BlockRaw[] {
 
 		const data = u8.slice(offset, offset + length);
 		offset += length;
+
 		blocks.push({ type, data });
 	}
 
