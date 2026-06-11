@@ -34,18 +34,21 @@
 						src={MachkaMochaLavender}
 						alt={m['landing.hero.image_alt']()}
 						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
 					/>
 				{:else if mode.current === 'dark'}
 					<enhanced:img
 						src={MachkaDark}
 						alt={m['landing.hero.image_alt']()}
 						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
 					/>
 				{:else}
 					<enhanced:img
 						src={MachkaLight}
 						alt={m['landing.hero.image_alt']()}
 						class="h-auto w-full object-contain transition-all duration-1000"
+						fetchpriority="high"
 					/>
 				{/if}
 			</div>
