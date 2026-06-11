@@ -1,6 +1,6 @@
 {
 	"name": "shelter-web",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -60,6 +60,7 @@
 		"@tiptap/extensions": "^3.26.0",
 		"@tiptap/pm": "^3.25.0",
 		"@tiptap/starter-kit": "^3.25.0",
+		"bigger-picture": "^1.1.20",
 		"dexie": "^4.4.3",
 		"flag-icons": "^7.5.0",
 		"zod": "^4.4.3"

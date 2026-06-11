@@ -26,6 +26,9 @@ importers:
       '@tiptap/starter-kit':
         specifier: ^3.25.0
         version: 3.25.0
+      bigger-picture:
+        specifier: ^1.1.20
+        version: 1.1.20
       dexie:
         specifier: ^4.4.3
         version: 4.4.3
@@ -1725,6 +1728,9 @@ packages:
     resolution: {integrity: sha512-IMDedajPifLnHNY0X9n8hKxRTQ6/eTHwr5bDo04WnuqxyKw6LYtQywCuuqPZwhl3aBXMvQpJov42GLCwRRdQzw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+
+  bigger-picture@1.1.20:
+    resolution: {integrity: sha512-aKh1R8hdoh0d2AgIx0B4oomjJHJExDFzdwBQttUBbpZ9Ht31G6OMEohMjwqP6TMWTa6iirt4CQgrXffxim4v6w==}
 
   bits-ui@2.18.1:
     resolution: {integrity: sha512-KkemzKFH4T3gt3H+P86JcnAWExjByv/6vlwjm/BoCwTPHu03yiCdxbghdJLvFReQTe0acCAiRcKfmixxD6XvlA==}
@@ -4963,6 +4969,8 @@ snapshots:
   balanced-match@4.0.4: {}
 
   baseline-browser-mapping@2.10.34: {}
+
+  bigger-picture@1.1.20: {}
 
   bits-ui@2.18.1(@internationalized/date@3.12.2)(@sveltejs/kit@2.63.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.2(@typescript-eslint/types@8.60.1))(vite@8.0.16(@types/node@24.13.0)(jiti@2.7.0)(terser@5.48.0)))(svelte@5.56.2(@typescript-eslint/types@8.60.1))(typescript@6.0.3)(vite@8.0.16(@types/node@24.13.0)(jiti@2.7.0)(terser@5.48.0)))(svelte@5.56.2(@typescript-eslint/types@8.60.1)):
     dependencies:
