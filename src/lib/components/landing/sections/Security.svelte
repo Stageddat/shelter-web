@@ -1,5 +1,5 @@
 <script lang="ts">
-	import BookLight from '$lib/assets/landing/book.png?enhanced';
+	import BookLight from '$lib/assets/landing/book.webp?enhanced';
 	import BookDark from '$lib/assets/landing/book-dark.webp?enhanced';
 	import BookMochaLavender from '$lib/assets/landing/book-mocha-lavender.webp?enhanced';
 	import { theme, mode } from 'mode-watcher';
