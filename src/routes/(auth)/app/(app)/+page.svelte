@@ -16,8 +16,7 @@
 	import { Info } from '@lucide/svelte';
 
 	const appContext = getAppContext();
-	const entries = appContext.entries;
-	const greetingMessage = appContext.greeting;
+	const greetingMessage = $derived(appContext.greeting);
 </script>
 
 <main class="flex h-screen max-h-screen flex-col overflow-hidden px-10 py-12">
@@ -56,23 +55,23 @@
 		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
 			<b>
 				<!-- {change this count system -->
-				{entries.length}
+				{appContext.entries.length}
 			</b>
 			<br />
 			entries
 		</div>
 		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>67</b>
+			<b>{appContext.totalWordCount}</b>
 			<br />
 			words
 		</div>
 		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>NaN</b>
+			<b>{appContext.streak}</b>
 			<br />
 			streak
 		</div>
 		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>tomorrow</b>
+			<b>{appContext.lastEntry}</b>
 			<br />
 			last entry
 		</div>
@@ -85,7 +84,7 @@
                 <EntryCard key={entry.id} entry={entry} />
               ))}
             </div> -->
-				{#each entries as entry (entry.id)}
+				{#each appContext.entries as entry (entry.id)}
 					<EntryCard {entry} />
 				{/each}
 			</ScrollArea>

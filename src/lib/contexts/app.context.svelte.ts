@@ -2,6 +2,8 @@ import { createContext } from 'svelte';
 import { getEntries, type DecryptedEntry } from '$lib/services/app/entry.service';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 import { getDynamicGreeting } from '$lib/hooks/app/useDynamicGreeting';
+import { calculateStreak } from '../utils/streak';
+import { formatRelativeDate } from '$lib/utils/date';
 
 class AppContext {
 	private auth = getAuthContext();
@@ -9,16 +11,18 @@ class AppContext {
 	entries = $state<DecryptedEntry[]>([]);
 	isLoading = $state(true);
 
-	greeting = $derived.by(() => {
-		return getDynamicGreeting(this.auth?.user?.username);
-	});
-
 	constructor() {
 		$effect(() => {
 			if (!this.auth?.masterKey) return;
 			this.loadEntries(this.auth.masterKey);
 		});
 	}
+
+	greeting = $derived.by(() => {
+		return getDynamicGreeting(
+			this.auth?.user?.displayName ?? this.auth?.user?.username ?? 'John-117'
+		);
+	});
 
 	private async loadEntries(masterKey: CryptoKey) {
 		try {
@@ -40,6 +44,11 @@ class AppContext {
 	removeEntry = (entryId: string) => {
 		this.entries = this.entries.filter((e) => e.id !== entryId);
 	};
+
+	totalWordCount = $derived(this.entries.reduce((sum, e) => sum + (e.wordCount || 0), 0));
+
+	lastEntry = $derived(this.entries[0] ? formatRelativeDate(this.entries[0].date) : null);
+	streak = $derived(calculateStreak(this.entries));
 }
 
 export const [getAppContext, setAppContext] = createContext<AppContext>();

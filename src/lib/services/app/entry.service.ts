@@ -113,6 +113,8 @@ export async function getEntries(masterKey: CryptoKey): Promise<DecryptedEntry[]
 			time: entry.time,
 			createdAt: entry.createdAt,
 			updatedAt: entry.updatedAt,
+			wordCount: entry.wordCount,
+			charCount: entry.charCount,
 			title: await decryptText(
 				masterKey,
 				entry.encryptedTitle as Uint8Array<ArrayBuffer>,
