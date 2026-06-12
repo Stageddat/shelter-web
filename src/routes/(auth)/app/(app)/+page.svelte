@@ -27,7 +27,7 @@
 	const greetingMessage = $derived(appContext.greeting);
 </script>
 
-<main class="flex h-screen flex-col gap-3 overflow-hidden px-10 py-8">
+<main class="flex h-screen flex-col gap-4 overflow-hidden px-10 py-8">
 	<!-- top -->
 	<div class="flex shrink-0 items-center justify-between">
 		<h2 class="mb-6 flex text-left text-7xl font-bold tracking-wide lowercase">
@@ -61,8 +61,8 @@
 	</div>
 
 	<!-- row 1 -->
-	<div class="flex w-full shrink-0 gap-3">
-		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+	<div class="flex w-full shrink-0 gap-4">
+		<div class="flex w-1/4 items-center gap-4 rounded-xl bg-secondary/40 px-6 py-5">
 			<!-- entries -->
 			<div class="h-9/12 rounded-md bg-mauve/20 p-3 text-mauve">
 				<Pencil class="h-full! w-full!" />
@@ -74,36 +74,36 @@
 			</div>
 		</div>
 		<!-- words -->
-		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+		<div class="flex w-1/4 items-center gap-4 rounded-xl bg-secondary/40 px-6 py-5">
 			<div class="h-9/12 rounded-md bg-green/20 p-3 text-green">
 				<BookOpen class="h-full! w-full!" />
 			</div>
 			<div>
-				<p class="text-3xl font-bold">{appContext.totalWordCount}</p>
+				<p class="text-4xl font-bold">{appContext.totalWordCount}</p>
 				<p class="text-xl">words</p>
 				<p class="text-xl text-green">+{appContext.weeklyWordCount} words this week!</p>
 			</div>
 		</div>
 
 		<!-- streak -->
-		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+		<div class="flex w-1/4 items-center gap-4 rounded-xl bg-secondary/40 px-6 py-5">
 			<div class="h-9/12 rounded-md bg-peach/20 p-2 text-peach">
 				<Flame class="h-full! w-full!" />
 			</div>
 			<div>
-				<p class="text-3xl font-bold">{appContext.streak}</p>
+				<p class="text-4xl font-bold">{appContext.streak}</p>
 				<p class="text-xl">day streak</p>
 				<p class="text-xl text-peach">{appContext.streakMotivation}</p>
 			</div>
 		</div>
 
 		<!-- last entry -->
-		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+		<div class="flex w-1/4 items-center gap-4 rounded-xl bg-secondary/40 px-6 py-5">
 			<div class="h-9/12 rounded-md bg-sky-500/20 p-2 text-sky">
 				<CalendarDays class="h-full! w-full!" />
 			</div>
 			<div>
-				<p class="text-3xl font-bold">{appContext.lastEntry}</p>
+				<p class="text-4xl font-bold">{appContext.lastEntry}</p>
 				<p class="text-xl">last entry</p>
 				{#if appContext.lastEntryRelativeDate !== appContext.lastEntry}
 					<p class="text-xl text-sky">{appContext.lastEntryRelativeDate}</p>
@@ -113,16 +113,17 @@
 	</div>
 
 	<!-- row 2 -->
-	<div class="flex min-h-0 w-full flex-1 gap-3">
+	<div class="flex min-h-0 w-full flex-1 gap-4">
 		<!-- left column -->
-		<div class="flex h-full w-1/2 flex-col gap-3">
+		<div class="flex h-full w-1/2 flex-col gap-4">
 			<!-- recent entries -->
-			<div class="flex flex-1 flex-col overflow-hidden rounded-lg bg-secondary/40 p-5">
+			<div class="flex min-h-0 flex-1 flex-col overflow-hidden rounded-xl bg-secondary/40 p-5">
 				<div class="mb-3 flex items-center justify-between">
 					<h3 class="text-2xl font-semibold">recent entries</h3>
 					<Button variant="ghost" href={resolve('/app/entries')} class="text-xl">view all →</Button>
 				</div>
-				<div class="flex flex-col gap-2">
+
+				<div class="flex min-h-0 flex-col gap-2 overflow-y-auto">
 					{#each appContext.entries.slice(0, 5) as entry (entry.id)}
 						<EntryCard {entry} class="h-20" enableDelete={false} />
 					{/each}
@@ -130,7 +131,7 @@
 			</div>
 
 			<!-- quote bar -->
-			<div class="shrink-0 rounded-lg bg-secondary/40 px-6 py-4">
+			<div class="shrink-0 rounded-xl bg-secondary/40 px-6 py-4">
 				<p class="text-lg text-foreground/90 lowercase italic">
 					"In the journal I do not just express myself more openly than I could to any person; I
 					create myself."
@@ -140,15 +141,15 @@
 		</div>
 
 		<!-- right column -->
-		<div class="flex h-full w-1/2 flex-col gap-3">
+		<div class="flex h-full w-1/2 flex-col gap-4">
 			<!-- Writing activity chart -->
-			<div class="flex h-1/2 flex-col rounded-lg bg-secondary/40 p-5">
+			<div class="flex min-h-0 flex-1 flex-col rounded-xl bg-secondary/40 p-5">
 				<h3 class="mb-3 shrink-0 text-2xl font-semibold">writing activity</h3>
 				<Char class="min-h-0 flex-1" />
 			</div>
 
 			<!-- quick actions -->
-			<div class="h-1/2 rounded-lg bg-secondary/40 p-5">
+			<div class="flex shrink-0 flex-col rounded-xl bg-secondary/40 p-5">
 				<h3 class="mb-3 text-2xl font-semibold">quick actions</h3>
 
 				<div class="flex flex-col gap-2 overflow-hidden rounded-xl py-1">
