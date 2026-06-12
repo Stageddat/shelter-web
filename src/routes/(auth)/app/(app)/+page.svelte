@@ -112,7 +112,7 @@
 
 	<!-- row 2 -->
 	<div class="flex min-h-0 w-full flex-1 gap-3">
-		<!-- LEFT COLUMN (Recent entries + Quote) -->
+		<!-- left column -->
 		<div class="flex h-full w-1/2 flex-col gap-3">
 			<!-- recent entries -->
 			<div class="flex flex-1 flex-col overflow-hidden rounded-lg bg-secondary/40 p-5">
@@ -127,14 +127,17 @@
 				</div>
 			</div>
 
-			<!-- Quote bar (Fuera, abajo del todo) -->
+			<!-- quote bar -->
 			<div class="shrink-0 rounded-lg bg-secondary/40 px-6 py-4">
-				<p class="text-muted-foreground italic">"Write without fear. Edit without mercy."</p>
-				<p class="text-sm text-muted-foreground">– Ernest Hemingway</p>
+				<p class="text-lg text-foreground/90 italic">
+					"In the journal I do not just express myself more openly than I could to any person; I
+					create myself."
+				</p>
+				<p class="text-base text-foreground/80">- Susan Sontag</p>
 			</div>
 		</div>
 
-		<!-- RIGHT COLUMN (Chart + Quick Actions) -->
+		<!-- right column -->
 		<div class="flex h-full w-1/2 flex-col gap-3">
 			<!-- Writing activity chart -->
 			<div class="flex h-1/2 flex-col rounded-lg bg-secondary/40 p-5">
@@ -147,7 +150,7 @@
 				<h3 class="mb-3 text-2xl font-semibold">quick actions</h3>
 
 				<div class="flex flex-col gap-2 overflow-hidden rounded-xl py-1">
-					<!-- New Entry -->
+					<!-- new Entry -->
 					<Button
 						variant="ghost"
 						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted/50"
@@ -165,7 +168,7 @@
 						<ChevronRight />
 					</Button>
 
-					<!-- Search Entries -->
+					<!-- search entries -->
 					<Button
 						variant="ghost"
 						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted"
@@ -181,7 +184,7 @@
 						<ChevronRight />
 					</Button>
 
-					<!-- View Calendar -->
+					<!-- view calendar -->
 					<Button
 						variant="ghost"
 						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted"
