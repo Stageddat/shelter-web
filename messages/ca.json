@@ -1,134 +1,134 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
-  "landing": {
-    "hero": {
-      "title": "shelter",
-      "subtitle": "un lloc segur on les teves idees poden respirar sense preocupacions",
-      "image_alt": "la machka escrivint el seu diari amb el seu gat ziggy"
+    "$schema": "https://inlang.com/schema/inlang-message-format",
+    "landing": {
+        "hero": {
+            "title": "shelter",
+            "subtitle": "un lloc segur on les teves idees poden respirar sense preocupacions",
+            "image_alt": "la machka escrivint el seu diari amb el seu gat ziggy"
+        },
+        "features": {
+            "1": {
+                "title": "seguretat d'alt nivell",
+                "description": "les teves entrades estan xifrades i protegides en tot moment."
+            },
+            "2": {
+                "title": "emmagatzematge local i totalment fora de línia",
+                "description": "mentenim els vostres diaris segurs al vostre propi dispositiu."
+            },
+            "3": {
+                "title": "sincronització al núvol (pròximament)",
+                "description": "aviat podràs accedir als teus pensaments des de qualsevol lloc."
+            },
+            "4": {
+                "title": "100% personal i privat",
+                "description": "el teu diari és només per a tu.\nrespectem la teva privadesa."
+            },
+            "5": {
+                "title": "dissenyat per a la calma",
+                "description": "una interfície sense distraccions per ajudar-vos a concentrar-vos."
+            },
+            "6": {
+                "title": "escriu al teu ritme",
+                "description": "ho hi ha terminis ni pressions. només tu i els teus pensaments."
+            },
+            "title": "un lloc segur per les teves idees"
+        },
+        "security": {
+            "1": {
+                "title": "els teus pensaments són teus",
+                "description": "shelter emmagatzema les teves notes de forma privada al navegador, de manera que hi podeu accedir ràpidament, fins i tot fora de línia. ningú més les pot llegir, ni tan sols nosaltres."
+            },
+            "2": {
+                "title": "xifrat de punta a punta",
+                "description": "les teves entrades es xifren de principi a fi i s'emmagatzemen en el teu dispositiu. mai llegim, escanegem ni venem les teves dades. i punt."
+            },
+            "3": {
+                "title": "0 rastrejadors i 0 anuncis",
+                "description": "no recopilem mai dades personals. No hi ha rastrejadors, anuncis ni anàlisis ocultes que et segueixin a tot arreu."
+            },
+            "title": "totalment protegit"
+        },
+        "faqs": {
+            "1": {
+                "question": "què és shelter?",
+                "answer": "shelter és un lloc segur on els teus pensaments poden respirar. és una aplicació web de diari segur on pots escriure lliurement sense judici des del teu navegador favorit."
+            },
+            "2": {
+                "question": "és de codi obert?",
+                "answer": "sí! pots trobar el codi font a <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> i acceptem contribucions."
+            },
+            "3": {
+                "question": "on s'emmagatzemen les dades?",
+                "answer": "totes les teves entrades s'emmagatzemen localment al teu navegador amb emmagatzematge xifrat."
+            },
+            "4": {
+                "question": "en què s'inspira aquest projecte?",
+                "answer": "aquest projecte s'inspira en la secció de comentaris de la cançó \"shelter\" de porter robinson & madeon. molta gent hi escriu comentaris diàries, i volíem crear un espai personal i privat per a aquests petits trossos de vida. pots veure el vídeo <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">aquí</a>!"
+            },
+            "5": {
+                "question": "és gratuït?",
+                "answer": "sí! shelter és gratuït, sense anuncis i de codi obert. és un projecte fet amb molt d'amor."
+            },
+            "6": {
+                "question": "com es xifren les dades?",
+                "answer": "les dades s'emmagatzemen localment amb un xifratge robust. pots saber-ne més sobre els nostres protocols de seguretat a la nostra <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">política de privacitat</a>."
+            },
+            "7": {
+                "question": "qui pot veure les meves dades?",
+                "answer": "ningú! ni nosaltres mateixos podem llegir-les. les teves entrades estan xifrades amb la teva pròpia clau."
+            },
+            "8": {
+                "question": "és segur?",
+                "answer": "sí. fem servir xifratge d'extrem a extrem i una arquitectura de 'privacitat primer' per garantir que el teu shelter sigui únicament teu."
+            },
+            "9": {
+                "question": "qui és la machka?",
+                "answer": "és la nostra mascota oficial! sovint la pots trobar a ella i al seu gatet ziggy passejant per la web.<br /><br /> moltíssimes gràcies a <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> per crear totes les meravelloses il·lustracions!"
+            },
+            "title": "preguntes freqüents"
+        },
+        "start": {
+            "description": "comença el teu viatge al teu ritme.",
+            "button": "comença el meu viatge!",
+            "title": "preparat per descansar?"
+        },
+        "navbar": {
+            "logo": "shelter",
+            "features": "característiques",
+            "security": "seguretat",
+            "faqs": "preguntes",
+            "start": "començar"
+        },
+        "footer": {
+            "title": "shelter",
+            "year": "© 2025-{currentYear} shelter",
+            "copyright": "tots els drets reservats.",
+            "product": {
+                "title": "producte",
+                "about_us": "sobre nosaltres",
+                "cloud": "núvol",
+                "selfhost": "hosting personal"
+            },
+            "legal": {
+                "title": "legal",
+                "privacy": "política de privacitat",
+                "terms": "condicions del servei",
+                "cookies": "política de cookies"
+            },
+            "contact": {
+                "title": "contacte"
+            }
+        }
     },
-    "features": {
-      "1": {
-        "title": "seguretat d'alt nivell",
-        "description": "les teves entrades estan xifrades i protegides en tot moment."
-      },
-      "2": {
-        "title": "emmagatzematge local i totalment fora de línia",
-        "description": "mentenim els vostres diaris segurs al vostre propi dispositiu."
-      },
-      "3": {
-        "title": "sincronització al núvol (pròximament)",
-        "description": "aviat podràs accedir als teus pensaments des de qualsevol lloc."
-      },
-      "4": {
-        "title": "100% personal i privat",
-        "description": "el teu diari és només per a tu.\nrespectem la teva privadesa."
-      },
-      "5": {
-        "title": "dissenyat per a la calma",
-        "description": "una interfície sense distraccions per ajudar-vos a concentrar-vos."
-      },
-      "6": {
-        "title": "escriu al teu ritme",
-        "description": "ho hi ha terminis ni pressions. només tu i els teus pensaments."
-      },
-      "title": "un lloc segur per les teves idees"
-    },
-    "security": {
-      "1": {
-        "title": "els teus pensaments són teus",
-        "description": "shelter emmagatzema les teves notes de forma privada al navegador, de manera que hi podeu accedir ràpidament, fins i tot fora de línia. ningú més les pot llegir, ni tan sols nosaltres."
-      },
-      "2": {
-        "title": "xifrat de punta a punta",
-        "description": "les teves entrades es xifren de principi a fi i s'emmagatzemen en el teu dispositiu. mai llegim, escanegem ni venem les teves dades. i punt."
-      },
-      "3": {
-        "title": "0 rastrejadors i 0 anuncis",
-        "description": "no recopilem mai dades personals. No hi ha rastrejadors, anuncis ni anàlisis ocultes que et segueixin a tot arreu."
-      },
-      "title": "totalment protegit"
-    },
-    "faqs": {
-      "1": {
-        "question": "què és shelter?",
-        "answer": "shelter és un lloc segur on els teus pensaments poden respirar. és una aplicació web de diari segur on pots escriure lliurement sense judici des del teu navegador favorit."
-      },
-      "2": {
-        "question": "és de codi obert?",
-        "answer": "sí! pots trobar el codi font a <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> i acceptem contribucions."
-      },
-      "3": {
-        "question": "on s'emmagatzemen les dades?",
-        "answer": "totes les teves entrades s'emmagatzemen localment al teu navegador amb emmagatzematge xifrat."
-      },
-      "4": {
-        "question": "en què s'inspira aquest projecte?",
-        "answer": "aquest projecte s'inspira en la secció de comentaris de la cançó \"shelter\" de porter robinson & madeon. molta gent hi escriu comentaris diàries, i volíem crear un espai personal i privat per a aquests petits trossos de vida. pots veure el vídeo <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">aquí</a>!"
-      },
-      "5": {
-        "question": "és gratuït?",
-        "answer": "sí! shelter és gratuït, sense anuncis i de codi obert. és un projecte fet amb molt d'amor."
-      },
-      "6": {
-        "question": "com es xifren les dades?",
-        "answer": "les dades s'emmagatzemen localment amb un xifratge robust. pots saber-ne més sobre els nostres protocols de seguretat a la nostra <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">política de privacitat</a>."
-      },
-      "7": {
-        "question": "qui pot veure les meves dades?",
-        "answer": "ningú! ni nosaltres mateixos podem llegir-les. les teves entrades estan xifrades amb la teva pròpia clau."
-      },
-      "8": {
-        "question": "és segur?",
-        "answer": "sí. fem servir xifratge d'extrem a extrem i una arquitectura de 'privacitat primer' per garantir que el teu shelter sigui únicament teu."
-      },
-      "9": {
-        "question": "qui és la machka?",
-        "answer": "és la nostra mascota oficial! sovint la pots trobar a ella i al seu gatet ziggy passejant per la web.<br /><br /> moltíssimes gràcies a <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> per crear totes les meravelloses il·lustracions!"
-      },
-      "title": "preguntes freqüents"
-    },
-    "start": {
-      "description": "comença el teu viatge al teu ritme.",
-      "button": "comença el meu viatge!",
-      "title": "preparat per descansar?"
-    },
-    "navbar": {
-      "logo": "shelter",
-      "features": "característiques",
-      "security": "seguretat",
-      "faqs": "preguntes",
-      "start": "començar"
-    },
-    "footer": {
-      "title": "shelter",
-      "year": "© 2025-{currentYear} shelter",
-      "copyright": "tots els drets reservats.",
-      "product": {
-        "title": "producte",
-        "about_us": "sobre nosaltres",
-        "cloud": "núvol",
-        "selfhost": "hosting personal"
-      },
-      "legal": {
-        "title": "legal",
-        "privacy": "política de privacitat",
-        "terms": "condicions del servei",
-        "cookies": "política de cookies"
-      },
-      "contact": {
-        "title": "contacte"
-      }
+    "login": {
+        "title": "hola de nou, {username}!",
+        "password": {
+            "label": "contrasenya",
+            "placeholder": "introdueix la teva contrasenya"
+        },
+        "button": {
+            "default": "accedir al meu shelter",
+            "loading": "accedint"
+        }
     }
-  },
-  "login": {
-    "title": "hola de nou, {username}!",
-    "password": {
-      "label": "contrasenya",
-      "placeholder": "introdueix la teva contrasenya"
-    },
-    "button": {
-      "default": "accedir al meu shelter",
-      "loading": "accedint"
-    }
-  }
 }
