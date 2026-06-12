@@ -131,11 +131,11 @@
 
 			<!-- quote bar -->
 			<div class="shrink-0 rounded-lg bg-secondary/40 px-6 py-4">
-				<p class="text-lg text-foreground/90 italic">
+				<p class="text-lg text-foreground/90 lowercase italic">
 					"In the journal I do not just express myself more openly than I could to any person; I
 					create myself."
 				</p>
-				<p class="text-base text-foreground/80">- Susan Sontag</p>
+				<p class="text-base text-foreground/80 lowercase">- Susan Sontag</p>
 			</div>
 		</div>
 
