@@ -5,9 +5,12 @@
 	import { Copy, Check, X } from '@lucide/svelte';
 	import * as InputGroup from '$lib/components/ui/input-group/index';
 	import { updateDisplayName } from '$lib/services/app/user.service';
+	import Switch from '$lib/components/ui/switch/switch.svelte';
+	import { onMount } from 'svelte';
 
 	const auth = getAuthContext();
 
+	// copy
 	let copied = $state<'username' | 'id' | null>(null);
 
 	function handleCopy(type: 'username' | 'id') {
@@ -17,6 +20,7 @@
 		setTimeout(() => (copied = null), 2000);
 	}
 
+	// display name
 	let displayName = $state(auth.user?.displayName ?? auth.user?.username ?? '');
 
 	async function handleSaveDisplayName() {
@@ -26,6 +30,22 @@
 		await updateDisplayName(auth.user.id, displayName.trim());
 		displayName = displayName.trim();
 		auth.user = { ...auth.user, displayName };
+	}
+
+	// toggle analytics
+	let analyticsEnabled = $state(false);
+
+	onMount(() => {
+		analyticsEnabled = localStorage.getItem('umami.disabled') !== '1';
+	});
+
+	function toggleAnalytics(value: boolean) {
+		analyticsEnabled = value;
+		if (value) {
+			localStorage.removeItem('umami.disabled');
+		} else {
+			localStorage.setItem('umami.disabled', '1');
+		}
 	}
 </script>
 
@@ -38,7 +58,7 @@
 		</h3>
 	</div>
 
-	<!-- project info -->
+	<!-- appereance -->
 	<div class="mb-6">
 		<h2 class="mb-2 text-2xl tracking-widest uppercase">appereance</h2>
 		<div class="flex flex-row items-center justify-between gap-2">
@@ -54,6 +74,8 @@
 			<LanguageSelector />
 		</div>
 	</div>
+
+	<!-- user -->
 	<div class="mb-6">
 		<h2 class="mb-2 text-2xl tracking-widest uppercase">user</h2>
 
@@ -118,5 +140,23 @@
 				{/if}
 			</button>
 		</div>
+	</div>
+
+	<!-- privacy -->
+	<div class="mb-6">
+		<h2 class="mb-2 text-2xl tracking-widest uppercase">privacy</h2>
+
+		<div class="flex flex-row items-center justify-between gap-2">
+			<div>
+				<p class="text-xl tracking-wide lowercase opacity-85">analytics</p>
+				<p class="text-base tracking-wide lowercase opacity-60">
+					share anonymous usage data to help improve shelter. no personal data is collected.
+				</p>
+			</div>
+			<div class="flex items-center space-x-2">
+				<Switch id="analytics" checked={analyticsEnabled} onCheckedChange={toggleAnalytics} />
+			</div>
+		</div>
+		<hr class="my-4 border-current opacity-10" />
 	</div>
 </div>
