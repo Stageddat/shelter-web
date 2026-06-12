@@ -157,6 +157,6 @@
 				<Switch id="analytics" checked={analyticsEnabled} onCheckedChange={toggleAnalytics} />
 			</div>
 		</div>
-		<hr class="my-4 border-current opacity-10" />
+		<!-- <hr class="my-4 border-current opacity-10" /> -->
 	</div>
 </div>
