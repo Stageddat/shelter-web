@@ -1,7 +1,5 @@
 <script lang="ts">
-	import packageJson from '../../../../../package.json';
 	import EntryCard from '$lib/components/app/entry/EntryCard.svelte';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { getAppContext } from '$lib/contexts/app.context.svelte';
 	import {
 		Popover,
@@ -12,19 +10,31 @@
 		PopoverTrigger
 	} from '$lib/components/ui/popover';
 	import { Button } from '$lib/components/ui/button';
-	import dumbCat from '$lib/assets/app/dumb-cat.png?enhanced';
-	import { Info } from '@lucide/svelte';
+	import {
+		BookOpen,
+		Calendar,
+		CalendarDays,
+		ChevronRight,
+		Flame,
+		Info,
+		Pencil,
+		Search
+	} from '@lucide/svelte';
+	import { resolve } from '$app/paths';
+	import Char from '$lib/components/app/stats/Char.svelte';
 
 	const appContext = getAppContext();
 	const greetingMessage = $derived(appContext.greeting);
 </script>
 
-<main class="flex h-screen max-h-screen flex-col overflow-hidden px-10 py-12">
+<main class="flex h-screen flex-col gap-3 overflow-hidden px-10 py-8">
 	<!-- top -->
-	<div class="flex items-center justify-between">
+	<div class="flex shrink-0 items-center justify-between">
 		<h2 class="mb-6 flex text-left text-7xl font-bold tracking-wide lowercase">
 			{greetingMessage}
 		</h2>
+
+		<!-- aviso de desarrollo -->
 		<Popover>
 			<PopoverTrigger>
 				<Button variant="outline" class="h-12 w-12">
@@ -50,55 +60,144 @@
 		</Popover>
 	</div>
 
-	<div class="grid min-h-0 flex-1 grid-cols-4 grid-rows-[auto_2fr_2fr] gap-2">
-		<!-- row 1 -->
-		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>
-				<!-- {change this count system -->
-				{appContext.entries.length}
-			</b>
-			<br />
-			entries
+	<!-- row 1 -->
+	<div class="flex w-full shrink-0 gap-3">
+		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+			<!-- entries -->
+			<div class="h-9/12 rounded-md bg-mauve/20 p-3 text-mauve">
+				<Pencil class="h-full! w-full!" />
+			</div>
+			<div>
+				<p class="text-4xl font-bold">{appContext.entries.length}</p>
+				<p class="text-xl">entries</p>
+				<p class="text-xl text-mauve">+{appContext.weeklyEntries} this week</p>
+			</div>
 		</div>
-		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>{appContext.totalWordCount}</b>
-			<br />
-			words
-		</div>
-		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>{appContext.streak}</b>
-			<br />
-			streak
-		</div>
-		<div class="rounded-sm bg-secondary/40 p-10 text-center text-3xl">
-			<b>{appContext.lastEntry}</b>
-			<br />
-			last entry
+		<!-- words -->
+		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+			<div class="h-9/12 rounded-md bg-green/20 p-3 text-green">
+				<BookOpen class="h-full! w-full!" />
+			</div>
+			<div>
+				<p class="text-3xl font-bold">{appContext.totalWordCount}</p>
+				<p class="text-xl">words</p>
+				<p class="text-xl text-green">+{appContext.weeklyWordCount} this week</p>
+			</div>
 		</div>
 
-		<div class="col-span-2 row-span-2 flex flex-col rounded-sm bg-secondary/40 p-4 text-3xl">
-			<h3 class="flex-none p-2 text-4xl">last entries</h3>
-			<ScrollArea class="min-h-0 flex-1">
-				<!-- <div class="mr-3 space-y-2 pb-6">
-              {entries.map((entry) => (
-                <EntryCard key={entry.id} entry={entry} />
-              ))}
-            </div> -->
-				{#each appContext.entries as entry (entry.id)}
-					<EntryCard {entry} />
-				{/each}
-			</ScrollArea>
+		<!-- streak -->
+		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+			<div class="h-9/12 rounded-md bg-peach/20 p-2 text-peach">
+				<Flame class="h-full! w-full!" />
+			</div>
+			<div>
+				<p class="text-3xl font-bold">{appContext.streak}</p>
+				<p class="text-xl">day streak</p>
+				<p class="text-xl text-peach">{appContext.streakMotivation}</p>
+			</div>
 		</div>
-		<div class="col-span-2 row-span-1 rounded-sm bg-secondary/40 p-10 text-3xl">lofi & focus</div>
-		<div class="col-span-2 row-span-1 overflow-hidden rounded-sm bg-secondary/40 text-3xl">
-			<enhanced:img src={dumbCat} alt="machka" class="h-full w-full object-fill" />
+
+		<!-- last entry -->
+		<div class="flex w-1/4 items-center gap-4 rounded-lg bg-secondary/40 px-6 py-5">
+			<div class="h-9/12 rounded-md bg-sky-500/20 p-2 text-sky">
+				<CalendarDays class="h-full! w-full!" />
+			</div>
+			<div>
+				<p class="text-3xl font-bold">{appContext.lastEntry}</p>
+				<p class="text-xl">last entry</p>
+				<p class="text-xl text-sky">{appContext.lastEntryRelativeDate}</p>
+			</div>
 		</div>
 	</div>
 
-	<!-- abajo -->
-	<div class="mt-auto">
-		<p class="mt-2 -mr-8 -mb-10 text-right text-lg text-muted-foreground lowercase">
-			v{packageJson.version}
-		</p>
+	<!-- row 2 -->
+	<div class="flex min-h-0 w-full flex-1 gap-3">
+		<!-- LEFT COLUMN (Recent entries + Quote) -->
+		<div class="flex h-full w-1/2 flex-col gap-3">
+			<!-- recent entries -->
+			<div class="flex flex-1 flex-col overflow-hidden rounded-lg bg-secondary/40 p-5">
+				<div class="mb-3 flex items-center justify-between">
+					<h3 class="text-2xl font-semibold">recent entries</h3>
+					<Button variant="ghost" href={resolve('/app/entries')} class="text-xl">view all →</Button>
+				</div>
+				<div class="flex flex-col gap-2">
+					{#each appContext.entries.slice(0, 5) as entry (entry.id)}
+						<EntryCard {entry} class="h-20" enableDelete={false} />
+					{/each}
+				</div>
+			</div>
+
+			<!-- Quote bar (Fuera, abajo del todo) -->
+			<div class="shrink-0 rounded-lg bg-secondary/40 px-6 py-4">
+				<p class="text-muted-foreground italic">"Write without fear. Edit without mercy."</p>
+				<p class="text-sm text-muted-foreground">– Ernest Hemingway</p>
+			</div>
+		</div>
+
+		<!-- RIGHT COLUMN (Chart + Quick Actions) -->
+		<div class="flex h-full w-1/2 flex-col gap-3">
+			<!-- Writing activity chart -->
+			<div class="flex h-1/2 flex-col rounded-lg bg-secondary/40 p-5">
+				<h3 class="mb-3 shrink-0 text-2xl font-semibold">writing activity</h3>
+				<Char class="min-h-0 flex-1" />
+			</div>
+
+			<!-- quick actions -->
+			<div class="h-1/2 rounded-lg bg-secondary/40 p-5">
+				<h3 class="mb-3 text-2xl font-semibold">quick actions</h3>
+
+				<div class="flex flex-col gap-2 overflow-hidden rounded-xl py-1">
+					<!-- New Entry -->
+					<Button
+						variant="ghost"
+						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted/50"
+						href="/app/new"
+					>
+						<div class="flex items-center gap-4">
+							<Pencil class="h-6! w-6! text-primary" />
+							<div>
+								<h4 class="text-xl tracking-wide text-foreground">new entry</h4>
+								<p class="text-base tracking-wide text-foreground/80">
+									start writing something new
+								</p>
+							</div>
+						</div>
+						<ChevronRight />
+					</Button>
+
+					<!-- Search Entries -->
+					<Button
+						variant="ghost"
+						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted"
+						href="/app/search"
+					>
+						<div class="flex items-center gap-4">
+							<Search class="h-6! w-6! text-primary" />
+							<div>
+								<h4 class="text-xl tracking-wide text-foreground">search entries</h4>
+								<p class="text-base tracking-wide text-foreground/85">find something you wrote</p>
+							</div>
+						</div>
+						<ChevronRight />
+					</Button>
+
+					<!-- View Calendar -->
+					<Button
+						variant="ghost"
+						class="flex h-fit items-center justify-between border-b border-muted px-4 py-2 text-left transition hover:bg-muted"
+						href="/app/calendar"
+					>
+						<div class="flex items-center gap-4">
+							<Calendar class="h-6! w-6! text-primary" />
+							<div>
+								<h4 class="text-xl tracking-wide text-foreground">view calendar</h4>
+								<p class="text-base tracking-wide text-foreground/85">see your entries by date</p>
+							</div>
+						</div>
+						<ChevronRight />
+					</Button>
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
