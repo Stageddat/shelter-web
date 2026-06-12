@@ -22,6 +22,7 @@
 	} from '@lucide/svelte';
 	import { resolve } from '$app/paths';
 	import Char from '$lib/components/app/stats/Char.svelte';
+	import ScrollArea from '$lib/components/ui/scroll-area/scroll-area.svelte';
 
 	const appContext = getAppContext();
 	const greetingMessage = $derived(appContext.greeting);
@@ -123,11 +124,13 @@
 					<Button variant="ghost" href={resolve('/app/entries')} class="text-xl">view all →</Button>
 				</div>
 
-				<div class="flex min-h-0 flex-col gap-2 overflow-y-auto">
-					{#each appContext.entries.slice(0, 5) as entry (entry.id)}
-						<EntryCard {entry} class="h-20" enableDelete={false} />
-					{/each}
-				</div>
+				<ScrollArea class="min-h-0 flex-1">
+					<div class="flex flex-col gap-2">
+						{#each appContext.entries.slice(0, 5) as entry (entry.id)}
+							<EntryCard {entry} class="h-20" enableDelete={false} />
+						{/each}
+					</div>
+				</ScrollArea>
 			</div>
 
 			<!-- quote bar -->
