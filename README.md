@@ -6,11 +6,16 @@
 
 </div>
 
-<img src="./docs/images/hero-readme-editor.png" alt="Shelter — journal editor" width="100%"/>
-
 Shelter is a secure, open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
 
 Built with [SvelteKit](https://svelte.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
+
+## Showcase gallery
+Shelter web app home page:
+<img src="./docs/images/homepage-showcase-optimized.webp" alt="Shelter — app home page showcase" width="100%"/>
+Shelter editor with different themes built in:
+<img src="./docs/images/themes-howcase-optimized.webp" alt="Shelter — theme showcase" width="100%"/>
+
 
 ## Features
 
