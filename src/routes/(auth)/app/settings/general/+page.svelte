@@ -2,7 +2,7 @@
 	import LanguageSelector from '$lib/components/landing/LanguageSelector.svelte';
 	import ThemeSelector from '$lib/components/shared/ThemeSelector.svelte';
 	import { getAuthContext } from '$lib/contexts/auth.context.svelte';
-	import { Copy, Check } from '@lucide/svelte';
+	import { Copy, Check, X } from '@lucide/svelte';
 	import * as InputGroup from '$lib/components/ui/input-group/index';
 	import { updateDisplayName } from '$lib/services/app/user.service';
 
@@ -24,6 +24,7 @@
 		if (displayName === auth.user.displayName) return;
 		if (displayName.length === 0 || displayName.length > 20) return;
 		await updateDisplayName(auth.user.id, displayName.trim());
+		displayName = displayName.trim();
 		auth.user = { ...auth.user, displayName };
 	}
 </script>
@@ -59,22 +60,31 @@
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
 				<p class="text-xl tracking-wide lowercase opacity-85">display name</p>
-				<p class="text-base tracking-wide lowercase opacity-60">this will reload the page!</p>
 			</div>
-			<InputGroup.Root>
-				<InputGroup.Input placeholder="display name" bind:value={displayName} maxlength={20} />
-				<InputGroup.Addon align="inline-end">
+			<InputGroup.Root class="w-sm">
+				<InputGroup.Input
+					class="text-xl!"
+					placeholder="display name"
+					bind:value={displayName}
+					maxlength={20}
+				/>
+				<InputGroup.Addon align="inline-end" class="margin-0 gap-0">
 					{#if displayName !== auth.user?.displayName}
 						<InputGroup.Button
-							variant="secondary"
+							variant="ghost"
 							onclick={() => (displayName = auth.user?.displayName ?? '')}
+							class="p-1! text-red-500 hover:bg-red-500/10 hover:text-red-500 dark:text-red-400 dark:hover:bg-red-400/10"
 						>
-							cancel
+							<X class="size-5 p-0!" />
+						</InputGroup.Button>
+						<InputGroup.Button
+							variant="ghost"
+							onclick={handleSaveDisplayName}
+							class="p-1! text-green-600 hover:bg-green-500/10 hover:text-green-600 dark:text-green-400 dark:hover:bg-green-400/10"
+						>
+							<Check class="size-5 p-0!" />
 						</InputGroup.Button>
 					{/if}
-					<InputGroup.Button variant="secondary" onclick={handleSaveDisplayName}>
-						save
-					</InputGroup.Button>
 				</InputGroup.Addon>
 			</InputGroup.Root>
 		</div>
