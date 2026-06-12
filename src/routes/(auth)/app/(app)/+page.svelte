@@ -70,7 +70,7 @@
 			<div>
 				<p class="text-4xl font-bold">{appContext.entries.length}</p>
 				<p class="text-xl">entries</p>
-				<p class="text-xl text-mauve">+{appContext.weeklyEntries} this week</p>
+				<p class="text-xl text-mauve">+{appContext.weeklyEntries} entries this week!</p>
 			</div>
 		</div>
 		<!-- words -->
@@ -81,7 +81,7 @@
 			<div>
 				<p class="text-3xl font-bold">{appContext.totalWordCount}</p>
 				<p class="text-xl">words</p>
-				<p class="text-xl text-green">+{appContext.weeklyWordCount} this week</p>
+				<p class="text-xl text-green">+{appContext.weeklyWordCount} words this week!</p>
 			</div>
 		</div>
 
@@ -105,7 +105,9 @@
 			<div>
 				<p class="text-3xl font-bold">{appContext.lastEntry}</p>
 				<p class="text-xl">last entry</p>
-				<p class="text-xl text-sky">{appContext.lastEntryRelativeDate}</p>
+				{#if appContext.lastEntryRelativeDate !== appContext.lastEntry}
+					<p class="text-xl text-sky">{appContext.lastEntryRelativeDate}</p>
+				{/if}
 			</div>
 		</div>
 	</div>
