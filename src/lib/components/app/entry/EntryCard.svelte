@@ -8,8 +8,10 @@
 
 	interface Props {
 		entry: DecryptedEntry;
+		class?: string;
+		enableDelete?: boolean;
 	}
-	let { entry }: Props = $props();
+	let { entry, class: className = '', enableDelete = true }: Props = $props();
 
 	const { removeEntry } = getAppContext();
 
@@ -47,7 +49,7 @@
 
 <a
 	href={resolve(`/app/entries/${entry.id}`)}
-	class="group flex items-center rounded-xl border border-border p-4 transition-all hover:bg-muted/50"
+	class="group flex items-center rounded-xl border border-border p-4 transition-all hover:bg-muted/50 {className}"
 >
 	<div class="flex-1">
 		<p class="text-xl">{entry.title}</p>
@@ -56,15 +58,17 @@
 		</p>
 	</div>
 
-	<Button
-		variant="ghost"
-		class="mr-2 hidden h-12 w-12 cursor-pointer items-center justify-center rounded-full p-0! group-hover:flex hover:bg-destructive/20 hover:text-destructive"
-		onclick={(e) => {
-			e.stopPropagation();
-			e.preventDefault();
-			showDialog = true;
-		}}
-	>
-		<Trash class="h-6! w-6! stroke-2" />
-	</Button>
+	{#if enableDelete}
+		<Button
+			variant="ghost"
+			class="mr-2 hidden h-12 w-12 cursor-pointer items-center justify-center rounded-full p-0! group-hover:flex hover:bg-destructive/20 hover:text-destructive"
+			onclick={(e) => {
+				e.stopPropagation();
+				e.preventDefault();
+				showDialog = true;
+			}}
+		>
+			<Trash class="h-6! w-6! stroke-2" />
+		</Button>
+	{/if}
 </a>
