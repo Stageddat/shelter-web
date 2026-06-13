@@ -125,7 +125,7 @@
 	--border: oklch(40% 0.03 280);
 	--input: oklch(40% 0.03 280);
 	--ring: oklch(82% 0.09 277);
-	--sidebar: oklch(22% 0.03 284);
+	--sidebar: oklch(32% 0.03 282 / 50%);
 	--sidebar-foreground: oklch(88% 0.04 272);
 	--sidebar-primary: oklch(82% 0.09 277);
 	--sidebar-primary-foreground: oklch(24% 0.03 284);
