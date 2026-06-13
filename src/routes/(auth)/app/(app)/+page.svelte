@@ -125,7 +125,7 @@
 				</div>
 
 				<ScrollArea class="min-h-0 flex-1">
-					<div class="flex flex-col gap-2">
+					<div class="flex flex-col gap-2 pr-2.5">
 						{#each appContext.entries.slice(0, 5) as entry (entry.id)}
 							<EntryCard {entry} class="h-20" enableDelete={false} />
 						{/each}
