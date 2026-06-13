@@ -17,3 +17,17 @@ export function formatRelativeDate(dateStr: string): string {
 		year: 'numeric'
 	});
 }
+
+export function formatRelativeDateTime(dateStr: string, timeStr: string): string {
+	const now = new Date();
+	const entryDate = new Date(`${dateStr}T${timeStr}`);
+	const diffMs = now.getTime() - entryDate.getTime();
+	const diffMins = Math.floor(diffMs / 60000);
+	const diffHours = Math.floor(diffMs / 3600000);
+
+	if (diffMins < 1) return 'just now';
+	if (diffMins < 60) return `${diffMins} minute${diffMins === 1 ? '' : 's'} ago`;
+	if (diffHours < 24) return `${diffHours} hour${diffHours === 1 ? '' : 's'} ago`;
+
+	return formatRelativeDate(dateStr);
+}

@@ -47,6 +47,16 @@
 	--sidebar-accent-foreground: oklch(12.67% 0.023 62.03);
 	--sidebar-border: oklch(80.89% 0.064 58.11);
 	--sidebar-ring: oklch(72.63% 0.102 57.32);
+
+	--green: oklch(45% 0.13 143);
+	--peach: oklch(50% 0.12 53);
+	--red: oklch(50% 0.13 3);
+	--blue: oklch(45% 0.11 260);
+	--mauve: oklch(45% 0.11 305);
+	--pink: oklch(50% 0.1 336);
+	--teal: oklch(50% 0.1 183);
+	--sky: oklch(50% 0.1 210);
+	--yellow: oklch(55% 0.1 87);
 }
 
 .dark {
@@ -83,6 +93,16 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(1 0 0 / 10%);
 	--sidebar-ring: oklch(0.556 0 0);
+
+	--green: oklch(86% 0.11 143);
+	--peach: oklch(82% 0.1 53);
+	--red: oklch(76% 0.13 3);
+	--blue: oklch(77% 0.11 260);
+	--mauve: oklch(79% 0.12 305);
+	--pink: oklch(87% 0.08 336);
+	--teal: oklch(86% 0.08 183);
+	--sky: oklch(85% 0.08 210);
+	--yellow: oklch(92% 0.07 87);
 }
 
 [data-theme='mocha-lavender'],
@@ -105,7 +125,7 @@
 	--border: oklch(40% 0.03 280);
 	--input: oklch(40% 0.03 280);
 	--ring: oklch(82% 0.09 277);
-	--sidebar: oklch(22% 0.03 284);
+	--sidebar: oklch(32% 0.03 282 / 50%);
 	--sidebar-foreground: oklch(88% 0.04 272);
 	--sidebar-primary: oklch(82% 0.09 277);
 	--sidebar-primary-foreground: oklch(24% 0.03 284);
@@ -113,6 +133,16 @@
 	--sidebar-accent-foreground: oklch(88% 0.04 272);
 	--sidebar-border: oklch(32% 0.03 282);
 	--sidebar-ring: oklch(82% 0.09 277);
+
+	--green: oklch(86% 0.11 143);
+	--peach: oklch(82% 0.1 53);
+	--red: oklch(76% 0.13 3);
+	--blue: oklch(77% 0.11 260);
+	--mauve: oklch(79% 0.12 305);
+	--pink: oklch(87% 0.08 336);
+	--teal: oklch(86% 0.08 183);
+	--sky: oklch(85% 0.08 210);
+	--yellow: oklch(92% 0.07 87);
 }
 
 @theme inline {
@@ -158,6 +188,16 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
+
+	--color-green: var(--green);
+	--color-peach: var(--peach);
+	--color-red: var(--red);
+	--color-blue: var(--blue);
+	--color-mauve: var(--mauve);
+	--color-pink: var(--pink);
+	--color-teal: var(--teal);
+	--color-sky: var(--sky);
+	--color-yellow: var(--yellow);
 }
 
 @layer base {

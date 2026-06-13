@@ -63,7 +63,7 @@
 		<div class="mt-auto pt-4 pb-2">
 			<Button class="w-full gap-2 py-6 lowercase shadow-sm" href="/app/new">
 				<CirclePlus class="h-5 w-5" />
-				<span class="text-lg tracking-wide">new entry</span>
+				<span class="text-xl font-semibold tracking-wider">new entry</span>
 			</Button>
 		</div>
 	</div>

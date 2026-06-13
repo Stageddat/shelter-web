@@ -27,6 +27,7 @@ export interface CreateEntryParams {
 	content: string;
 	wordCount?: number;
 	charCount?: number;
+	date?: Date;
 }
 
 // encriptar titulo y contenido antes de guardar
@@ -35,7 +36,8 @@ export async function createEntry({
 	title,
 	content,
 	wordCount,
-	charCount
+	charCount,
+	date
 }: CreateEntryParams): Promise<string> {
 	const user = await getUser();
 	if (!user) throw new Error('no user found');
@@ -46,7 +48,7 @@ export async function createEntry({
 	);
 	const { ciphertext: encryptedContent, iv: contentIv } = await encryptText(masterKey, content);
 
-	const now = new Date();
+	const now = date ?? new Date();
 	const id = crypto.randomUUID();
 
 	await db.entries.add({
