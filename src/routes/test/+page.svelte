@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { onMount } from 'svelte';
 
-	if (!import.meta.env.DEV) {
-		goto('/');
-	}
+	onMount(() => {
+		if (!import.meta.env.DEV) {
+			goto('/');
+		}
+	});
 </script>
