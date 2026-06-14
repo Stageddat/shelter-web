@@ -57,6 +57,7 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-js-svelte": "^1.0.3",
+		"@scure/bip39": "^2.2.0",
 		"@tiptap/core": "^3.25.0",
 		"@tiptap/extension-bubble-menu": "^3.25.0",
 		"@tiptap/extensions": "^3.26.0",
