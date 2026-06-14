@@ -13,6 +13,11 @@ export interface User {
 	encryptedMasterKey: Uint8Array<ArrayBuffer>;
 	salt: Uint8Array<ArrayBuffer>;
 	iv: Uint8Array<ArrayBuffer>;
+
+	// recovery
+	recoveryEncryptedMasterKey?: Uint8Array<ArrayBuffer>;
+	recoverySalt?: Uint8Array<ArrayBuffer>;
+	recoveryIv?: Uint8Array<ArrayBuffer>;
 }
 
 interface DiaryEntry {
@@ -68,6 +73,22 @@ db.version(2)
 				if (!entry.charCount) {
 					entry.charCount = 0;
 				}
+			});
+	});
+
+db.version(3)
+	.stores({
+		users: 'id, username',
+		entries: 'id, userId, date, createdAt, updatedAt'
+	})
+	.upgrade(async (tx) => {
+		await tx
+			.table('users')
+			.toCollection()
+			.modify((user) => {
+				user.recoveryEncryptedMasterKey = undefined;
+				user.recoverySalt = undefined;
+				user.recoveryIv = undefined;
 			});
 	});
 
