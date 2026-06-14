@@ -5,7 +5,6 @@
 	$effect(() => {
 		console.log('needRefresh:', $needRefresh);
 	});
-	console.log('here!!');
 </script>
 
 {#if $needRefresh}
