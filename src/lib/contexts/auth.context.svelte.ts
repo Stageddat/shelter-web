@@ -1,15 +1,12 @@
 import { createContext } from 'svelte';
 import { type User } from '$lib/db';
-import { getUser } from '$lib/services/app/db.service';
+import { getAutoLockMinutes } from '$lib/hooks/app/useAutoLock.svelte';
 
 class AuthContext {
 	user = $state<User | undefined>(undefined);
 	masterKey = $state<CryptoKey | null>(null);
 	isAuthenticated = $derived(this.masterKey !== null);
-
-	constructor() {
-		getUser().then((u) => (this.user = u));
-	}
+	autoLockMinutes = $state(getAutoLockMinutes());
 
 	logout = () => {
 		this.masterKey = null;

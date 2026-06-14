@@ -5,12 +5,15 @@
 	import Sidebar from '$lib/components/app/Sidebar.svelte';
 	import { resolve } from '$app/paths';
 	import PWAUpdatePrompt from '$lib/components/app/PWAUpdatePrompt.svelte';
+	import { useAutoLock } from '$lib/hooks/app/useAutoLock.svelte';
 
 	let { children } = $props();
 
 	const authContext = getAuthContext();
 	const appContext = new AppContext();
 	setAppContext(appContext);
+
+	useAutoLock();
 
 	$effect(() => {
 		if (!authContext.isAuthenticated && !authContext.masterKey) {
@@ -22,7 +25,7 @@
 
 	if (import.meta.env.DEV) {
 		import('$lib/dev/seed').then(({ seedEntries }) => {
-			const seedWindow = window as Window & { __seed?: (n?: number) => void }; // what the fuck is this
+			const seedWindow = window as Window & { __seed?: (n?: number) => void };
 			seedWindow.__seed = (n = 500) => seedEntries(auth.masterKey!, n);
 		});
 	}
