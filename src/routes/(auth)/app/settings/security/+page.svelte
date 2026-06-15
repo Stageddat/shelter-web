@@ -65,6 +65,38 @@
 		auth.autoLockMinutes = value;
 		setAutoLockMinutes(value);
 	}
+
+	import {
+		generateRecoveryFile,
+		downloadRecoveryFile
+	} from '$lib/services/auth/recoveryKey.service';
+
+	let showRecoveryKey = $state(false);
+	let recoveryPhrase = $state('');
+	let recoveryLoading = $state(false);
+	let recoveryStep = $state<'generate' | 'show'>('generate');
+
+	async function handleGenerateKeyFile() {
+		if (!auth.masterKey || !auth.user) return;
+		recoveryLoading = true;
+		try {
+			const phrase = await generateRecoveryFile(auth.masterKey);
+			downloadRecoveryFile(phrase, auth.user.username);
+			recoveryPhrase = phrase;
+			recoveryStep = 'show';
+		} catch (err) {
+			console.error(err);
+			toast.error('failed to generate recovery key');
+		} finally {
+			recoveryLoading = false;
+		}
+	}
+
+	function handleCloseRecovery() {
+		showRecoveryKey = false;
+		recoveryPhrase = '';
+		recoveryStep = 'generate';
+	}
 </script>
 
 <div class="flex flex-col gap-2 px-12 py-9">
@@ -182,6 +214,78 @@
 					{/each}
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
+		</div>
+
+		<hr class="my-4 border-current opacity-10" />
+
+		<!-- recovery key -->
+		<div class="flex flex-row items-center justify-between gap-2">
+			<div>
+				<p class="text-xl tracking-wide lowercase opacity-85">recovery key</p>
+				<p class="text-sm tracking-wide lowercase opacity-60">
+					generate a key file to recover your account if you forget your password
+				</p>
+			</div>
+			<Dialog.Root
+				bind:open={showRecoveryKey}
+				onOpenChange={(o) => {
+					if (!o) handleCloseRecovery();
+				}}
+			>
+				<Dialog.Trigger
+					class="{buttonVariants({
+						variant: 'outline'
+					})} h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground"
+				>
+					generate
+				</Dialog.Trigger>
+				<Dialog.Content class="sm:max-w-lg">
+					<Dialog.Header>
+						<Dialog.Title class="text-2xl">recovery key</Dialog.Title>
+						<Dialog.Description class="text-xl">
+							{#if recoveryStep === 'generate'}
+								this will generate a <span class="font-mono">.key</span> file with your 12-word recovery
+								phrase. keep it safe.
+							{:else}
+								your <span class="font-mono">.key</span> file has been downloaded. keep it somewhere safe.
+							{/if}
+						</Dialog.Description>
+					</Dialog.Header>
+
+					{#if recoveryStep === 'generate'}
+						<p class="text-lg tracking-wider text-destructive uppercase">
+							if you already have a recovery key, generating a new one will invalidate the old one.
+						</p>
+						<Dialog.Footer>
+							<Dialog.Close class="text-lg! {buttonVariants({ variant: 'outline' })}">
+								cancel
+							</Dialog.Close>
+							<Button onclick={handleGenerateKeyFile} disabled={recoveryLoading} class="text-lg!">
+								{recoveryLoading ? 'generating...' : 'generate & download'}
+							</Button>
+						</Dialog.Footer>
+					{:else}
+						<div class="rounded-lg border border-border/40 bg-secondary/60 p-4">
+							<div class="grid grid-cols-3 gap-2">
+								{#each recoveryPhrase.split(' ') as word, i (i)}
+									<div class="flex items-center gap-2">
+										<span class="text-sm text-foreground/85 opacity-60 select-none">{i + 1}.</span>
+										<span class="font-mono text-lg">{word}</span>
+									</div>
+								{/each}
+							</div>
+						</div>
+						<p class="text-xl opacity-60">
+							the .key file has been downloaded. store it separately from this phrase.
+						</p>
+						<Dialog.Footer>
+							<Button onclick={handleCloseRecovery} class="text-lg!">
+								i've saved my recovery phrase
+							</Button>
+						</Dialog.Footer>
+					{/if}
+				</Dialog.Content>
+			</Dialog.Root>
 		</div>
 	</div>
 
