@@ -138,6 +138,7 @@
 								<Input
 									id="oldPassword"
 									name="oldPassword"
+									autocomplete="current-password"
 									bind:value={oldPassword}
 									class="text-lg"
 									type="password"
@@ -148,6 +149,7 @@
 								<Input
 									id="newPassword"
 									name="newPassword"
+									autocomplete="new-password"
 									bind:value={newPassword}
 									class="text-lg"
 									type="password"
@@ -158,6 +160,7 @@
 								<Input
 									id="confirmPassword"
 									name="confirmPassword"
+									autocomplete="new-password"
 									bind:value={confirmPassword}
 									class="text-lg"
 									type="password"

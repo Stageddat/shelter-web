@@ -3,9 +3,11 @@ import User from '@lucide/svelte/icons/user';
 import Info from '@lucide/svelte/icons/info';
 import Lock from '@lucide/svelte/icons/lock';
 import { type LucideIcon } from '@lucide/svelte';
+import type { HTMLInputAttributes } from 'svelte/elements';
 
 export interface FormFieldConfig {
 	id: keyof RegisterInput;
+	autocomplete?: HTMLInputAttributes['autocomplete'];
 	name: keyof RegisterInput;
 	label: string;
 	type: string;
@@ -18,6 +20,7 @@ export interface FormFieldConfig {
 export const formFields: FormFieldConfig[] = [
 	{
 		id: 'username',
+		autocomplete: 'username',
 		name: 'username',
 		label: 'what should we call you?',
 		type: 'text',
@@ -29,6 +32,7 @@ export const formFields: FormFieldConfig[] = [
 	},
 	{
 		id: 'password',
+		autocomplete: 'new-password',
 		name: 'password',
 		label: 'choose a password',
 		type: 'password',
@@ -37,6 +41,7 @@ export const formFields: FormFieldConfig[] = [
 	},
 	{
 		id: 'password2',
+		autocomplete: 'new-password',
 		name: 'password2',
 		label: 'repeat password',
 		type: 'password',
