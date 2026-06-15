@@ -3,10 +3,9 @@ import {
 	BlockType,
 	ExportMode,
 	FORMAT_VERSION,
-	META_VERSION,
+	SCHEMA_VERSION,
 	MIN_SUPPORTED_FORMAT,
 	HEADER_SIZE,
-	type BackupMeta,
 	type ImportResult,
 	MIN_SUPPORTED_META
 } from '$lib/types/app/backup';
@@ -39,26 +38,12 @@ export function checkImportCompatibility(buffer: ArrayBuffer): ImportResult {
 
 	// meta es mas nueva que la app, aviso pero no bloquea
 	// puede perder algunos datos
-	if (header.metaVersion > META_VERSION) {
+	if (header.metaVersion > SCHEMA_VERSION) {
 		return { ok: true, warning: 'backup_from_newer_app' };
 	}
 
 	// misma version de formato y meta
 	return { ok: true };
-}
-
-// migration function if meta json is changed
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function migrateMeta(raw: Partial<BackupMeta>, fromVersion: number): BackupMeta {
-	const m = { ...raw };
-
-	if (fromVersion < 2) {
-		// future migration?
-	}
-
-	// if (fromVersion < 3)
-
-	return m as BackupMeta;
 }
 
 // importar
@@ -83,7 +68,14 @@ export async function importFullBackup(buffer: ArrayBuffer): Promise<void> {
 						displayName: json.displayName ?? json.username,
 						encryptedMasterKey: new Uint8Array(json.encryptedMasterKey),
 						salt: new Uint8Array(json.salt),
-						iv: new Uint8Array(json.iv)
+						iv: new Uint8Array(json.iv),
+
+						// recovery v1.2
+						recoveryEncryptedMasterKey: json.recoveryEncryptedMasterKey
+							? new Uint8Array(json.recoveryEncryptedMasterKey)
+							: undefined,
+						recoverySalt: json.recoverySalt ? new Uint8Array(json.recoverySalt) : undefined,
+						recoveryIv: json.recoveryIv ? new Uint8Array(json.recoveryIv) : undefined
 					});
 					break;
 

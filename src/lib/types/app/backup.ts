@@ -1,7 +1,7 @@
 export const MAGIC_NUMBER = new Uint8Array([0x53, 0x48, 0x4c, 0x54]); // "SHLT"
 
 export const FORMAT_VERSION = 1;
-export const META_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 export const MIN_SUPPORTED_FORMAT = 1;
 export const MIN_SUPPORTED_META = 1;
 export const HEADER_SIZE = 32;
@@ -10,7 +10,7 @@ export const HEADER_SIZE = 32;
 //
 // [0-3]   magic           4 bytes  "SHLT"
 // [4]     FORMAT_VERSION  1 byte
-// [5]     META_VERSION    1 byte
+// [5]     SCHEMA_VERSION  1 byte
 // [6]     mode            1 byte
 // [7]     compressed      1 byte   (0x00 = no, 0x01 = sí)
 // [8-15]  timestamp       8 bytes

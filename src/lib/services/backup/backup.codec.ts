@@ -5,7 +5,7 @@ import {
 	HEADER_SIZE,
 	MAGIC_NUMBER,
 	FORMAT_VERSION,
-	META_VERSION,
+	SCHEMA_VERSION,
 	Compressed
 } from '$lib/types/app/backup';
 
@@ -51,7 +51,7 @@ export function encodeHeader(meta: Uint8Array, totalBlocks: number, mode: number
 	view.setUint8(4, FORMAT_VERSION);
 
 	// [5] META_VERSION
-	view.setUint8(5, META_VERSION);
+	view.setUint8(5, SCHEMA_VERSION);
 
 	// [6] mode
 	view.setUint8(6, mode);

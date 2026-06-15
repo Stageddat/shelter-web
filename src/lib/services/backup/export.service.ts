@@ -1,5 +1,5 @@
 import { db } from '$lib/db';
-import { ExportMode, BlockType, META_VERSION, type BackupMeta } from '$lib/types/app/backup';
+import { ExportMode, BlockType, SCHEMA_VERSION, type BackupMeta } from '$lib/types/app/backup';
 import { encodeHeader, encodeBlock, encodeMetadata } from '$lib/services/backup/backup.codec';
 import packageJson from '$lib/../../package.json';
 
@@ -17,7 +17,14 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 			...user,
 			encryptedMasterKey: Array.from(user.encryptedMasterKey),
 			salt: Array.from(user.salt),
-			iv: Array.from(user.iv)
+			iv: Array.from(user.iv),
+
+			// recovery v1.2
+			recoveryEncryptedMasterKey: user.recoveryEncryptedMasterKey
+				? Array.from(user.recoveryEncryptedMasterKey)
+				: undefined,
+			recoverySalt: user.recoverySalt ? Array.from(user.recoverySalt) : undefined,
+			recoveryIv: user.recoveryIv ? Array.from(user.recoveryIv) : undefined
 		})
 	);
 
@@ -36,7 +43,7 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 
 	// metadata
 	const meta: BackupMeta = {
-		metaVersion: META_VERSION,
+		metaVersion: SCHEMA_VERSION,
 		appVersion: packageJson.version,
 		username: user.username,
 		totalEntries: entries.length,
