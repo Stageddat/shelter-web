@@ -40,7 +40,9 @@ export function useLogin() {
 
 		try {
 			const masterKey = await login(password);
+			const user = await getUser();
 			auth.masterKey = masterKey;
+			auth.user = user ?? undefined;
 			goto(resolve('/app'));
 		} catch (err) {
 			if (err instanceof Error && err.message === 'incorrect password') {

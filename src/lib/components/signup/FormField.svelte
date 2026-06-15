@@ -35,6 +35,7 @@
 	<InputGroup class="h-12!">
 		<InputGroupInput
 			type={field.type}
+			autocomplete={field.autocomplete}
 			id={String(field.id)}
 			name={String(field.name)}
 			value={value ?? ''}
@@ -64,7 +65,7 @@
 						</TooltipTrigger>
 
 						<TooltipContent>
-							{#each field.tooltipContent.split('\n') as line, i}
+							{#each field.tooltipContent.split('\n') as line, i (i)}
 								<span>
 									{line}
 									{#if i < field.tooltipContent.split('\n').length - 1}

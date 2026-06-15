@@ -40,6 +40,7 @@
 				type="password"
 				id="password"
 				name="password"
+				autocomplete="current-password"
 				value={password}
 				oninput={handleChange}
 				placeholder={m['login.password.placeholder']()}

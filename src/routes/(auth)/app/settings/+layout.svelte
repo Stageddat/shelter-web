@@ -40,7 +40,7 @@
 
 						<div class="line-clamp-1 flex flex-col">
 							<span class="text-lg font-bold tracking-wide">{category.id}</span>
-							<span class="text-sm opacity-70">{category.desc}</span>
+							<span class="text-base tracking-wide opacity-85">{category.desc}</span>
 						</div>
 					</div>
 				</button>

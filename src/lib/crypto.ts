@@ -87,7 +87,7 @@ export async function decryptMasterKey(
 		encryptedMasterKey
 	);
 
-	return crypto.subtle.importKey('raw', decrypted, { name: 'AES-GCM' }, false, [
+	return crypto.subtle.importKey('raw', decrypted, { name: 'AES-GCM' }, true, [
 		'encrypt',
 		'decrypt'
 	]);

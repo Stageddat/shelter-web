@@ -17,7 +17,14 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 			...user,
 			encryptedMasterKey: Array.from(user.encryptedMasterKey),
 			salt: Array.from(user.salt),
-			iv: Array.from(user.iv)
+			iv: Array.from(user.iv),
+
+			// recovery v1.2
+			recoveryEncryptedMasterKey: user.recoveryEncryptedMasterKey
+				? Array.from(user.recoveryEncryptedMasterKey)
+				: undefined,
+			recoverySalt: user.recoverySalt ? Array.from(user.recoverySalt) : undefined,
+			recoveryIv: user.recoveryIv ? Array.from(user.recoveryIv) : undefined
 		})
 	);
 
