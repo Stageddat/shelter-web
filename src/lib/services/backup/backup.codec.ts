@@ -102,7 +102,7 @@ export function decodeHeader(buffer: ArrayBuffer): DecodedHeader {
 
 	return {
 		formatVersion: view.getUint8(4),
-		metaVersion: view.getUint8(5),
+		schemaVersion: view.getUint8(5),
 		mode: view.getUint8(6),
 		compressed: view.getUint8(7),
 		timestamp: view.getBigInt64(8, false),

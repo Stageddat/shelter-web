@@ -7,7 +7,7 @@ import {
 	MIN_SUPPORTED_FORMAT,
 	HEADER_SIZE,
 	type ImportResult,
-	MIN_SUPPORTED_META
+	MIN_SUPPORTED_SCHEMA
 } from '$lib/types/app/backup';
 import { db } from '$lib/db';
 
@@ -25,9 +25,9 @@ export function checkImportCompatibility(buffer: ArrayBuffer): ImportResult {
 		return { ok: false, reason: 'format_incompatible' };
 	}
 
-	// bloquea los metas antiguos
-	if (header.metaVersion < MIN_SUPPORTED_META) {
-		return { ok: false, reason: 'meta_incompatible' };
+	// bloquea los schemas antiguos
+	if (header.schemaVersion < MIN_SUPPORTED_SCHEMA) {
+		return { ok: false, reason: 'schema_incompatible' };
 	}
 
 	// unknown export mode
@@ -38,7 +38,7 @@ export function checkImportCompatibility(buffer: ArrayBuffer): ImportResult {
 
 	// meta es mas nueva que la app, aviso pero no bloquea
 	// puede perder algunos datos
-	if (header.metaVersion > SCHEMA_VERSION) {
+	if (header.schemaVersion > SCHEMA_VERSION) {
 		return { ok: true, warning: 'backup_from_newer_app' };
 	}
 

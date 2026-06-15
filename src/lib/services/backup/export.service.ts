@@ -1,5 +1,5 @@
 import { db } from '$lib/db';
-import { ExportMode, BlockType, SCHEMA_VERSION, type BackupMeta } from '$lib/types/app/backup';
+import { ExportMode, BlockType, META_VERSION, type BackupMeta } from '$lib/types/app/backup';
 import { encodeHeader, encodeBlock, encodeMetadata } from '$lib/services/backup/backup.codec';
 import packageJson from '$lib/../../package.json';
 
@@ -43,7 +43,7 @@ export async function exportFullBackup(): Promise<ArrayBuffer> {
 
 	// metadata
 	const meta: BackupMeta = {
-		metaVersion: SCHEMA_VERSION,
+		metaVersion: META_VERSION,
 		appVersion: packageJson.version,
 		username: user.username,
 		totalEntries: entries.length,

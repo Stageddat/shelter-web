@@ -2,7 +2,9 @@ export const MAGIC_NUMBER = new Uint8Array([0x53, 0x48, 0x4c, 0x54]); // "SHLT"
 
 export const FORMAT_VERSION = 1;
 export const SCHEMA_VERSION = 2;
+export const META_VERSION = 1;
 export const MIN_SUPPORTED_FORMAT = 1;
+export const MIN_SUPPORTED_SCHEMA = 1;
 export const MIN_SUPPORTED_META = 1;
 export const HEADER_SIZE = 32;
 
@@ -50,7 +52,7 @@ export interface BlockRaw {
 
 export interface DecodedHeader {
 	formatVersion: number;
-	metaVersion: number;
+	schemaVersion: number;
 	mode: number;
 	compressed: number;
 	timestamp: bigint;
@@ -67,5 +69,5 @@ export type ImportResult =
 				| 'format_incompatible'
 				| 'export_mode_not_supported'
 				| 'invalid_file'
-				| 'meta_incompatible';
+				| 'schema_incompatible';
 	  };
