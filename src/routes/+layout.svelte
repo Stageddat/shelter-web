@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
 	import { locales, localizeHref } from '$lib/paraglide/runtime';
 	import { page } from '$app/state';
 	import { pwaInfo } from 'virtual:pwa-info';
@@ -41,6 +41,8 @@
 	{/if}
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifest}
+
+	<ModeWatcher />
 </svelte:head>
 
 <div class="sr-only" aria-hidden="true">
@@ -50,5 +52,5 @@
 		</a>
 	{/each}
 </div>
-<ModeWatcher />
+
 {@render children()}
