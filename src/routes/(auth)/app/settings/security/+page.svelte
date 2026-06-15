@@ -113,6 +113,7 @@
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
 				<p class="text-xl tracking-wide lowercase opacity-85">change password</p>
+				<p class="text-sm tracking-wide lowercase opacity-60">change your account password</p>
 			</div>
 			<Dialog.Root bind:open={showChangePassword}>
 				<form>
@@ -187,7 +188,13 @@
 
 		<!-- auto lock -->
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">auto lock</p>
+			<div>
+				<p class="text-xl tracking-wide lowercase opacity-85">auto lock</p>
+				<p class="text-sm tracking-wide lowercase opacity-60">
+					auto lock the app after a period of inactivity
+				</p>
+			</div>
+
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
 					{#snippet child({ props })}
