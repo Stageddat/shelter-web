@@ -16,7 +16,10 @@ export function checkImportCompatibility(buffer: ArrayBuffer): ImportResult {
 	let header;
 	try {
 		header = decodeHeader(buffer);
-	} catch {
+	} catch (err) {
+		if (err instanceof Error && err.message === 'invalid_checksum') {
+			return { ok: false, reason: 'corrupted_file' };
+		}
 		return { ok: false, reason: 'invalid_file' };
 	}
 

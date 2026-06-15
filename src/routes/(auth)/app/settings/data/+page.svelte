@@ -52,11 +52,14 @@
 			const check = checkImportCompatibility(buffer);
 
 			if (!check.ok) {
-				toast.error(
-					check.reason === 'format_incompatible'
-						? 'this backup is not compatible with this version of shelter'
-						: 'this backup format is not supported'
-				);
+				const messages: Record<typeof check.reason, string> = {
+					invalid_file: 'this file is not a shelter backup',
+					corrupted_file: 'this backup is corrupted or has been modified',
+					format_incompatible: 'this backup is not compatible with this version of shelter',
+					schema_incompatible: 'this backup was created with an older version of shelter',
+					export_mode_not_supported: 'this backup format is not supported'
+				};
+				toast.error(messages[check.reason]);
 				return;
 			}
 

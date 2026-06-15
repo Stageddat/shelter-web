@@ -66,6 +66,7 @@ export type ImportResult =
 	| {
 			ok: false;
 			reason:
+				| 'corrupted_file'
 				| 'format_incompatible'
 				| 'export_mode_not_supported'
 				| 'invalid_file'
