@@ -4,4 +4,4 @@ Disallow: /app
 Disallow: /login
 Disallow: /signup
 
-Sitemap: https://shelter.stageddat.dev/sitemap.xml
+Sitemap: https://shelter.cat/sitemap.xml
