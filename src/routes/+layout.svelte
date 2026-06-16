@@ -41,8 +41,6 @@
 	{/if}
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html webManifest}
-
-	<ModeWatcher />
 </svelte:head>
 
 <div class="sr-only" aria-hidden="true">
@@ -53,4 +51,5 @@
 	{/each}
 </div>
 
+<ModeWatcher />
 {@render children()}
