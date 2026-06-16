@@ -34,8 +34,8 @@ export default defineConfig({
 			// injectRegister: 'inline',
 			kit: { spa: true },
 			workbox: {
-				navigateFallback: '/',
-				navigateFallbackAllowlist: [/^\//],
+				navigateFallback: '/app',
+				navigateFallbackAllowlist: [/^\/app/, /^\/login/, /^\/signup/],
 				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
 				// additionalManifestEntries: [{ url: '/', revision: null }],
 				runtimeCaching: [
