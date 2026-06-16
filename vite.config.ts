@@ -34,11 +34,22 @@ export default defineConfig({
 			// injectRegister: 'inline',
 			kit: { spa: true },
 			workbox: {
-				navigateFallback: '/app',
-				navigateFallbackAllowlist: [/^\/app/, /^\/login/, /^\/signup/],
+				navigateFallback: '/',
+				navigateFallbackAllowlist: [/^\//],
 				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
-				// additionalManifestEntries: [{ url: '/', revision: null }],
+
 				runtimeCaching: [
+					{
+						urlPattern: ({ url }) => {
+							const publicRoutes = [/^\/app/, /^\/login/, /^\/signup/];
+							return !publicRoutes.some((regex) => regex.test(url.pathname));
+						},
+						handler: 'NetworkFirst',
+						options: {
+							cacheName: 'public-marketing-routes',
+							expiration: { maxEntries: 20, maxAgeSeconds: 60 * 60 * 24 * 7 }
+						}
+					},
 					{
 						urlPattern: /\.(?:png|jpg|webp|svg|ico)$/,
 						handler: 'CacheFirst',
