@@ -5,6 +5,8 @@
 	import LanguageSelector from '$lib/components/landing/LanguageSelector.svelte';
 	import { m } from '$lib/paraglide/messages';
 	import { localizeHref } from '$lib/paraglide/runtime';
+	import GitHub from '$lib/assets/icons/github.svelte';
+	import Discord from '$lib/assets/icons/discord.svelte';
 </script>
 
 <header
@@ -24,9 +26,26 @@
 			<DesktopNav />
 		</div>
 
-		<div class="flex items-center gap-4">
+		<div class="flex items-center gap-1.5">
 			<LanguageSelector />
-
+			<Button
+				title="github repository"
+				variant="outline"
+				href="https://github.com/Stageddat/shelter-web"
+				target="_blank"
+				class="h-10 border-border/40 bg-secondary hover:text-foreground"
+			>
+				<GitHub class="h-6! w-6!" />
+			</Button>
+			<Button
+				title="discord server"
+				variant="outline"
+				href="https://discord.gg/BntK5GbF2M"
+				target="_blank"
+				class="h-10 border-border/40 bg-secondary hover:text-foreground"
+			>
+				<Discord class="h-6! w-6!" />
+			</Button>
 			<Button
 				href="/signup"
 				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:inline-flex"
