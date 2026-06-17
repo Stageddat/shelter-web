@@ -1,5 +1,6 @@
 import { goto } from '$app/navigation';
 import { resolve } from '$app/paths';
+import { getAppContext } from '$lib/contexts/app.context.svelte';
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 
 const AUTOLOCK_KEY = 'shelter.autoLockMinutes';
@@ -14,10 +15,11 @@ export function setAutoLockMinutes(minutes: number): void {
 }
 
 export function useAutoLock() {
-	const auth = getAuthContext();
+	const authContext = getAuthContext();
+	const appContext = getAppContext();
 
 	$effect(() => {
-		const minutes = auth.autoLockMinutes;
+		const minutes = authContext.autoLockMinutes;
 		if (minutes === 0) {
 			// console.log('[autolock] disabled');
 			return;
@@ -29,7 +31,8 @@ export function useAutoLock() {
 
 		function lockOut() {
 			// console.log('[autolock] locking out!');
-			auth.logout();
+			authContext.logout();
+			appContext.logout();
 			goto(resolve('/login'));
 		}
 

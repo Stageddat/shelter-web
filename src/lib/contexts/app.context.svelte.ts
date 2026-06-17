@@ -37,6 +37,10 @@ class AppContext {
 		}
 	}
 
+	logout = () => {
+		this.entries = [];
+	};
+
 	refreshEntries = async () => {
 		if (!this.auth?.masterKey) return;
 		await this.loadEntries(this.auth.masterKey);
