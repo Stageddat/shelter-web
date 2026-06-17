@@ -16,7 +16,7 @@
 	{href}
 	target={external ? '_blank' : undefined}
 	rel={external ? 'noopener noreferrer' : undefined}
-	class="text-base text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary"
+	class="text-base tracking-wide text-muted-foreground transition-colors duration-200 ease-in-out hover:text-primary"
 >
 	{@render children?.()}
 </a>
