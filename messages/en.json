@@ -44,7 +44,7 @@
       },
       "2": {
         "question": "is my data safe?",
-        "answer": "yes. your entries are end-to-end encrypted and stored locally on your device first. nobody can read them, not even us — your data is encrypted with a key only you have."
+        "answer": "yes. your entries are end-to-end encrypted and stored locally on your device first. nobody can read them, not even us. your data is encrypted with a key only you have."
       },
       "3": {
         "question": "is it open source?",
@@ -56,7 +56,7 @@
       },
       "5": {
         "question": "is it free?",
-        "answer": "yes! shelter is free to use, ad-free, and open source. it's a labor of love."
+        "answer": "yes! shelter is free to use, ad-free, and open source. made with ❤️!"
       },
       "6": {
         "question": "who is machka?",
