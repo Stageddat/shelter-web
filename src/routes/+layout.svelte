@@ -45,7 +45,7 @@
 
 <div class="sr-only" aria-hidden="true">
 	{#each locales as locale (locale)}
-		<a href={localizeHref(page.url.pathname, { locale })} data-sveltekit-reload>
+		<a href={localizeHref(page.url.pathname, { locale })} data-sveltekit-reload tabindex="-1">
 			{locale}
 		</a>
 	{/each}
