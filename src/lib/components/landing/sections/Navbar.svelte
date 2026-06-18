@@ -13,12 +13,12 @@
 	class="fixed top-0 z-50 w-full border-b border-border/20 bg-background/60 backdrop-blur-xl transition-all duration-300"
 >
 	<div class="container mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-		<div class="flex items-center gap-8">
+		<div class="flex items-center gap-2 sm:gap-4">
 			<MobileNav />
 
 			<a
 				href={localizeHref('/')}
-				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:opacity-80 lg:text-3xl"
+				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:text-primary lg:text-3xl"
 			>
 				<span class="relative -top-px">{m['landing.navbar.logo']()}</span>
 			</a>
@@ -33,7 +33,7 @@
 				variant="outline"
 				href="https://github.com/Stageddat/shelter-web"
 				target="_blank"
-				class="h-10 border-border/40 bg-secondary hover:text-foreground"
+				class="hidden h-10 border-border/40 bg-secondary hover:text-foreground sm:inline-flex"
 			>
 				<GitHub class="h-6! w-6!" />
 			</Button>
@@ -42,7 +42,7 @@
 				variant="outline"
 				href="https://discord.gg/BntK5GbF2M"
 				target="_blank"
-				class="h-10 border-border/40 bg-secondary hover:text-foreground"
+				class="hidden h-10 border-border/40 bg-secondary hover:text-foreground sm:inline-flex"
 			>
 				<Discord class="h-6! w-6!" />
 			</Button>
