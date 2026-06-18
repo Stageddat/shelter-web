@@ -8,7 +8,7 @@
 <main class="mx-auto max-w-4xl px-8 py-24">
 	<BackToHome />
 	<h1 class="mb-8 text-6xl font-bold text-foreground">cookie policy</h1>
-	<p class="mb-12 text-lg text-muted-foreground">last updated: december 30, 2025</p>
+	<p class="mb-12 text-lg text-muted-foreground">last updated: june 18, 2026</p>
 
 	<div class="space-y-12">
 		<section class="space-y-4">
@@ -26,41 +26,10 @@
 				our approach to cookies
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">
-				we use the absolute minimum number of cookies necessary to make shelter work. we don&apos;t
-				use tracking cookies, advertising cookies, or analytics cookies.
+				shelter doesn&apos;t use cookies. there&apos;s no account or login system, so there&apos;s
+				nothing to remember between visits beyond what&apos;s already stored locally in your
+				browser.
 			</p>
-		</section>
-
-		<section class="space-y-4">
-			<h2 class="border-b-2 border-primary pb-2 text-3xl font-bold text-balance text-primary">
-				essential cookies we use
-			</h2>
-			<p class="text-xl text-pretty text-muted-foreground">
-				these cookies are required for shelter to function properly:
-			</p>
-			<div class="ml-6 space-y-4 text-xl">
-				<div>
-					<p class="font-semibold text-foreground">• authentication cookies</p>
-					<p class="text-muted-foreground">
-						keeps you logged in so you don&apos;t have to sign in every time you visit shelter.
-						without this cookie, you&apos;d need to log in on every page.
-					</p>
-				</div>
-				<div>
-					<p class="font-semibold text-foreground">• session cookies</p>
-					<p class="text-muted-foreground">
-						remembers your preferences and settings during your visit, like your theme choice or
-						language preference.
-					</p>
-				</div>
-				<div>
-					<p class="font-semibold text-foreground">• security cookies</p>
-					<p class="text-muted-foreground">
-						helps protect your account from unauthorized access and ensures secure communication
-						between your browser and our servers.
-					</p>
-				</div>
-			</div>
 		</section>
 
 		<section class="space-y-4">
@@ -69,7 +38,7 @@
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">shelter does not use:</p>
 			<ul class="ml-6 space-y-2 text-xl text-muted-foreground">
-				<li>• tracking cookies to monitor your behavior</li>
+				<li>• cookies to track your behavior</li>
 				<li>• advertising cookies to show you ads</li>
 				<li>• analytics cookies to collect usage statistics</li>
 				<li>• third-party cookies from social media or other services</li>
@@ -82,9 +51,9 @@
 				local storage
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">
-				in addition to cookies, we use your browser&apos;s local storage to save your encrypted
-				entries on your device. this is not the same as cookies and gives you offline access to your
-				content.
+				instead of cookies, shelter uses your browser&apos;s local storage to save your encrypted
+				entries on your device. this is not the same as cookies, it&apos;s what gives you offline
+				access to your content, and it never leaves your device.
 			</p>
 			<p class="text-xl text-pretty text-muted-foreground">
 				everything stored locally is encrypted and only accessible by you.
@@ -93,25 +62,12 @@
 
 		<section class="space-y-4">
 			<h2 class="border-b-2 border-primary pb-2 text-3xl font-bold text-balance text-primary">
-				managing cookies
+				future: cloud sync
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">
-				most browsers allow you to control cookies through their settings. you can set your browser
-				to refuse cookies or alert you when cookies are being sent.
-			</p>
-			<p class="text-xl text-pretty text-muted-foreground">
-				however, if you disable our essential cookies, shelter won&apos;t work properly. you
-				won&apos;t be able to stay logged in or save your preferences.
-			</p>
-		</section>
-
-		<section class="space-y-4">
-			<h2 class="border-b-2 border-primary pb-2 text-3xl font-bold text-balance text-primary">
-				cookie lifetime
-			</h2>
-			<p class="text-xl text-pretty text-muted-foreground">
-				our authentication cookies last for 30 days or until you log out, whichever comes first.
-				session cookies are deleted when you close your browser.
+				we&apos;re working on an optional cloud sync feature, which may introduce a small number of
+				essential cookies (for example, to keep you signed in). if that changes, we&apos;ll update
+				this policy with full details before that feature goes live.
 			</p>
 		</section>
 
@@ -127,15 +83,15 @@
 
 		<section class="space-y-4">
 			<h2 class="border-b-2 border-primary pb-2 text-3xl font-bold text-balance text-primary">
-				questions
+				contact us
 			</h2>
 			<p class="text-xl text-pretty text-muted-foreground">
-				if you have questions about how we use cookies, contact us at{' '}
+				if you have any questions about this privacy policy, please contact us on the
 				<a
-					href="mailto:hello@stageddat.dev"
+					href="https://discord.gg/BntK5GbF2M"
 					class="text-primary-dark hover:text-primary-dark/80 underline transition-colors"
 				>
-					hello@stageddat.dev
+					discord server
 				</a>
 			</p>
 		</section>

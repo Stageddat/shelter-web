@@ -21,15 +21,17 @@
 	];
 </script>
 
-<section class="bg-background px-8 py-24 lg:py-40" id="security">
+<section class="bg-background px-4 py-24 md:px-8 lg:py-40" id="security">
 	<div class="mx-auto max-w-6xl">
-		<div class="mb-20 space-y-4 text-center">
-			<h2 class="font-display text-4xl font-normal text-foreground sm:text-6xl lg:text-7xl">
+		<div class="mb-4 space-y-4 text-center">
+			<h2
+				class="font-display text-5xl font-normal text-pretty text-foreground sm:text-6xl lg:mb-3 lg:text-7xl"
+			>
 				{m['landing.security.title']()}
 			</h2>
 		</div>
 
-		<div class="flex flex-col items-center gap-16 lg:flex-row lg:gap-24">
+		<div class="flex flex-col items-center gap-2 lg:flex-row lg:gap-24">
 			<div class="relative flex w-full justify-center lg:w-1/2">
 				{#if theme.current === 'mocha-lavender'}
 					<enhanced:img

@@ -15,12 +15,12 @@
 		<div class="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
 			<div class="space-y-8">
 				<h1
-					class="text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl lg:text-[13rem]"
+					class="text-8xl leading-[0.8] font-normal tracking-wide text-foreground sm:text-9xl md:text-[10rem] lg:text-[13rem]"
 				>
 					{m['landing.hero.title']()}
 				</h1>
 				<p
-					class="font-primary mx-auto max-w-md text-left text-xl leading-relaxed text-pretty text-muted-foreground lg:mx-0 lg:text-3xl"
+					class="font-primary mx-auto max-w-md text-center text-xl leading-relaxed text-pretty text-muted-foreground lg:mx-0 lg:text-left lg:text-3xl"
 				>
 					{m['landing.hero.subtitle']()}
 				</p>
@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="flex flex-1 items-center justify-center lg:-ml-16">
-			<div class="relative w-full max-w-125 sm:max-w-150 lg:max-w-175">
+			<div class="relative w-full max-w-md sm:max-w-lg md:max-w-lg lg:max-w-175">
 				{#if theme.current === 'mocha-lavender'}
 					<enhanced:img
 						src={MachkaMochaLavender}

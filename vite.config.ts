@@ -4,8 +4,14 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
+import path from 'path';
 
 export default defineConfig({
+	resolve: {
+		alias: {
+			'@css': path.resolve('./src/routes')
+		}
+	},
 	plugins: [
 		paraglideVitePlugin({
 			project: './project.inlang',
@@ -31,17 +37,19 @@ export default defineConfig({
 		tailwindcss(),
 		SvelteKitPWA({
 			registerType: 'prompt',
-			// injectRegister: 'inline',
-			kit: { spa: true },
+			kit: {
+				adapterFallback: 'app.html',
+				spa: { fallbackMapping: '/app' }
+			},
 			workbox: {
-				navigateFallback: '/',
-				navigateFallbackAllowlist: [/^\//],
-				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
+				navigateFallback: '/app',
+				navigateFallbackAllowlist: [/^\/app/, /^\/login/, /^\/signup/, /^\/restore/],
+				globPatterns: ['client/**/*.{js,css,woff,woff2}', '**/*.html'],
 
 				runtimeCaching: [
 					{
 						urlPattern: ({ url }) => {
-							const publicRoutes = [/^\/app/, /^\/login/, /^\/signup/];
+							const publicRoutes = [/^\/app/, /^\/login/, /^\/signup/, /^\/restore/];
 							return !publicRoutes.some((regex) => regex.test(url.pathname));
 						},
 						handler: 'NetworkFirst',

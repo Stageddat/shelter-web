@@ -5,6 +5,8 @@
 	import { getLocale, localizeHref, locales } from '$lib/paraglide/runtime';
 	import { Check, Languages } from '@lucide/svelte';
 
+	let { class: className = '' } = $props();
+
 	const localeConfig: Record<string, { label: string; translation: 'official' | 'community' }> = {
 		en: { label: 'english', translation: 'official' },
 		ca: { label: 'català', translation: 'official' },
@@ -24,7 +26,7 @@
 			<Button
 				{...props}
 				variant="outline"
-				class="h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground"
+				class="h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground {className}"
 			>
 				<Languages class="h-6! w-6!" />
 				{localeConfig[getLocale()].label}

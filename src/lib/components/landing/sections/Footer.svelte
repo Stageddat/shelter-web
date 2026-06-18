@@ -10,7 +10,7 @@
 	<div class="mx-auto w-11/12 max-w-7xl">
 		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
 			<div class="space-y-4">
-				<p class="text-4xl font-normal tracking-tighter text-foreground">
+				<p class="text-4xl font-normal tracking-wide text-foreground">
 					{m['landing.footer.title']()}
 				</p>
 				<div class="space-y-1 text-sm leading-relaxed text-muted-foreground">
@@ -25,14 +25,16 @@
 					{m['landing.footer.product.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
-					<FooterLink href="">{m['landing.footer.product.about_us']()}</FooterLink>
-					<FooterLink href="">{m['landing.footer.product.cloud']()}</FooterLink>
-					<FooterLink href="">{m['landing.footer.product.selfhost']()}</FooterLink>
+					<FooterLink href={localizeHref('/credits')}
+						>{m['landing.footer.product.credits']()}</FooterLink
+					>
+					<FooterLink href={localizeHref('/')}>{m['landing.footer.product.cloud']()}</FooterLink>
+					<FooterLink href={localizeHref('/')}>{m['landing.footer.product.selfhost']()}</FooterLink>
 				</nav>
 			</div>
 
 			<div class="space-y-4">
-				<p class="text-lg font-medium tracking-tight text-foreground">
+				<p class="text-lg font-medium tracking-wide text-foreground">
 					{m['landing.footer.legal.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
@@ -49,12 +51,12 @@
 			</div>
 
 			<div class="space-y-4">
-				<p class="text-lg font-medium tracking-tight text-foreground">
+				<p class="text-lg font-medium tracking-wide text-foreground">
 					{m['landing.footer.contact.title']()}
 				</p>
 				<nav class="flex flex-col space-y-2.5">
 					<FooterLink href="https://github.com/Stageddat/shelter-web" external>github</FooterLink>
-					<FooterLink href="mailto:hello@stageddat.dev">hello@stageddat.dev</FooterLink>
+					<FooterLink href="https://discord.gg/BntK5GbF2M" external>discord server</FooterLink>
 				</nav>
 			</div>
 		</div>
