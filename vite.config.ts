@@ -31,17 +31,19 @@ export default defineConfig({
 		tailwindcss(),
 		SvelteKitPWA({
 			registerType: 'prompt',
-			// injectRegister: 'inline',
-			kit: { spa: true },
+			kit: {
+				adapterFallback: 'app.html',
+				spa: { fallbackMapping: '/app' }
+			},
 			workbox: {
-				navigateFallback: '/',
-				navigateFallbackAllowlist: [/^\//],
-				globPatterns: ['client/**/*.{js,css,woff,woff2}'],
+				navigateFallback: '/app',
+				navigateFallbackAllowlist: [/^\/app/, /^\/login/, /^\/signup/, /^\/restore/],
+				globPatterns: ['client/**/*.{js,css,woff,woff2}', '**/*.html'],
 
 				runtimeCaching: [
 					{
 						urlPattern: ({ url }) => {
-							const publicRoutes = [/^\/app/, /^\/login/, /^\/signup/];
+							const publicRoutes = [/^\/app/, /^\/login/, /^\/signup/, /^\/restore/];
 							return !publicRoutes.some((regex) => regex.test(url.pathname));
 						},
 						handler: 'NetworkFirst',
