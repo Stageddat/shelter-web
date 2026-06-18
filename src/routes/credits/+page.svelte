@@ -44,7 +44,7 @@
 			links: []
 		},
 		{
-			name: 'BestGamez',
+			name: 'BestG',
 			pfp: bestPfp,
 			roles: ['translator'],
 			links: []
