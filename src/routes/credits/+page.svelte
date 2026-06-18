@@ -29,7 +29,7 @@
 			pfp: stageddatPfp,
 			roles: ['development'],
 			links: [
-				{ label: 'website', href: 'https://stageddat.dev' },
+				{ label: 'webs', href: 'https://stageddat.dev' },
 				{ label: 'github', href: 'https://github.com/stageddat' }
 			]
 		},
