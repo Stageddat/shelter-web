@@ -4,8 +4,14 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
+import path from 'path';
 
 export default defineConfig({
+	resolve: {
+		alias: {
+			'@css': path.resolve('./src/routes')
+		}
+	},
 	plugins: [
 		paraglideVitePlugin({
 			project: './project.inlang',
