@@ -3,35 +3,23 @@
   "landing": {
     "hero": {
       "title": "shelter",
-      "subtitle": "a safe place where your thoughts can breathe without judgment",
+      "subtitle": "a safe place where your thoughts can breathe",
       "image_alt": "machka writing her journal with her kitty ziggy"
     },
     "features": {
+      "title": "made to feel like home",
       "1": {
-        "title": "top-level security",
-        "description": "your entries are encrypted and protected at all times."
-      },
-      "2": {
         "title": "local storage & offline-first",
         "description": "keep your journals safe on your own device."
       },
-      "3": {
+      "2": {
         "title": "cloud sync (coming soon)",
         "description": "soon you'll be able to access your thoughts anywhere."
       },
-      "4": {
-        "title": "100% personal & private",
-        "description": "your journal is for your eyes only.\nwe respect your privacy."
-      },
-      "5": {
-        "title": "designed for calm",
-        "description": "a distraction-free interface to help you focus."
-      },
-      "6": {
-        "title": "write at your own pace",
-        "description": "there are no deadlines or pressures. just you and your thoughts."
-      },
-      "title": "a safe place for your thoughts"
+      "3": {
+        "title": "calm by design",
+        "description": "no deadlines, no pressure. just a quiet space to write, at your own pace."
+      }
     },
     "security": {
       "1": {
@@ -49,17 +37,18 @@
       "title": "fully protected"
     },
     "faqs": {
+      "title": "frequently asked questions",
       "1": {
         "question": "what is shelter?",
         "answer": "shelter is a secure place where your thoughts can breathe. it's a secure journal web app where you can write freely without judgment in your favorite browser."
       },
       "2": {
-        "question": "is it open source?",
-        "answer": "yes! you can find the source code on <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> and we welcome contributions."
+        "question": "is my data safe?",
+        "answer": "yes. your entries are end-to-end encrypted and stored locally on your device first. nobody can read them, not even us — your data is encrypted with a key only you have."
       },
       "3": {
-        "question": "where is the data stored?",
-        "answer": "all your entries are stored locally in your browser using encrypted storage."
+        "question": "is it open source?",
+        "answer": "yes! you can find the source code on <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> and we welcome contributions."
       },
       "4": {
         "question": "what is this project inspired by?",
@@ -70,22 +59,9 @@
         "answer": "yes! shelter is free to use, ad-free, and open source. it's a labor of love."
       },
       "6": {
-        "question": "how is the data encrypted?",
-        "answer": "the data is stored locally with strong encryption. you can learn more about our security protocols in our <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">privacy policy</a>."
-      },
-      "7": {
-        "question": "who can see my data?",
-        "answer": "nobody! even we can't read it. your entries are encrypted with your own key."
-      },
-      "8": {
-        "question": "is it secure?",
-        "answer": "yes. we use end-to-end encryption and a 'privacy-first' architecture to ensure your shelter remains yours alone."
-      },
-      "9": {
         "question": "who is machka?",
         "answer": "she is our official mascot! you can often find her and her kitty ziggy wandering around the website.<br /><br /> special thanks to <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> for creating all the wonderful artwork!"
-      },
-      "title": "frequently asked questions"
+      }
     },
     "start": {
       "title": "ready to rest?",

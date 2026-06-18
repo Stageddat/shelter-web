@@ -6,8 +6,5 @@ export const faqData = [
 	{ question: () => m['landing.faqs.3.question'](), message: m['landing.faqs.3.answer'] },
 	{ question: () => m['landing.faqs.4.question'](), message: m['landing.faqs.4.answer'] },
 	{ question: () => m['landing.faqs.5.question'](), message: m['landing.faqs.5.answer'] },
-	{ question: () => m['landing.faqs.6.question'](), message: m['landing.faqs.6.answer'] },
-	{ question: () => m['landing.faqs.7.question'](), message: m['landing.faqs.7.answer'] },
-	{ question: () => m['landing.faqs.8.question'](), message: m['landing.faqs.8.answer'] },
-	{ question: () => m['landing.faqs.9.question'](), message: m['landing.faqs.9.answer'] }
+	{ question: () => m['landing.faqs.6.question'](), message: m['landing.faqs.6.answer'] }
 ];
