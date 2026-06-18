@@ -8,16 +8,16 @@
         },
         "features": {
             "1": {
-                "title": "seguretat d'alt nivell",
-                "description": "les teves entrades estan xifrades i protegides en tot moment."
+                "title": "emmagatzematge local i sense connexió",
+                "description": "mantén els teus diaris segurs al teu propi dispositiu."
             },
             "2": {
-                "title": "emmagatzematge local i totalment fora de línia",
-                "description": "mentenim els vostres diaris segurs al vostre propi dispositiu."
+                "title": "sincronització al núvol (pròximament)",
+                "description": "aviat podràs accedir als teus pensaments des de qualsevol lloc."
             },
             "3": {
-                "title": "sincronització al núvol (pròximament)",
-                "description": "aviat podràs accedir als teus pensaments des de qualsevol lloc."
+                "title": "disseny amb calma",
+                "description": "sense terminis, sense pressions. només un espai tranquil per escriure, al teu propi ritme."
             },
             "4": {
                 "title": "100% personal i privat",
@@ -31,7 +31,7 @@
                 "title": "escriu al teu ritme",
                 "description": "ho hi ha terminis ni pressions. només tu i els teus pensaments."
             },
-            "title": "un lloc segur per les teves idees"
+            "title": "creat per fer-te sentir com a casa"
         },
         "security": {
             "1": {
@@ -54,12 +54,12 @@
                 "answer": "shelter és un lloc segur on els teus pensaments poden respirar. és una aplicació web de diari segur on pots escriure lliurement sense judici des del teu navegador favorit."
             },
             "2": {
-                "question": "és de codi obert?",
-                "answer": "sí! pots trobar el codi font a <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> i acceptem contribucions."
+                "question": "estan segures les meves dades?",
+                "answer": "sí! les teves entrades estan xifrades de principi a fi i s'emmagatzemen localment al teu dispositiu primer. ningú les pot llegir, ni tan sols nosaltres. les teves dades estan xifrades amb una clau que només tu tens."
             },
             "3": {
-                "question": "on s'emmagatzemen les dades?",
-                "answer": "totes les teves entrades s'emmagatzemen localment al teu navegador amb emmagatzematge xifrat."
+                "question": "és de codi obert?",
+                "answer": "sí! pots trobar el codi font a <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> i les contribucions són benvingudes."
             },
             "4": {
                 "question": "en què s'inspira aquest projecte?",
@@ -67,11 +67,11 @@
             },
             "5": {
                 "question": "és gratuït?",
-                "answer": "sí! shelter és gratuït, sense anuncis i de codi obert. és un projecte fet amb molt d'amor."
+                "answer": "sí! shelter és gratuït, sense anuncis i de codi obert. és un projecte fet amb molt d'❤️."
             },
             "6": {
-                "question": "com es xifren les dades?",
-                "answer": "les dades s'emmagatzemen localment amb un xifratge robust. pots saber-ne més sobre els nostres protocols de seguretat a la nostra <a href=\"/privacy\" class=\"text-primary underline hover:opacity-80\">política de privacitat</a>."
+                "question": "qui és la machka?",
+                "answer": "ella és la nostra mascota oficial! la pots trobar sovint amb el seu gat ziggy passejant pel lloc web.<br /><br /> Moltíssimes gràcies a <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> per crear totes aquestes meravelloses obres d'art!"
             },
             "7": {
                 "question": "qui pot veure les meves dades?",
@@ -107,7 +107,8 @@
                 "title": "producte",
                 "about_us": "sobre nosaltres",
                 "cloud": "núvol",
-                "selfhost": "hosting personal"
+                "selfhost": "hosting personal",
+                "credits": "crèdits"
             },
             "legal": {
                 "title": "legal",
