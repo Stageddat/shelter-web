@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { m } from '$lib/paraglide/messages';
 	import Navbar from '$lib/components/landing/sections/Navbar.svelte';
 	import Footer from '$lib/components/landing/sections/Footer.svelte';
 
@@ -14,6 +15,13 @@
 	import kiwiPfp from '$lib/assets/landing/credits/pfp/kiwi.jpg?enhanced';
 	import csPfp from '$lib/assets/landing/credits/pfp/cs.jpg?enhanced';
 	import defaultPfp from '$lib/assets/landing/credits/pfp/default.webp?enhanced';
+
+	const roleMessages = {
+		development: m['landing.credits.roles.development'],
+		artist: m['landing.credits.roles.artist'],
+		tester: m['landing.credits.roles.tester'],
+		translator: m['landing.credits.roles.translator']
+	} as const;
 
 	const contributors = [
 		{
@@ -31,54 +39,14 @@
 			roles: ['artist'],
 			links: [{ label: 'instagram', href: 'https://www.instagram.com/fiddlearty/' }]
 		},
-		{
-			name: 'josh',
-			pfp: joshPfp,
-			roles: ['tester'],
-			links: []
-		},
-		{
-			name: 'Cheesy Bacon',
-			pfp: cheesyPfp,
-			roles: ['tester', 'translator'],
-			links: []
-		},
-		{
-			name: 'BestG',
-			pfp: bestPfp,
-			roles: ['translator'],
-			links: []
-		},
-		{
-			name: '4XLS',
-			pfp: _4xlsPfp,
-			roles: ['tester'],
-			links: []
-		},
-		{
-			name: 'meteor',
-			pfp: meteorPfp,
-			roles: ['tester'],
-			links: []
-		},
-		{
-			name: 'panda',
-			pfp: pandaPfp,
-			roles: ['tester'],
-			links: []
-		},
-		{
-			name: 'fisch',
-			pfp: defaultPfp,
-			roles: ['translator'],
-			links: []
-		},
-		{
-			name: 'Capitan Solnan',
-			pfp: csPfp,
-			roles: ['tester'],
-			links: []
-		},
+		{ name: 'josh', pfp: joshPfp, roles: ['tester'], links: [] },
+		{ name: 'Cheesy Bacon', pfp: cheesyPfp, roles: ['tester', 'translator'], links: [] },
+		{ name: 'BestG', pfp: bestPfp, roles: ['translator'], links: [] },
+		{ name: '4XLS', pfp: _4xlsPfp, roles: ['tester'], links: [] },
+		{ name: 'meteor', pfp: meteorPfp, roles: ['tester'], links: [] },
+		{ name: 'panda', pfp: pandaPfp, roles: ['tester'], links: [] },
+		{ name: 'fisch', pfp: defaultPfp, roles: ['translator'], links: [] },
+		{ name: 'Capitan Solnan', pfp: csPfp, roles: ['tester'], links: [] },
 		{
 			name: 'kiwi',
 			pfp: kiwiPfp,
@@ -90,14 +58,11 @@
 
 <Navbar />
 <div class="mx-auto mt-12 max-w-4xl px-4 py-12">
-	<h1 class="mb-8 text-6xl font-bold text-foreground">credits</h1>
-	<p class="text-xl text-pretty text-muted-foreground">
-		thanks to everyone who has supported shelter in one way or another, whether with code, design,
-		feedback, or just using it. this project would not be what it is without you &lt;3
-	</p>
+	<h1 class="mb-8 text-6xl font-bold text-foreground">{m['landing.credits.title']()}</h1>
+	<p class="text-xl text-pretty text-muted-foreground">{m['landing.credits.intro']()}</p>
 	<section class="mt-10">
 		<h2 class="border-b-2 border-primary pb-2 text-3xl font-bold text-balance text-primary">
-			contributors
+			{m['landing.credits.contributors']()}
 		</h2>
 		<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
 			{#each contributors as contributor (contributor.name)}
@@ -111,7 +76,9 @@
 						<p class="text-3xl font-medium tracking-wide">{contributor.name}</p>
 						<div class="mt-1 flex flex-row flex-wrap items-center justify-center gap-2">
 							{#each contributor.roles as role (role)}
-								<p class="rounded-md border px-1.5 text-xl text-muted-foreground">{role}</p>
+								<p class="rounded-md border px-1.5 text-xl text-muted-foreground">
+									{roleMessages[role as keyof typeof roleMessages]()}
+								</p>
 							{/each}
 						</div>
 					</div>
