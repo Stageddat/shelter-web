@@ -16,7 +16,7 @@
 		'group relative flex flex-col p-4 md:p-6 lg:p-8',
 		'rounded-xl border border-border',
 		'border-0 bg-secondary/50 transition-colors duration-300 ease-in-out',
-		'hover:bg-accent/50'
+		'hover:bg-accent/25 hover:text-accent-foreground'
 	)}
 >
 	<div
