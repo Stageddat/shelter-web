@@ -4,11 +4,11 @@
 	import { m } from '$lib/paraglide/messages';
 </script>
 
-<section class="relative overflow-hidden bg-background px-12 py-24" id="features">
+<section class="relative overflow-hidden bg-background px-4 py-2 lg:px-8 lg:py-8" id="features">
 	<div class="mx-auto xl:max-w-10/12">
-		<div class="mb-16 space-y-4 text-center">
+		<div class="mb-4 text-center">
 			<h2
-				class="font-display text-4xl font-normal text-pretty text-foreground sm:text-6xl lg:text-7xl"
+				class="font-display text-5xl font-normal text-pretty text-foreground sm:text-6xl lg:mb-3 lg:text-7xl"
 			>
 				{m['landing.features.title']()}
 			</h2>
