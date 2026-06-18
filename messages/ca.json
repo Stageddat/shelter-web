@@ -112,11 +112,166 @@
             "legal": {
                 "title": "legal",
                 "privacy": "política de privacitat",
-                "terms": "condicions del servei",
+                "terms": "condicions d'ús",
                 "cookies": "política de cookies"
             },
             "contact": {
                 "title": "contacte"
+            }
+        },
+        "privacy": {
+            "title": "política de privacitat",
+            "lastUpdated": "última actualització: 18 de juny de 2026",
+            "noCollect": {
+                "title": "no recopilem les teves dades",
+                "content": "shelter es basa en un principi simple: els teus pensaments són teus. shelter s'executa completament al teu navegador, no recopilem, emmagatzemem ni processem les teves dades personals a cap servidor. tot el que escrius es queda al teu dispositiu."
+            },
+            "storage": {
+                "title": "com s'emmagatzemen les teves dades",
+                "intro": "totes les teves entrades s'emmagatzemen localment al teu navegador mitjançant emmagatzematge xifrat. això significa:",
+                "items": {
+                    "device": "les teves notes mai surten del teu dispositiu",
+                    "read": "no podem llegir les teves entrades, encara que volguéssim",
+                    "encrypted": "les teves dades estan xifrades en repòs amb una clau que només tu tens",
+                    "control": "tens un control complet sobre la teva informació"
+                }
+            },
+            "analytics": {
+                "title": "analítica",
+                "content": "utilitzem analítica autoadministrada i respectuosa amb la privacitat (umami) per entendre com s'utilitza shelter de manera agregada — coses com les visualitzacions de pàgina i les tendències generals d'ús. aquestes dades són anònimes, mai vinculades a la teva identitat o les teves entrades del diari, i mai es comparteixen ni es venen a ningú. pots desactivar-ho en qualsevol moment."
+            },
+            "noAds": {
+                "title": "sense anuncis, sense vendre dades",
+                "content": "mai mostrarem anuncis ni vendrem les teves dades a tercers. mai. la teva privacitat no està en venda."
+            },
+            "cookies": {
+                "title": "cookies",
+                "content": "shelter no utilitza cookies. no hi ha cap sistema de comptes ni d'inici de sessió, així que no hi ha res a recordar entre sessions més enllà del que ja s'emmagatzema localment al teu navegador. consulta la nostra <a class=\"text-primary-dark hover:text-primary-dark/80 transition-colors\" href=\"/cookies\">política de cookies</a> per a més detalls."
+            },
+            "rights": {
+                "title": "els teus drets",
+                "content": "com que no recopilem les teves dades, no tenim res a eliminar ni a compartir per la nostra part. tens la propietat i el control complets de tot el que crees a shelter, i pots exportar o eliminar les teves dades en qualsevol moment directament des de l'aplicació."
+            },
+            "futureSync": {
+                "title": "futur: sincronització al núvol",
+                "content": "estem treballant en una funció opcional de sincronització al núvol. quan es llanci, les teves dades s'xifraran al teu dispositiu abans d'arribar als nostres servidors, i només tu tindràs les claus per desxifrar-les. actualitzarem aquesta política amb tots els detalls abans que aquesta funció estigui disponible."
+            },
+            "changes": {
+                "title": "canvis en aquesta política",
+                "content": "si alguna vegada canviem aquesta política de privacitat, t'ho notificarem clarament i et donarem l'opció de revisar els canvis. mai farem canvis que comprometin la teva privacitat sense el teu coneixement."
+            },
+            "contact": {
+                "title": "contacta'ns",
+                "content": "si tens alguna pregunta sobre aquesta política de privacitat, posa't en contacte amb nosaltres al <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
+            }
+        },
+        "terms": {
+            "title": "condicions d'ús",
+            "lastUpdated": "última actualització: 18 de juny de 2026",
+            "welcome": {
+                "title": "benvingut a shelter!",
+                "content": "en utilitzar shelter, acceptes aquestes condicions. les hem mantingut simples i clares perquè creiem en la transparència."
+            },
+            "whatIs": {
+                "title": "què és shelter",
+                "content": "shelter és un espai privat i xifrat per als teus pensaments, notes i reflexions. està dissenyat per ser un lloc segur on puguis escriure lliurement sense judici ni vigilància. shelter s'executa completament al teu navegador — no cal cap compte ni inici de sessió."
+            },
+            "yourContent": {
+                "title": "el teu contingut",
+                "content1": "tot el que escrius a shelter és teu. no reclamem cap propietat sobre el teu contingut. com que les teves dades estan xifrades i emmagatzemades al teu propi dispositiu, de totes maneres no hi podem accedir.",
+                "content2": "ets responsable del contingut que crees. tot i que no podem veure les teves entrades, et demanem que utilitzis shelter de manera responsable i legal."
+            },
+            "acceptableUse": {
+                "title": "ús acceptable",
+                "intro": "acceptes no:",
+                "items": {
+                    "illegal": "utilitzar shelter per a activitats il·legals",
+                    "hack": "intentar piratejar, trencar o comprometre la seguretat de shelter",
+                    "interfere": "interferir en l'accés d'altres usuaris al servei",
+                    "malware": "utilitzar shelter per distribuir programari maliciós o nociu",
+                    "ip": "vulnerar els drets de propietat intel·lectual o privacitat de ningú",
+                    "superearth": "jurar lleialtat eterna a la Super Terra; qualsevol activitat sospitosa s'ha de notificar al teu oficial democràtic més proper"
+                }
+            },
+            "availability": {
+                "title": "disponibilitat del servei",
+                "content1": "treballem dur per mantenir shelter funcionant sense problemes, però no podem garantir que el lloc web estigui disponible el 100% del temps. de tant en tant pot ser necessari aturar-lo per manteniment o actualitzacions.",
+                "content2": "com que les teves dades s'emmagatzemen localment al teu dispositiu, les teves entrades continuen sent accessibles per a tu fins i tot si el lloc web de shelter és temporalment inactiu."
+            },
+            "backups": {
+                "title": "còpies de seguretat",
+                "content": "les teves entrades viuen al teu dispositiu. recomanem encaridament que exportis regularment les teves entrades com a còpia de seguretat — si perds l'accés al teu dispositiu o esborres les dades del navegador sense una còpia de seguretat, no tenim manera de recuperar les teves entrades. ets responsable de mantenir les teves pròpies còpies de seguretat del contingut important."
+            },
+            "noWarranty": {
+                "title": "sense garantia",
+                "content": "shelter es proporciona \"tal com és\" sense cap tipus de garantia. fem el possible perquè shelter sigui fiable i segur, però no podem garantir que satisfaci totes les teves necessitats o que estigui completament lliure d'errors."
+            },
+            "liability": {
+                "title": "limitació de responsabilitat",
+                "content": "no som responsables de cap dany derivat de l'ús o la impossibilitat d'ús de shelter. això inclou la pèrdua de dades, tot i que treballem dur per evitar-ho."
+            },
+            "futureSync": {
+                "title": "futur: comptes i sincronització al núvol",
+                "content": "estem treballant en una funció opcional de sincronització al núvol, que introduirà comptes. quan es llanci, seràs responsable de mantenir el teu compte segur, i actualitzarem aquestes condicions amb tots els detalls sobre comptes, dades sincronitzades i cancel·lació abans que aquesta funció estigui disponible."
+            },
+            "changes": {
+                "title": "canvis en aquestes condicions",
+                "content": "podem actualitzar aquestes condicions de tant en tant. si fem canvis significatius, t'ho notificarem clarament i et donarem temps per revisar-los. continuar utilitzant shelter després dels canvis significa que acceptes les noves condicions."
+            },
+            "contact": {
+                "title": "contacta'ns",
+                "content": "si tens alguna pregunta sobre aquesta política de privacitat, posa't en contacte amb nosaltres al <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
+            }
+        },
+        "credits": {
+            "title": "crèdits",
+            "intro": "gràcies a tothom qui ha donat suport a shelter d'una manera o altra, ja sigui amb codi, disseny, comentaris o simplement utilitzant-lo. aquest projecte no seria el que és sense vosaltres <3",
+            "contributors": "col·laboradors",
+            "roles": {
+                "development": "desenvolupament",
+                "artist": "artista",
+                "tester": "provador",
+                "translator": "traductor"
+            }
+        },
+        "cookies": {
+            "title": "política de cookies",
+            "lastUpdated": "última actualització: 18 de juny de 2026",
+            "whatAreCookies": {
+                "title": "què són les cookies",
+                "content": "les cookies són petits fitxers de text que els llocs web emmagatzemen al teu dispositiu per recordar informació sobre tu. són una part estàndard del funcionament dels llocs web moderns."
+            },
+            "ourApproach": {
+                "title": "el nostre enfocament de les cookies",
+                "content": "shelter no utilitza cookies. no hi ha cap sistema de comptes ni d'inici de sessió, de manera que no hi ha res a recordar entre visites més enllà del que ja s'emmagatzema localment al teu navegador."
+            },
+            "whatWeDontUse": {
+                "title": "què no utilitzem",
+                "intro": "shelter no utilitza:",
+                "items": {
+                    "tracking": "cookies per rastrejar el teu comportament",
+                    "advertising": "cookies publicitàries per mostrar-te anuncis",
+                    "analytics": "cookies d'analítica per recopilar estadístiques d'ús",
+                    "thirdParty": "cookies de tercers de xarxes socials o altres serveis",
+                    "personal": "cookies que t'identifiquin personalment"
+                }
+            },
+            "localStorage": {
+                "title": "emmagatzematge local",
+                "content1": "en lloc de cookies, shelter utilitza l'emmagatzematge local del teu navegador per desar les teves entrades xifrades al teu dispositiu. això no és el mateix que les cookies, és el que et permet accedir al teu contingut sense connexió, i mai surt del teu dispositiu.",
+                "content2": "tot el que s'emmagatzema localment està xifrat i només és accessible per tu."
+            },
+            "futureSync": {
+                "title": "futur: sincronització al núvol",
+                "content": "estem treballant en una funció opcional de sincronització al núvol, que pot introduir un petit nombre de cookies essencials (per exemple, per mantenir-te connectat). si això canvia, actualitzarem aquesta política amb tots els detalls abans que aquesta funció estigui disponible."
+            },
+            "updates": {
+                "title": "actualitzacions d'aquesta política",
+                "content": "si alguna vegada necessitem afegir o canviar les cookies que utilitzem, actualitzarem aquesta política i t'ho farem saber. estem compromesos a mantenir l'ús de cookies al mínim absolut."
+            },
+            "contact": {
+                "title": "contacta'ns",
+                "content": "si tens alguna pregunta sobre aquesta política de privacitat, posa't en contacte amb nosaltres al <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
             }
         }
     },
