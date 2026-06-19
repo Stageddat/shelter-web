@@ -26,9 +26,13 @@
 	}
 </script>
 
-<main class="flex h-full flex-col px-12 py-6">
-	<div class="mt-auto mb-4 flex items-center justify-between">
-		<Button variant="ghost" href={resolve('/app')} class="flex items-center px-3! py-6! text-2xl">
+<main class="flex h-full flex-col px-4 py-4 lg:px-12 lg:py-6">
+	<div class="mb-4 flex items-center justify-between">
+		<Button
+			variant="ghost"
+			href={resolve('/app')}
+			class="flex items-center px-2! py-5! text-xl! lg:px-3! lg:py-6! lg:text-2xl!"
+		>
 			<ArrowLeft class="mt-1 -mr-0.5" />
 			home
 		</Button>
@@ -52,13 +56,13 @@
 		</div>
 	</div>
 
-	<div class="px-2">
+	<div class="px-1 lg:px-2">
 		<input
 			placeholder="untitled entry"
 			type="text"
 			value={entry.title}
 			oninput={(e) => (entry.title = e.currentTarget.value)}
-			class="font-editor mb-4 w-full border-b-2 border-accent bg-transparent text-2xl outline-none placeholder:text-muted-foreground"
+			class="font-editor mb-4 w-full border-b-2 border-accent bg-transparent text-xl outline-none placeholder:text-muted-foreground lg:text-2xl"
 		/>
 	</div>
 
