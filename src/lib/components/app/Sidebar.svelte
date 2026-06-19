@@ -110,10 +110,10 @@
 	<!-- boton del medio, nueva entrada -->
 	<a
 		href="/app/new"
-		class="-mt-2 flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background shadow-md"
+		class="-mt-2 flex h-12 w-12 items-center justify-center rounded-full bg-foreground/85 text-background shadow-md"
 		aria-label="new entry"
 	>
-		<CirclePlus class="h-6 w-6" />
+		<CirclePlus class="h-6! w-6!" />
 	</a>
 
 	{#each mobileLinks.slice(2) as { href, label, icon: Icon, navigateTo } (href)}
