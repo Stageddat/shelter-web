@@ -56,7 +56,7 @@
 				</p>
 				<nav class="flex flex-col space-y-2.5">
 					<FooterLink href="https://github.com/Stageddat/shelter-web" external>github</FooterLink>
-					<FooterLink href="https://discord.gg/BntK5GbF2M" external>discord server</FooterLink>
+					<FooterLink href="https://discord.gg/BntK5GbF2M" external>discord</FooterLink>
 				</nav>
 			</div>
 		</div>

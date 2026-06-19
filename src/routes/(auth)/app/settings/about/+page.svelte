@@ -116,7 +116,7 @@
 				target="_blank"
 			>
 				<HouseHeart class="mt-1 mr-2 h-5! w-5!" />
-				discord
+				discord server
 			</a>
 			<a
 				href="https://ko-fi.com/stageddat"
