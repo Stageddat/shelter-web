@@ -4,7 +4,10 @@
 	import { m } from '$lib/paraglide/messages';
 </script>
 
-<section class="relative overflow-hidden bg-background px-4 py-2 lg:px-8 lg:py-8" id="features">
+<section
+	class="relative overflow-hidden bg-background px-4 py-2 lg:px-8 lg:py-12 lg:pt-24"
+	id="features"
+>
 	<div class="mx-auto xl:max-w-10/12">
 		<div class="mb-4 text-center">
 			<h2

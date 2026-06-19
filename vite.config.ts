@@ -4,6 +4,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { enhancedImages } from '@sveltejs/enhanced-img';
 import { defineConfig } from 'vite';
 import { SvelteKitPWA } from '@vite-pwa/sveltekit';
+import basicSsl from '@vitejs/plugin-basic-ssl';
 import path from 'path';
 
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
 		}
 	},
 	plugins: [
+		basicSsl(),
 		paraglideVitePlugin({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide',

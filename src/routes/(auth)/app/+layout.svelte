@@ -36,7 +36,7 @@
 {#if authContext.isAuthenticated}
 	<div class="flex h-screen">
 		<Sidebar />
-		<main class="flex-1 overflow-auto">
+		<main class="flex-1 overflow-auto pb-16 lg:pb-0">
 			{@render children()}
 		</main>
 	</div>

@@ -16,11 +16,11 @@
 	let activeId = $derived(page.url.pathname.split('/').pop());
 </script>
 
-<div class="flex h-screen">
-	<aside class="flex h-screen w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs">
-		<h2 class="mb-4 flex pt-8 pl-5 text-left text-4xl font-bold tracking-wide lowercase">
-			settings
-		</h2>
+<div class="flex h-screen overflow-hidden">
+	<aside
+		class="hidden h-full w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs lg:flex"
+	>
+		<h2 class="mb-4 pt-8 pl-5 text-left text-4xl font-bold tracking-wide lowercase">settings</h2>
 		<nav class="m-2 flex flex-col gap-2">
 			{#each categories as category (category.id)}
 				{@const isActive = activeId === category.id}
@@ -34,10 +34,8 @@
 					{#if isActive}
 						<div class="absolute top-1/4 left-2 h-1/2 w-1 rounded-full bg-primary"></div>
 					{/if}
-
 					<div class="flex items-center gap-3 {isActive ? 'pl-2' : ''}">
 						<category.icon class="h-6 w-6" />
-
 						<div class="line-clamp-1 flex flex-col">
 							<span class="text-lg font-bold tracking-wide">{category.id}</span>
 							<span class="text-base tracking-wide opacity-85">{category.desc}</span>
@@ -47,7 +45,8 @@
 			{/each}
 		</nav>
 	</aside>
-	<div class="flex-1 overflow-auto">
+
+	<div class="flex-1 overflow-y-auto">
 		{@render children?.()}
 	</div>
 </div>

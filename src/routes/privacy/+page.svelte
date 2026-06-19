@@ -6,9 +6,9 @@
 </script>
 
 <Navbar />
-<main class="mx-auto max-w-4xl bg-background px-8 py-16 lg:py-24">
+<main class="mx-auto max-w-4xl px-8 py-20 lg:py-24">
 	<BackToHome />
-	<h1 class="mb-8 text-6xl font-bold text-foreground">{m['landing.privacy.title']()}</h1>
+	<h1 class="mb-2 text-6xl font-bold text-foreground">{m['landing.privacy.title']()}</h1>
 	<p class="mb-12 text-lg text-balance text-muted-foreground">
 		{m['landing.privacy.lastUpdated']()}
 	</p>

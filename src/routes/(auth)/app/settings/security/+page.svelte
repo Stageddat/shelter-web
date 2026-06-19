@@ -70,6 +70,7 @@
 		generateRecoveryFile,
 		downloadRecoveryFile
 	} from '$lib/services/auth/recoveryKey.service';
+	import SettingsPageHeader from '$lib/components/app/SettingsPageHeader.svelte';
 
 	let showRecoveryKey = $state(false);
 	let recoveryPhrase = $state('');
@@ -99,20 +100,17 @@
 	}
 </script>
 
-<div class="flex flex-col gap-2 px-12 py-9">
-	<!-- header -->
-	<div>
-		<h2 class="mb-0.5 flex text-left text-4xl font-semibold tracking-wide lowercase">security</h2>
-		<h3 class="mb-6 flex text-left text-xl tracking-wide lowercase">change security behavior</h3>
-	</div>
+<div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">
+	<SettingsPageHeader title="security" description="change security behavior" />
+
 	<!-- security options -->
 	<div class="mb-6">
-		<h2 class="mb-2 text-2xl tracking-widest uppercase">options</h2>
+		<h2 class="mb-2 text-xl tracking-widest uppercase lg:text-2xl">options</h2>
 
 		<!-- change password -->
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">change password</p>
+				<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">change password</p>
 				<p class="text-sm tracking-wide lowercase opacity-60">change your account password</p>
 			</div>
 			<Dialog.Root bind:open={showChangePassword}>
@@ -121,11 +119,11 @@
 						type="button"
 						class="{buttonVariants({
 							variant: 'outline'
-						})} h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground"
+						})} h-10 gap-2 border-border/40 bg-secondary px-3 text-base text-muted-foreground hover:text-foreground lg:text-xl"
 					>
-						change my password
+						change
 					</Dialog.Trigger>
-					<Dialog.Content class="sm:max-w-106.25">
+					<Dialog.Content class="w-[90vw] sm:max-w-106.25">
 						<Dialog.Header class="gap-0.5!">
 							<Dialog.Title class="text-2xl">change password</Dialog.Title>
 							<Dialog.Description class="text-lg">
@@ -171,9 +169,9 @@
 							{/if}
 						</div>
 						<Dialog.Footer>
-							<Dialog.Close type="button" class="text-lg! {buttonVariants({ variant: 'outline' })}">
-								cancel
-							</Dialog.Close>
+							<Dialog.Close type="button" class="text-lg! {buttonVariants({ variant: 'outline' })}"
+								>cancel</Dialog.Close
+							>
 							<Button
 								onclick={handleChangePassword}
 								disabled={passwordLoading}
@@ -192,19 +190,16 @@
 		<!-- auto lock -->
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">auto lock</p>
-				<p class="text-sm tracking-wide lowercase opacity-60">
-					auto lock the app after a period of inactivity
-				</p>
+				<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">auto lock</p>
+				<p class="text-sm tracking-wide lowercase opacity-60">auto lock after inactivity</p>
 			</div>
-
 			<DropdownMenu.Root>
 				<DropdownMenu.Trigger>
 					{#snippet child({ props })}
 						<Button
 							{...props}
 							variant="outline"
-							class="h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground"
+							class="h-10 gap-2 border-border/40 bg-secondary px-3 text-base text-muted-foreground hover:text-foreground lg:text-xl"
 						>
 							{LOCK_OPTIONS.find((o) => o.value === selected)?.label ?? '15 minutes'}
 						</Button>
@@ -216,24 +211,23 @@
 							onclick={() => handleSelect(option.value)}
 							class="text-base tracking-wide"
 						>
-							<span class="w-4 text-muted-foreground">
-								{#if selected === option.value}<Check />{/if}
-							</span>
+							<span class="w-4 text-muted-foreground"
+								>{#if selected === option.value}<Check />{/if}</span
+							>
 							{option.label}
 						</DropdownMenu.Item>
 					{/each}
 				</DropdownMenu.Content>
 			</DropdownMenu.Root>
 		</div>
-
 		<hr class="my-4 border-current opacity-10" />
 
 		<!-- recovery key -->
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">recovery key</p>
+				<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">recovery key</p>
 				<p class="text-sm tracking-wide lowercase opacity-60">
-					generate a key file to recover your account if you forget your password
+					generate a key file to recover your account
 				</p>
 			</div>
 			<Dialog.Root
@@ -245,14 +239,14 @@
 				<Dialog.Trigger
 					class="{buttonVariants({
 						variant: 'outline'
-					})} h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground"
+					})} h-10 gap-2 border-border/40 bg-secondary px-3 text-base text-muted-foreground hover:text-foreground lg:text-xl"
 				>
 					generate
 				</Dialog.Trigger>
-				<Dialog.Content class="sm:max-w-lg">
+				<Dialog.Content class="w-[90vw] sm:max-w-lg">
 					<Dialog.Header>
 						<Dialog.Title class="text-2xl">recovery key</Dialog.Title>
-						<Dialog.Description class="text-xl">
+						<Dialog.Description class="text-lg lg:text-xl">
 							{#if recoveryStep === 'generate'}
 								this will generate a <span class="font-mono">.key</span> file with your 12-word recovery
 								phrase. keep it safe.
@@ -263,13 +257,13 @@
 					</Dialog.Header>
 
 					{#if recoveryStep === 'generate'}
-						<p class="text-lg tracking-wider text-destructive uppercase">
+						<p class="text-base tracking-wider text-destructive uppercase lg:text-lg">
 							if you already have a recovery key, generating a new one will invalidate the old one.
 						</p>
 						<Dialog.Footer>
-							<Dialog.Close class="text-lg! {buttonVariants({ variant: 'outline' })}">
-								cancel
-							</Dialog.Close>
+							<Dialog.Close class="text-lg! {buttonVariants({ variant: 'outline' })}"
+								>cancel</Dialog.Close
+							>
 							<Button onclick={handleGenerateKeyFile} disabled={recoveryLoading} class="text-lg!">
 								{recoveryLoading ? 'generating...' : 'generate & download'}
 							</Button>
@@ -280,18 +274,18 @@
 								{#each recoveryPhrase.split(' ') as word, i (i)}
 									<div class="flex items-center gap-2">
 										<span class="text-sm text-foreground/85 opacity-60 select-none">{i + 1}.</span>
-										<span class="font-mono text-lg">{word}</span>
+										<span class="font-mono text-base lg:text-lg">{word}</span>
 									</div>
 								{/each}
 							</div>
 						</div>
-						<p class="text-xl opacity-60">
+						<p class="text-base opacity-60 lg:text-xl">
 							the .key file has been downloaded. store it separately from this phrase.
 						</p>
 						<Dialog.Footer>
-							<Button onclick={handleCloseRecovery} class="text-lg!">
-								i've saved my recovery phrase
-							</Button>
+							<Button onclick={handleCloseRecovery} class="text-lg!"
+								>i've saved my recovery phrase</Button
+							>
 						</Dialog.Footer>
 					{/if}
 				</Dialog.Content>
@@ -301,47 +295,48 @@
 
 	<!-- info -->
 	<div class="mb-6">
-		<h2 class="mb-2 text-2xl tracking-widest uppercase">info</h2>
+		<h2 class="mb-2 text-xl tracking-widest uppercase lg:text-2xl">info</h2>
 
 		<!-- derivation algorithm -->
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">password derivation</p>
-			<p class="text-lg text-foreground/85">PBKDF2 (SHA-256)</p>
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">password derivation</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">PBKDF2 (SHA-256)</p>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 
 		<!-- iterations -->
-		<div class="mt-1 flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">derivation iterations</p>
-			<p class="text-lg text-foreground/85">600,000</p>
+		<div class="flex flex-row items-center justify-between gap-2">
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">derivation iterations</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">600,000</p>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 
 		<!-- salt size -->
-		<div class="mt-1 flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">salt size</p>
-			<p class="text-lg text-foreground/85">16 bytes</p>
+		<div class="flex flex-row items-center justify-between gap-2">
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">salt size</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">16 bytes</p>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 
 		<!-- main encryption algorithm -->
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">encryption algorithm</p>
-			<p class="text-lg text-foreground/85">AES-GCM (256 bits)</p>
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">encryption algorithm</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">AES-GCM (256 bits)</p>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 
 		<!-- initialization vector size -->
-		<div class="mt-1 flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">initialization vector (iv)</p>
-			<p class="text-lg text-foreground/85">12 bytes</p>
+		<div class="flex flex-row items-center justify-between gap-2">
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">
+				initialization vector (iv)
+			</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">12 bytes</p>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
-
 		<!-- encryption architecture -->
-		<div class="mt-1 flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">encryption architecture</p>
-			<p class="text-lg text-foreground/85">hybrid (encrypted master key)</p>
+		<div class="flex flex-row items-center justify-between gap-2">
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">encryption architecture</p>
+			<p class="text-sm text-foreground/85 lg:text-lg">hybrid (encrypted master key)</p>
 		</div>
 	</div>
 </div>

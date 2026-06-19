@@ -31,7 +31,6 @@
 	let element: HTMLDivElement;
 	let editor = $state<Editor | null>(null);
 
-	// metadata
 	let wordCount = $state(0);
 	let charCount = $state(0);
 
@@ -76,7 +75,7 @@
 		</div>
 	{/if}
 
-	<div bind:this={element} class="tiptap-editor flex-1 outline-none"></div>
+	<div bind:this={element} class="tiptap-editor min-h-0 flex-1 overflow-hidden"></div>
 
 	{#if editor}
 		<div class="mt-4">
@@ -87,29 +86,35 @@
 </div>
 
 <style>
-	@reference "../../../../routes/layout.css";
+	@reference "@css/layout.css";
+
+	.tiptap-editor {
+		min-height: 0;
+		overflow: hidden;
+	}
 
 	.tiptap-editor :global(.tiptap) {
-		flex: 1 1 0%;
+		height: 100%;
+		overflow-y: auto;
 		outline: none;
-		min-height: 100%;
 
 		&::-webkit-scrollbar {
 			display: none;
 		}
 
-		@apply overflow-y-auto px-3;
+		@apply px-3;
 	}
 
 	.tiptap-editor :global(.tiptap[contenteditable='true']) {
 		cursor: text;
 	}
+
 	.tiptap-editor :global(.tiptap p) {
-		@apply mb-2 font-patrick text-2xl leading-relaxed last:mb-0;
+		@apply mb-2 font-patrick text-xl leading-relaxed last:mb-0 lg:text-2xl;
 	}
 
 	.tiptap-editor :global(.tiptap h1) {
-		@apply mt-8 mb-4 text-3xl font-bold first:mt-0 last:mb-0;
+		@apply mt-8 mb-4 text-2xl font-bold first:mt-0 last:mb-0 lg:text-3xl;
 	}
 
 	.tiptap-editor :global(.tiptap ul) {
@@ -121,7 +126,7 @@
 	}
 
 	.tiptap-editor :global(.tiptap li) {
-		@apply mb-1 font-patrick text-2xl leading-relaxed;
+		@apply mb-1 font-patrick text-xl leading-relaxed lg:text-2xl;
 	}
 
 	.tiptap-editor :global(.tiptap ::selection) {
