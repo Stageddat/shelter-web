@@ -6,8 +6,8 @@
 		CirclePlus,
 		House,
 		BookOpen,
-		Calendar,
-		ChartNoAxesColumn,
+		// Calendar,
+		// ChartNoAxesColumn,
 		Search,
 		Settings
 	} from '@lucide/svelte';
@@ -18,8 +18,8 @@
 	const links = [
 		{ href: '/app', label: 'home', icon: House },
 		{ href: '/app/entries', label: 'entries', icon: BookOpen },
-		{ href: '/app/calendar', label: 'calendar', icon: Calendar },
-		{ href: '/app/stats', label: 'stats', icon: ChartNoAxesColumn },
+		// { href: '/app/calendar', label: 'calendar', icon: Calendar },
+		// { href: '/app/stats', label: 'stats', icon: ChartNoAxesColumn },
 		{ href: '/app/search', label: 'search', icon: Search },
 		{
 			href: '/app/settings',
