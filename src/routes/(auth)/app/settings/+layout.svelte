@@ -16,9 +16,9 @@
 	let activeId = $derived(page.url.pathname.split('/').pop());
 </script>
 
-<div class="flex flex-col lg:flex-row">
+<div class="flex h-screen overflow-hidden">
 	<aside
-		class="hidden h-screen w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs lg:flex"
+		class="hidden h-full w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs lg:flex"
 	>
 		<h2 class="mb-4 pt-8 pl-5 text-left text-4xl font-bold tracking-wide lowercase">settings</h2>
 		<nav class="m-2 flex flex-col gap-2">
@@ -46,7 +46,7 @@
 		</nav>
 	</aside>
 
-	<div class="min-h-0 flex-1 overflow-auto">
+	<div class="flex-1 overflow-y-auto">
 		{@render children?.()}
 	</div>
 </div>
