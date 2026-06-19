@@ -133,7 +133,9 @@
 			</div>
 
 			<div class="hidden shrink-0 rounded-xl bg-secondary/40 px-6 py-4 lg:block">
-				<p class="text-base tracking-wider text-foreground/90 lowercase italic lg:text-lg">
+				<p
+					class="text-base tracking-wider text-pretty text-foreground/90 lowercase italic lg:text-lg"
+				>
 					"In the journal I do not just express myself more openly than I could to any person; I
 					create myself."
 				</p>
@@ -145,10 +147,13 @@
 
 		<div class="flex w-full flex-col gap-4 lg:h-full lg:w-1/2">
 			<div
-				class="h-64 flex-col rounded-xl bg-secondary/40 px-6 py-3 lg:flex lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
+				class="flex h-64 flex-col rounded-xl bg-secondary/40 px-6 py-3 lg:h-full lg:min-h-0 lg:flex-1 lg:p-5"
 			>
 				<h3 class="mb-3 shrink-0 text-xl font-semibold lg:text-2xl">writing activity</h3>
-				<Char class="min-h-0 flex-1" />
+
+				<div class="min-h-0 w-full flex-1">
+					<Char class="h-full w-full" />
+				</div>
 			</div>
 
 			<!-- quick actions -->
