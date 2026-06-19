@@ -14,7 +14,6 @@
 	let { entry, class: className = '', enableDelete = true }: Props = $props();
 
 	const { removeEntry } = getAppContext();
-
 	let showDialog = $state(false);
 
 	async function handleConfirmDelete(id: string) {
@@ -27,18 +26,20 @@
 <AlertDialog.Root bind:open={showDialog}>
 	<AlertDialog.Content>
 		<AlertDialog.Header>
-			<AlertDialog.Title class="text-3xl! tracking-wide">
+			<AlertDialog.Title class="text-2xl! tracking-wide lg:text-3xl!">
 				delete "{entry.title}" entry?
 			</AlertDialog.Title>
-			<AlertDialog.Description class="text-xl tracking-wide text-muted-foreground">
+			<AlertDialog.Description class="text-base tracking-wide text-muted-foreground lg:text-xl">
 				this entry will be lost forever! (a long time!)
 			</AlertDialog.Description>
 		</AlertDialog.Header>
 		<AlertDialog.Footer>
-			<AlertDialog.Cancel class="cursor-pointer text-lg! tracking-wide!">cancel</AlertDialog.Cancel>
+			<AlertDialog.Cancel class="cursor-pointer text-base! tracking-wide! lg:text-lg!"
+				>cancel</AlertDialog.Cancel
+			>
 			<AlertDialog.Action
 				variant="destructive"
-				class="cursor-pointer bg-destructive/20! text-lg! tracking-wider! text-destructive! hover:bg-destructive/30!"
+				class="cursor-pointer bg-destructive/20! text-base! tracking-wider! text-destructive! hover:bg-destructive/30! lg:text-lg!"
 				onclick={() => handleConfirmDelete(entry.id)}
 			>
 				delete
@@ -52,8 +53,8 @@
 	class="group flex items-center rounded-xl border border-border p-4 transition-all hover:bg-muted/50 {className}"
 >
 	<div class="flex-1">
-		<p class="text-xl">{entry.title}</p>
-		<p class="mt-1 text-base text-muted-foreground">
+		<p class="text-lg lg:text-xl">{entry.title}</p>
+		<p class="mt-1 text-sm text-muted-foreground lg:text-base">
 			{entry.date} · {entry.time}
 		</p>
 	</div>
@@ -61,14 +62,14 @@
 	{#if enableDelete}
 		<Button
 			variant="ghost"
-			class="mr-2 hidden h-12 w-12 cursor-pointer items-center justify-center rounded-full p-0! group-hover:flex hover:bg-destructive/20 hover:text-destructive"
+			class="mr-2 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full p-0! hover:bg-destructive/20 hover:text-destructive lg:hidden lg:h-12 lg:w-12 lg:group-hover:flex"
 			onclick={(e) => {
 				e.stopPropagation();
 				e.preventDefault();
 				showDialog = true;
 			}}
 		>
-			<Trash class="h-6! w-6! stroke-2" />
+			<Trash class="h-5! w-5! stroke-2 lg:h-6! lg:w-6!" />
 		</Button>
 	{/if}
 </a>
