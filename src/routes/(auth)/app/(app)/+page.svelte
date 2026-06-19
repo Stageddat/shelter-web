@@ -115,16 +115,16 @@
 		<!-- entries -->
 		<div class="flex w-full flex-col gap-4 lg:h-full lg:w-1/2">
 			<div
-				class="flex h-80 flex-col overflow-hidden rounded-xl bg-secondary/40 p-2.5 lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
+				class="flex h-80 flex-col overflow-hidden rounded-xl bg-secondary/40 px-3 py-3 lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
 			>
-				<div class="mb-3 flex items-center justify-between">
+				<div class="mb-3 flex items-center justify-between px-3">
 					<h3 class="text-xl font-semibold lg:text-2xl">recent entries</h3>
 					<Button variant="ghost" href={resolve('/app/entries')} class="text-base lg:text-xl"
 						>view all →</Button
 					>
 				</div>
 				<ScrollArea class="min-h-0 flex-1">
-					<div class="flex flex-col gap-2">
+					<div class="flex flex-col gap-2 px-3">
 						{#each appContext.entries.slice(0, 5) as entry (entry.id)}
 							<EntryCard {entry} class="h-20" enableDelete={false} />
 						{/each}
@@ -132,7 +132,7 @@
 				</ScrollArea>
 			</div>
 
-			<div class="shrink-0 rounded-xl bg-secondary/40 px-6 py-4">
+			<div class="hidden shrink-0 rounded-xl bg-secondary/40 px-6 py-4 lg:block">
 				<p class="text-base tracking-wider text-foreground/90 lowercase italic lg:text-lg">
 					"In the journal I do not just express myself more openly than I could to any person; I
 					create myself."
@@ -145,14 +145,14 @@
 
 		<div class="flex w-full flex-col gap-4 lg:h-full lg:w-1/2">
 			<div
-				class="h-64 flex-col rounded-xl bg-secondary/40 p-2.5 lg:flex lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
+				class="h-64 flex-col rounded-xl bg-secondary/40 px-6 py-3 lg:flex lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
 			>
 				<h3 class="mb-3 shrink-0 text-xl font-semibold lg:text-2xl">writing activity</h3>
 				<Char class="min-h-0 flex-1" />
 			</div>
 
 			<!-- quick actions -->
-			<div class="shrink-0 rounded-xl bg-secondary/40 p-2.5 lg:p-5">
+			<div class="shrink-0 rounded-xl bg-secondary/40 px-6 py-3 lg:p-5">
 				<h3 class="mb-3 text-xl font-semibold lg:text-2xl">quick actions</h3>
 				<div class="flex flex-col gap-2 overflow-hidden rounded-xl py-1">
 					<!-- new Entry -->
