@@ -115,7 +115,7 @@
 		<!-- entries -->
 		<div class="flex w-full flex-col gap-4 lg:h-full lg:w-1/2">
 			<div
-				class="flex h-80 flex-col overflow-hidden rounded-xl bg-secondary/40 p-5 lg:h-auto lg:min-h-0 lg:flex-1"
+				class="flex h-80 flex-col overflow-hidden rounded-xl bg-secondary/40 p-2.5 lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
 			>
 				<div class="mb-3 flex items-center justify-between">
 					<h3 class="text-xl font-semibold lg:text-2xl">recent entries</h3>
@@ -124,7 +124,7 @@
 					>
 				</div>
 				<ScrollArea class="min-h-0 flex-1">
-					<div class="flex flex-col gap-2 pr-2.5">
+					<div class="flex flex-col gap-2">
 						{#each appContext.entries.slice(0, 5) as entry (entry.id)}
 							<EntryCard {entry} class="h-20" enableDelete={false} />
 						{/each}
@@ -145,14 +145,14 @@
 
 		<div class="flex w-full flex-col gap-4 lg:h-full lg:w-1/2">
 			<div
-				class="h-64 flex-col rounded-xl bg-secondary/40 p-5 lg:flex lg:h-auto lg:min-h-0 lg:flex-1"
+				class="h-64 flex-col rounded-xl bg-secondary/40 p-2.5 lg:flex lg:h-auto lg:min-h-0 lg:flex-1 lg:p-5"
 			>
 				<h3 class="mb-3 shrink-0 text-xl font-semibold lg:text-2xl">writing activity</h3>
 				<Char class="min-h-0 flex-1" />
 			</div>
 
 			<!-- quick actions -->
-			<div class="shrink-0 rounded-xl bg-secondary/40 p-5">
+			<div class="shrink-0 rounded-xl bg-secondary/40 p-2.5 lg:p-5">
 				<h3 class="mb-3 text-xl font-semibold lg:text-2xl">quick actions</h3>
 				<div class="flex flex-col gap-2 overflow-hidden rounded-xl py-1">
 					<!-- new Entry -->
@@ -222,18 +222,18 @@
 	}
 
 	:global(.stats-card-icon) {
-		@apply h-9 w-9 shrink-0 rounded-md p-1.5 lg:h-10 lg:w-10 xl:h-12 xl:w-12;
+		@apply h-9 w-9 shrink-0 rounded-md p-1.5 sm:h-14 sm:w-14 lg:h-10 lg:w-10 xl:h-12 xl:w-12;
 	}
 
 	:global(.stats-card-counter) {
-		@apply text-2xl font-bold xl:text-4xl;
+		@apply text-2xl font-bold sm:text-3xl;
 	}
 
 	:global(.stats-card-label) {
-		@apply text-base lg:text-xl xl:text-2xl;
+		@apply text-xl sm:text-3xl lg:text-xl;
 	}
 
 	:global(.stats-card-sublabel) {
-		@apply text-sm lg:text-base xl:text-lg;
+		@apply text-sm sm:text-lg lg:text-base;
 	}
 </style>
