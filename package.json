@@ -30,6 +30,7 @@
 		"@types/d3-scale": "^4.0.9",
 		"@types/node": "^24.13.0",
 		"@vite-pwa/sveltekit": "^1.1.0",
+		"@vitejs/plugin-basic-ssl": "^2.3.0",
 		"bits-ui": "^2.18.1",
 		"clsx": "^2.1.1",
 		"eslint": "^10.4.1",
