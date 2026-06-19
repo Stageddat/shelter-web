@@ -7,6 +7,7 @@
 	import { updateDisplayName } from '$lib/services/app/user.service';
 	import Switch from '$lib/components/ui/switch/switch.svelte';
 	import { onMount } from 'svelte';
+	import SettingsPageHeader from '$lib/components/app/SettingsPageHeader.svelte';
 
 	const auth = getAuthContext();
 
@@ -49,27 +50,23 @@
 	}
 </script>
 
-<div class="flex flex-col gap-2 px-12 py-9">
+<div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">
 	<!-- header -->
-	<div>
-		<h2 class="mb-0.5 flex text-left text-4xl font-semibold tracking-wide lowercase">general</h2>
-		<h3 class="mb-6 flex text-left text-xl tracking-wide lowercase">
-			change your appareance, language, etc.
-		</h3>
-	</div>
-
+	<SettingsPageHeader title="general" description="change your appearance, language, etc." />
 	<!-- appereance -->
 	<div class="mb-6">
-		<h2 class="mb-2 text-2xl tracking-widest uppercase">appereance</h2>
+		<h2 class="mb-2 text-xl tracking-widest uppercase lg:text-2xl">appereance</h2>
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">theme</p>
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">theme</p>
 			<ThemeSelector />
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">language</p>
-				<p class="text-base tracking-wide lowercase opacity-60">this will reload the page!</p>
+				<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">language</p>
+				<p class="text-sm tracking-wide lowercase opacity-60 lg:text-base">
+					this will reload the page!
+				</p>
 			</div>
 			<LanguageSelector />
 		</div>
@@ -77,15 +74,13 @@
 
 	<!-- user -->
 	<div class="mb-6">
-		<h2 class="mb-2 text-2xl tracking-widest uppercase">user</h2>
+		<h2 class="mb-2 text-xl tracking-widest uppercase lg:text-2xl">user</h2>
 
 		<div class="flex flex-row items-center justify-between gap-2">
-			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">display name</p>
-			</div>
-			<InputGroup.Root class="w-sm">
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">display name</p>
+			<InputGroup.Root class="w-40 lg:w-sm">
 				<InputGroup.Input
-					class="text-xl!"
+					class="text-base! lg:text-xl!"
 					placeholder="display name"
 					bind:value={displayName}
 					maxlength={20}
@@ -112,31 +107,35 @@
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">username</p>
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">username</p>
 			<button
 				onclick={() => handleCopy('username')}
 				class="flex cursor-pointer items-center gap-2 rounded-md border border-border bg-muted/60 px-3 py-1 transition-opacity hover:opacity-90"
 			>
-				<span class="font-mono text-base opacity-85">{auth.user?.username}</span>
+				<span class="max-w-32 truncate font-mono text-sm opacity-85 lg:max-w-none lg:text-base"
+					>{auth.user?.username}</span
+				>
 				{#if copied === 'username'}
-					<Check class="size-3.5" />
+					<Check class="size-3.5 shrink-0" />
 				{:else}
-					<Copy class="size-3.5" />
+					<Copy class="size-3.5 shrink-0" />
 				{/if}
 			</button>
 		</div>
 		<hr class="my-4 border-current opacity-10" />
 		<div class="flex flex-row items-center justify-between gap-2">
-			<p class="text-xl tracking-wide lowercase opacity-85">user id</p>
+			<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">user id</p>
 			<button
 				onclick={() => handleCopy('id')}
 				class="flex cursor-pointer items-center gap-2 rounded-md border border-border bg-muted/60 px-3 py-1 transition-opacity hover:opacity-90"
 			>
-				<span class="font-mono text-base opacity-85">{auth.user?.id}</span>
+				<span class="max-w-32 truncate font-mono text-sm opacity-85 lg:max-w-none lg:text-base"
+					>{auth.user?.id}</span
+				>
 				{#if copied === 'id'}
-					<Check class="size-3.5" />
+					<Check class="size-3.5 shrink-0" />
 				{:else}
-					<Copy class="size-3.5" />
+					<Copy class="size-3.5 shrink-0" />
 				{/if}
 			</button>
 		</div>
@@ -144,12 +143,11 @@
 
 	<!-- privacy -->
 	<div class="mb-6">
-		<h2 class="mb-2 text-2xl tracking-widest uppercase">privacy</h2>
-
+		<h2 class="mb-2 text-xl tracking-widest uppercase lg:text-2xl">privacy</h2>
 		<div class="flex flex-row items-center justify-between gap-2">
 			<div>
-				<p class="text-xl tracking-wide lowercase opacity-85">analytics</p>
-				<p class="text-base tracking-wide lowercase opacity-60">
+				<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">analytics</p>
+				<p class="text-sm tracking-wide lowercase opacity-60 lg:text-base">
 					share anonymous usage data to help improve shelter. no personal data is collected.
 				</p>
 			</div>

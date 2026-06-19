@@ -1,22 +1,17 @@
 <script lang="ts">
 	import packageJson from '$lib/../../package.json';
+	import SettingsPageHeader from '$lib/components/app/SettingsPageHeader.svelte';
 	import { Bug, Coffee, Globe, HouseHeart, Users } from '@lucide/svelte';
 </script>
 
-<div class="flex flex-col gap-2 px-12 py-9">
+<div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">
 	<!-- header -->
-	<div>
-		<h2 class="mb-0.5 flex text-left text-4xl font-semibold tracking-wide lowercase">about</h2>
-		<h3 class="mb-6 flex text-left text-xl tracking-wide lowercase">
-			information about this project
-		</h3>
-	</div>
-
+	<SettingsPageHeader title="about" description="information about this project" />
 	<!-- project description -->
 	<div class="my-4 flex flex-col gap-2">
-		<p class="text-2xl tracking-widest uppercase">what is shelter?</p>
-		<p class="text-left text-xl tracking-wide lowercase opacity-85">
-			shelter is a secure, open-source web-based journal designed with privacy and end-to-end<br />
+		<p class="text-xl tracking-widest uppercase lg:text-2xl">what is shelter?</p>
+		<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">
+			shelter is a secure, open-source web-based journal designed with privacy and end-to-end
 			encryption. your data stays yours, stored directly in your browser.
 		</p>
 	</div>
@@ -25,12 +20,11 @@
 
 	<!-- project info -->
 	<div class="my-4 flex flex-col gap-2">
-		<p class="text-2xl tracking-widest uppercase">shelter info</p>
-		<p class="text-left text-xl tracking-wide lowercase">
-			version:
-			<span class="opacity-60">{packageJson.version}</span>
+		<p class="text-xl tracking-widest uppercase lg:text-2xl">shelter info</p>
+		<p class="text-base tracking-wide lowercase lg:text-xl">
+			version: <span class="opacity-60">{packageJson.version}</span>
 		</p>
-		<p class="text-left text-xl tracking-wide lowercase">
+		<p class="text-base tracking-wide lowercase lg:text-xl">
 			source:
 			<a
 				href="https://github.com/Stageddat/shelter-web"
@@ -41,7 +35,7 @@
 				github.com/Stageddat/shelter-web
 			</a>
 		</p>
-		<p class="text-left text-xl tracking-wide lowercase">
+		<p class="text-base tracking-wide lowercase lg:text-xl">
 			website:
 			<a
 				href="/"
@@ -52,7 +46,7 @@
 				shelter.cat
 			</a>
 		</p>
-		<p class="text-left text-xl tracking-wide lowercase">
+		<p class="text-base tracking-wide lowercase lg:text-xl">
 			license:
 			<a
 				href="https://github.com/Stageddat/shelter-web/blob/main/LICENSE"
@@ -63,7 +57,7 @@
 				GNU AFFERO GENERAL PUBLIC LICENSE v3.0
 			</a>
 		</p>
-		<p class="text-left text-xl tracking-wide lowercase">
+		<p class="text-base tracking-wide lowercase lg:text-xl">
 			translations:
 			<a
 				href="https://i18n.stageddat.dev/projects/shelter-web/"
@@ -80,15 +74,15 @@
 
 	<!-- credits -->
 	<div class="my-4 flex flex-col gap-2">
-		<p class="text-2xl tracking-widest uppercase">credits</p>
-		<p class="text-left text-xl tracking-wide lowercase opacity-85">
+		<p class="text-xl tracking-widest uppercase lg:text-2xl">credits</p>
+		<p class="text-base tracking-wide lowercase opacity-85 lg:text-xl">
 			this project is made possible by an amazing community of developers, artists, illustrators,
 			graphic designers, musicians, testers, translators, and way too much caffeine. i'm truly
 			grateful for all your support!
 		</p>
 		<a
 			href="/credits"
-			class="flex w-full items-center justify-between rounded-lg border border-current px-4 py-2 text-xl tracking-wider lowercase opacity-60 transition-opacity hover:opacity-100"
+			class="flex w-full items-center justify-between rounded-lg border border-current px-4 py-2 text-base tracking-wider lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 			target="_blank"
 		>
 			see all credits
@@ -100,11 +94,11 @@
 
 	<!-- links -->
 	<div class="my-4 gap-2">
-		<p class="mb-3 text-2xl tracking-widest uppercase">links</p>
-		<div class="flex flex-row gap-3">
+		<p class="mb-3 text-xl tracking-widest uppercase lg:text-2xl">links</p>
+		<div class="grid grid-cols-2 gap-3 lg:flex lg:flex-row">
 			<a
 				href="https://github.com/Stageddat/shelter-web/issues"
-				class="flex w-full items-center rounded-lg border border-current px-4 py-2 text-xl lowercase opacity-60 transition-opacity hover:opacity-100"
+				class="flex items-center rounded-lg border border-current px-4 py-2 text-base lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 				target="_blank"
 			>
 				<Bug class="mt-1 mr-2 h-5! w-5!" />
@@ -112,7 +106,7 @@
 			</a>
 			<a
 				href="https://discord.gg/BntK5GbF2M"
-				class="flex w-full items-center rounded-lg border border-current px-4 py-2 text-xl lowercase opacity-60 transition-opacity hover:opacity-100"
+				class="flex items-center rounded-lg border border-current px-4 py-2 text-base lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 				target="_blank"
 			>
 				<HouseHeart class="mt-1 mr-2 h-5! w-5!" />
@@ -120,7 +114,7 @@
 			</a>
 			<a
 				href="https://ko-fi.com/stageddat"
-				class="flex w-full items-center rounded-lg border border-current px-4 py-2 text-xl lowercase opacity-60 transition-opacity hover:opacity-100"
+				class="flex items-center rounded-lg border border-current px-4 py-2 text-base lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 				target="_blank"
 			>
 				<Coffee class="mt-1 mr-2 h-5! w-5!" />
@@ -128,7 +122,7 @@
 			</a>
 			<a
 				href="https://github.com/Stageddat/shelter-web/blob/main/CONTRIBUTING.md"
-				class="flex w-full items-center rounded-lg border border-current px-4 py-2 text-xl lowercase opacity-60 transition-opacity hover:opacity-100"
+				class="flex items-center rounded-lg border border-current px-4 py-2 text-base lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 				target="_blank"
 			>
 				<Globe class="mt-1 mr-2 h-5! w-5!" />
