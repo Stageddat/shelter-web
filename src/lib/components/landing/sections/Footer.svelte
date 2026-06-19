@@ -8,7 +8,7 @@
 
 <footer class="w-full border-t border-border/40 bg-background pt-16 pb-12">
 	<div class="mx-auto w-11/12 max-w-7xl">
-		<div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+		<div class="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
 			<div class="space-y-4">
 				<p class="text-4xl font-normal tracking-wide text-foreground">
 					{m['landing.footer.title']()}
