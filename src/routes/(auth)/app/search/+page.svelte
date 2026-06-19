@@ -92,39 +92,38 @@
 	}
 </script>
 
-<div class="mx-auto flex w-full max-w-4xl flex-col gap-6 p-6">
-	<h1 class="mb-0 text-left text-4xl font-bold tracking-wide lowercase">search</h1>
+<div class="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 py-6 lg:gap-6 lg:p-6">
+	<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">search</h1>
 
 	<div class="relative flex w-full items-center">
 		<div
 			class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4 text-muted-foreground"
 		>
-			<Search />
+			<Search class="h-5 w-5" />
 		</div>
-
 		<input
 			type="text"
 			bind:value={query}
 			disabled={isLoading}
 			placeholder={isLoading ? 'loading search engine...' : 'search...'}
-			class="w-full rounded-xl border bg-background p-4 pl-12 text-xl shadow-xs outline-none focus:ring-2 focus:ring-primary disabled:opacity-50"
+			class="w-full rounded-xl border bg-background p-3 pl-11 text-lg shadow-xs outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 lg:p-4 lg:pl-12 lg:text-xl"
 		/>
 	</div>
 
 	{#if isLoading}
-		<p class="animate-pulse text-center font-patrick text-xl text-muted-foreground">
+		<p class="animate-pulse text-center font-patrick text-lg text-muted-foreground lg:text-xl">
 			preparing search engine...
 		</p>
 	{:else}
-		<div class="flex flex-col gap-4">
+		<div class="flex flex-col gap-3 lg:gap-4">
 			{#each results as result, i (i)}
 				<div class="flex flex-col gap-1 rounded-xl border bg-card p-4 shadow-xs">
-					<h3 class="font-patrick text-2xl font-bold">{result.title}</h3>
+					<h3 class="font-patrick text-xl font-bold lg:text-2xl">{result.title}</h3>
 					<p class="mb-2 text-xs text-muted-foreground">{result.date}</p>
 
 					{#if query.trim() !== ''}
 						<p
-							class="rounded-md border border-dashed bg-muted/30 p-2 font-patrick text-base leading-relaxed text-muted-foreground"
+							class="rounded-md border border-dashed bg-muted/30 p-2 font-patrick text-sm leading-relaxed text-muted-foreground lg:text-base"
 						>
 							{#each result.highlightTokens as token, i (i)}
 								{#if token.highlight}
@@ -138,14 +137,14 @@
 
 					<a
 						href="/app/entries/{result.id}"
-						class="mt-2 inline-block self-start text-base font-medium text-blue-500 hover:underline"
+						class="mt-2 inline-block self-start text-sm font-medium text-blue-500 hover:underline lg:text-base"
 					>
 						open entry
 					</a>
 				</div>
 			{:else}
 				{#if query.trim() !== ''}
-					<p class="text-muted-foreground text-center py-8">
+					<p class="py-8 text-center text-muted-foreground">
 						no entries found for "{query}".
 					</p>
 				{/if}
