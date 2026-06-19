@@ -16,7 +16,7 @@
 	let activeId = $derived(page.url.pathname.split('/').pop());
 </script>
 
-<div class="flex h-screen flex-col lg:flex-row">
+<div class="flex flex-col lg:flex-row">
 	<aside
 		class="hidden h-screen w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs lg:flex"
 	>
