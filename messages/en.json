@@ -296,6 +296,45 @@
         "settings": "settings"
       },
       "newEntry": "new entry"
+    },
+    "home": {
+      "devNotice": {
+        "title": "shelter is still in development!",
+        "body": "we're actively working on shelter. as a precaution, we recommend exporting your journal from time to time, just in case ;)",
+        "export": "you can export easily in settings › data › export!"
+      },
+      "stats": {
+        "entries": "entries",
+        "entriesWeekly": "+{count} this week!",
+        "words": "words",
+        "wordsWeekly": "+{count} this week!",
+        "dayStreak": "day streak",
+        "lastEntry": "last entry"
+      },
+      "recentEntries": {
+        "title": "recent entries",
+        "viewAll": "view all →"
+      },
+      "quote": {
+        "text": "In the journal I do not just express myself more openly than I could to any person; I create myself.",
+        "author": "- Susan Sontag"
+      },
+      "writingActivity": "writing activity",
+      "quickActions": {
+        "title": "quick actions",
+        "newEntry": {
+          "label": "new entry",
+          "description": "start writing something new"
+        },
+        "searchEntries": {
+          "label": "search entries",
+          "description": "find something you wrote"
+        },
+        "viewCalendar": {
+          "label": "view calendar",
+          "description": "see your entries by date"
+        }
+      }
     }
   }
 }
