@@ -318,7 +318,7 @@
                 "home": "inici",
                 "entries": "entrades",
                 "search": "cercar",
-                "settings": "ajustos"
+                "settings": "configuració"
             },
             "newEntry": "nova entrada"
         },
@@ -326,7 +326,7 @@
             "devNotice": {
                 "title": "shelter encara està en desenvolupament!",
                 "body": "estem treballant activament en shelter. com a precaució, recomanem exportar el teu diari de tant en tant, per si de cas ;)",
-                "export": "pots exportar fàcilment a ajustos › dades › exportar!"
+                "export": "pots exportar fàcilment a configuració › dades › exportar!"
             },
             "stats": {
                 "entries": "entrades",
@@ -384,7 +384,7 @@
             "delete": "eliminar"
         },
         "settings": {
-            "title": "ajustos",
+            "title": "configuració",
             "general": {
                 "title": "general",
                 "description": "canvia l'aparença, l'idioma, etc.",
