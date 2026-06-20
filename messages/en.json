@@ -285,5 +285,17 @@
     },
     "alreadyHaveDiary": "already have a diary?",
     "restoreDiary": "restore"
+  },
+  "app": {
+    "sidebar": {
+      "tagline": "private space",
+      "nav": {
+        "home": "home",
+        "entries": "entries",
+        "search": "search",
+        "settings": "settings"
+      },
+      "newEntry": "new entry"
+    }
   }
 }
