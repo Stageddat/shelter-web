@@ -537,6 +537,66 @@
         "hoursAgo": "{count} hours ago",
         "noEntries": "no entries yet"
       }
+    },
+    "greetings": {
+      "morning": {
+        "withUser": {
+          "0": "good morning, {username}!",
+          "1": "ready for a new day, {username}?",
+          "2": "grab a coffee and let's start, {username}.",
+          "3": "fresh morning, fresh thoughts, {username}."
+        },
+        "anonymous": {
+          "0": "good morning!",
+          "1": "ready for a new day?",
+          "2": "grab a coffee and let's start."
+        }
+      },
+      "afternoon": {
+        "withUser": {
+          "0": "good afternoon, {username}!",
+          "1": "hope your day is going well, {username}.",
+          "2": "taking a little break, {username}?"
+        },
+        "anonymous": {
+          "0": "good afternoon!",
+          "1": "hope your day is going well.",
+          "2": "taking a little break?"
+        }
+      },
+      "evening": {
+        "withUser": {
+          "0": "good evening, {username}!",
+          "1": "time to wind down, {username}.",
+          "2": "how was your day, {username}?"
+        },
+        "anonymous": {
+          "0": "good evening!",
+          "1": "time to wind down.",
+          "2": "how was your day?"
+        }
+      },
+      "night": {
+        "withUser": {
+          "0": "it's late-night, {username}."
+        },
+        "anonymous": {
+          "0": "working late?",
+          "1": "the world is quiet now."
+        }
+      },
+      "default": {
+        "withUser": {
+          "0": "welcome back, {username}!",
+          "1": "so good to see you again, {username}!",
+          "2": "what's on your mind today, {username}?"
+        },
+        "anonymous": {
+          "0": "welcome back!",
+          "1": "so good to see you again!",
+          "2": "what's on your mind today?"
+        }
+      }
     }
   }
 }

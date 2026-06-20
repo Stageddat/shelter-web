@@ -13,15 +13,13 @@ const getTimeOfDay = (): TimeOfDay => {
 export function getDynamicGreeting(username: string | null | undefined): string {
 	const time = dynamicGreetings[getTimeOfDay()];
 
-	const pool = username
-		? [
-				...time.withUser,
-				...dynamicGreetings.default.withUser,
-				...time.anonymous, // add anonymous greetings anyways for more variety :3
-				...dynamicGreetings.default.anonymous
-			]
-		: [...time.anonymous, ...dynamicGreetings.default.anonymous];
-
-	const template = pool[Math.floor(Math.random() * pool.length)];
-	return username ? template.replace('{username}', username) : template;
+	if (username) {
+		const pool = [...time.withUser, ...dynamicGreetings.default.withUser];
+		const fn = pool[Math.floor(Math.random() * pool.length)];
+		return fn({ username });
+	} else {
+		const pool = [...time.anonymous, ...dynamicGreetings.default.anonymous];
+		const fn = pool[Math.floor(Math.random() * pool.length)];
+		return fn();
+	}
 }
