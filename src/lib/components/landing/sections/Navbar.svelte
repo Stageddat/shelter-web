@@ -48,7 +48,7 @@
 			</Button>
 			<Button
 				href="/signup"
-				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85"
+				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:flex"
 			>
 				{m['landing.navbar.start']()}
 			</Button>

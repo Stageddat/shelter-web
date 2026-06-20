@@ -261,5 +261,29 @@
       "default": "enter my shelter",
       "loading": "entering"
     }
+  },
+  "signup": {
+    "title": "welcome to shelter!",
+    "form": {
+      "username": {
+        "label": "how should we call you?",
+        "placeholder": "enter your username",
+        "tooltip": "this is how we will call you across the app, you don't have to use your real name"
+      },
+      "password": {
+        "label": "choose a password",
+        "placeholder": "set a password"
+      },
+      "passwordRepeat": {
+        "label": "repeat password",
+        "placeholder": "repeat the password"
+      }
+    },
+    "button": {
+      "default": "create my diary",
+      "loading": "creating your diary..."
+    },
+    "alreadyHaveDiary": "already have a diary?",
+    "restoreDiary": "restore"
   }
 }

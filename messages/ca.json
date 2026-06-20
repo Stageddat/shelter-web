@@ -286,5 +286,29 @@
             "default": "accedir al meu shelter",
             "loading": "accedint"
         }
+    },
+    "signup": {
+        "title": "et donem la benvinguda a shelter!",
+        "form": {
+            "username": {
+                "label": "com vols que et diguem?",
+                "placeholder": "introdueix el teu nom d'usuari",
+                "tooltip": "així és com et direm a l'aplicació, no cal que utilitzis el teu nom real"
+            },
+            "password": {
+                "label": "tria una contrasenya",
+                "placeholder": "estableix una contrasenya"
+            },
+            "passwordRepeat": {
+                "label": "repeteix la contrasenya",
+                "placeholder": "repeteix la contrasenya"
+            }
+        },
+        "button": {
+            "default": "crear el meu diari",
+            "loading": "creant el teu diari..."
+        },
+        "alreadyHaveDiary": "ja tens un diari?",
+        "restoreDiary": "restaurar"
     }
 }
