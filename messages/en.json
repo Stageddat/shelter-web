@@ -357,6 +357,152 @@
       "deleteDescription": "this entry will be lost forever! (a long time!)",
       "cancel": "cancel",
       "delete": "delete"
+    },
+    "settings": {
+      "title": "settings",
+      "general": {
+        "title": "general",
+        "description": "change your appearance, language, etc.",
+        "appearance": {
+          "title": "appereance",
+          "theme": "theme",
+          "language": "language",
+          "languageWarning": "this will reload the page!"
+        },
+        "user": {
+          "title": "user",
+          "displayName": "display name",
+          "displayNamePlaceholder": "display name",
+          "username": "username",
+          "userId": "user id"
+        },
+        "privacy": {
+          "title": "privacy",
+          "analytics": "analytics",
+          "analyticsDescription": "share anonymous usage data to help improve shelter. no personal data is collected."
+        }
+      },
+      "security": {
+        "title": "security",
+        "description": "change security behavior",
+        "options": {
+          "title": "options",
+          "changePassword": "change password",
+          "changePasswordDescription": "change your account password",
+          "changePasswordDialogTitle": "change password",
+          "changePasswordDialogDescription": "make sure your new password is strong and secure :)",
+          "changePasswordOld": "old password",
+          "changePasswordNew": "new password",
+          "changePasswordConfirm": "confirm password",
+          "changePasswordCancel": "cancel",
+          "changePasswordSubmit": "change it!",
+          "changePasswordSubmitting": "changing...",
+          "changePasswordButton": "change",
+          "autoLock": "auto lock",
+          "autoLockDescription": "auto lock after inactivity",
+          "recoveryKey": "recovery key",
+          "recoveryKeyDescription": "generate a key file to recover your account",
+          "recoveryKeyGenerate": "generate",
+          "recoveryKeyDialogTitle": "recovery key",
+          "recoveryKeyDialogDescriptionGenerate": "this will generate a {ext} file with your 12-word recovery phrase. keep it safe.",
+          "recoveryKeyDialogDescriptionShow": "your {ext} file has been downloaded. keep it somewhere safe.",
+          "recoveryKeyWarning": "if you already have a recovery key, generating a new one will invalidate the old one.",
+          "recoveryKeyCancel": "cancel",
+          "recoveryKeyGenerateDownload": "generate & download",
+          "recoveryKeyGenerating": "generating...",
+          "recoveryKeyFileDownloaded": "the .key file has been downloaded. store it separately from this phrase.",
+          "recoveryKeySaved": "i've saved my recovery phrase",
+          "lockOptions": {
+            "never": "never",
+            "1min": "1 minute",
+            "5min": "5 minutes",
+            "15min": "15 minutes",
+            "30min": "30 minutes",
+            "1hour": "1 hour"
+          }
+        },
+        "info": {
+          "title": "info",
+          "passwordDerivation": "password derivation",
+          "derivationIterations": "derivation iterations",
+          "saltSize": "salt size",
+          "encryptionAlgorithm": "encryption algorithm",
+          "iv": "initialization vector (iv)",
+          "encryptionArchitecture": "encryption architecture",
+          "hybridValue": "hybrid (encrypted master key)"
+        }
+      },
+      "data": {
+        "title": "data",
+        "description": "manage your data and backups",
+        "importExport": {
+          "title": "import & export",
+          "subtitle": "backup your data or bring it to this profile",
+          "exportTitle": "export data",
+          "exportDescription": "download an encrypted backup of all your entries and attachments. keep it somewhere safe, only you can open it.",
+          "exportButton": "export",
+          "exportingButton": "exporting...",
+          "importTitle": "import data",
+          "importDescription": "restore a previous backup from a {ext} file. this will replace all your current data.",
+          "importButton": "import",
+          "importingButton": "importing...",
+          "importConfirm": "importing a backup will permanently delete all your current data, including entries, account and password. everything will be replaced with the backup contents.\nTHIS CANNOT BE UNDONE\n\ncontinue?",
+          "importNewerWarning": "this backup was created with a newer version of shelter. some data may be lost. continue?",
+          "importSuccess": "backup imported successfully, you will be logged out in 3 seconds",
+          "importErrors": {
+            "invalid_file": "this file is not a shelter backup",
+            "corrupted_file": "this backup is corrupted or has been modified",
+            "format_incompatible": "this backup is not compatible with this version of shelter",
+            "schema_incompatible": "this backup was created with an older version of shelter",
+            "export_mode_not_supported": "this backup format is not supported"
+          },
+          "exportSuccess": "backup exported successfully",
+          "exportError": "failed to export backup :(",
+          "importError": "failed to import backup :("
+        },
+        "dangerZone": {
+          "title": "danger zone",
+          "subtitle": "permanently delete all the data in this profile",
+          "description": "this action is irreversible. all entries, accounts and attachments will be permanently deleted. make sure to export a backup first if you want to keep a copy.",
+          "purgeButton": "purge all data",
+          "purgingButton": "purging...",
+          "purgeConfirm": "this will permanently delete all your data, including entries, account and password. there is no way to recover it.\nTHIS CANNOT BE UNDONE\n\ncontinue?",
+          "purgeSuccess": "all data has been deleted. you will be logged out."
+        }
+      },
+      "editor": {
+        "title": "editor",
+        "description": "typography, shortcuts"
+      },
+      "about": {
+        "title": "about",
+        "description": "information about this project",
+        "whatIs": {
+          "title": "what is shelter?",
+          "description": "shelter is a secure, open-source web-based journal designed with privacy and end-to-end encryption. your data stays yours, stored directly in your browser."
+        },
+        "info": {
+          "title": "shelter info",
+          "version": "version:",
+          "source": "source:",
+          "website": "website:",
+          "license": "license:",
+          "translations": "translations:",
+          "translationsLink": "see translations progress"
+        },
+        "credits": {
+          "title": "credits",
+          "description": "this project is made possible by an amazing community of developers, artists, illustrators, graphic designers, musicians, testers, translators, and way too much caffeine. i'm truly grateful for all your support!",
+          "seeAll": "see all credits"
+        },
+        "links": {
+          "title": "links",
+          "reportBug": "report a bug",
+          "discord": "discord server",
+          "kofi": "support on ko-fi",
+          "translate": "help translate"
+        }
+      }
     }
   }
 }
