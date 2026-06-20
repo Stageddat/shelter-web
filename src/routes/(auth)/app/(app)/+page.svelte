@@ -27,6 +27,31 @@
 
 	const appContext = getAppContext();
 	const greetingMessage = $derived(appContext.greeting);
+
+	const STREAK_MESSAGES = {
+		zero: [m['app.home.stats.streakMotivation.zero.0']],
+		low: [
+			m['app.home.stats.streakMotivation.low.0'],
+			m['app.home.stats.streakMotivation.low.1'],
+			m['app.home.stats.streakMotivation.low.2']
+		],
+		mid: [
+			m['app.home.stats.streakMotivation.mid.0'],
+			m['app.home.stats.streakMotivation.mid.1'],
+			m['app.home.stats.streakMotivation.mid.2'],
+			m['app.home.stats.streakMotivation.mid.3']
+		],
+		high: [
+			m['app.home.stats.streakMotivation.high.0'],
+			m['app.home.stats.streakMotivation.high.1'],
+			m['app.home.stats.streakMotivation.high.2']
+		]
+	} satisfies Record<string, (() => string)[]>;
+
+	const streakMotivation = $derived.by(() => {
+		const pool = STREAK_MESSAGES[appContext.streakTier];
+		return pool[Math.floor(Math.random() * pool.length)]();
+	});
 </script>
 
 <main class="flex flex-col gap-4 px-4 py-6 lg:h-screen lg:overflow-hidden lg:px-10 lg:py-8">
@@ -91,7 +116,7 @@
 			<div>
 				<p class="stats-card-counter">{appContext.streak}</p>
 				<p class="stats-card-label">{m['app.home.stats.dayStreak']()}</p>
-				<p class="stats-card-sublabel text-peach">{appContext.streakMotivation}</p>
+				<p class="stats-card-sublabel text-peach">{streakMotivation}</p>
 			</div>
 		</div>
 

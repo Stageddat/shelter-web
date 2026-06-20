@@ -309,7 +309,28 @@
         "words": "words",
         "wordsWeekly": "+{count} this week!",
         "dayStreak": "day streak",
-        "lastEntry": "last entry"
+        "lastEntry": "last entry",
+        "streakMotivation": {
+          "zero": {
+            "0": "write the first line!"
+          },
+          "low": {
+            "0": "keep it up!",
+            "1": "off to a great start!",
+            "2": "you're doing great!"
+          },
+          "mid": {
+            "0": "you're on a roll!",
+            "1": "absolutely cooking!",
+            "2": "locked in",
+            "3": "look at you go!"
+          },
+          "high": {
+            "0": "unstoppable!",
+            "1": "legendary status",
+            "2": "built different?"
+          }
+        }
       },
       "recentEntries": {
         "title": "recent entries",
@@ -502,6 +523,19 @@
           "kofi": "support on ko-fi",
           "translate": "help translate"
         }
+      }
+    },
+    "utils": {
+      "date": {
+        "today": "today",
+        "yesterday": "yesterday",
+        "daysAgo": "{count} days ago",
+        "justNow": "just now",
+        "minuteAgo": "1 minute ago",
+        "minutesAgo": "{count} minutes ago",
+        "hourAgo": "1 hour ago",
+        "hoursAgo": "{count} hours ago",
+        "noEntries": "no entries yet"
       }
     }
   }
