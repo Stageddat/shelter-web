@@ -37,23 +37,9 @@ ANYWAYS, i don't want to bother you more,
 so have a nice day and bye bye!
 -->
 <script>
-	import {
-		UserRound,
-		ShieldCheck,
-		NotebookPen,
-		ArrowDownUp,
-		Info,
-		ChevronRight
-	} from '@lucide/svelte';
 	import { goto } from '$app/navigation';
-
-	const categories = [
-		{ id: 'general', desc: 'account, language, appearance', icon: UserRound },
-		{ id: 'security', desc: 'password, autolock', icon: ShieldCheck },
-		{ id: 'editor', desc: 'typography, shortcuts', icon: NotebookPen },
-		{ id: 'data', desc: 'export, import, purge', icon: ArrowDownUp },
-		{ id: 'about', desc: 'version, credits, license', icon: Info }
-	];
+	import settingsCategories from '$lib/types/app/settingsCategories';
+	import { ChevronRight } from '@lucide/svelte';
 </script>
 
 <!--
@@ -63,7 +49,7 @@ so have a nice day and bye bye!
 <div class="flex flex-col px-4 py-6 lg:hidden">
 	<h2 class="mb-6 text-3xl font-bold tracking-wide lowercase">settings</h2>
 	<div class="flex flex-col gap-1">
-		{#each categories as category (category.id)}
+		{#each settingsCategories as category (category.id)}
 			<button
 				onclick={() => goto(`/app/settings/${category.id}`)}
 				class="flex items-center gap-4 rounded-2xl px-4 py-4 text-left transition-colors hover:bg-muted"

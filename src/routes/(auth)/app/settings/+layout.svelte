@@ -1,17 +1,9 @@
 <script>
-	import { UserRound, ShieldCheck, NotebookPen, ArrowDownUp, Info } from '@lucide/svelte';
 	import { page } from '$app/state';
 	import { goto } from '$app/navigation';
+	import settingsCategories from '$lib/types/app/settingsCategories';
 
 	let { children } = $props();
-
-	const categories = [
-		{ id: 'general', desc: 'account, language, appearance', icon: UserRound },
-		{ id: 'security', desc: 'password, autolock', icon: ShieldCheck },
-		{ id: 'editor', desc: 'typography, shortcuts', icon: NotebookPen },
-		{ id: 'data', desc: 'export, import, purge', icon: ArrowDownUp },
-		{ id: 'about', desc: 'version, credits, license', icon: Info }
-	];
 
 	let activeId = $derived(page.url.pathname.split('/').pop());
 </script>
@@ -22,7 +14,7 @@
 	>
 		<h2 class="mb-4 pt-8 pl-5 text-left text-4xl font-bold tracking-wide lowercase">settings</h2>
 		<nav class="m-2 flex flex-col gap-2">
-			{#each categories as category (category.id)}
+			{#each settingsCategories as category (category.id)}
 				{@const isActive = activeId === category.id}
 				<button
 					onclick={() => goto(`/app/settings/${category.id}`)}
