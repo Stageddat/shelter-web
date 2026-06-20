@@ -33,7 +33,7 @@
 				variant="outline"
 				href="https://github.com/Stageddat/shelter-web"
 				target="_blank"
-				class="hidden h-10 border-border/40 bg-secondary hover:text-foreground sm:inline-flex"
+				class=" h-10 border-border/40 bg-secondary hover:text-foreground"
 			>
 				<GitHub class="h-6! w-6!" />
 			</Button>
@@ -42,13 +42,13 @@
 				variant="outline"
 				href="https://discord.gg/BntK5GbF2M"
 				target="_blank"
-				class="hidden h-10 border-border/40 bg-secondary hover:text-foreground sm:inline-flex"
+				class=" h-10 border-border/40 bg-secondary hover:text-foreground"
 			>
 				<Discord class="h-6! w-6!" />
 			</Button>
 			<Button
 				href="/signup"
-				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85 sm:inline-flex"
+				class="hidden h-10 bg-primary px-4 py-2 text-2xl shadow-lg shadow-foreground/5 transition-all hover:bg-primary/85"
 			>
 				{m['landing.navbar.start']()}
 			</Button>
