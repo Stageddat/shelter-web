@@ -2,6 +2,7 @@
 	import packageJson from '$lib/../../package.json';
 	import SettingsPageHeader from '$lib/components/app/SettingsPageHeader.svelte';
 	import { m } from '$lib/paraglide/messages';
+	import { localizeHref } from '$lib/paraglide/runtime';
 	import { Bug, Coffee, Globe, HouseHeart, Users } from '@lucide/svelte';
 </script>
 
@@ -46,7 +47,7 @@
 		<p class="text-base tracking-wide lowercase lg:text-xl">
 			{m['app.settings.about.info.website']()}
 			<a
-				href="/"
+				href={localizeHref('/')}
 				target="_blank"
 				rel="noopener noreferrer"
 				class="underline underline-offset-2 opacity-60 transition-opacity hover:opacity-100"
@@ -54,7 +55,7 @@
 				shelter.cat
 			</a>
 		</p>
-		<p class="text-base tracking-wide lowercase lg:text-xl">
+		<p class="text-base tracking-wide lg:text-xl">
 			{m['app.settings.about.info.license']()}
 			<a
 				href="https://github.com/Stageddat/shelter-web/blob/main/LICENSE"
@@ -89,7 +90,7 @@
 			{m['app.settings.about.credits.description']()}
 		</p>
 		<a
-			href="/credits"
+			href={localizeHref('/credits')}
 			target="_blank"
 			class="flex w-full items-center justify-between rounded-lg border border-current px-4 py-2 text-base tracking-wider lowercase opacity-60 transition-opacity hover:opacity-100 lg:text-xl"
 		>
