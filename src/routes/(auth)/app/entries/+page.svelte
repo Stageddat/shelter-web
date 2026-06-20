@@ -4,6 +4,7 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import { Button } from '$lib/components/ui/button';
 	import { getAppContext } from '$lib/contexts/app.context.svelte';
+	import * as m from '$lib/paraglide/messages';
 
 	const app = getAppContext();
 </script>
@@ -15,19 +16,21 @@
 {:else}
 	<main class="flex h-full flex-col px-4 pt-8 lg:px-10 lg:pt-12">
 		<div class="mb-6 shrink-0">
-			<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">entries</h1>
+			<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">
+				{m['app.entries.title']()}
+			</h1>
 			<p class="ml-1 text-base text-muted-foreground lg:text-lg">
 				{app.entries.length}
-				{app.entries.length === 1 ? 'entry' : 'entries'}
+				{app.entries.length === 1 ? m['app.entries.entry']() : m['app.entries.entries']()}
 			</p>
 		</div>
 
 		{#if app.entries.length === 0}
 			<div class="flex flex-1 flex-col items-center justify-center gap-2 text-muted-foreground">
-				<p class="text-3xl lowercase lg:text-4xl">no entries yet</p>
-				<p class="text-2xl lg:text-3xl">^▽^</p>
+				<p class="text-3xl lowercase lg:text-4xl">{m['app.entries.noEntries']()}</p>
+				<p class="text-2xl lg:text-3xl">{m['app.entries.noEntriesEmoji']()}</p>
 				<Button class="mt-2 p-5! text-lg! tracking-wide lg:text-xl!" href="/app/new">
-					begin the story
+					{m['app.entries.beginStory']()}
 				</Button>
 			</div>
 		{:else}

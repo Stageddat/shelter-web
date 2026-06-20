@@ -335,6 +335,28 @@
           "description": "see your entries by date"
         }
       }
+    },
+    "entries": {
+      "title": "entries",
+      "entry": "entry",
+      "entries": "entries",
+      "noEntries": "no entries yet",
+      "noEntriesEmoji": "^▽^",
+      "beginStory": "begin the story"
+    },
+    "search": {
+      "title": "search",
+      "placeholderLoading": "loading search engine...",
+      "placeholder": "search...",
+      "preparingEngine": "preparing search engine...",
+      "openEntry": "open entry",
+      "noResults": "no entries found for \"{query}\"."
+    },
+    "entryCard": {
+      "deleteTitle": "delete \"{title}\" entry?",
+      "deleteDescription": "this entry will be lost forever! (a long time!)",
+      "cancel": "cancel",
+      "delete": "delete"
     }
   }
 }
