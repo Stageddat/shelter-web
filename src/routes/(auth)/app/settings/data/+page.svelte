@@ -7,6 +7,7 @@
 	import { Trash2, FileUp, FileDown } from '@lucide/svelte';
 	import { toast } from 'svelte-sonner';
 	import SettingsPageHeader from '$lib/components/app/SettingsPageHeader.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	const auth = getAuthContext();
 	let exporting = $state(false);
@@ -35,9 +36,8 @@
 	}
 
 	function handleImportClick() {
-		const ok = confirm(
-			'importing a backup will permanently delete all your current data, including entries, account and password. everything will be replaced with the backup contents.\nTHIS CANNOT BE UNDONE\n\ncontinue?'
-		);
+		const ok = confirm(m['app.settings.data.importExport.importConfirm']());
+
 		if (!ok) return;
 		fileInput?.click();
 	}
@@ -50,43 +50,44 @@
 			const buffer = await file.arrayBuffer();
 			const check = checkImportCompatibility(buffer);
 			if (!check.ok) {
-				const messages: Record<typeof check.reason, string> = {
-					invalid_file: 'this file is not a shelter backup',
-					corrupted_file: 'this backup is corrupted or has been modified',
-					format_incompatible: 'this backup is not compatible with this version of shelter',
-					schema_incompatible: 'this backup was created with an older version of shelter',
-					export_mode_not_supported: 'this backup format is not supported'
+				const messages = {
+					invalid_file: m['app.settings.data.importExport.importErrors.invalid_file'](),
+					corrupted_file: m['app.settings.data.importExport.importErrors.corrupted_file'](),
+					format_incompatible:
+						m['app.settings.data.importExport.importErrors.format_incompatible'](),
+					schema_incompatible:
+						m['app.settings.data.importExport.importErrors.schema_incompatible'](),
+					export_mode_not_supported:
+						m['app.settings.data.importExport.importErrors.export_mode_not_supported']()
 				};
 				toast.error(messages[check.reason]);
 				return;
 			}
 			if (check.warning === 'backup_from_newer_app') {
-				const ok = confirm(
-					'this backup was created with a newer version of shelter. some data may be lost. continue?'
-				);
+				const ok = confirm(m['app.settings.data.importExport.importNewerWarning']());
+
 				if (!ok) return;
 			}
 			await importFullBackup(buffer);
-			window.alert('backup imported successfully, you will be logged out in 3 seconds');
-			toast.success('backup imported successfully');
+			window.alert(m['app.settings.data.importExport.importSuccess']());
+			toast.success(m['app.settings.data.importExport.importSuccess']());
 			setTimeout(() => auth.logout(), 3000);
 		} catch (err) {
 			console.error(err);
-			toast.error('failed to import backup :(');
+			toast.error(m['app.settings.data.importExport.importError']());
 		} finally {
 			importing = false;
 		}
 	}
 
 	async function handlePurge() {
-		const ok = confirm(
-			'this will permanently delete all your data, including entries, account and password. there is no way to recover it.\nTHIS CANNOT BE UNDONE\n\ncontinue?'
-		);
+		const ok = confirm(m['app.settings.data.dangerZone.purgeConfirm']());
+
 		if (!ok) return;
 		purging = true;
 		try {
 			await purgeAllData();
-			alert('all data has been deleted. you will be logged out.');
+			alert(m['app.settings.data.dangerZone.purgeSuccess']());
 			auth.logout();
 		} catch (err) {
 			toast.error(err instanceof Error ? err.message : 'unknown error');
@@ -100,23 +101,28 @@
 
 <div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">
 	<!-- header -->
-	<SettingsPageHeader title="data" description="manage your data and backups" />
-
+	<SettingsPageHeader
+		title={m['app.settings.data.title']()}
+		description={m['app.settings.data.description']()}
+	/>
 	<!-- import & export -->
 	<div class="mb-4">
-		<p class="mb-1 text-xl tracking-widest uppercase lg:text-2xl">import & export</p>
+		<p class="tracking-widets mb-1 text-xl uppercase lg:text-2xl">
+			{m['app.settings.data.importExport.title']()}
+		</p>
 		<p class="mb-4 text-base lowercase opacity-85 lg:text-xl">
-			backup your data or bring it to this profile
+			{m['app.settings.data.importExport.subtitle']()}
 		</p>
 		<div class="flex w-full flex-col gap-4 lg:flex-row">
 			<div
 				class="flex w-full flex-col rounded-xl border border-current p-5 lg:w-1/2"
 				style="border-opacity: 0.1;"
 			>
-				<p class="mb-1 text-xl font-semibold tracking-wide lowercase lg:text-2xl">export data</p>
+				<p class="mb-1 text-xl font-semibold tracking-wide lowercase lg:text-2xl">
+					{m['app.settings.data.importExport.exportTitle']()}
+				</p>
 				<p class="mb-6 text-base leading-relaxed lowercase opacity-60 lg:text-xl">
-					download an encrypted backup of all your entries and attachments. keep it somewhere safe,
-					only you can open it.
+					{m['app.settings.data.importExport.exportDescription']()}
 				</p>
 				<Button
 					class="mt-auto h-12 w-full cursor-pointer text-lg lg:text-xl"
@@ -124,18 +130,21 @@
 					disabled={exporting}
 				>
 					<FileDown class="mr-1 h-5! w-5! lg:h-6! lg:w-6!" />
-					{exporting ? 'exporting...' : 'export'}
+					{exporting
+						? m['app.settings.data.importExport.exportingButton']()
+						: m['app.settings.data.importExport.exportButton']()}
 				</Button>
 			</div>
-
 			<div
 				class="flex w-full flex-col rounded-xl border border-current p-5 lg:w-1/2"
 				style="border-opacity: 0.1;"
 			>
-				<p class="mb-1 text-xl font-semibold tracking-wide lowercase lg:text-2xl">import data</p>
+				<p class="mb-1 text-xl font-semibold tracking-wide lowercase lg:text-2xl">
+					{m['app.settings.data.importExport.importTitle']()}
+				</p>
 				<p class="mb-6 text-base leading-relaxed lowercase opacity-60 lg:text-xl">
-					restore a previous backup from a <code>.shelter</code> file. this will replace all your current
-					data.
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+					{@html m['app.settings.data.importExport.importDescription']()}
 				</p>
 				<Button
 					class="mt-auto h-12 w-full cursor-pointer text-lg lg:text-xl"
@@ -143,7 +152,9 @@
 					disabled={importing}
 				>
 					<FileUp class="mr-1 h-5! w-5! lg:h-6! lg:w-6!" />
-					{importing ? 'importing...' : 'import'}
+					{importing
+						? m['app.settings.data.importExport.importingButton']()
+						: m['app.settings.data.importExport.importButton']()}
 				</Button>
 			</div>
 		</div>
@@ -153,9 +164,11 @@
 
 	<!-- purge -->
 	<div class="my-4">
-		<p class="mb-1 text-xl tracking-widest uppercase lg:text-2xl">danger zone</p>
+		<p class="tracking-widets mb-1 text-xl uppercase lg:text-2xl">
+			{m['app.settings.data.dangerZone.title']()}
+		</p>
 		<p class="mb-4 text-base lowercase opacity-85 lg:text-xl">
-			permanently delete all the data in this profile
+			{m['app.settings.data.dangerZone.subtitle']()}
 		</p>
 		<div
 			class="flex flex-col gap-4 rounded-xl border border-destructive/20 p-5 lg:flex-row lg:items-center lg:justify-between"
@@ -163,8 +176,7 @@
 			<p
 				class="text-base leading-relaxed text-destructive lowercase opacity-90 lg:w-9/12 lg:text-xl"
 			>
-				this action is irreversible. all entries, accounts and attachments will be permanently
-				deleted. make sure to export a backup first if you want to keep a copy.
+				{m['app.settings.data.dangerZone.description']()}
 			</p>
 			<Button
 				class="h-12 w-full cursor-pointer text-lg lg:w-3/12 lg:text-xl"
@@ -173,7 +185,9 @@
 				variant="destructive"
 			>
 				<Trash2 class="mr-1 h-5! w-5! lg:h-6! lg:w-6!" />
-				{purging ? 'purging...' : 'purge all data'}
+				{purging
+					? m['app.settings.data.dangerZone.purgingButton']()
+					: m['app.settings.data.dangerZone.purgeButton']()}
 			</Button>
 		</div>
 	</div>

@@ -5,6 +5,7 @@
 	import { Trash } from '@lucide/svelte';
 	import * as AlertDialog from '$lib/components/ui/alert-dialog';
 	import { resolve } from '$app/paths';
+	import { m } from '$lib/paraglide/messages';
 
 	interface Props {
 		entry: DecryptedEntry;
@@ -27,22 +28,22 @@
 	<AlertDialog.Content>
 		<AlertDialog.Header>
 			<AlertDialog.Title class="text-2xl! tracking-wide lg:text-3xl!">
-				delete "{entry.title}" entry?
+				{m['app.entryCard.deleteTitle']({ title: entry.title })}
 			</AlertDialog.Title>
 			<AlertDialog.Description class="text-base tracking-wide text-muted-foreground lg:text-xl">
-				this entry will be lost forever! (a long time!)
+				{m['app.entryCard.deleteDescription']()}
 			</AlertDialog.Description>
 		</AlertDialog.Header>
 		<AlertDialog.Footer>
-			<AlertDialog.Cancel class="cursor-pointer text-base! tracking-wide! lg:text-lg!"
-				>cancel</AlertDialog.Cancel
-			>
+			<AlertDialog.Cancel class="cursor-pointer text-base! tracking-wide! lg:text-lg!">
+				{m['app.entryCard.cancel']()}
+			</AlertDialog.Cancel>
 			<AlertDialog.Action
 				variant="destructive"
 				class="cursor-pointer bg-destructive/20! text-base! tracking-wider! text-destructive! hover:bg-destructive/30! lg:text-lg!"
 				onclick={() => handleConfirmDelete(entry.id)}
 			>
-				delete
+				{m['app.entryCard.delete']()}
 			</AlertDialog.Action>
 		</AlertDialog.Footer>
 	</AlertDialog.Content>

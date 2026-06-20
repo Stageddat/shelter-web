@@ -36,24 +36,34 @@ oh yea, this is beastie, say hi to beastie! isn't he a cutie?
 ANYWAYS, i don't want to bother you more,
 so have a nice day and bye bye!
 -->
-<script>
-	import {
-		UserRound,
-		ShieldCheck,
-		NotebookPen,
-		ArrowDownUp,
-		Info,
-		ChevronRight
-	} from '@lucide/svelte';
+<script lang="ts">
 	import { goto } from '$app/navigation';
+	import settingsCategories from '$lib/types/app/settingsCategories';
+	import { ChevronRight } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages';
 
-	const categories = [
-		{ id: 'general', desc: 'account, language, appearance', icon: UserRound },
-		{ id: 'security', desc: 'password, autolock', icon: ShieldCheck },
-		{ id: 'editor', desc: 'typography, shortcuts', icon: NotebookPen },
-		{ id: 'data', desc: 'export, import, purge', icon: ArrowDownUp },
-		{ id: 'about', desc: 'version, credits, license', icon: Info }
-	];
+	const categoryLabels = $derived({
+		general: {
+			title: m['app.settings.general.title'](),
+			description: m['app.settings.general.description']()
+		},
+		security: {
+			title: m['app.settings.security.title'](),
+			description: m['app.settings.security.description']()
+		},
+		editor: {
+			title: m['app.settings.editor.title'](),
+			description: m['app.settings.editor.description']()
+		},
+		data: {
+			title: m['app.settings.data.title'](),
+			description: m['app.settings.data.description']()
+		},
+		about: {
+			title: m['app.settings.about.title'](),
+			description: m['app.settings.about.description']()
+		}
+	});
 </script>
 
 <!--
@@ -61,9 +71,9 @@ so have a nice day and bye bye!
     esta página es solo para móvil -->
 
 <div class="flex flex-col px-4 py-6 lg:hidden">
-	<h2 class="mb-6 text-3xl font-bold tracking-wide lowercase">settings</h2>
+	<h2 class="mb-6 text-3xl font-bold tracking-wide lowercase">{m['app.settings.title']()}</h2>
 	<div class="flex flex-col gap-1">
-		{#each categories as category (category.id)}
+		{#each settingsCategories as category (category.id)}
 			<button
 				onclick={() => goto(`/app/settings/${category.id}`)}
 				class="flex items-center gap-4 rounded-2xl px-4 py-4 text-left transition-colors hover:bg-muted"
@@ -72,8 +82,12 @@ so have a nice day and bye bye!
 					<category.icon class="h-5 w-5" />
 				</div>
 				<div class="flex-1">
-					<p class="text-lg font-semibold tracking-wide lowercase">{category.id}</p>
-					<p class="text-sm tracking-wide opacity-60">{category.desc}</p>
+					<p class="text-lg font-semibold tracking-wide lowercase">
+						{categoryLabels[category.id as keyof typeof categoryLabels]?.title}
+					</p>
+					<p class="text-sm tracking-wide opacity-60">
+						{categoryLabels[category.id as keyof typeof categoryLabels]?.description}
+					</p>
 				</div>
 				<ChevronRight class="h-4 w-4 opacity-40" />
 			</button>

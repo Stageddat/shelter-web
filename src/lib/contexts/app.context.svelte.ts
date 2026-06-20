@@ -3,8 +3,14 @@ import { getEntries, type DecryptedEntry } from '$lib/services/app/entry.service
 import { getAuthContext } from '$lib/contexts/auth.context.svelte';
 import { getDynamicGreeting } from '$lib/hooks/app/useDynamicGreeting';
 import { calculateStreak } from '../utils/streak';
-import { formatRelativeDate, formatRelativeDateTime } from '$lib/utils/date';
+import {
+	formatRelativeDate,
+	formatRelativeDateTime,
+	type RelativeDateStrings
+} from '$lib/utils/date';
 import { SvelteDate } from 'svelte/reactivity';
+import { getLocale } from '$lib/paraglide/runtime';
+import { m } from '$lib/paraglide/messages';
 
 class AppContext {
 	private auth = getAuthContext();
@@ -37,6 +43,20 @@ class AppContext {
 		}
 	}
 
+	private get dateStrings(): RelativeDateStrings {
+		getLocale();
+		return {
+			today: m['app.utils.date.today'](),
+			yesterday: m['app.utils.date.yesterday'](),
+			daysAgo: (count) => m['app.utils.date.daysAgo']({ count }),
+			justNow: m['app.utils.date.justNow'](),
+			minuteAgo: m['app.utils.date.minuteAgo'](),
+			minutesAgo: (count) => m['app.utils.date.minutesAgo']({ count }),
+			hourAgo: m['app.utils.date.hourAgo'](),
+			hoursAgo: (count) => m['app.utils.date.hoursAgo']({ count })
+		};
+	}
+
 	logout = () => {
 		this.entries = [];
 	};
@@ -52,7 +72,9 @@ class AppContext {
 
 	totalWordCount = $derived(this.entries.reduce((sum, e) => sum + (e.wordCount || 0), 0));
 
-	lastEntry = $derived(this.entries[0] ? formatRelativeDate(this.entries[0].date) : null);
+	lastEntry = $derived(
+		this.entries[0] ? formatRelativeDate(this.entries[0].date, this.dateStrings) : null
+	);
 	streak = $derived(calculateStreak(this.entries));
 
 	weeklyEntries = $derived.by(() => {
@@ -69,34 +91,18 @@ class AppContext {
 			.reduce((sum, e) => sum + (e.wordCount || 0), 0);
 	});
 
-	streakMotivation = $derived.by(() => {
+	streakTier = $derived.by((): 'zero' | 'low' | 'mid' | 'high' => {
 		const s = this.streak;
-
-		// streak 0
-		const zeroStreak = ['write the first line!'];
-
-		// streak 1 - 3
-		const lowStreak = ['keep it up!', 'off to a great start!', 'you’re doing great!'];
-
-		// streak 4 - 7
-		const midStreak = ['you’re on a roll!', 'absolutely cooking!', 'locked in', 'look at you go!'];
-
-		// streak 8+
-		const highStreak = ['unstoppable!', 'legendary status', 'built different?'];
-
-		// random selection
-		const getRandom = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
-
-		if (s === 0) return getRandom(zeroStreak);
-		if (s <= 3) return getRandom(lowStreak);
-		if (s <= 7) return getRandom(midStreak);
-		return getRandom(highStreak);
+		if (s === 0) return 'zero';
+		if (s <= 3) return 'low';
+		if (s <= 7) return 'mid';
+		return 'high';
 	});
 
 	lastEntryRelativeDate = $derived(
 		this.entries[0]
-			? formatRelativeDateTime(this.entries[0].date, this.entries[0].time)
-			: 'no entries yet'
+			? formatRelativeDateTime(this.entries[0].date, this.entries[0].time, this.dateStrings)
+			: m['app.utils.date.noEntries']()
 	);
 }
 

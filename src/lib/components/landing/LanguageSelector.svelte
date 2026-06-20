@@ -5,7 +5,7 @@
 	import { getLocale, localizeHref, locales } from '$lib/paraglide/runtime';
 	import { Check, Languages } from '@lucide/svelte';
 
-	let { class: className = '' } = $props();
+	let { class: className = '', onlyIcon = false } = $props();
 
 	const localeConfig: Record<string, { label: string; translation: 'official' | 'community' }> = {
 		en: { label: 'english', translation: 'official' },
@@ -29,7 +29,11 @@
 				class="h-10 gap-2 border-border/40 bg-secondary px-3 text-xl text-muted-foreground hover:text-foreground {className}"
 			>
 				<Languages class="h-6! w-6!" />
-				{localeConfig[getLocale()].label}
+				{#if !onlyIcon}
+					<span class="hidden sm:block">
+						{localeConfig[getLocale()].label}
+					</span>
+				{/if}
 			</Button>
 		{/snippet}
 	</DropdownMenu.Trigger>

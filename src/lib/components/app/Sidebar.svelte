@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { Button } from '$lib/components/ui/button';
+	import { m } from '$lib/paraglide/messages';
 	import { cn } from '$lib/utils';
 	import {
 		CirclePlus,
@@ -16,14 +17,14 @@
 	let inSettings = $derived(page.url.pathname.startsWith('/app/settings/'));
 
 	const links = [
-		{ href: '/app', label: 'home', icon: House },
-		{ href: '/app/entries', label: 'entries', icon: BookOpen },
+		{ href: '/app', label: m['app.sidebar.nav.home'](), icon: House },
+		{ href: '/app/entries', label: m['app.sidebar.nav.entries'](), icon: BookOpen },
 		// { href: '/app/calendar', label: 'calendar', icon: Calendar },
 		// { href: '/app/stats', label: 'stats', icon: ChartNoAxesColumn },
-		{ href: '/app/search', label: 'search', icon: Search },
+		{ href: '/app/search', label: m['app.sidebar.nav.search'](), icon: Search },
 		{
 			href: '/app/settings',
-			label: 'settings',
+			label: m['app.sidebar.nav.settings'](),
 			icon: Settings,
 			navigateTo: '/app/settings/general'
 		}
@@ -31,12 +32,12 @@
 
 	// mobile links
 	const mobileLinks = [
-		{ href: '/app', label: 'home', icon: House },
-		{ href: '/app/entries', label: 'entries', icon: BookOpen },
-		{ href: '/app/search', label: 'search', icon: Search },
+		{ href: '/app', label: m['app.sidebar.nav.home'](), icon: House },
+		{ href: '/app/entries', label: m['app.sidebar.nav.entries'](), icon: BookOpen },
+		{ href: '/app/search', label: m['app.sidebar.nav.search'](), icon: Search },
 		{
 			href: '/app/settings',
-			label: 'settings',
+			label: m['app.sidebar.nav.settings'](),
 			icon: Settings,
 			navigateTo: '/app/settings'
 		}
@@ -54,7 +55,7 @@
 		<!-- logo -->
 		<div class="py-8">
 			<h1 class="text-4xl font-semibold tracking-wide lowercase">shelter</h1>
-			<p class="text-lg tracking-widest text-muted-foreground">private space</p>
+			<p class="text-lg tracking-widest text-muted-foreground">{m['app.sidebar.tagline']()}</p>
 		</div>
 
 		<!-- links -->
@@ -80,7 +81,7 @@
 		<div class="mt-auto pt-4 pb-2">
 			<Button class="w-full gap-2 py-6 lowercase shadow-sm" href="/app/new">
 				<CirclePlus class="h-5 w-5" />
-				<span class="text-xl font-semibold tracking-wider">new entry</span>
+				<span class="text-xl font-semibold tracking-wider">{m['app.sidebar.newEntry']()}</span>
 			</Button>
 		</div>
 	</div>

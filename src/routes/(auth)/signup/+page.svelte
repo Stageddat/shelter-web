@@ -4,6 +4,7 @@
 	import FormField from '$lib/components/signup/FormField.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { resolve } from '$app/paths';
+	import { m } from '$lib/paraglide/messages';
 
 	const signup = useSignup();
 </script>
@@ -20,14 +21,14 @@
 			<div class="rounded-xl border bg-card px-4 py-3 shadow-lg md:px-8 md:py-6">
 				<form onsubmit={signup.handleSubmit} class="space-y-6">
 					<!-- header -->
-					<h1 class="mb-8 text-4xl font-bold text-foreground lg:text-5xl">welcome to shelter!</h1>
+					<h1 class="mb-8 text-4xl font-bold text-foreground lg:text-5xl">{m['signup.title']()}</h1>
 
 					<!-- form -->
 					<div class="space-y-4">
 						{#each formFields as field (field.id)}
 							<FormField
 								{field}
-								value={signup.formData[field.name]}
+								value={signup.formData[field.id]}
 								onChange={signup.handleChange}
 								disabled={signup.isLoading}
 							/>
@@ -46,17 +47,17 @@
 						size="lg"
 						disabled={signup.isLoading}
 					>
-						{signup.isLoading ? 'creating your diary...' : 'create my diary'}
+						{signup.isLoading ? m['signup.button.loading']() : m['signup.button.default']()}
 					</Button>
 				</form>
 
 				<p class="text-md mt-4 text-center text-muted-foreground">
-					already have a diary?
+					{m['signup.alreadyHaveDiary']()}
 					<a
 						class="text-primary-dark font-medium underline transition-colors hover:text-primary"
 						href={resolve('/restore')}
 					>
-						restore
+						{m['signup.restoreDiary']()}
 					</a>
 				</p>
 			</div>

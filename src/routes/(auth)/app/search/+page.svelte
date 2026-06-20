@@ -6,6 +6,7 @@
 	import { buildSearchIndex, searchEntries } from '$lib/search';
 	import type { SearchResult } from 'minisearch';
 	import { Search } from '@lucide/svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	const auth = getAuthContext();
 	const appContext = getAppContext();
@@ -93,7 +94,7 @@
 </script>
 
 <div class="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 py-6 lg:gap-6 lg:p-6">
-	<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">search</h1>
+	<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">{m['app.search.title']()}</h1>
 
 	<div class="relative flex w-full items-center">
 		<div
@@ -105,14 +106,14 @@
 			type="text"
 			bind:value={query}
 			disabled={isLoading}
-			placeholder={isLoading ? 'loading search engine...' : 'search...'}
+			placeholder={isLoading ? m['app.search.placeholderLoading']() : m['app.search.placeholder']()}
 			class="w-full rounded-xl border bg-background p-3 pl-11 text-lg shadow-xs outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 lg:p-4 lg:pl-12 lg:text-xl"
 		/>
 	</div>
 
 	{#if isLoading}
 		<p class="animate-pulse text-center font-patrick text-lg text-muted-foreground lg:text-xl">
-			preparing search engine...
+			{m['app.search.preparingEngine']()}
 		</p>
 	{:else}
 		<div class="flex flex-col gap-3 lg:gap-4">
@@ -139,13 +140,13 @@
 						href="/app/entries/{result.id}"
 						class="mt-2 inline-block self-start text-sm font-medium text-blue-500 hover:underline lg:text-base"
 					>
-						open entry
+						{m['app.search.openEntry']()}
 					</a>
 				</div>
 			{:else}
 				{#if query.trim() !== ''}
 					<p class="py-8 text-center text-muted-foreground">
-						no entries found for "{query}".
+						{m['app.search.noResults']({ query })}
 					</p>
 				{/if}
 			{/each}

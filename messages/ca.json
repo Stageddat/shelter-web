@@ -36,7 +36,7 @@
         "security": {
             "1": {
                 "title": "els teus pensaments són teus",
-                "description": "shelter emmagatzema les teves notes de forma privada al navegador, de manera que hi podeu accedir ràpidament, fins i tot fora de línia. ningú més les pot llegir, ni tan sols nosaltres."
+                "description": "shelter emmagatzema les teves notes de forma privat al navegador, de manera que hi podeu accedir ràpidament, fins i tot fora de línia. ningú més les pot llegir, ni tan sols nosaltres."
             },
             "2": {
                 "title": "xifrat de punta a punta",
@@ -285,6 +285,343 @@
         "button": {
             "default": "accedir al meu shelter",
             "loading": "accedint"
+        }
+    },
+    "signup": {
+        "title": "et donem la benvinguda a shelter!",
+        "form": {
+            "username": {
+                "label": "com vols que et diguem?",
+                "placeholder": "introdueix el teu nom d'usuari",
+                "tooltip": "així és com et direm a l'aplicació, no cal que utilitzis el teu nom real"
+            },
+            "password": {
+                "label": "tria una contrasenya",
+                "placeholder": "estableix una contrasenya"
+            },
+            "passwordRepeat": {
+                "label": "repeteix la contrasenya",
+                "placeholder": "repeteix la contrasenya"
+            }
+        },
+        "button": {
+            "default": "crear el meu diari",
+            "loading": "creant el teu diari..."
+        },
+        "alreadyHaveDiary": "ja tens un diari?",
+        "restoreDiary": "restaurar"
+    },
+    "app": {
+        "sidebar": {
+            "tagline": "espai privat",
+            "nav": {
+                "home": "inici",
+                "entries": "entrades",
+                "search": "cercar",
+                "settings": "configuració"
+            },
+            "newEntry": "nova entrada"
+        },
+        "home": {
+            "devNotice": {
+                "title": "shelter encara està en desenvolupament!",
+                "body": "estem treballant activament en shelter. com a precaució, recomanem exportar el teu diari de tant en tant, per si de cas ;)",
+                "export": "pots exportar fàcilment a configuració › dades › exportar!"
+            },
+            "stats": {
+                "entries": "entrades",
+                "entriesWeekly": "+{count} aquesta setmana!",
+                "words": "paraules",
+                "wordsWeekly": "+{count} aquesta setmana!",
+                "dayStreak": "dies seguits",
+                "lastEntry": "última entrada",
+                "streakMotivation": {
+                    "zero": {
+                        "0": "escriu la teva primera línia!"
+                    },
+                    "low": {
+                        "0": "continua així!",
+                        "1": "un gran començament!",
+                        "2": "ho estàs fent molt bé!"
+                    },
+                    "mid": {
+                        "0": "estàs en ratxa!",
+                        "1": "a tope!",
+                        "2": "concentrat",
+                        "3": "mira com avances!"
+                    },
+                    "high": {
+                        "0": "imparable!",
+                        "1": "estat llegendari",
+                        "2": "fets d'una altra pasta?"
+                    }
+                }
+            },
+            "recentEntries": {
+                "title": "entrades recents",
+                "viewAll": "veure-les totes →"
+            },
+            "quote": {
+                "text": "Al diari no només m'expresso amb més llibertat que amb qualsevol persona; em creo a mi mateixa.",
+                "author": "- Susan Sontag"
+            },
+            "writingActivity": "activitat d'escriptura",
+            "quickActions": {
+                "title": "accions ràpides",
+                "newEntry": {
+                    "label": "nova entrada",
+                    "description": "comença a escriure alguna cosa nova"
+                },
+                "searchEntries": {
+                    "label": "cercar entrades",
+                    "description": "troba alguna cosa que has escrit"
+                },
+                "viewCalendar": {
+                    "label": "veure calendari",
+                    "description": "consulta les teves entrades per data"
+                }
+            }
+        },
+        "entries": {
+            "title": "entrades",
+            "entry": "entrada",
+            "entries": "entrades",
+            "noEntries": "encara no hi ha entrades",
+            "noEntriesEmoji": "^▽^",
+            "beginStory": "comença la història"
+        },
+        "search": {
+            "title": "cercar",
+            "placeholderLoading": "carregant el motor de cerca...",
+            "placeholder": "cerca...",
+            "preparingEngine": "preparant el motor de cerca...",
+            "openEntry": "obrir entrada",
+            "noResults": "no s'han trobat entrades per \"{query}\"."
+        },
+        "entryCard": {
+            "deleteTitle": "eliminar l'entrada \"{title}\"?",
+            "deleteDescription": "aquesta entrada es perdrà per sempre! (molt de temps!)",
+            "cancel": "cancel·lar",
+            "delete": "eliminar"
+        },
+        "settings": {
+            "title": "configuració",
+            "general": {
+                "title": "general",
+                "description": "canvia l'aparença, l'idioma, etc.",
+                "appearance": {
+                    "title": "aparença",
+                    "theme": "tema",
+                    "language": "idioma",
+                    "languageWarning": "això recarregarà la pàgina!"
+                },
+                "user": {
+                    "title": "usuari",
+                    "displayName": "nom visible",
+                    "displayNamePlaceholder": "nom visible",
+                    "username": "nom d'usuari",
+                    "userId": "id d'usuari"
+                },
+                "privacy": {
+                    "title": "privacitat",
+                    "analytics": "analítica",
+                    "analyticsDescription": "comparteix dades d'ús anònimes per ajudar a millorar shelter. no es recopilen dades personals."
+                }
+            },
+            "security": {
+                "title": "seguretat",
+                "description": "canvia el comportament de seguretat",
+                "options": {
+                    "title": "opcions",
+                    "changePassword": "canviar contrasenya",
+                    "changePasswordDescription": "canvia la contrasenya del teu compte",
+                    "changePasswordDialogTitle": "canviar contrasenya",
+                    "changePasswordDialogDescription": "assegura't que la teva nova contrasenya sigui forta i segura :)",
+                    "changePasswordOld": "contrasenya antiga",
+                    "changePasswordNew": "contrasenya nova",
+                    "changePasswordConfirm": "confirmar contrasenya",
+                    "changePasswordCancel": "cancel·lar",
+                    "changePasswordSubmit": "canvia-la!",
+                    "changePasswordSubmitting": "canviant...",
+                    "changePasswordButton": "canviar",
+                    "autoLock": "bloqueig automàtic",
+                    "autoLockDescription": "bloqueig automàtic per inactivitat",
+                    "recoveryKey": "clau de recuperació",
+                    "recoveryKeyDescription": "genera un fitxer de clau per recuperar el teu compte",
+                    "recoveryKeyGenerate": "generar",
+                    "recoveryKeyDialogTitle": "clau de recuperació",
+                    "recoveryKeyDialogDescriptionGenerate": "això generarà un fitxer <span class=\"font-mono\">.key</span> amb la teva frase de recuperació de 12 paraules. guarda-la en un lloc segur.",
+                    "recoveryKeyDialogDescriptionShow": "el teu fitxer <span class=\"font-mono\">.key</span> s'ha descarregat. guarda-la en un lloc segur.",
+                    "recoveryKeyWarning": "si ja tens una clau de recuperació, en generar-ne una de nova, l'antiga quedarà invalidada.",
+                    "recoveryKeyCancel": "cancel·lar",
+                    "recoveryKeyGenerateDownload": "generar i descarregar",
+                    "recoveryKeyGenerating": "generant...",
+                    "recoveryKeyFileDownloaded": "el fitxer .key s'ha descarregat. guarda-lo en un lloc separat d'aquesta frase.",
+                    "recoveryKeySaved": "he guardat la meva frase de recuperació",
+                    "lockOptions": {
+                        "never": "mai",
+                        "1min": "1 minut",
+                        "5min": "5 minuts",
+                        "15min": "15 minuts",
+                        "30min": "30 minuts",
+                        "1hour": "1 hora"
+                    }
+                },
+                "info": {
+                    "title": "informació",
+                    "passwordDerivation": "derivació de contrasenya",
+                    "derivationIterations": "iteracions de derivació",
+                    "saltSize": "mida del salt",
+                    "encryptionAlgorithm": "algoritme de xifrat",
+                    "iv": "vector d'inicialització (iv)",
+                    "encryptionArchitecture": "arquitectura de xifrat",
+                    "hybridValue": "híbrid (clau mestra xifrada)"
+                }
+            },
+            "data": {
+                "title": "dades",
+                "description": "gestiona les teves dades i còpies de seguretat",
+                "importExport": {
+                    "title": "importar i exportar",
+                    "subtitle": "fes una còpia de seguretat de les teves dades o porta-les a aquest perfil",
+                    "exportTitle": "exportar dades",
+                    "exportDescription": "descarrega una còpia de seguretat xifrada de totes les teves entrades i adjunts. guarda-la en un lloc segur, només tu la pots obrir.",
+                    "exportButton": "exportar",
+                    "exportingButton": "exportant...",
+                    "importTitle": "importar dades",
+                    "importDescription": "restaura una còpia de seguretat anterior d'un fitxer <code>.shelter</code>. això substituirà totes les teves dades actuals.",
+                    "importButton": "importar",
+                    "importingButton": "important...",
+                    "importConfirm": "importar una còpia de seguretat eliminarà permanentment totes les teves dades actuals, incloent entrades, compte i contrasenya. tot serà substituït pel contingut de la còpia de seguretat.\nAIXÒ NO ES POT DESFER\n\ncontinuar?",
+                    "importNewerWarning": "aquesta còpia de seguretat va ser creada amb una versió més nova de shelter. és possible que es perdin algunes dades. continuar?",
+                    "importSuccess": "còpia de seguretat importada correctament, es tancarà la sessió en 3 segons",
+                    "importErrors": {
+                        "invalid_file": "aquest fitxer no és una còpia de seguretat de shelter",
+                        "corrupted_file": "aquesta còpia de seguretat està corrupta o ha estat modificada",
+                        "format_incompatible": "aquesta còpia de seguretat no és compatible amb aquesta versió de shelter",
+                        "schema_incompatible": "aquesta còpia de seguretat va ser creada amb una versió anterior de shelter",
+                        "export_mode_not_supported": "aquest format de còpia de seguretat no està suportat"
+                    },
+                    "exportSuccess": "còpia de seguretat exportada correctament",
+                    "exportError": "no s'ha pogut exportar la còpia de seguretat :(",
+                    "importError": "no s'ha pogut importar la còpia de seguretat :("
+                },
+                "dangerZone": {
+                    "title": "zona de perill",
+                    "subtitle": "elimina permanentment totes les dades d'aquest perfil",
+                    "description": "aquesta acció és irreversible. totes les entrades, comptes i adjunts s'eliminaran permanentment. assegura't d'exportar una còpia de seguretat primer si vols conservar una còpia.",
+                    "purgeButton": "eliminar totes les dades",
+                    "purgingButton": "eliminant...",
+                    "purgeConfirm": "això eliminarà permanentment totes les teves dades, incloent entrades, compte i contrasenya. no hi ha manera de recuperar-les.\nAIXÒ NO ES POT DESFER\n\ncontinuar?",
+                    "purgeSuccess": "totes les dades han estat eliminades. es tancarà la sessió."
+                }
+            },
+            "editor": {
+                "title": "editor",
+                "description": "tipografia, dreceres"
+            },
+            "about": {
+                "title": "sobre",
+                "description": "informació sobre aquest projecte",
+                "whatIs": {
+                    "title": "què és shelter?",
+                    "description": "shelter és un diari web segur i de codi obert dissenyat amb privacitat i xifratge d'extrem a extrem. les teves dades són teves, emmagatzemades directament al teu navegador."
+                },
+                "info": {
+                    "title": "informació de shelter",
+                    "version": "versió:",
+                    "source": "codi font:",
+                    "website": "lloc web:",
+                    "license": "llicència:",
+                    "translations": "traduccions:",
+                    "translationsLink": "veure el progrés de les traduccions"
+                },
+                "credits": {
+                    "title": "crèdits",
+                    "description": "aquest projecte és possible gràcies a una increïble comunitat de desenvolupadors, artistes, il·lustradors, dissenyadors gràfics, músics, provadors, traductors, i massa cafeïna. estic molt agraït per tot el vostre suport!",
+                    "seeAll": "veure tots els crèdits"
+                },
+                "links": {
+                    "title": "enllaços",
+                    "reportBug": "informar d'un error",
+                    "discord": "servidor de discord",
+                    "kofi": "donar suport a ko-fi",
+                    "translate": "ajudar a traduir"
+                }
+            }
+        },
+        "utils": {
+            "date": {
+                "today": "avui",
+                "yesterday": "ahir",
+                "daysAgo": "fa {count} dies",
+                "justNow": "ara mateix",
+                "minuteAgo": "fa 1 minut",
+                "minutesAgo": "fa {count} minuts",
+                "hourAgo": "fa 1 hora",
+                "hoursAgo": "fa {count} hores",
+                "noEntries": "encara no hi ha entrades"
+            }
+        },
+        "greetings": {
+            "morning": {
+                "withUser": {
+                    "0": "bon dia, {username}!",
+                    "1": "preparat per a un nou dia, {username}?",
+                    "2": "agafa un cafè i comencem, {username}.",
+                    "3": "matí fresc, pensaments frescos, {username}."
+                },
+                "anonymous": {
+                    "0": "bon dia!",
+                    "1": "preparat per a un nou dia?",
+                    "2": "agafa un cafè i comencem."
+                }
+            },
+            "afternoon": {
+                "withUser": {
+                    "0": "bona tarda, {username}!",
+                    "1": "espero que el teu dia vagi bé, {username}.",
+                    "2": "fent un petit descans, {username}?"
+                },
+                "anonymous": {
+                    "0": "bona tarda!",
+                    "1": "espero que el teu dia vagi bé.",
+                    "2": "fent un petit descans?"
+                }
+            },
+            "evening": {
+                "withUser": {
+                    "0": "bona vespre, {username}!",
+                    "1": "hora de desconnectar, {username}.",
+                    "2": "com ha anat el dia, {username}?"
+                },
+                "anonymous": {
+                    "0": "bon vespre!",
+                    "1": "hora de desconnectar.",
+                    "2": "com ha anat el dia?"
+                }
+            },
+            "night": {
+                "withUser": {
+                    "0": "és ben tard de nit, {username}."
+                },
+                "anonymous": {
+                    "0": "treballant fins tard?",
+                    "1": "el món ja està tranquil."
+                }
+            },
+            "default": {
+                "withUser": {
+                    "0": "et donem la benvinguda de nou, {username}!",
+                    "1": "què bo veure't de nou, {username}!",
+                    "2": "què tens al cap avui, {username}?"
+                },
+                "anonymous": {
+                    "0": "et donem la benvinguda de nou!",
+                    "1": "què bo veure't de nou!",
+                    "2": "què tens al cap avui?"
+                }
+            }
         }
     }
 }

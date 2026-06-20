@@ -1,39 +1,57 @@
+import { m } from '$lib/paraglide/messages';
+
 export const dynamicGreetings = {
 	morning: {
 		withUser: [
-			'good morning, {username}!',
-			'ready for a new day, {username}?',
-			"grab a coffee and let's start, {username}.",
-			'fresh morning, fresh thoughts, {username}.'
+			m['app.greetings.morning.withUser.0'],
+			m['app.greetings.morning.withUser.1'],
+			m['app.greetings.morning.withUser.2'],
+			m['app.greetings.morning.withUser.3']
 		],
-		anonymous: ['good morning!', 'ready for a new day?', "grab a coffee and let's start."]
+		anonymous: [
+			m['app.greetings.morning.anonymous.0'],
+			m['app.greetings.morning.anonymous.1'],
+			m['app.greetings.morning.anonymous.2']
+		]
 	},
 	afternoon: {
 		withUser: [
-			'good afternoon, {username}!',
-			'hope your day is going well, {username}.',
-			'taking a little break, {username}?'
+			m['app.greetings.afternoon.withUser.0'],
+			m['app.greetings.afternoon.withUser.1'],
+			m['app.greetings.afternoon.withUser.2']
 		],
-		anonymous: ['good afternoon!', 'hope your day is going well.', 'taking a little break?']
+		anonymous: [
+			m['app.greetings.afternoon.anonymous.0'],
+			m['app.greetings.afternoon.anonymous.1'],
+			m['app.greetings.afternoon.anonymous.2']
+		]
 	},
 	evening: {
 		withUser: [
-			'good evening, {username}!',
-			'time to wind down, {username}.',
-			'how was your day, {username}?'
+			m['app.greetings.evening.withUser.0'],
+			m['app.greetings.evening.withUser.1'],
+			m['app.greetings.evening.withUser.2']
 		],
-		anonymous: ['good evening!', 'time to wind down.', 'how was your day?']
+		anonymous: [
+			m['app.greetings.evening.anonymous.0'],
+			m['app.greetings.evening.anonymous.1'],
+			m['app.greetings.evening.anonymous.2']
+		]
 	},
 	night: {
-		withUser: ["it's late-night, {username}"],
-		anonymous: ['working late?', 'the world is quiet now.']
+		withUser: [m['app.greetings.night.withUser.0']],
+		anonymous: [m['app.greetings.night.anonymous.0'], m['app.greetings.night.anonymous.1']]
 	},
 	default: {
 		withUser: [
-			'welcome back, {username}!',
-			'so good to see you again, {username}!',
-			"what's on your mind today, {username}?"
+			m['app.greetings.default.withUser.0'],
+			m['app.greetings.default.withUser.1'],
+			m['app.greetings.default.withUser.2']
 		],
-		anonymous: ['welcome back!', 'so good to see you again!', "what's on your mind today?"]
+		anonymous: [
+			m['app.greetings.default.anonymous.0'],
+			m['app.greetings.default.anonymous.1'],
+			m['app.greetings.default.anonymous.2']
+		]
 	}
 };
