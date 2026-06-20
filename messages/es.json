@@ -8,16 +8,16 @@
         },
         "features": {
             "1": {
-                "title": "seguridad de alto nivel",
-                "description": "tus entradas están encriptadas y protegidos todo el tiempo."
+                "title": "almacenamiento local y sin conexión",
+                "description": "guarda tus diarios de forma segura en tu propio dispositivo."
             },
             "2": {
-                "title": "almacenamiento local y offline",
-                "description": "mantén tus diarios de forma segura en tu propio dispositivo."
+                "title": "sincronización en la nube (próximamente)",
+                "description": "pronto podrás acceder a tus pensamientos desde cualquier lugar."
             },
             "3": {
-                "title": "sincronización en la nube (muy pronto)",
-                "description": "pronto podrás acceder a tus ideas en cualquier lugar."
+                "title": "diseñado para transmitir tranquilidad",
+                "description": "sin plazos de entrega, sin presiones. simplemente un espacio tranquilo para escribir, a tu propio ritmo."
             },
             "4": {
                 "title": "100% personal y privado",
@@ -31,7 +31,7 @@
                 "title": "escribe a tu ritmo",
                 "description": "no hay plazos ni presiones. solo tú y tus pensamientos."
             },
-            "title": "un lugar seguro para tus pensamientos"
+            "title": "hecho para que te sientas como en casa"
         },
         "security": {
             "1": {
@@ -44,7 +44,7 @@
             },
             "3": {
                 "title": "0 rastreadores y 0 anuncios",
-                "description": "jamás recopilamos datos personales. no utilizamos rastreadores, anuncios ni análisis ocultos que te sigan."
+                "description": "jamás recopilamos datos personales. no hay rastreadores ni anuncios que te sigan."
             },
             "title": "totalmente protegido"
         },
@@ -54,13 +54,102 @@
                 "answer": "shelter es un lugar seguro donde tus pensamientos pueden respirar. es una aplicación web de diario segura donde puedes escribir libremente sin presión en tu navegador favorito."
             },
             "2": {
-                "question": "¿es de código abierto?",
-                "answer": "¡sí! puedes encontrar el código fuente en <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> y aceptamos contribuciones."
+                "question": "¿mis datos están seguros?",
+                "answer": "sí. tus entradas están cifradas de extremo a extremo y se almacenan primero localmente en tu dispositivo. nadie puede leerlas, ni siquiera nosotros. tus datos están cifrados con una clave que solo tú posees."
             },
             "3": {
-                "question": "¿dónde se almacenan los datos?",
-                "answer": "todas tus entradas se almacenan localmente en tu navegador mediante almacenamiento cifrado."
+                "question": "¿es de código abierto?",
+                "answer": "¡sí! puedes encontrar el código fuente en <a href=\"https://github.com/Stageddat/shelter-web\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">github</a> y agradecemos las contribuciones."
+            },
+            "title": "preguntas frecuentes",
+            "4": {
+                "question": "¿en qué se inspira este proyecto?",
+                "answer": "este proyecto está inspirado en la sección de comentarios de la canción \"shelter\" de porter robinson & madeon. mucha gente escribe allí a diario, y queríamos crear un espacio personal y privado para esos pequeños fragmentos de vpda. ¡Puedes ver el vídeo <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">aquí</a>!"
+            },
+            "5": {
+                "question": "¿es gratis?",
+                "answer": "¡sí! shelter es de uso gratuito, sin anuncios y de código abierto. ¡hecho con ❤️!"
+            },
+            "6": {
+                "question": "¿quién es machka?",
+                "answer": "¡ella es nuestra mascota oficial! a menudo la puedes encontrar a ella y a su gatito ziggy paseando por el sitio web.<br /><br /> ¡muchísimas gracias a <a href=\"https://www.instagram.com/fiddlearty\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">fiddle</a> por crear todas las maravillosas ilustraciones!"
             }
+        },
+        "start": {
+            "title": "¿listo para descansar?",
+            "description": "comienza tu viaje a tu propio ritmo.",
+            "button": "¡empezar mi viaje!"
+        },
+        "navbar": {
+            "logo": "shelter",
+            "features": "características",
+            "security": "seguridad",
+            "faqs": "preguntas",
+            "start": "empezar"
+        },
+        "footer": {
+            "title": "shelter",
+            "year": "© 2025-{currentYear} shelter",
+            "copyright": "todos los derechos reservados.",
+            "product": {
+                "title": "producto",
+                "credits": "créditos",
+                "cloud": "nube",
+                "selfhost": "autoalojamiento"
+            },
+            "legal": {
+                "title": "legal",
+                "privacy": "política de privacidad",
+                "terms": "términos de servicio",
+                "cookies": "política de cookies"
+            },
+            "contact": {
+                "title": "contacto"
+            }
+        },
+        "cookies": {
+            "title": "política de cookies",
+            "lastUpdated": "última actualización: 18 de junio de 2026",
+            "whatAreCookies": {
+                "title": "qué son las cookies",
+                "content": "las cookies son pequeños archivos de texto que los sitios web almacenan en tu dispositivo para recordar información sobre ti. son una parte estándar del funcionamiento de los sitios web modernos."
+            },
+            "ourApproach": {
+                "title": "nuestro enfoque respecto a las cookies",
+                "content": "shelter no utiliza cookies. no hay sistema de cuenta ni de inicio de sesión, por lo que no hay nada que recordar entre visitas más allá de lo que ya está almacenado localmente en tu navegador."
+            },
+            "whatWeDontUse": {
+                "title": "lo que no usamos",
+                "intro": "shelter no utiliza:",
+                "items": {
+                    "tracking": "cookies para rastrear tu comportamiento",
+                    "advertising": "cookies publicitarias para mostrarte anuncios",
+                    "analytics": "cookies analíticas para recopilar estadísticas de uso",
+                    "thirdParty": "cookies de terceros de redes sociales u otros servicios",
+                    "personal": "cookies que te identifican personalmente"
+                }
+            },
+            "localStorage": {
+                "title": "almacenamiento local",
+                "content1": "en lugar de cookies, shelter utiliza el almacenamiento local de tu navegador para guardar tus entradas cifradas en tu dispositivo. esto no es lo mismo que las cookies; es lo que te permite acceder a tu contenido sin conexión y nunca sale de tu dispositivo.",
+                "content2": "todo lo que se almacena localmente está cifrado y solo usted puede acceder a él."
+            },
+            "futureSync": {
+                "title": "futuro: sincronización en la nube",
+                "content": "estamos trabajando en una función opcional de sincronización en la nube, que podría introducir algunas cookies esenciales (por ejemplo, para mantener tu sesión iniciada). si esto cambia, actualizaremos esta política con todos los detalles antes de que la función esté disponible."
+            },
+            "updates": {
+                "title": "actualizaciones de esta política",
+                "content": "si en algún momento necesitamos añadir o modificar las cookies que utilizamos, actualizaremos esta política y se lo comunicaremos. nos comprometemos a reducir al mínimo el uso de cookies."
+            },
+            "contact": {
+                "title": "contacta con nosotros",
+                "content": "si tiene alguna pregunta sobre esta política de privacidad, póngase en contacto con nosotros en el <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
+            }
+        },
+        "privacy": {
+            "title": "política de privacidad",
+            "lastUpdated": "última actualización: 18 de junio de 2026"
         }
     }
 }
