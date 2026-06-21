@@ -3,5 +3,7 @@ Allow: /
 Disallow: /app
 Disallow: /login
 Disallow: /signup
+Disallow: /restore
+Disallow: /test
 
 Sitemap: https://shelter.cat/sitemap.xml
