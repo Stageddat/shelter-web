@@ -3,11 +3,11 @@
     "landing": {
         "hero": {
             "title": "shelter",
-            "subtitle": "et sikkert sted, hvor dine tanker kan trække vejret uden at blive dømt",
+            "subtitle": "et sikkert sted, hvor dine tanker kan trække vejret",
             "image_alt": "machka som skriver hendes journal med hendes kat ziggy"
         },
         "features": {
-            "title": "et sikkert sted for dine tanker",
+            "title": "bygget så du føler dig tryg",
             "1": {
                 "title": "lokal opbevaring & offline-først",
                 "description": "beholder dine journaler sikkert på din egen enhed."
@@ -72,7 +72,7 @@
             "logo": "shelter",
             "features": "funktioner",
             "security": "sikkerhed",
-            "faqs": "faq",
+            "faqs": "spørgmål",
             "start": "kom i gang"
         },
         "footer": {
@@ -104,7 +104,7 @@
             },
             "ourApproach": {
                 "title": "vores tilgang til cookies",
-                "content": "shelter bruger ikke cookies. der er intet konto- eller loginsystem, så der er intet at huske mellem besøg ud over det, der allerede er gemt lokalt i din browser."
+                "content": "shelter bruger ikke cookies. der er ingen konto- eller loginsystem, så der er intet at huske mellem besøg ud over det, der allerede er gemt lokalt i din browser."
             },
             "whatWeDontUse": {
                 "title": "hvad vi ikke bruger",
@@ -123,7 +123,7 @@
                 "content2": "alt, der er gemt lokalt, er krypteret og kun tilgængeligt for dig."
             },
             "futureSync": {
-                "title": "fremtid: cloud sync",
+                "title": "fremtid: synkronisering med skyen",
                 "content": "vi arbejder på en valgfri cloud-synkroniseringsfunktion, som muligvis vil introducere et lille antal nødvendige cookies (for eksempel for at holde dig logget ind). hvis det ændrer sig, opdaterer vi denne politik med fulde detaljer, før funktionen går live."
             },
             "updates": {
