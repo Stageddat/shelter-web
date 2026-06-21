@@ -46,6 +46,7 @@ export default defineConfig({
 			workbox: {
 				navigateFallback: '/app',
 				navigateFallbackAllowlist: [/^\/app/, /^\/login/, /^\/signup/, /^\/restore/],
+				navigateFallbackDenylist: [/^\/sitemap\.xml/, /^\/robots\.txt/],
 				globPatterns: ['client/**/*.{js,css,woff,woff2}', '**/*.html'],
 
 				runtimeCaching: [
