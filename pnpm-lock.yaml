@@ -135,6 +135,9 @@ importers:
       shadcn-svelte:
         specifier: ^1.3.0
         version: 1.3.0(svelte@5.56.2(@typescript-eslint/types@8.60.1))
+      super-sitemap:
+        specifier: ^1.0.12
+        version: 1.0.12(svelte@5.56.2(@typescript-eslint/types@8.60.1))
       svelte:
         specifier: ^5.56.2
         version: 5.56.2(@typescript-eslint/types@8.60.1)
@@ -3261,6 +3264,11 @@ packages:
 
   style-to-object@1.0.14:
     resolution: {integrity: sha512-LIN7rULI0jBscWQYaSswptyderlarFkjQ+t79nzty8tcIAceVomEVlLzH5VP4Cmsv6MtKhs7qaAiwlcp+Mgaxw==}
+
+  super-sitemap@1.0.12:
+    resolution: {integrity: sha512-C3gfAS1RZxL5bbZGtgnIOitMhfqAt8RmhW8AWTia6c8n9RW3Zx7f/SxVeFWZD0I1nUAx2pkxuWazVtev0Nmb5w==}
+    peerDependencies:
+      svelte: '>=4.0.0 <6.0.0'
 
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
@@ -6883,6 +6891,10 @@ snapshots:
   style-to-object@1.0.14:
     dependencies:
       inline-style-parser: 0.2.7
+
+  super-sitemap@1.0.12(svelte@5.56.2(@typescript-eslint/types@8.60.1)):
+    dependencies:
+      svelte: 5.56.2(@typescript-eslint/types@8.60.1)
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
