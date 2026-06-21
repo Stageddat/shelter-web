@@ -308,7 +308,7 @@
                 "entriesWeekly": "+{count} i denne uge!",
                 "words": "ord",
                 "wordsWeekly": "+{count} i denne uge!",
-                "dayStreak": "dages række",
+                "dayStreak": "dages stribe",
                 "lastEntry": "sidste indlæg",
                 "streakMotivation": {
                     "zero": {
