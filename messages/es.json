@@ -64,7 +64,7 @@
             "title": "preguntas frecuentes",
             "4": {
                 "question": "¿en qué se inspira este proyecto?",
-                "answer": "este proyecto está inspirado en la sección de comentarios de la canción \"shelter\" de porter robinson & madeon. mucha gente escribe allí a diario, y queríamos crear un espacio personal y privado para esos pequeños fragmentos de vpda. ¡Puedes ver el vídeo <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">aquí</a>!"
+                "answer": "este proyecto está inspirado en la sección de comentarios de la canción \"shelter\" de porter robinson & madeon. mucha gente escribe allí a diario, y queríamos crear un espacio personal y privado para esos pequeños fragmentos de vida. ¡Puedes ver el vídeo <a href=\"https://www.youtube.com/watch?v=HQnC1UHBvWA\" target=\"_blank\" class=\"text-primary underline hover:opacity-80\">aquí</a>!"
             },
             "5": {
                 "question": "¿es gratis?",
@@ -132,7 +132,7 @@
             "localStorage": {
                 "title": "almacenamiento local",
                 "content1": "en lugar de cookies, shelter utiliza el almacenamiento local de tu navegador para guardar tus entradas cifradas en tu dispositivo. esto no es lo mismo que las cookies; es lo que te permite acceder a tu contenido sin conexión y nunca sale de tu dispositivo.",
-                "content2": "todo lo que se almacena localmente está cifrado y solo usted puede acceder a él."
+                "content2": "todo lo que se almacena localmente está cifrado y solo tú puedes acceder a ello."
             },
             "futureSync": {
                 "title": "futuro: sincronización en la nube",
@@ -149,7 +149,466 @@
         },
         "privacy": {
             "title": "política de privacidad",
-            "lastUpdated": "última actualización: 18 de junio de 2026"
+            "lastUpdated": "última actualización: 18 de junio de 2026",
+            "noCollect": {
+                "title": "no recopilamos tus datos",
+                "content": "shelter se basa en un principio simple: tus pensamientos son tuyos. shelter se ejecuta completamente en tu navegador, no recopilamos, almacenamos ni procesamos tus datos personales en ningún servidor. todo lo que escribes se queda en tu dispositivo."
+            },
+            "storage": {
+                "title": "cómo se almacenan tus datos",
+                "intro": "todas tus entradas se almacenan localmente en tu navegador mediante almacenamiento cifrado. esto significa:",
+                "items": {
+                    "device": "tus notas nunca salen de tu dispositivo",
+                    "read": "no podemos leer tus entradas, aunque quisiéramos",
+                    "encrypted": "tus datos están cifrados en reposo con una clave que solo tú tienes",
+                    "control": "tienes un control completo sobre tu información"
+                }
+            },
+            "analytics": {
+                "title": "analítica",
+                "content": "utilizamos analítica autohospedada y respetuosa con la privacidad (umami) para entender cómo se utiliza shelter de manera agregada — cosas como las visualizaciones de página y las tendencias generales de uso. estos datos son anónimos, nunca se vinculan a tu identidad o tus entradas del diario, y jamás se comparten ni se venden a nadie. puedes desactivarlo en cualquier momento."
+            },
+            "noAds": {
+                "title": "sin anuncios, sin vender datos",
+                "content": "nunca mostraremos anuncios ni venderemos tus datos a terceros. jamás. tu privacidad no está en venta."
+            },
+            "cookies": {
+                "title": "cookies",
+                "content": "shelter no utiliza cookies. no hay ningún sistema de cuentas ni de inicio de sesión, así que no hay nada que recordar entre sesiones más allá de lo que ya se almacena localmente en tu navegador. consulta nuestra <a class=\"text-primary-dark hover:text-primary-dark/80 transition-colors\" href=\"/cookies\">política de cookies</a> para más detalles."
+            },
+            "rights": {
+                "title": "tus derechos",
+                "content": "como no recopilamos tus datos, no tenemos nada que eliminar ni compartir por nuestra parte. tienes la propiedad y el control completos de todo lo que creas en shelter, y puedes exportar o eliminar tus datos en cualquier momento directamente desde la aplicación."
+            },
+            "futureSync": {
+                "title": "futuro: sincronización en la nube",
+                "content": "estamos trabajando en una función opcional de sincronización en la nube. cuando se lance, tus datos se cifrarán en tu dispositivo antes de llegar a nuestros servidores, y solo tú tendrás las claves para descifrarlos. actualizaremos esta política con todos los detalles antes de que esta función esté disponible."
+            },
+            "changes": {
+                "title": "cambios en esta política",
+                "content": "si alguna vez cambiamos esta política de privacidad, te lo notificaremos claramente y te daremos la opción de revisar los cambios. nunca haremos cambios que comprometan tu privacidad sin tu conocimiento."
+            },
+            "contact": {
+                "title": "contacta con nosotros",
+                "content": "si tienes alguna pregunta sobre esta política de privacidad, ponte en contacto con nosotros en el <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
+            }
+        },
+        "terms": {
+            "title": "términos de servicio",
+            "lastUpdated": "última actualización: 18 de junio de 2026",
+            "welcome": {
+                "title": "¡bienvenido a shelter!",
+                "content": "al utilizar shelter, aceptas estos términos. los hemos mantenido simples y claros porque creemos en la transparencia."
+            },
+            "whatIs": {
+                "title": "qué es shelter",
+                "content": "shelter es un espacio privado y cifrado para tus pensamientos, notas y reflexiones. está diseñado para ser un lugar seguro donde puedas escribir libremente sin juicios ni vigilancia. actualmente shelter se ejecuta completamente en tu navegador — no se requiere ninguna cuenta ni inicio de sesión."
+            },
+            "yourContent": {
+                "title": "tu contenido",
+                "content1": "todo lo que escribes en shelter te pertenece. no reclamamos ninguna propiedad sobre tu contenido. como tus datos están cifrados y almacenados en tu propio dispositivo, de todas formas no podemos acceder a ellos.",
+                "content2": "eres responsable del contenido que creas. aunque no podemos ver tus entradas, te pedimos que utilices shelter de manera responsable y legal."
+            },
+            "acceptableUse": {
+                "title": "uso aceptable",
+                "intro": "aceptas no:",
+                "items": {
+                    "illegal": "utilizar shelter para actividades ilegales",
+                    "hack": "intentar hackear, romper o comprometer la seguridad de shelter",
+                    "interfere": "interferir con el acceso de otros usuarios al servicio",
+                    "malware": "utilizar shelter para distribuir malware o software dañino",
+                    "ip": "vulnerar los derechos de propiedad intelectual o privacidad de nadie",
+                    "superearth": "jurar lealtad eterna a la Súper Tierra; cualquier actividad sospechosa debe ser reportada a tu oficial democrático más cercano"
+                }
+            },
+            "availability": {
+                "title": "disponibilidad del servicio",
+                "content1": "trabajamos duro para mantener shelter funcionando sin problemas, pero no podemos garantizar que el sitio web esté disponible el 100% del tiempo. de vez en cuando puede ser necesario detenerlo por mantenimiento o actualizaciones.",
+                "content2": "como tus datos se almacenan localmente en tu dispositivo, tus entradas siguen siendo accesibles para ti incluso si el sitio web de shelter está temporalmente inactivo."
+            },
+            "backups": {
+                "title": "copias de seguridad",
+                "content": "tus entradas viven en tu dispositivo. recomendamos encarecidamente que exportes regularmente tus entradas como copia de seguridad — si pierdes el acceso a tu dispositivo o borras los datos del navegador sin una copia de seguridad, no tenemos forma de recuperar tus entradas. eres responsable de mantener tus propias copias de seguridad del contenido importante."
+            },
+            "noWarranty": {
+                "title": "sin garantía",
+                "content": "shelter se proporciona \"tal cual\" sin ningún tipo de garantía. hacemos todo lo posible para que shelter sea fiable y seguro, pero no podemos garantizar que cumpla con todas tus necesidades o que esté completamente libre de errores."
+            },
+            "liability": {
+                "title": "limitación de responsabilidad",
+                "content": "no somos responsables de ningún daño derivado del uso o la imposibilidad de uso de shelter. esto incluye la pérdida de datos, a pesar de que trabajamos duro para evitarlo."
+            },
+            "futureSync": {
+                "title": "futuro: cuentas y sincronización en la nube",
+                "content": "estamos trabajando en una función opcional de sincronización en la nube, que introducirá cuentas. cuando se lance, serás responsable de mantener tu cuenta segura, y actualizaremos estos términos con todos los detalles sobre cuentas, datos sincronizados y cancelación antes de que esa función esté disponible."
+            },
+            "changes": {
+                "title": "cambios en estos términos",
+                "content": "podemos actualizar estos términos de vez en cuando. si hacemos cambios significativos, te lo notificaremos claramente y te daremos tiempo para revisarlos. continuar utilizando shelter después de los cambios significa que aceptas los nuevos términos."
+            },
+            "contact": {
+                "title": "contacta con nosotros",
+                "content": "si tienes alguna pregunta sobre esta política de privacidad, ponte en contacto con nosotros en el <a href=\"https://discord.gg/BntK5GbF2M\" class=\"text-primary-dark hover:text-primary-dark/80 underline transition-colors\">servidor de discord</a>"
+            }
+        },
+        "credits": {
+            "title": "créditos",
+            "intro": "gracias a todos los que han apoyado a shelter de una forma u otra, ya sea con código, diseño, comentarios o simplemente usándolo. este proyecto no sería lo que es sin vosotros <3",
+            "contributors": "colaboradores",
+            "roles": {
+                "development": "desarrollo",
+                "artist": "artista",
+                "tester": "probador",
+                "translator": "traductor"
+            }
+        }
+    },
+    "login": {
+        "title": "¡hola de nuevo, {username}!",
+        "password": {
+            "label": "contraseña",
+            "placeholder": "introduce tu contraseña"
+        },
+        "button": {
+            "default": "acceder a mi shelter",
+            "loading": "accediendo"
+        }
+    },
+    "signup": {
+        "title": "¡te damos la bienvenida a shelter!",
+        "form": {
+            "username": {
+                "label": "¿cómo quieres que te llamemos?",
+                "placeholder": "introduce tu nombre de usuario",
+                "tooltip": "así es como te llamaremos en la aplicación, no es necesario que uses tu nombre real"
+            },
+            "password": {
+                "label": "elige una contraseña",
+                "placeholder": "establece una contraseña"
+            },
+            "passwordRepeat": {
+                "label": "repite la contraseña",
+                "placeholder": "repite la contraseña"
+            }
+        },
+        "button": {
+            "default": "crear mi diario",
+            "loading": "creando tu diario..."
+        },
+        "alreadyHaveDiary": "¿ya tienes un diario?",
+        "restoreDiary": "restaurar"
+    },
+    "app": {
+        "sidebar": {
+            "tagline": "espacio privado",
+            "nav": {
+                "home": "inicio",
+                "entries": "entradas",
+                "search": "buscar",
+                "settings": "configuración"
+            },
+            "newEntry": "nueva entrada"
+        },
+        "home": {
+            "devNotice": {
+                "title": "¡shelter todavía está en desarrollo!",
+                "body": "estamos trabajando activamente en shelter. como precaución, recomendamos exportar tu diario de vez en cuando, por si acaso ;)",
+                "export": "¡puedes exportar fácilmente en configuración › datos › exportar!"
+            },
+            "stats": {
+                "entries": "entradas",
+                "entriesWeekly": "+{count} ¡esta semana!",
+                "words": "palabras",
+                "wordsWeekly": "+{count} ¡esta semana!",
+                "dayStreak": "días seguidos",
+                "lastEntry": "última entrada",
+                "streakMotivation": {
+                    "zero": {
+                        "0": "¡escribe tu primera línea!"
+                    },
+                    "low": {
+                        "0": "¡continúa así!",
+                        "1": "¡un gran comienzo!",
+                        "2": "¡lo estás haciendo genial!"
+                    },
+                    "mid": {
+                        "0": "¡estás en racha!",
+                        "1": "¡a tope!",
+                        "2": "concentrado",
+                        "3": "¡mira cómo avanzas!"
+                    },
+                    "high": {
+                        "0": "¡imparable!",
+                        "1": "estado legendario",
+                        "2": "¿hecho de otra pasta?"
+                    }
+                }
+            },
+            "recentEntries": {
+                "title": "entradas recientes",
+                "viewAll": "ver todas →"
+            },
+            "quote": {
+                "text": "En el diario no solo me expreso con más libertad que con cualquier persona; me creo a mí misma.",
+                "author": "- Susan Sontag"
+            },
+            "writingActivity": "actividad de escritura",
+            "quickActions": {
+                "title": "acciones rápidas",
+                "newEntry": {
+                    "label": "nueva entrada",
+                    "description": "comienza a escribir algo nuevo"
+                },
+                "searchEntries": {
+                    "label": "buscar entradas",
+                    "description": "encuentra algo que hayas escrito"
+                },
+                "viewCalendar": {
+                    "label": "ver calendario",
+                    "description": "consulta tus entradas por fecha"
+                }
+            }
+        },
+        "entries": {
+            "title": "entradas",
+            "entry": "entrada",
+            "entries": "entradas",
+            "noEntries": "aún no hay entradas",
+            "noEntriesEmoji": "^▽^",
+            "beginStory": "comienza la historia"
+        },
+        "search": {
+            "title": "buscar",
+            "placeholderLoading": "cargando el motor de búsqueda...",
+            "placeholder": "buscar...",
+            "preparingEngine": "preparando el motor de búsqueda...",
+            "openEntry": "abrir entrada",
+            "noResults": "no se han encontrado entradas para \"{query}\"."
+        },
+        "entryCard": {
+            "deleteTitle": "¿eliminar la entrada \"{title}\"?",
+            "deleteDescription": "¡esta entrada se perderá para siempre! (¡mucho tiempo!)",
+            "cancel": "cancelar",
+            "delete": "eliminar"
+        },
+        "settings": {
+            "title": "configuración",
+            "general": {
+                "title": "general",
+                "description": "cambia la apariencia, el idioma, etc.",
+                "appearance": {
+                    "title": "apariencia",
+                    "theme": "tema",
+                    "language": "idioma",
+                    "languageWarning": "¡esto recargará la página!"
+                },
+                "user": {
+                    "title": "usuario",
+                    "displayName": "nombre visible",
+                    "displayNamePlaceholder": "nombre visible",
+                    "username": "nombre de usuario",
+                    "userId": "id de usuario"
+                },
+                "privacy": {
+                    "title": "privacidad",
+                    "analytics": "analítica",
+                    "analyticsDescription": "comparte datos de uso anónimos para ayudar a mejorar shelter. no se recopilan datos personales."
+                }
+            },
+            "security": {
+                "title": "seguridad",
+                "description": "cambia el comportamiento de seguridad",
+                "options": {
+                    "title": "opciones",
+                    "changePassword": "cambiar contraseña",
+                    "changePasswordDescription": "cambia la contraseña de tu cuenta",
+                    "changePasswordDialogTitle": "cambiar contraseña",
+                    "changePasswordDialogDescription": "asegúrate de que tu nueva contraseña sea fuerte y segura :)",
+                    "changePasswordOld": "contraseña antigua",
+                    "changePasswordNew": "contraseña nueva",
+                    "changePasswordConfirm": "confirmar contraseña",
+                    "changePasswordCancel": "cancelar",
+                    "changePasswordSubmit": "¡cámbiala!",
+                    "changePasswordSubmitting": "cambiando...",
+                    "changePasswordButton": "cambiar",
+                    "autoLock": "bloqueo automático",
+                    "autoLockDescription": "bloqueo automático por inactividad",
+                    "recoveryKey": "clave de recuperación",
+                    "recoveryKeyDescription": "genera un archivo de clave para recuperar tu cuenta",
+                    "recoveryKeyGenerate": "generar",
+                    "recoveryKeyDialogTitle": "clave de recuperación",
+                    "recoveryKeyDialogDescriptionGenerate": "esto generará un archivo <span class=\"font-mono\">.key</span> con tu frase de recuperación de 12 palabras. guárdala en un lugar seguro.",
+                    "recoveryKeyDialogDescriptionShow": "tu archivo <span class=\"font-mono\">.key</span> se ha descargado. guárdala en un lugar seguro.",
+                    "recoveryKeyWarning": "si ya tienes una clave de recuperación, al generar una nueva, la antigua quedará invalidada.",
+                    "recoveryKeyCancel": "cancelar",
+                    "recoveryKeyGenerateDownload": "generar y descargar",
+                    "recoveryKeyGenerating": "generando...",
+                    "recoveryKeyFileDownloaded": "el archivo .key se ha descargado. guárdalo en un lugar separado de esta frase.",
+                    "recoveryKeySaved": "he guardado mi frase de recuperación",
+                    "lockOptions": {
+                        "never": "nunca",
+                        "1min": "1 minuto",
+                        "5min": "5 minutos",
+                        "15min": "15 minutos",
+                        "30min": "30 minutos",
+                        "1hour": "1 hora"
+                    }
+                },
+                "info": {
+                    "title": "información",
+                    "passwordDerivation": "derivación de contraseña",
+                    "derivationIterations": "iteraciones de derivación",
+                    "saltSize": "tamaño del salt",
+                    "encryptionAlgorithm": "algoritmo de cifrado",
+                    "iv": "vector de inicialización (iv)",
+                    "encryptionArchitecture": "arquitectura de cifrado",
+                    "hybridValue": "híbrido (clave maestra cifrada)"
+                }
+            },
+            "data": {
+                "title": "datos",
+                "description": "gestiona tus datos y copias de seguridad",
+                "importExport": {
+                    "title": "importar y exportar",
+                    "subtitle": "haz una copia de seguridad de tus datos o tráelos a este perfil",
+                    "exportTitle": "exportar datos",
+                    "exportDescription": "descarga una copia de seguridad cifrada de todas tus entradas y archivos adjuntos. guárdala en un lugar seguro, solo tú puedes abrirla.",
+                    "exportButton": "exportar",
+                    "exportingButton": "exportando...",
+                    "importTitle": "importar datos",
+                    "importDescription": "restaura una copia de seguridad anterior desde un archivo <code>.shelter</code>. esto reemplazará todos tus datos actuales.",
+                    "importButton": "importar",
+                    "importingButton": "importando...",
+                    "importConfirm": "importar una copia de seguridad eliminará permanentemente todos tus datos actuales, incluyendo entradas, cuenta y contraseña. todo será reemplazado por el contenido de la copia de seguridad.\nESTO NO SE PUEDE DESHACER\n\n¿continuar?",
+                    "importNewerWarning": "esta copia de seguridad fue creada con una versión más nueva de shelter. es posible que se pierdan algunos datos. ¿continuar?",
+                    "importSuccess": "copia de seguridad importada correctamente, se cerrará la sesión en 3 segundos",
+                    "importErrors": {
+                        "invalid_file": "este archivo no es una copia de seguridad de shelter",
+                        "corrupted_file": "esta copia de seguridad está corrupta o ha sido modificada",
+                        "format_incompatible": "esta copia de seguridad no es compatible con esta versión de shelter",
+                        "schema_incompatible": "esta copia de seguridad fue creada con una versión anterior de shelter",
+                        "export_mode_not_supported": "este formato de copia de seguridad no está soportado"
+                    },
+                    "exportSuccess": "copia de seguridad exportada correctamente",
+                    "exportError": "no se ha podido exportar la copia de seguridad :(",
+                    "importError": "no se ha podido importar la copia de seguridad :("
+                },
+                "dangerZone": {
+                    "title": "zona de peligro",
+                    "subtitle": "elimina permanentemente todos los datos de este perfil",
+                    "description": "esta acción es irreversible. todas las entradas, cuentas y archivos adjuntos se eliminarán permanentemente. asegúrate de exportar una copia de seguridad primero si quieres conservar una copia.",
+                    "purgeButton": "eliminar todos los datos",
+                    "purgingButton": "eliminando...",
+                    "purgeConfirm": "esto eliminará permanentemente todos tus datos, incluyendo entradas, cuenta y contraseña. no hay forma de recuperarlos.\nESTO NO SE PUEDE DESHACER\n\n¿continuar?",
+                    "purgeSuccess": "todos los datos han sido eliminados. se cerrará la sesión."
+                }
+            },
+            "editor": {
+                "title": "editor",
+                "description": "tipografía, atajos"
+            },
+            "about": {
+                "title": "sobre",
+                "description": "información sobre este proyecto",
+                "whatIs": {
+                    "title": "¿qué es shelter?",
+                    "description": "shelter es un diario web seguro y de código abierto diseñado con privacidad y cifrado de extremo a extremo. tus datos son tuyos, almacenados directamente en tu navegador."
+                },
+                "info": {
+                    "title": "información de shelter",
+                    "version": "versión:",
+                    "source": "código fuente:",
+                    "website": "sitio web:",
+                    "license": "licencia:",
+                    "translations": "traducciones:",
+                    "translationsLink": "ver el progreso de las traducciones"
+                },
+                "credits": {
+                    "title": "créditos",
+                    "description": "este proyecto es posible gracias a una increíble comunidad de desarrolladores, artistas, ilustradores, diseñadores gráficos, músicos, probadores, traductores y demasiada cafeína. ¡estoy muy agradecido por todo vuestro apoyo!",
+                    "seeAll": "ver todos los créditos"
+                },
+                "links": {
+                    "title": "enlaces",
+                    "reportBug": "informar de un error",
+                    "discord": "servidor de discord",
+                    "kofi": "apoyar en ko-fi",
+                    "translate": "ayudar a traducir"
+                }
+            }
+        },
+        "utils": {
+            "date": {
+                "today": "hoy",
+                "yesterday": "ayer",
+                "daysAgo": "hace {count} días",
+                "justNow": "ahora mismo",
+                "minuteAgo": "hace 1 minuto",
+                "minutesAgo": "hace {count} minutos",
+                "hourAgo": "hace 1 hora",
+                "hoursAgo": "hace {count} horas",
+                "noEntries": "aún no hay entradas"
+            }
+        },
+        "greetings": {
+            "morning": {
+                "withUser": {
+                    "0": "¡buen día, {username}!",
+                    "1": "¿preparado para un nuevo día, {username}?",
+                    "2": "toma un café y comencemos, {username}.",
+                    "3": "mañana fresca, pensamientos frescos, {username}."
+                },
+                "anonymous": {
+                    "0": "¡buen día!",
+                    "1": "¿preparado para un nuevo día?",
+                    "2": "toma un café y comencemos."
+                }
+            },
+            "afternoon": {
+                "withUser": {
+                    "0": "¡buenas tardes, {username}!",
+                    "1": "espero que tu día vaya bien, {username}.",
+                    "2": "¿haciendo un pequeño descanso, {username}?"
+                },
+                "anonymous": {
+                    "0": "¡buenas tardes!",
+                    "1": "espero que tu día vaya bien.",
+                    "2": "¿haciendo un pequeño descanso?"
+                }
+            },
+            "evening": {
+                "withUser": {
+                    "0": "¡buenas noches, {username}!",
+                    "1": "hora de desconectar, {username}.",
+                    "2": "¿cómo ha ido el día, {username}?"
+                },
+                "anonymous": {
+                    "0": "¡buenas noches!",
+                    "1": "hora de desconectar.",
+                    "2": "¿cómo ha ido el día?"
+                }
+            },
+            "night": {
+                "withUser": {
+                    "0": "es muy tarde por la noche, {username}."
+                },
+                "anonymous": {
+                    "0": "¿trabajando hasta tarde?",
+                    "1": "el mundo ya está tranquilo."
+                }
+            },
+            "default": {
+                "withUser": {
+                    "0": "¡te damos la bienvenida de nuevo, {username}!",
+                    "1": "¡qué bueno verte de nuevo, {username}!",
+                    "2": "¿qué tienes en mente hoy, {username}?"
+                },
+                "anonymous": {
+                    "0": "¡te damos la bienvenida de nuevo!",
+                    "1": "¡qué bueno verte de nuevo!",
+                    "2": "¿qué tienes en mente hoy?"
+                }
+            }
         }
     }
 }
