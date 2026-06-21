@@ -3,6 +3,8 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { localizeHref } from '$lib/paraglide/runtime';
 import { locales } from '$lib/paraglide/runtime';
 
+export const prerender = true;
+
 export const GET: RequestHandler = async () => {
 	return await sitemap.response({
 		origin: 'https://shelter.cat',
