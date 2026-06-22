@@ -3,7 +3,66 @@
     "metadata": {
         "landing": {
             "title": "shelter - el teu diari íntim, segur i de codi obert",
-            "description": "escriu els teus pensaments en un espai personal íntim i 100% segur. les teves dades es mantenen completament privades i sota el teu control."
+            "description": "Escriu els teus pensaments en un espai personal íntim i 100% segur. Les teves dades es mantenen completament privades i sota el teu control."
+        },
+        "app": {
+            "title": "shelter",
+            "description": "Accedeix al teu diari personal segur. Escriu, reflexiona i gestiona els teus pensaments privats."
+        },
+        "cookies": {
+            "title": "política de cookies - shelter",
+            "description": "Informació sobre com shelter utilitza les cookies i l'emmagatzematge local per mantenir la teva sessió segura."
+        },
+        "privacy": {
+            "title": "política de privacitat - shelter",
+            "description": "La teva privacitat és la nostra prioritat. Llegeix com shelter garanteix una protecció de dades i un xifratge 100% local-first."
+        },
+        "terms": {
+            "title": "termes de servei - shelter",
+            "description": "Llegeix els termes i condicions per utilitzar shelter, el teu diari personal privat i de codi obert."
+        },
+        "credits": {
+            "title": "crèdits - shelter",
+            "description": "Gràcies a totes les persones increïbles que han fet possible aquest projecte."
+        },
+        "login": {
+            "title": "inici de sessió - shelter"
+        },
+        "signup": {
+            "title": "registre - shelter"
+        },
+        "restore": {
+            "title": "restaurar - shelter"
+        },
+        "home": {
+            "title": "inici - shelter"
+        },
+        "entries": {
+            "title": "entrades - shelter"
+        },
+        "new": {
+            "title": "nova entrada - shelter"
+        },
+        "search": {
+            "title": "cercar - shelter"
+        },
+        "settings": {
+            "title": "ajustos - shelter"
+        },
+        "settings_general": {
+            "title": "general | ajustos - shelter"
+        },
+        "settings_security": {
+            "title": "seguretat | ajustos - shelter"
+        },
+        "settings_editor": {
+            "title": "editor | ajustos - shelter"
+        },
+        "settings_data": {
+            "title": "dades | ajustos - shelter"
+        },
+        "settings_about": {
+            "title": "quant a | ajustos - shelter"
         }
     },
     "landing": {

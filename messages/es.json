@@ -1,5 +1,70 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
+    "metadata": {
+        "landing": {
+            "title": "shelter - tu diario íntimo, seguro y de código abierto",
+            "description": "Escribe tus pensamientos en un espacio personal íntimo y 100% seguro. Tus datos se mantienen completamente privados y bajo tu control."
+        },
+        "app": {
+            "title": "shelter",
+            "description": "Accede a tu diario personal seguro. Escribe, reflexiona y gestiona tus pensamientos privados."
+        },
+        "cookies": {
+            "title": "política de cookies - shelter",
+            "description": "Información sobre cómo shelter utiliza las cookies y el almacenamiento local para mantener tu sesión segura."
+        },
+        "privacy": {
+            "title": "política de privacidad - shelter",
+            "description": "Tu privacidad es nuestra prioridad. Lee cómo shelter garantiza una protección de datos y cifrado 100% local-first."
+        },
+        "terms": {
+            "title": "términos de servicio - shelter",
+            "description": "Lee los términos y condiciones para usar shelter, tu diario personal privado y de código abierto."
+        },
+        "credits": {
+            "title": "créditos - shelter",
+            "description": "Gracias a todas las personas increíbles que han hecho posible este proyecto."
+        },
+        "login": {
+            "title": "iniciar sesión - shelter"
+        },
+        "signup": {
+            "title": "registrarse - shelter"
+        },
+        "restore": {
+            "title": "restaurar - shelter"
+        },
+        "home": {
+            "title": "inicio - shelter"
+        },
+        "entries": {
+            "title": "entradas - shelter"
+        },
+        "new": {
+            "title": "nueva entrada - shelter"
+        },
+        "search": {
+            "title": "buscar - shelter"
+        },
+        "settings": {
+            "title": "ajustes - shelter"
+        },
+        "settings_general": {
+            "title": "general | ajustes - shelter"
+        },
+        "settings_security": {
+            "title": "seguridad | ajustes - shelter"
+        },
+        "settings_editor": {
+            "title": "editor | ajustes - shelter"
+        },
+        "settings_data": {
+            "title": "datos | ajustes - shelter"
+        },
+        "settings_about": {
+            "title": "acerca de | ajustes - shelter"
+        }
+    },
     "landing": {
         "hero": {
             "title": "shelter",
