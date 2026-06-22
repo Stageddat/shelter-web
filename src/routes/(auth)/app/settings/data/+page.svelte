@@ -97,6 +97,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{m['metadata.settings_data.title']()}</title>
+</svelte:head>
+
 <input bind:this={fileInput} type="file" accept=".shelter" class="hidden" onchange={handleImport} />
 
 <div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">

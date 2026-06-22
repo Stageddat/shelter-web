@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import { ModeWatcher } from 'mode-watcher';
 	import { dev } from '$app/environment';
+	import { m } from '$lib/paraglide/messages';
 
 	onMount(async () => {
 		if (pwaInfo) {
@@ -27,11 +28,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>shelter — your private, secure & open source journal</title>
-	<meta
-		name="description"
-		content="your personal journal, secure and open source. write your thoughts in a private, cozy, and 100% secure space."
-	/>
+	<title>{m['metadata.landing.title']()}</title>
+	<meta name="description" content={m['metadata.landing.description']()} />
 	{#if !import.meta.env.DEV}
 		<script
 			defer

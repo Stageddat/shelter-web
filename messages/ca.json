@@ -1,5 +1,11 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
+    "metadata": {
+        "landing": {
+            "title": "shelter - el teu diari íntim, segur i de codi obert",
+            "description": "escriu els teus pensaments en un espai personal íntim i 100% segur. les teves dades es mantenen completament privades i sota el teu control."
+        }
+    },
     "landing": {
         "hero": {
             "title": "shelter",

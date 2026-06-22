@@ -5,6 +5,7 @@
 	import { resolve } from '$app/paths';
 	import Editor from '$lib/components/app/editor/Editor.svelte';
 	import { useCreateEntry } from '$lib/hooks/app/useCreateEntry.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	const entry = useCreateEntry();
 
@@ -25,6 +26,10 @@
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>{m['metadata.new.title']()}</title>
+</svelte:head>
 
 <main class="flex h-full flex-col px-4 py-4 lg:px-12 lg:py-6">
 	<div class="mb-4 flex items-center justify-between">

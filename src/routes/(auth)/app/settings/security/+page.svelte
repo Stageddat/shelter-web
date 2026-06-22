@@ -102,6 +102,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{m['metadata.settings_security.title']()}</title>
+</svelte:head>
+
 <div class="flex flex-col gap-2 px-5 py-6 lg:px-12 lg:py-9">
 	<SettingsPageHeader
 		title={m['app.settings.security.title']()}

@@ -5,6 +5,11 @@
 	import Navbar from '$lib/components/landing/sections/Navbar.svelte';
 </script>
 
+<svelte:head>
+	<title>{m['metadata.privacy.title']()}</title>
+	<meta name="description" content={m['metadata.privacy.description']()} />
+</svelte:head>
+
 <Navbar />
 <main class="mx-auto max-w-4xl px-8 py-20 lg:py-24">
 	<BackToHome />

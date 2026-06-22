@@ -9,6 +9,10 @@
 	const signup = useSignup();
 </script>
 
+<svelte:head>
+	<title>{m['metadata.signup.title']()}</title>
+</svelte:head>
+
 {#if signup.isChecking}
 	<!-- add loading? -->
 	<!-- <div class="flex min-h-screen items-center justify-center">

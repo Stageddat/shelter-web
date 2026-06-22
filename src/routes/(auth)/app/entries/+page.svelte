@@ -9,6 +9,10 @@
 	const app = getAppContext();
 </script>
 
+<svelte:head>
+	<title>{m['metadata.entries.title']()}</title>
+</svelte:head>
+
 {#if app.isLoading}
 	<div class="flex h-full items-center justify-center text-6xl text-muted-foreground">
 		<LoadingText />

@@ -6,6 +6,7 @@
 	import { resolve } from '$app/paths';
 	import PWAUpdatePrompt from '$lib/components/app/PWAUpdatePrompt.svelte';
 	import { useAutoLock } from '$lib/hooks/app/useAutoLock.svelte';
+	import { m } from '$lib/paraglide/messages';
 
 	let { children } = $props();
 
@@ -32,6 +33,11 @@
 </script>
 
 <PWAUpdatePrompt />
+
+<svelte:head>
+	<title>{m['metadata.app.title']()}</title>
+	<meta name="description" content={m['metadata.app.description']()} />
+</svelte:head>
 
 {#if authContext.isAuthenticated}
 	<div class="flex h-screen">

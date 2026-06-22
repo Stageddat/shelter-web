@@ -93,6 +93,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{m['metadata.search.title']()}</title>
+</svelte:head>
+
 <div class="mx-auto flex w-full max-w-4xl flex-col gap-5 px-4 py-6 lg:gap-6 lg:p-6">
 	<h1 class="text-3xl font-bold tracking-wide lowercase lg:text-4xl">{m['app.search.title']()}</h1>
 

@@ -1,5 +1,70 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "metadata": {
+    "landing": {
+      "title": "shelter - your cozy, secure & open source journal",
+      "description": "Write your thoughts in a cozy, 100% secure personal space. Your data stays completely private and under your control."
+    },
+    "app": {
+      "title": "shelter",
+      "description": "access your secure personal journal. write, reflect, and manage your private thoughts."
+    },
+    "cookies": {
+      "title": "cookie policy - shelter",
+      "description": "information about how shelter uses cookies and local storage to keep your session secure."
+    },
+    "privacy": {
+      "title": "privacy policy - shelter",
+      "description": "your privacy is our priority. read how shelter guarantees 100% local-first data protection and encryption."
+    },
+    "terms": {
+      "title": "terms of service - shelter",
+      "description": "read the terms and conditions for using shelter, your open-source and private personal journal."
+    },
+    "credits": {
+      "title": "credits - shelter",
+      "description": "thanks to all the amazing people who made this project possible."
+    },
+    "login": {
+      "title": "login - shelter"
+    },
+    "signup": {
+      "title": "signup - shelter"
+    },
+    "restore": {
+      "title": "restore - shelter"
+    },
+    "home": {
+      "title": "home - shelter"
+    },
+    "entries": {
+      "title": "entries - shelter"
+    },
+    "new": {
+      "title": "new entry - shelter"
+    },
+    "search": {
+      "title": "search - shelter"
+    },
+    "settings": {
+      "title": "settings - shelter"
+    },
+    "settings_general": {
+      "title": "general | settings - shelter"
+    },
+    "settings_security": {
+      "title": "security | settings - shelter"
+    },
+    "settings_editor": {
+      "title": "editor | settings - shelter"
+    },
+    "settings_data": {
+      "title": "data | settings - shelter"
+    },
+    "settings_about": {
+      "title": "about | settings - shelter"
+    }
+  },
   "landing": {
     "hero": {
       "title": "shelter",
