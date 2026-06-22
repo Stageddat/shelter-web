@@ -15,6 +15,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{m['metadata.login.title']()}</title>
+</svelte:head>
+
 {#if login.username}
 	<main class="flex min-h-screen items-center justify-center px-2 py-4 md:px-8 md:py-16">
 		<div class="w-full max-w-2xl">

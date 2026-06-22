@@ -25,6 +25,15 @@
       "title": "credits - shelter",
       "description": "thanks to all the amazing people who made this project possible."
     },
+    "login": {
+      "title": "login - shelter"
+    },
+    "signup": {
+      "title": "signup - shelter"
+    },
+    "restore": {
+      "title": "restore - shelter"
+    },
     "home": {
       "title": "home - shelter"
     },
