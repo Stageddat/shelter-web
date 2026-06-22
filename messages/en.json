@@ -1,5 +1,11 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
+  "metadata": {
+    "landing": {
+      "title": "shelter - your cozy, secure & open source journal",
+      "description": "write your thoughts in a cozy, 100% secure personal space. your data stays completely private and under your control."
+    }
+  },
   "landing": {
     "hero": {
       "title": "shelter",
