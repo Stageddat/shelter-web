@@ -54,6 +54,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{m['metadata.home.title']()}</title>
+</svelte:head>
+
 <main class="flex flex-col gap-4 px-4 py-6 lg:h-screen lg:overflow-hidden lg:px-10 lg:py-8">
 	<div class="mb-4 flex shrink-0 items-center justify-between">
 		<h2

@@ -32,6 +32,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>{m['metadata.settings.title']()}</title>
+</svelte:head>
+
 <div class="flex h-screen overflow-hidden">
 	<aside
 		class="hidden h-full w-72 flex-col overflow-hidden border-r bg-card/50 backdrop-blur-xs lg:flex"
