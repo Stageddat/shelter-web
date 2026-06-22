@@ -56,6 +56,11 @@
 	];
 </script>
 
+<svelte:head>
+	<title>{m['metadata.credits.title']()}</title>
+	<meta name="description" content={m['metadata.credits.description']()} />
+</svelte:head>
+
 <Navbar />
 <div class="mx-auto mt-12 max-w-4xl px-4 py-12">
 	<h1 class="mb-8 text-6xl font-bold text-foreground">{m['landing.credits.title']()}</h1>
