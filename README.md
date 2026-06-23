@@ -70,7 +70,7 @@ Open `localhost:5173` in your browser to view the local development server.
 
 Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a pull request.
 
-**Thank you to everyone who makes Shelter possible!**  
+**Thank you to everyone who makes Shelter possible ❤️!**  
 You can see the full list of people who have contributed to this project at [shelter.cat/credits](https://shelter.cat/credits).
 
 <a href="https://github.com/stageddat/shelter-web/graphs/contributors">
