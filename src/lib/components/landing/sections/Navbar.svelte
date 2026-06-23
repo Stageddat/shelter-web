@@ -17,7 +17,7 @@
 			<MobileNav />
 
 			<a
-				href={localizeHref('/')}
+				href={goto(localizeHref('/'))}
 				class="font-primary flex items-center text-2xl tracking-wide transition-opacity hover:text-primary lg:text-3xl"
 			>
 				<span class="relative -top-px">{m['landing.navbar.logo']()}</span>
