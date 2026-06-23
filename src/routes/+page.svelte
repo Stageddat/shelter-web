@@ -6,7 +6,13 @@
 	import Navbar from '$lib/components/landing/sections/Navbar.svelte';
 	import Security from '$lib/components/landing/sections/Security.svelte';
 	import Start from '$lib/components/landing/sections/Start.svelte';
+	import { m } from '$lib/paraglide/messages';
 </script>
+
+<svelte:head>
+	<title>{m['metadata.landing.title']()}</title>
+	<meta name="description" content={m['metadata.landing.description']()} />
+</svelte:head>
 
 <Navbar />
 <Hero />

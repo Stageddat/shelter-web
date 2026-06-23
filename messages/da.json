@@ -3,27 +3,27 @@
     "metadata": {
         "landing": {
             "title": "shelter - din hyggelige, sikre & open source-dagbog",
-            "description": "Skriv dine tanker i et hyggeligt, 100% sikkert personligt rum. Dine data forbliver helt private og under din kontrol."
+            "description": "skriv dine tanker i et hyggeligt, 100% sikkert personligt rum. dine data forbliver helt private og under din kontrol."
         },
         "app": {
             "title": "shelter",
-            "description": "Få adgang til din sikre personlige dagbog. Skriv, reflekter og administrer dine private tanker."
+            "description": "få adgang til din sikre personlige dagbog. skriv, reflekter og administrer dine private tanker."
         },
         "cookies": {
             "title": "cookiepolitik - shelter",
-            "description": "Information om, hvordan shelter bruger cookies og lokal lagring for at holde din session sikker."
+            "description": "information om, hvordan shelter bruger cookies og lokal lagring for at holde din session sikker."
         },
         "privacy": {
             "title": "privatlivspolitik - shelter",
-            "description": "Dit privatliv er vores prioritet. Læs, hvordan shelter garanterer 100% local-first databeskyttelse og kryptering."
+            "description": "dit privatliv er vores prioritet. læs, hvordan shelter garanterer 100% local-first databeskyttelse og kryptering."
         },
         "terms": {
             "title": "servicevilkår - shelter",
-            "description": "Læs vilkårene og betingelserne for at bruge shelter, din open source og private personlige dagbog."
+            "description": "læs vilkårene og betingelserne for at bruge shelter, din open source og private personlige dagbog."
         },
         "credits": {
             "title": "anerkendelser - shelter",
-            "description": "Tak til alle de fantastiske mennesker, der har gjort dette projekt muligt."
+            "description": "tak til alle de fantastiske mennesker, der har gjort dette projekt muligt."
         },
         "login": {
             "title": "log ind - shelter"
