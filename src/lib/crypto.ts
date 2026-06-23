@@ -51,6 +51,28 @@ export function generateSalt(): Uint8Array<ArrayBuffer> {
 	return crypto.getRandomValues(new Uint8Array(SALT_SIZE));
 }
 
+export async function deriveAuthKey(masterKey: CryptoKey): Promise<Uint8Array> {
+	const rawKey = await crypto.subtle.exportKey('raw', masterKey);
+
+	const baseKey = await crypto.subtle.importKey('raw', rawKey, 'HKDF', false, ['deriveKey']);
+
+	const authKey = await crypto.subtle.deriveKey(
+		{
+			name: 'HKDF',
+			hash: 'SHA-256',
+			salt: new Uint8Array(0),
+			info: new TextEncoder().encode('shelter-auth-key')
+		},
+		baseKey,
+		{ name: 'AES-GCM', length: 256 },
+		true,
+		['encrypt', 'decrypt']
+	);
+
+	const raw = await crypto.subtle.exportKey('raw', authKey);
+	return new Uint8Array(raw);
+}
+
 // ============================================================
 // MASTER KEY
 // ============================================================
