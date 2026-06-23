@@ -6,25 +6,33 @@
 
 </div>
 
-Shelter is a secure, open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
+Shelter is a cozy, secure and open-source web-based journal designed with privacy and end-to-end encryption. Your data stays yours, stored directly in your browser.
 
 Built with [SvelteKit](https://svelte.dev/), [Web Crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API) & ❤️.
 
 ## Showcase gallery
 Shelter web app home page:
-<img src="./docs/images/homepage-showcase-optimized.webp" alt="Shelter — app home page showcase" width="100%"/>
+<img src="./docs/images/homepage-showcase-optimized.webp" alt="Shelter - app home page showcase" width="100%"/>
 Shelter editor with different themes built in:
-<img src="./docs/images/themes-howcase-optimized.webp" alt="Shelter — theme showcase" width="100%"/>
+<img src="./docs/images/themes-howcase-optimized.webp" alt="Shelter - theme showcase" width="100%"/>
 
+<div align="center">
+
+More screenshots in [SHOWCASE.md](./SHOWCASE.md)!
+
+</div>
 
 ## Features
 
-- **Local-First Architecture:** Fast, resilient, and works entirely offline using IndexedDB.
-- **End-to-End Encryption (E2EE):** Client-side encryption via the Web Crypto API. Nobody can read your entries except you, not even us.
+- **Local-First Architecture:** Works completely offline using IndexDB and Service Workers.
+- **End-to-End Encryption (E2EE):** All sensitive information is encrypted on the client using Web Crypto. No one can read its contents, not even us.
+- **Battle-tested encryption:** We implement robust and audited algorithms such as AES-GCM for encryption and PBKDF2 for key derivation.
 - **No account required:** No email, no server, no tracking. Just open the app and start writing.
+- **No Vendor Lock-in:** Your entries and notes belong to you. Export your entire library to standard open formats at any time (soon!).
 - **Rich Text Editor:** Write with formatting using a clean, distraction-free editor powered by Tiptap.
-- **Multilingual:** Available in English, Catalan and Danish, with more languages on the way.
-- **Open Source:** Fully auditable code under the GNU AGPLv3 license.
+- **Themes:** Choose the design you like best, from light and dark themes to community styles like Catppuccin, and many more on the way!
+- **Multilingual:** Officially available in English and Catalan. Thanks to the community, we also have translations into Danish, Spanish, and many other languages!
+- **Open Source:** Shelter is and always will be open source and free under the GNU AGPLv3 license.
 
 ## Getting Started
 
@@ -33,7 +41,7 @@ Follow these steps to set up the project locally for development.
 ### Prerequisites
 
 - Make sure you have [Node.js](https://nodejs.org/) (20.9 or higher) installed.
-- [pnpm](https://pnpm.io/es/) (recommended) or [npm](https://www.npmjs.com/).
+- [pnpm](https://pnpm.io/es/).
 
 ### Installation
 
@@ -62,10 +70,11 @@ Open `localhost:5173` in your browser to view the local development server.
 
 Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before submitting a pull request.
 
-**Thank you to all the contributors who made this project possible!**
+**Thank you to everyone who makes Shelter possible!**  
+You can see the full list of people who have contributed to this project at [shelter.cat/credits](https://shelter.cat/credits).
 
 <a href="https://github.com/stageddat/shelter-web/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=stageddat/shelter-web" />
+  <img src="https://contrib.rocks/image?repo=stageddat/shelter-web" alt="Shelter Contributors" />
 </a>
 
 ## License
