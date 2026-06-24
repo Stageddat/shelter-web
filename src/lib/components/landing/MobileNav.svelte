@@ -39,6 +39,22 @@
 						>{m['landing.navbar.faqs']()}</a
 					>
 				</Sheet.Close>
+				<Sheet.Close>
+					<a
+						href="https://github.com/Stageddat/shelter-web"
+						target="_blank"
+						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
+						>github</a
+					>
+				</Sheet.Close>
+				<Sheet.Close>
+					<a
+						href="https://discord.gg/BntK5GbF2M"
+						target="_blank"
+						class="font-display text-3xl tracking-tight text-muted-foreground transition-colors hover:text-primary"
+						>discord</a
+					>
+				</Sheet.Close>
 			</nav>
 		</div>
 	</Sheet.Content>
