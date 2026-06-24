@@ -18,6 +18,10 @@ export function getCategoryLabels() {
 			title: m['app.settings.data.title'](),
 			description: m['app.settings.data.description']()
 		},
+		sync: {
+			title: m['app.settings.sync.title'](),
+			description: m['app.settings.sync.description']()
+		},
 		about: {
 			title: m['app.settings.about.title'](),
 			description: m['app.settings.about.description']()
