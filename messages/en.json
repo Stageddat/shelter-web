@@ -560,6 +560,10 @@
         "title": "editor",
         "description": "typography, shortcuts"
       },
+      "sync": {
+        "title": "sync",
+        "description": "synchronization, status"
+      },
       "about": {
         "title": "about",
         "description": "information about this project",

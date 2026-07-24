@@ -3,33 +3,13 @@
 	import { goto } from '$app/navigation';
 	import settingsCategories from '$lib/types/app/settingsCategories';
 	import { m } from '$lib/paraglide/messages';
+	import { getCategoryLabels } from '$lib/types/app/settingsCategoriesLabels';
 
 	let { children } = $props();
 
 	let activeId = $derived(page.url.pathname.split('/').pop());
 
-	const categoryLabels = $derived({
-		general: {
-			title: m['app.settings.general.title'](),
-			description: m['app.settings.general.description']()
-		},
-		security: {
-			title: m['app.settings.security.title'](),
-			description: m['app.settings.security.description']()
-		},
-		editor: {
-			title: m['app.settings.editor.title'](),
-			description: m['app.settings.editor.description']()
-		},
-		data: {
-			title: m['app.settings.data.title'](),
-			description: m['app.settings.data.description']()
-		},
-		about: {
-			title: m['app.settings.about.title'](),
-			description: m['app.settings.about.description']()
-		}
-	});
+	const categoryLabels = $derived(getCategoryLabels());
 </script>
 
 <svelte:head>
